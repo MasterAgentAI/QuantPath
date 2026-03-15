@@ -1,0 +1,88 @@
+id: rutgers-mqf
+name: Rutgers MQF
+full_name: Master of Quantitative Finance
+university: Rutgers University
+department: Department of Mathematics & Statistics
+website: https://www.mqf.rutgers.edu/
+quantnet_ranking: 13
+
+admissions:
+  class_size: 40
+  acceptance_rate: 0.25
+  avg_gpa: 3.60
+  gre_quant_avg: 167
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Strongly recommended"
+    - category: real_analysis
+      note: "Beneficial for stochastic calculus courses"
+    - category: numerical_methods
+      note: "Helpful for computational work"
+  languages: [cpp, python, r]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "2790"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 83
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-01"
+    - round: 2
+      date: "2026-04-01"
+      decision_by: "2026-05-15"
+
+application:
+  fee: 70
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: academic background, research interests, and career goals"
+  video: null
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: none
+    format: "No interview required"
+
+special:
+  - "Mathematics department foundation with strong theoretical emphasis"
+  - "Close proximity to NYC financial hub"
+  - "Competitive tuition relative to peer programs"
+  - "Practicum with industry partners"
+
+tags: [stem, math_dept, nyc_proximity, affordable, practicum]

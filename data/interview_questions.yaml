@@ -1,0 +1,645 @@
+categories:
+  - id: probability
+    name: "Probability & Statistics"
+    questions:
+      - question: "You flip a fair coin until you get two heads in a row. What is the expected number of flips?"
+        difficulty: medium
+        topics: ["expected_value", "markov_chains"]
+        hint: "Set up a system of equations using states: Start, one Head seen."
+        solution: |
+          6 flips. Define states: S (start/just got tails), H (just got one head).
+          E[S] = 1 + 0.5*E[H] + 0.5*E[S]
+          E[H] = 1 + 0.5*0 + 0.5*E[S]
+          Substituting: E[S] = 6.
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+      - question: "A stick is broken at two uniformly random points. What is the probability the three pieces form a triangle?"
+        difficulty: hard
+        topics: ["geometric_probability", "uniform_distribution"]
+        hint: "Use the triangle inequality: each piece must be less than 1/2 the total length."
+        solution: |
+          1/4. Let the break points be U, V ~ Uniform(0,1). The three pieces satisfy the
+          triangle inequality iff none exceeds 1/2. By geometric probability (area of the
+          valid region inside the unit square), the answer is 1/4.
+        programs: ["princeton-mfin", "stanford-mcf"]
+
+      - question: "You have a biased coin with P(H) = p. How do you use it to simulate a fair coin?"
+        difficulty: easy
+        topics: ["simulation", "von_neumann_trick"]
+        hint: "Consider pairs of flips and the symmetry between HT and TH."
+        solution: |
+          Von Neumann's trick: Flip twice. If HT, call it 'Heads'. If TH, call it 'Tails'.
+          If HH or TT, discard and repeat. P(HT) = p(1-p) = P(TH), so outcomes are equally likely.
+        programs: ["baruch-mfe", "mit-mfin"]
+
+      - question: "Two envelopes each contain a check. One check is twice the other. You pick one and see $100. Should you switch?"
+        difficulty: medium
+        topics: ["expected_value", "paradoxes"]
+        hint: "Think carefully about the prior distribution over possible amounts."
+        solution: |
+          The naive argument says switching gives E = 0.5*200 + 0.5*50 = 125 > 100, so switch.
+          But this is a paradox -- the same argument applies regardless of the amount seen.
+          Without a prior on the amounts, you cannot determine if switching is beneficial.
+          With a proper Bayesian prior, the answer depends on the prior distribution.
+        programs: ["cmu-mscf", "uchicago-msfm"]
+
+      - question: "What is the expected number of rolls of a fair die to see all 6 faces?"
+        difficulty: medium
+        topics: ["coupon_collector", "expected_value"]
+        hint: "Use the coupon collector framework: after seeing k faces, how many rolls to see a new one?"
+        solution: |
+          14.7 rolls. After seeing k distinct faces, the probability of a new face is (6-k)/6,
+          so the expected rolls to get the next new face is 6/(6-k).
+          Total = 6/6 + 6/5 + 6/4 + 6/3 + 6/2 + 6/1 = 1 + 1.2 + 1.5 + 2 + 3 + 6 = 14.7.
+        programs: ["baruch-mfe", "nyu-tandon-mfe"]
+
+      - question: "You draw cards from a standard 52-card deck without replacement. What is the expected number of draws until you get an Ace?"
+        difficulty: medium
+        topics: ["expected_value", "hypergeometric"]
+        hint: "Think of the 4 Aces as dividing the non-Ace cards into 5 groups."
+        solution: |
+          10.6 draws. By symmetry, the 4 Aces divide the 48 non-Ace cards into 5 equally-sized
+          groups in expectation. The expected size of the first group (before the first Ace) is
+          48/5 = 9.6. So the expected draws until the first Ace is 9.6 + 1 = 10.6.
+        programs: ["columbia-msfe", "baruch-mfe"]
+
+      - question: "If X and Y are independent standard normals, what is the distribution of X^2 + Y^2?"
+        difficulty: easy
+        topics: ["chi_squared", "normal_distribution"]
+        hint: "Recall the definition of the chi-squared distribution."
+        solution: |
+          X^2 + Y^2 ~ Chi-squared(2) = Exponential(1/2). The sum of squares of k independent
+          standard normals follows a chi-squared distribution with k degrees of freedom.
+          Chi-squared(2) is equivalent to Exponential with rate 1/2 (mean 2).
+        programs: ["cmu-mscf", "princeton-mfin"]
+
+      - question: "You toss a fair coin 100 times. What is the probability of getting exactly 50 heads? Approximate."
+        difficulty: medium
+        topics: ["central_limit_theorem", "binomial"]
+        hint: "Use the normal approximation to the binomial (de Moivre-Laplace)."
+        solution: |
+          Approximately 0.08 (about 8%). Using the normal approximation, X ~ Bin(100, 0.5) is
+          approximately N(50, 25). P(X=50) ~ f(50) * 1 = (1/sqrt(2*pi*25)) * 1 = 1/(5*sqrt(2*pi))
+          ~ 0.0798.
+        programs: ["baruch-mfe", "berkeley-mfe"]
+
+      - question: "A and B alternately toss a fair coin (A first). The first to get heads wins. What is A's probability of winning?"
+        difficulty: easy
+        topics: ["geometric_series", "probability"]
+        hint: "A wins on toss 1, 3, 5, ... Sum the geometric series."
+        solution: |
+          2/3. P(A wins) = 1/2 + (1/2)^2 * 1/2 + (1/2)^4 * 1/2 + ...
+          = (1/2) * sum_{k=0}^{inf} (1/4)^k = (1/2) * 1/(1 - 1/4) = (1/2)*(4/3) = 2/3.
+        programs: ["nyu-tandon-mfe", "ucla-mfe"]
+
+      - question: "You have 3 cards: one red on both sides, one blue on both sides, one red on one side and blue on the other. You draw a card and see a red side. What is the probability the other side is also red?"
+        difficulty: medium
+        topics: ["bayes_theorem", "conditional_probability"]
+        hint: "Count the number of red sides, not the number of cards."
+        solution: |
+          2/3. There are 3 red sides total. 2 of them belong to the red-red card (so the other
+          side is red). 1 belongs to the red-blue card (so the other side is blue).
+          P(other side red | see red) = 2/3.
+        programs: ["baruch-mfe", "cmu-mscf", "mit-mfin"]
+
+  - id: stochastic_calculus
+    name: "Stochastic Calculus"
+    questions:
+      - question: "State Ito's Lemma for a function f(t, X_t) where X_t follows dX_t = mu*dt + sigma*dW_t."
+        difficulty: easy
+        topics: ["itos_lemma", "stochastic_differential_equations"]
+        hint: "Remember the extra second-order term from the quadratic variation of Brownian motion."
+        solution: |
+          df = (df/dt + mu * df/dx + 0.5 * sigma^2 * d^2f/dx^2) dt + sigma * df/dx * dW_t.
+          The key difference from ordinary calculus is the (1/2)*sigma^2*f_xx term, which arises
+          because (dW_t)^2 = dt in the Ito calculus framework.
+        programs: ["baruch-mfe", "princeton-mfin", "cmu-mscf"]
+
+      - question: "Let W_t be a standard Brownian motion. Compute d(W_t^2) using Ito's Lemma."
+        difficulty: easy
+        topics: ["itos_lemma", "brownian_motion"]
+        hint: "Apply Ito's Lemma with f(x) = x^2, dX = dW."
+        solution: |
+          d(W_t^2) = 2*W_t * dW_t + (1/2)*2*dt = 2*W_t * dW_t + dt.
+          Here f(x) = x^2, f'(x) = 2x, f''(x) = 2, mu = 0, sigma = 1.
+          Equivalently: W_t^2 = 2 * integral_0^t W_s dW_s + t.
+        programs: ["baruch-mfe", "berkeley-mfe"]
+
+      - question: "Derive the Black-Scholes PDE for a European call option."
+        difficulty: hard
+        topics: ["black_scholes", "risk_neutral_pricing", "pde"]
+        hint: "Form a self-financing portfolio of the option and Delta shares of stock to eliminate risk."
+        solution: |
+          Under GBM dS = mu*S*dt + sigma*S*dW, apply Ito's Lemma to V(S,t):
+          dV = (V_t + mu*S*V_S + 0.5*sigma^2*S^2*V_SS)dt + sigma*S*V_S*dW.
+          Hedge: Pi = V - Delta*S with Delta = V_S eliminates dW.
+          No-arbitrage: dPi = r*Pi*dt gives the BS PDE:
+          V_t + 0.5*sigma^2*S^2*V_SS + r*S*V_S - r*V = 0.
+        programs: ["baruch-mfe", "princeton-mfin", "cmu-mscf", "stanford-mcf"]
+
+      - question: "What is the Girsanov theorem and why is it important in finance?"
+        difficulty: hard
+        topics: ["girsanov", "measure_change", "risk_neutral"]
+        hint: "It tells us how to change the drift of a Brownian motion when switching probability measures."
+        solution: |
+          Girsanov's theorem states that if we define a new measure Q via the Radon-Nikodym
+          derivative dQ/dP = exp(-theta*W_T - 0.5*theta^2*T), then W_t^Q = W_t + theta*t is
+          a Brownian motion under Q. In finance, this lets us switch from the real-world measure P
+          (with drift mu) to the risk-neutral measure Q (with drift r), enabling us to price
+          derivatives as discounted expected payoffs under Q.
+        programs: ["princeton-mfin", "stanford-mcf", "mit-mfin"]
+
+      - question: "If S_t follows geometric Brownian motion dS/S = mu*dt + sigma*dW, what is E[S_t]?"
+        difficulty: medium
+        topics: ["geometric_brownian_motion", "expected_value"]
+        hint: "Solve the SDE explicitly using Ito's Lemma on ln(S_t)."
+        solution: |
+          E[S_t] = S_0 * exp(mu * t).
+          Applying Ito's Lemma to ln(S_t): d(ln S) = (mu - sigma^2/2)dt + sigma*dW.
+          So S_t = S_0 * exp((mu - sigma^2/2)*t + sigma*W_t).
+          Taking expectations: E[S_t] = S_0 * exp((mu - sigma^2/2)*t) * exp(sigma^2*t/2) = S_0 * exp(mu*t).
+        programs: ["baruch-mfe", "cmu-mscf", "columbia-msfe"]
+
+      - question: "Is the Ito integral integral_0^T W_t dW_t a martingale? What is its expectation?"
+        difficulty: medium
+        topics: ["ito_integral", "martingale"]
+        hint: "Ito integrals with nice integrands are martingales. Use the result for d(W_t^2)."
+        solution: |
+          Yes, it is a martingale (since W_t is adapted and E[integral W^2 dt] < inf).
+          Its expectation is 0. We can also compute it directly:
+          integral_0^T W_t dW_t = (W_T^2 - T)/2.
+          E[(W_T^2 - T)/2] = (T - T)/2 = 0.
+        programs: ["princeton-mfin", "baruch-mfe"]
+
+      - question: "What is Ito's isometry? State and explain its significance."
+        difficulty: medium
+        topics: ["ito_integral", "isometry"]
+        hint: "It relates the expectation of the squared Ito integral to an ordinary Lebesgue integral."
+        solution: |
+          Ito's isometry: E[(integral_0^T f(t) dW_t)^2] = integral_0^T E[f(t)^2] dt.
+          This means the L2-norm of an Ito integral equals the L2-norm of the integrand in
+          ordinary Lebesgue sense. It is fundamental for defining the Ito integral for general
+          adapted processes and for computing variances of stochastic integrals.
+        programs: ["cmu-mscf", "princeton-mfin"]
+
+  - id: linear_algebra
+    name: "Linear Algebra"
+    questions:
+      - question: "What is the geometric interpretation of eigenvalues and eigenvectors?"
+        difficulty: easy
+        topics: ["eigenvalues", "eigenvectors", "linear_transformations"]
+        hint: "Think about what happens when you apply a matrix to its eigenvector."
+        solution: |
+          Eigenvectors are directions that are preserved (only scaled) by the linear transformation.
+          The eigenvalue is the scaling factor along that direction. If lambda > 1, the vector is
+          stretched; if 0 < lambda < 1, compressed; if lambda < 0, reversed. A matrix with distinct
+          eigenvalues can be understood as stretching/compressing along its eigenvector directions.
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+      - question: "When is a matrix diagonalizable? Give a necessary and sufficient condition."
+        difficulty: medium
+        topics: ["diagonalization", "eigenvalues"]
+        hint: "Think about the relationship between algebraic and geometric multiplicities."
+        solution: |
+          An n x n matrix is diagonalizable iff it has n linearly independent eigenvectors, or
+          equivalently, iff the geometric multiplicity equals the algebraic multiplicity for every
+          eigenvalue. Sufficient conditions: (1) n distinct eigenvalues, (2) the matrix is symmetric
+          (real) or Hermitian (complex) -- spectral theorem guarantees orthogonal diagonalization.
+        programs: ["cmu-mscf", "columbia-msfe"]
+
+      - question: "Explain the Singular Value Decomposition (SVD) and its applications in finance."
+        difficulty: hard
+        topics: ["svd", "matrix_decomposition", "pca"]
+        hint: "SVD decomposes any matrix into rotation, scaling, rotation. Think PCA."
+        solution: |
+          Any m x n matrix A = U * Sigma * V^T where U (m x m) and V (n x n) are orthogonal,
+          Sigma is diagonal with non-negative singular values. Applications in finance:
+          (1) PCA on covariance matrices for factor models and risk decomposition,
+          (2) Dimensionality reduction of large return matrices,
+          (3) Noise reduction in correlation estimation,
+          (4) Solving ill-conditioned least-squares problems in regression.
+        programs: ["baruch-mfe", "princeton-mfin", "cmu-mscf"]
+
+      - question: "Prove that a real symmetric matrix has only real eigenvalues."
+        difficulty: medium
+        topics: ["symmetric_matrices", "eigenvalues", "proof"]
+        hint: "Take the conjugate transpose of Av = lambda*v and use A = A^T."
+        solution: |
+          Let Av = lambda*v (v != 0). Take conjugate transpose: v^*A^T = conj(lambda)*v^*.
+          Since A is real symmetric (A = A^T): v^*A = conj(lambda)*v^*.
+          Multiply Av = lambda*v on the left by v^*: v^*Av = lambda*(v^*v).
+          Multiply v^*A = conj(lambda)*v^* on the right by v: v^*Av = conj(lambda)*(v^*v).
+          Since v^*v > 0: lambda = conj(lambda), so lambda is real.
+        programs: ["princeton-mfin", "mit-mfin"]
+
+      - question: "What is the Cholesky decomposition and why is it used in Monte Carlo simulation?"
+        difficulty: medium
+        topics: ["cholesky", "monte_carlo", "correlation"]
+        hint: "It decomposes a positive definite matrix into L*L^T. Think about generating correlated normals."
+        solution: |
+          Cholesky decomposition: a symmetric positive definite matrix A = L*L^T where L is lower
+          triangular. In Monte Carlo, to generate correlated normal random variables with covariance
+          matrix Sigma, compute L = cholesky(Sigma), then X = L*Z where Z ~ N(0,I). The result
+          X has Cov(X) = L*I*L^T = Sigma. This is more efficient than eigendecomposition and
+          numerically stable for well-conditioned matrices.
+        programs: ["baruch-mfe", "cmu-mscf", "berkeley-mfe"]
+
+      - question: "What is the rank of a matrix and why does it matter in regression?"
+        difficulty: easy
+        topics: ["rank", "regression", "multicollinearity"]
+        hint: "Rank equals the number of linearly independent columns. What happens when X^T X is not full rank?"
+        solution: |
+          Rank is the dimension of the column space (= row space). In regression Y = X*beta + eps,
+          the OLS solution beta = (X^T X)^{-1} X^T Y requires X^T X to be invertible, which needs
+          X to have full column rank. If rank(X) < p (multicollinearity), X^T X is singular:
+          infinitely many solutions exist, estimates are unstable. Remedies include ridge regression,
+          dropping variables, or PCA.
+        programs: ["columbia-msfe", "nyu-tandon-mfe"]
+
+      - question: "What are positive definite matrices? Give three equivalent characterizations."
+        difficulty: medium
+        topics: ["positive_definite", "eigenvalues", "cholesky"]
+        hint: "Think about the quadratic form, eigenvalues, and factorizations."
+        solution: |
+          A symmetric matrix A is positive definite iff any of:
+          (1) x^T A x > 0 for all x != 0 (quadratic form definition),
+          (2) All eigenvalues of A are strictly positive,
+          (3) A has a Cholesky decomposition A = L L^T with L lower triangular and positive diagonal,
+          (4) All leading principal minors are positive (Sylvester's criterion),
+          (5) A = B^T B for some full-rank matrix B.
+          Covariance matrices are always positive semi-definite; strictly PD when no perfect collinearity.
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+  - id: programming
+    name: "Programming & Algorithms"
+    questions:
+      - question: "Implement a function to price a European call option using Monte Carlo simulation in Python."
+        difficulty: medium
+        topics: ["monte_carlo", "option_pricing", "python"]
+        hint: "Simulate GBM paths, compute payoffs, discount back. Use numpy for vectorization."
+        solution: |
+          import numpy as np
+          def mc_european_call(S0, K, T, r, sigma, n_sims=100000):
+              Z = np.random.standard_normal(n_sims)
+              ST = S0 * np.exp((r - 0.5*sigma**2)*T + sigma*np.sqrt(T)*Z)
+              payoffs = np.maximum(ST - K, 0)
+              return np.exp(-r*T) * np.mean(payoffs)
+          Key: use risk-neutral drift r (not mu), vectorize with numpy, discount at risk-free rate.
+        programs: ["baruch-mfe", "cmu-mscf", "berkeley-mfe"]
+
+      - question: "What is the difference between a pointer and a reference in C++?"
+        difficulty: easy
+        topics: ["cpp", "pointers", "references"]
+        hint: "Think about nullability, reassignment, and syntax."
+        solution: |
+          Pointers: can be null, can be reassigned, use * to dereference, support arithmetic.
+          References: must be initialized, cannot be null, cannot be reseated, use like the original
+          variable (syntactic alias). References are implemented as const pointers internally.
+          In quant finance C++: prefer references for function parameters (safety), pointers for
+          optional parameters and polymorphism (can be nullptr).
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+      - question: "Explain the time complexity of building a heap vs inserting n elements one by one."
+        difficulty: medium
+        topics: ["heap", "complexity", "algorithms"]
+        hint: "Heapify (bottom-up) is O(n), but n individual insertions are O(n log n). Why?"
+        solution: |
+          Bottom-up heapify (Floyd's algorithm): O(n). Most nodes are near the leaves and sift
+          down a small distance. Sum = n/4*1 + n/8*2 + n/16*3 + ... = O(n).
+          Repeated insertion: each insert is O(log n), so n inserts = O(n log n).
+          The difference matters for quant systems processing large datasets: always prefer
+          heapq.heapify() over repeated heappush() in Python.
+        programs: ["cmu-mscf", "baruch-mfe"]
+
+      - question: "Implement a function to compute the moving average of a time series in O(n) time."
+        difficulty: easy
+        topics: ["sliding_window", "time_series", "python"]
+        hint: "Use a running sum: add the new element, subtract the old one."
+        solution: |
+          def moving_average(prices, window):
+              result = []
+              window_sum = sum(prices[:window])
+              result.append(window_sum / window)
+              for i in range(window, len(prices)):
+                  window_sum += prices[i] - prices[i - window]
+                  result.append(window_sum / window)
+              return result
+          O(n) time, O(1) extra space (excluding output). Avoids recomputing the sum each step.
+        programs: ["baruch-mfe", "columbia-msfe"]
+
+      - question: "What is the difference between virtual and non-virtual functions in C++? When do you use each?"
+        difficulty: medium
+        topics: ["cpp", "polymorphism", "vtable"]
+        hint: "Virtual functions enable runtime polymorphism via the vtable. Consider the performance cost."
+        solution: |
+          Non-virtual: resolved at compile time (static dispatch). Fast, no overhead.
+          Virtual: resolved at runtime via vtable lookup (dynamic dispatch). Slight overhead
+          (~indirect function call). Use virtual when you need polymorphism (base class pointer
+          calling derived class method). Use non-virtual for performance-critical code (pricing
+          engines, hot loops). Pure virtual (= 0) makes the class abstract. In quant: instrument
+          hierarchies use virtual; numerical kernels avoid it.
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+      - question: "How would you design a data structure to efficiently compute the median of a stream of numbers?"
+        difficulty: hard
+        topics: ["data_structures", "heap", "streaming"]
+        hint: "Use two heaps: a max-heap for the lower half and a min-heap for the upper half."
+        solution: |
+          Maintain a max-heap (lower half) and min-heap (upper half). For each new number:
+          1. If <= max of lower heap, insert into lower; else insert into upper.
+          2. Rebalance so sizes differ by at most 1.
+          3. Median is top of larger heap (odd n) or average of both tops (even n).
+          Insert: O(log n), Query median: O(1). This is useful in real-time risk monitoring
+          and order book analysis where robust statistics (median) are preferred over mean.
+        programs: ["cmu-mscf", "uchicago-msfm"]
+
+      - question: "Explain the GIL in Python. How does it affect quant applications?"
+        difficulty: medium
+        topics: ["python", "concurrency", "performance"]
+        hint: "The GIL prevents true parallel execution of Python threads. Think about workarounds."
+        solution: |
+          The Global Interpreter Lock (GIL) ensures only one thread executes Python bytecode at a
+          time, even on multi-core systems. Impact on quant work: CPU-bound tasks (Monte Carlo,
+          optimization) don't benefit from threading. Workarounds:
+          (1) multiprocessing (separate processes, no shared GIL),
+          (2) numpy/scipy release the GIL during C-level computation,
+          (3) Use C++ extensions (pybind11) for hot loops,
+          (4) asyncio for I/O-bound tasks (market data feeds).
+        programs: ["baruch-mfe", "berkeley-mfe"]
+
+  - id: brainteasers
+    name: "Brainteasers"
+    questions:
+      - question: "You have 12 balls, one is either heavier or lighter. You have a balance scale and 3 weighings. Find the odd ball and whether it's heavier or lighter."
+        difficulty: hard
+        topics: ["logic", "information_theory"]
+        hint: "Each weighing has 3 outcomes (left heavy, right heavy, balanced). 3 weighings give 3^3 = 27 outcomes. You need to distinguish 24 cases (12 balls x 2 possibilities)."
+        solution: |
+          Label balls 1-12. Weighing 1: {1,2,3,4} vs {5,6,7,8}.
+          Case A (balanced): odd ball is in {9,10,11,12}. Weigh {9,10,11} vs {1,2,3}.
+            If balanced: ball 12 is odd, weigh against any to find heavy/light.
+            If not balanced: you know heavy/light direction, one more weighing identifies which.
+          Case B (not balanced): you know {9,10,11,12} are normal. Use them as references
+            in the remaining 2 weighings, strategically swapping balls to isolate the odd one.
+        programs: ["baruch-mfe", "uchicago-msfm"]
+
+      - question: "You are in a dark room with a deck of 52 cards. 13 are face up, 39 face down. You can't see or feel which way they face. Split them into two piles so each pile has the same number of face-up cards."
+        difficulty: medium
+        topics: ["logic", "invariant"]
+        hint: "You don't need to know which cards are face up. Think about what happens when you flip cards."
+        solution: |
+          Take any 13 cards and put them in a separate pile. Flip all 13 cards in that pile.
+          If the 13 you took contained k face-up cards, the remaining pile has 13-k face-up cards.
+          After flipping your pile of 13: it has 13-k face-up cards (the k that were face-up are
+          now face-down, and the 13-k that were face-down are now face-up). Both piles have 13-k face-up cards.
+        programs: ["baruch-mfe", "cmu-mscf"]
+
+      - question: "How many trailing zeros does 100! have?"
+        difficulty: easy
+        topics: ["number_theory", "counting"]
+        hint: "Trailing zeros come from factors of 10 = 2 x 5. Which factor is rarer?"
+        solution: |
+          Count factors of 5 in 100! (factors of 2 are more plentiful).
+          floor(100/5) + floor(100/25) + floor(100/125) = 20 + 4 + 0 = 24 trailing zeros.
+          Each multiple of 5 contributes one factor, multiples of 25 contribute an extra, etc.
+        programs: ["baruch-mfe", "nyu-tandon-mfe"]
+
+      - question: "Two trains are 100 miles apart heading toward each other, each at 50 mph. A fly starts on one train and flies at 75 mph back and forth between them until they collide. How far does the fly travel?"
+        difficulty: easy
+        topics: ["logic", "relative_velocity"]
+        hint: "Don't track the fly's trips individually. How long until the trains collide?"
+        solution: |
+          The trains close the gap at 50 + 50 = 100 mph, so they collide in 1 hour.
+          The fly travels for 1 hour at 75 mph = 75 miles. No need to sum an infinite series.
+        programs: ["baruch-mfe", "uchicago-msfm"]
+
+      - question: "You have two ropes that each take exactly 1 hour to burn, but burn at non-uniform rates. How do you measure exactly 45 minutes?"
+        difficulty: medium
+        topics: ["logic", "lateral_thinking"]
+        hint: "You can light a rope from both ends. What does that give you?"
+        solution: |
+          Light rope A from both ends and rope B from one end simultaneously.
+          Rope A burns out in 30 minutes (burning from both ends halves the time).
+          At that moment, rope B has 30 minutes of burn left. Light rope B's other end.
+          Rope B now burns out in 15 more minutes. Total elapsed: 30 + 15 = 45 minutes.
+        programs: ["baruch-mfe", "nyu-tandon-mfe", "cmu-mscf"]
+
+      - question: "Three ants are on three corners of an equilateral triangle. Each picks a random direction and walks along an edge. What is the probability no two ants collide?"
+        difficulty: medium
+        topics: ["combinatorics", "probability"]
+        hint: "Ants don't collide only if they all walk in the same direction (all clockwise or all counterclockwise)."
+        solution: |
+          Each ant independently chooses one of 2 directions. Total outcomes: 2^3 = 8.
+          No collision only if all go clockwise (1 way) or all go counterclockwise (1 way).
+          P(no collision) = 2/8 = 1/4.
+        programs: ["baruch-mfe", "mit-mfin"]
+
+      - question: "You have a 3-gallon jug and a 5-gallon jug. How do you measure exactly 4 gallons?"
+        difficulty: easy
+        topics: ["logic", "modular_arithmetic"]
+        hint: "Fill and pour between the jugs. Key operation: filling the 3-gallon into the 5-gallon."
+        solution: |
+          1. Fill the 5-gallon jug. (5, 0)
+          2. Pour into 3-gallon jug. (2, 3)
+          3. Empty the 3-gallon jug. (2, 0)
+          4. Pour the 2 gallons into the 3-gallon jug. (0, 2)
+          5. Fill the 5-gallon jug. (5, 2)
+          6. Pour from 5-gallon into 3-gallon (which has room for 1). (4, 3)
+          The 5-gallon jug now has exactly 4 gallons.
+        programs: ["nyu-tandon-mfe", "cornell-mfe"]
+
+  - id: finance
+    name: "Finance & Markets"
+    questions:
+      - question: "Explain put-call parity and derive it from no-arbitrage."
+        difficulty: medium
+        topics: ["options", "no_arbitrage", "put_call_parity"]
+        hint: "Compare the payoff of (call + K*e^{-rT}) versus (put + stock) at expiration."
+        solution: |
+          Put-call parity: C - P = S - K*e^{-rT} (European options, no dividends).
+          Proof: Portfolio A = Call + K*e^{-rT} in cash. Portfolio B = Put + Stock.
+          At expiry T: if S_T > K, A pays (S_T - K) + K = S_T, B pays 0 + S_T = S_T.
+          If S_T <= K, A pays 0 + K = K, B pays (K - S_T) + S_T = K.
+          A and B have identical payoffs in all states => same price today => C + K*e^{-rT} = P + S.
+        programs: ["baruch-mfe", "cmu-mscf", "columbia-msfe"]
+
+      - question: "What are the Greeks (Delta, Gamma, Theta, Vega, Rho)? How does a market maker use them?"
+        difficulty: medium
+        topics: ["greeks", "risk_management", "options"]
+        hint: "Each Greek measures sensitivity to a specific risk factor. Market makers hedge by neutralizing Greeks."
+        solution: |
+          Delta: dV/dS (price sensitivity to underlying). Gamma: d^2V/dS^2 (delta sensitivity).
+          Theta: dV/dt (time decay). Vega: dV/d(sigma) (vol sensitivity). Rho: dV/dr (rate sensitivity).
+          Market makers: hedge Delta continuously (delta-neutral), monitor Gamma (convexity risk,
+          especially near expiry/ATM), manage Theta (collect or pay time decay), and trade Vega
+          (volatility views). A delta-neutral, gamma-positive portfolio profits from large moves
+          but pays theta.
+        programs: ["baruch-mfe", "cmu-mscf", "berkeley-mfe"]
+
+      - question: "What is the difference between historical volatility and implied volatility?"
+        difficulty: easy
+        topics: ["volatility", "options", "statistics"]
+        hint: "One is backward-looking (realized), the other is forward-looking (market-derived)."
+        solution: |
+          Historical (realized) volatility: annualized standard deviation of past log returns.
+          Measured from data, backward-looking. Implied volatility: the sigma that, when plugged
+          into Black-Scholes, produces the observed market price. Forward-looking, reflects market
+          expectations. Key differences: IV includes risk premium, can differ across strikes
+          (volatility smile/skew), and is generally higher than realized vol (variance risk premium).
+        programs: ["baruch-mfe", "nyu-tandon-mfe"]
+
+      - question: "Explain the concept of risk-neutral pricing. Why can we use it even though investors are risk-averse?"
+        difficulty: hard
+        topics: ["risk_neutral", "no_arbitrage", "fundamental_theorem"]
+        hint: "It's not about investor preferences. It's about replication and no-arbitrage."
+        solution: |
+          Risk-neutral pricing says derivatives can be priced as discounted expected payoffs under
+          the risk-neutral measure Q (where all assets earn the risk-free rate in expectation).
+          This works because: (1) derivative payoffs can be replicated by trading the underlying,
+          (2) the replicating portfolio's cost is preference-free (it works for any investor),
+          (3) by the Fundamental Theorem of Asset Pricing, absence of arbitrage implies existence
+          of an equivalent martingale measure Q. We don't assume risk-neutrality -- we exploit
+          the fact that hedging eliminates risk, making preferences irrelevant for pricing.
+        programs: ["princeton-mfin", "cmu-mscf", "stanford-mcf"]
+
+      - question: "What is the volatility smile? What causes it?"
+        difficulty: medium
+        topics: ["volatility_smile", "options", "market_microstructure"]
+        hint: "Plot implied vol vs strike. It's not flat as Black-Scholes assumes."
+        solution: |
+          The volatility smile is the pattern where implied volatility varies with strike price,
+          typically U-shaped (smile) or downward-sloping (skew). Causes:
+          (1) Fat tails in return distributions (Black-Scholes assumes normal, reality has excess kurtosis),
+          (2) Jump risk -- crash risk makes OTM puts expensive (skew),
+          (3) Supply/demand -- portfolio insurance creates put demand,
+          (4) Leverage effect -- falling prices increase leverage and thus volatility,
+          (5) Stochastic volatility -- vol itself is random (Heston, SABR models).
+        programs: ["baruch-mfe", "cmu-mscf", "berkeley-mfe"]
+
+      - question: "Explain duration and convexity for a bond. Why do we need both?"
+        difficulty: medium
+        topics: ["fixed_income", "duration", "convexity"]
+        hint: "Duration is the first-order approximation; convexity is the second-order correction."
+        solution: |
+          Duration: (negative) weighted average time to cash flows. Measures bond price sensitivity
+          to yield changes: dP/P ~ -D * dy (first-order).
+          Convexity: measures the curvature of the price-yield relationship: dP/P ~ -D*dy + 0.5*C*(dy)^2.
+          We need convexity because duration alone is a linear approximation -- it overestimates
+          price drops and underestimates price gains. For large yield changes, the convexity term
+          is significant. Higher convexity is desirable: it means the bond outperforms the linear
+          estimate in both directions.
+        programs: ["baruch-mfe", "columbia-msfe", "mit-mfin"]
+
+      - question: "What is the difference between American and European options? When is early exercise optimal?"
+        difficulty: easy
+        topics: ["options", "early_exercise"]
+        hint: "American options can be exercised early. Think about when the exercise value exceeds the continuation value."
+        solution: |
+          European: exercisable only at expiry. American: exercisable at any time up to expiry.
+          American >= European in value (more rights). Early exercise is optimal for:
+          (1) American puts on non-dividend stocks: when deep ITM, exercise to earn interest on K.
+          (2) American calls on dividend-paying stocks: exercise just before ex-dividend date to
+          capture the dividend.
+          (3) Never optimal to exercise American calls on non-dividend stocks early (time value
+          always positive). American options require different pricing methods (binomial trees,
+          least-squares Monte Carlo, PDE with free boundary).
+        programs: ["baruch-mfe", "nyu-tandon-mfe", "cmu-mscf"]
+
+      - question: "You see a call option trading at $5 with Delta = 0.6. The stock moves up $2. Approximately what is the new option price?"
+        difficulty: easy
+        topics: ["greeks", "delta", "options"]
+        hint: "Delta approximation: dC ~ Delta * dS. But remember Gamma for a better estimate."
+        solution: |
+          First-order approximation: new price ~ $5 + 0.6 * $2 = $6.20.
+          If you also know Gamma (say Gamma = 0.05), the second-order approximation is:
+          new price ~ $5 + 0.6*$2 + 0.5*0.05*$2^2 = $5 + $1.20 + $0.10 = $6.30.
+          The Gamma correction matters more for larger moves and ATM options (where Gamma peaks).
+        programs: ["baruch-mfe", "columbia-msfe"]
+
+  - id: behavioral
+    name: "Behavioral"
+    questions:
+      - question: "Why do you want to pursue an MFE degree? Why not a PhD or MBA?"
+        difficulty: easy
+        topics: ["motivation", "career_goals"]
+        hint: "Be specific about the technical skills you want and the career path you envision. Show you understand what an MFE offers vs alternatives."
+        solution: |
+          Strong answer elements: (1) Specific technical skills you want (stochastic calc, ML for
+          finance, C++ for low-latency systems), (2) Career goal alignment -- MFE targets
+          quantitative roles directly vs. PhD (academic/research-focused, 4-6 years) vs. MBA
+          (management/leadership, less technical), (3) Practical orientation -- you want to apply
+          math to real markets, not just theory, (4) Timeline -- 1-1.5 year program fits your
+          career trajectory, (5) Mention specific courses or faculty at the target program.
+        programs: ["baruch-mfe", "cmu-mscf", "princeton-mfin", "mit-mfin", "berkeley-mfe"]
+
+      - question: "Tell me about a time you worked on a challenging quantitative project."
+        difficulty: easy
+        topics: ["experience", "problem_solving"]
+        hint: "Use the STAR format: Situation, Task, Action, Result. Emphasize the quantitative rigor."
+        solution: |
+          Structure your answer using STAR:
+          Situation: Set the context (course project, internship, research).
+          Task: What was the specific quantitative challenge?
+          Action: What methods/tools did you use? (Be specific: optimization algorithm, statistical
+          test, programming language, dataset size).
+          Result: Quantify the outcome (improved accuracy by X%, reduced runtime by Y, published
+          paper, won competition).
+          Good topics: pricing model implementation, statistical arbitrage backtest, ML prediction
+          model, risk system design.
+        programs: ["baruch-mfe", "cmu-mscf", "princeton-mfin", "mit-mfin"]
+
+      - question: "Where do you see yourself in 5 years after completing the MFE?"
+        difficulty: easy
+        topics: ["career_goals", "long_term_vision"]
+        hint: "Show a clear, realistic career trajectory. Demonstrate you understand quant finance roles."
+        solution: |
+          Strong answer: Start with a specific entry role (quant researcher at a hedge fund, derivatives
+          desk quant at a bank, systematic trading at a prop firm). Then describe progression
+          (senior quant, portfolio manager, head of desk). Show awareness of the industry:
+          mention specific firms, strategies, or market segments you find compelling.
+          Avoid being too vague ("I want to be successful") or too rigid. Show intellectual
+          curiosity and willingness to grow. Connect your background to the target role.
+        programs: ["baruch-mfe", "cmu-mscf", "princeton-mfin", "mit-mfin"]
+
+      - question: "What is your biggest weakness and how are you addressing it?"
+        difficulty: easy
+        topics: ["self_awareness", "growth_mindset"]
+        hint: "Choose a genuine weakness relevant to the program, then show concrete steps you are taking."
+        solution: |
+          Framework: (1) Name a real, relevant weakness (not a fake one like 'I work too hard').
+          Good examples: limited C++ experience, haven't taken measure theory, public speaking.
+          (2) Show self-awareness of why it matters for the MFE.
+          (3) Describe concrete actions: enrolled in a MOOC, practicing on LeetCode in C++,
+          attending Toastmasters.
+          (4) Show progress: "I've completed 50% of the course and can now implement basic
+          data structures in C++." Authenticity and growth mindset matter more than the weakness itself.
+        programs: ["baruch-mfe", "cmu-mscf", "berkeley-mfe"]
+
+      - question: "How do you handle disagreements in a team setting?"
+        difficulty: easy
+        topics: ["teamwork", "conflict_resolution"]
+        hint: "Give a specific example. Show maturity, data-driven resolution, and respect for others."
+        solution: |
+          Strong answer: Describe a specific disagreement (e.g., which model to use for a project,
+          how to allocate tasks). Show your process: (1) Listen to the other perspective fully,
+          (2) Identify the core disagreement (data vs. opinion vs. methodology),
+          (3) Propose a data-driven resolution (backtest both approaches, benchmark, consult an expert),
+          (4) Compromise when appropriate while maintaining intellectual honesty.
+          Key: show you value the team outcome over being right, but don't be a pushover.
+          Quant teams are collaborative -- interviewers look for people who can debate constructively.
+        programs: ["cmu-mscf", "berkeley-mfe", "mit-mfin"]
+
+      - question: "What books, papers, or resources have influenced your interest in quantitative finance?"
+        difficulty: easy
+        topics: ["intellectual_curiosity", "preparation"]
+        hint: "Name specific resources and explain what you learned. Show genuine intellectual engagement."
+        solution: |
+          Strong answers reference specific works and takeaways:
+          - "Heard on the Street" / "A Practical Guide to Quant Finance Interviews" (Mark Joshi)
+          - "Options, Futures, and Other Derivatives" (Hull) -- foundational
+          - "Stochastic Calculus for Finance" (Shreve) -- rigorous mathematical treatment
+          - "Advances in Financial Machine Learning" (de Prado) -- modern ML applications
+          - Specific papers: Black-Scholes (1973), Heston (1993), or recent ML papers from journals
+          - Online: QuantNet forums, Wilmott, arXiv quant-ph/q-fin
+          Key: don't just name-drop. Explain what you learned and how it shaped your interests.
+        programs: ["baruch-mfe", "cmu-mscf", "princeton-mfin", "stanford-mcf"]

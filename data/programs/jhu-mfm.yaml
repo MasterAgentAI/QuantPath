@@ -1,0 +1,94 @@
+id: jhu-mfm
+name: JHU MFM
+full_name: Master of Science in Finance (Financial Mathematics)
+university: Johns Hopkins University
+department: Carey Business School
+website: https://carey.jhu.edu/programs/master-science-programs/ms-finance
+quantnet_ranking: null
+
+admissions:
+  class_size: 35
+  acceptance_rate: 0.25
+  avg_gpa: 3.65
+  gre_quant_avg: 167
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-II"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Recommended for quantitative track"
+    - category: real_analysis
+      note: "Helpful but not required"
+    - category: econometrics
+      note: "Useful for finance modeling courses"
+  languages: [python, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE/GMAT optional; strong quantitative transcripts may suffice"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-11-15"
+      decision_by: "2026-01-31"
+    - round: 2
+      date: "2026-02-15"
+      decision_by: "2026-04-15"
+
+application:
+  fee: 100
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: why JHU Carey and career aspirations"
+    - type: short_answer
+      count: 1
+      max_words: 300
+      prompt: "Describe leadership or teamwork experience"
+  video:
+    duration_seconds: 60
+    type: "recorded"
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation; virtual preferred"
+
+special:
+  - "Financial Mathematics concentration within MS Finance"
+  - "Campuses in Baltimore and Washington, D.C."
+  - "Access to JHU's strong quantitative research environment"
+  - "Flexible part-time option available"
+
+tags: [stem, business_school, mid_atlantic, flexible_format, dc_campus]

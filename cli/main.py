@@ -12,6 +12,13 @@ from rich.text import Text
 
 from core.data_loader import load_all_programs, load_profile
 from core.gap_advisor import analyze_gaps
+from core.interview_prep import (
+    get_questions_by_category,
+    get_questions_by_difficulty,
+    get_questions_for_program,
+    get_random_quiz,
+    load_questions,
+)
 from core.prerequisite_matcher import match_prerequisites
 from core.profile_evaluator import evaluate as evaluate_profile
 from core.school_ranker import rank_schools
@@ -347,6 +354,147 @@ def cmd_compare(args: argparse.Namespace) -> None:
     console.print()
 
 
+def _difficulty_badge(difficulty: str) -> str:
+    """Return a Rich-formatted badge for question difficulty."""
+    colors = {"easy": "green", "medium": "yellow", "hard": "red"}
+    color = colors.get(difficulty, "white")
+    label = difficulty.upper()
+    return f"[{color}] {label} [/{color}]"
+
+
+def cmd_interview(args: argparse.Namespace) -> None:
+    """Display interview practice questions as a study guide."""
+    categories = load_questions()
+
+    # --list-categories: just print the category table and exit.
+    if args.list_categories:
+        console.print()
+        table = Table(title="Interview Question Categories", border_style="cyan")
+        table.add_column("ID", style="bold")
+        table.add_column("Category")
+        table.add_column("Questions", justify="right")
+        table.add_column("Difficulties")
+
+        for cat in categories:
+            diffs = sorted({q.difficulty for q in cat.questions})
+            diff_str = ", ".join(diffs)
+            table.add_row(cat.id, cat.name, str(len(cat.questions)), diff_str)
+
+        total = sum(len(c.questions) for c in categories)
+        console.print(table)
+        console.print(f"\n  [bold]{total}[/bold] questions across [bold]{len(categories)}[/bold] categories\n")
+        return
+
+    # Build the question pool based on filters.
+    if args.category:
+        questions = get_questions_by_category(args.category, categories)
+        if not questions:
+            console.print(f"[red]Category '{args.category}' not found.[/red]")
+            console.print("[dim]Use --list-categories to see available categories.[/dim]")
+            return
+    elif args.difficulty:
+        questions = get_questions_by_difficulty(args.difficulty, categories)
+    elif args.program:
+        questions = get_questions_for_program(args.program, categories)
+        if not questions:
+            console.print(f"[red]No questions tagged for program '{args.program}'.[/red]")
+            return
+    else:
+        questions = get_random_quiz(
+            n=args.count,
+            categories=categories,
+        )
+
+    # Apply additional filters when a primary filter was already set.
+    if args.category and args.difficulty:
+        questions = [q for q in questions if q.difficulty == args.difficulty.lower()]
+    if args.program and args.category:
+        questions = [q for q in questions if args.program in q.programs]
+
+    # Limit to requested count (unless fewer available).
+    if len(questions) > args.count:
+        questions = questions[: args.count]
+
+    if not questions:
+        console.print("[yellow]No questions match the given filters.[/yellow]")
+        return
+
+    # Header
+    console.print()
+    filter_parts = []
+    if args.category:
+        filter_parts.append(f"Category: [bold]{args.category}[/bold]")
+    if args.difficulty:
+        filter_parts.append(f"Difficulty: [bold]{args.difficulty}[/bold]")
+    if args.program:
+        filter_parts.append(f"Program: [bold]{args.program}[/bold]")
+    filter_desc = "  |  ".join(filter_parts) if filter_parts else "All categories"
+
+    console.print(
+        Panel(
+            f"[bold]Interview Practice Set[/bold]  --  {len(questions)} questions\n{filter_desc}",
+            border_style="cyan",
+            title="QuantPath Interview Prep",
+        )
+    )
+
+    # Render each question
+    for idx, q in enumerate(questions, 1):
+        badge = _difficulty_badge(q.difficulty)
+        topics_str = ", ".join(q.topics)
+
+        # Question header line
+        header = Text()
+        header.append(f"Q{idx}", style="bold cyan")
+        header.append(f"  [{q.category_name}]", style="dim")
+
+        # Build panel content
+        lines = []
+        lines.append(f"{q.question}")
+        lines.append("")
+        lines.append(f"Difficulty: {badge}    Topics: [cyan]{topics_str}[/cyan]")
+
+        if q.programs:
+            prog_str = ", ".join(q.programs)
+            lines.append(f"Programs:   [dim]{prog_str}[/dim]")
+
+        lines.append("")
+        lines.append(f"[dim italic]Hint: {q.hint}[/dim italic]")
+        lines.append("")
+        lines.append("[bold]Solution:[/bold]")
+        for sol_line in q.solution.strip().splitlines():
+            lines.append(f"  {sol_line}")
+
+        console.print(
+            Panel(
+                "\n".join(lines),
+                title=str(header),
+                border_style="blue",
+                padding=(1, 2),
+            )
+        )
+
+    # Summary footer
+    cats_seen = sorted({q.category_name for q in questions})
+    diff_counts = {}
+    for q in questions:
+        diff_counts[q.difficulty] = diff_counts.get(q.difficulty, 0) + 1
+    diff_summary = "  ".join(
+        f"{_difficulty_badge(d)}: {c}" for d, c in sorted(diff_counts.items())
+    )
+
+    console.print(
+        Panel(
+            f"[bold]{len(questions)}[/bold] questions  |  "
+            f"Categories: {', '.join(cats_seen)}\n"
+            f"Difficulty breakdown: {diff_summary}",
+            title="Practice Set Summary",
+            border_style="green",
+        )
+    )
+    console.print()
+
+
 def cmd_gaps(args: argparse.Namespace) -> None:
     """Analyze profile gaps and suggest improvements."""
     profile = load_profile(args.profile)
@@ -451,6 +599,26 @@ def main() -> None:
         help="Comma-separated program IDs (e.g., cmu-mscf,baruch-mfe,berkeley-mfe)",
     )
 
+    # interview
+    p_interview = subparsers.add_parser("interview", help="Practice MFE interview questions")
+    p_interview.add_argument("--category", "-c", help="Filter by category ID (e.g. probability, finance)")
+    p_interview.add_argument(
+        "--difficulty", "-d",
+        choices=["easy", "medium", "hard"],
+        help="Filter by difficulty level",
+    )
+    p_interview.add_argument("--program", help="Show questions for a specific program (e.g. baruch-mfe)")
+    p_interview.add_argument(
+        "--count", "-n",
+        type=int, default=5,
+        help="Number of questions to display (default: 5)",
+    )
+    p_interview.add_argument(
+        "--list-categories",
+        action="store_true",
+        help="List all available question categories and exit",
+    )
+
     # gaps
     p_gaps = subparsers.add_parser("gaps", help="Analyze profile gaps and suggest improvements")
     p_gaps.add_argument("--profile", "-p", required=True, help="Path to profile YAML")
@@ -468,6 +636,7 @@ def main() -> None:
         "timeline": cmd_timeline,
         "programs": cmd_programs,
         "compare": cmd_compare,
+        "interview": cmd_interview,
         "gaps": cmd_gaps,
     }
     commands[args.command](args)

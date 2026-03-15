@@ -1,0 +1,95 @@
+id: umich-mfe
+name: UMich MFE
+full_name: Master of Financial Engineering
+university: University of Michigan
+department: College of Engineering - Department of Industrial & Operations Engineering
+website: https://ioe.engin.umich.edu/academics/masters-programs/mfe/
+quantnet_ranking: 14
+
+admissions:
+  class_size: 40
+  acceptance_rate: 0.15
+  avg_gpa: 3.80
+  gre_quant_avg: 169
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Strongly recommended"
+    - category: optimization
+      note: "Relevant to operations engineering curriculum"
+    - category: stochastic_calculus
+      note: "Helpful for derivatives pricing courses"
+  languages: [cpp, python]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "1839"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (minimum 2 years)"
+    min_scores:
+      toefl_ibt: 84
+      ielts: 6.5
+      duolingo: 115
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-01"
+      decision_by: "2026-02-15"
+    - round: 2
+      date: "2026-02-15"
+      decision_by: "2026-04-01"
+
+application:
+  fee: 90
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: why MFE and career objectives"
+    - type: short_answer
+      count: 1
+      max_words: 300
+      prompt: "Relevant quantitative or technical experience"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation; virtual interview with faculty"
+
+special:
+  - "Housed in College of Engineering with strong quantitative rigor"
+  - "Access to Michigan Ross School electives"
+  - "Strong alumni network in Chicago and NYC finance"
+  - "Capstone project with industry sponsor"
+
+tags: [stem, engineering_dept, midwest, capstone, cross_school_electives]

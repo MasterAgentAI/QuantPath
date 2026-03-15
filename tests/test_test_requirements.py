@@ -198,10 +198,10 @@ class TestCheckToefl:
         assert result["waived"] is False
 
     def test_international_english_medium_custom_years(self) -> None:
-        """Waiver condition specifies 3+ years."""
+        """Waiver condition specifies 3+ years (token must be bare, e.g. '3+')."""
         profile = _profile(is_international=True, years_at_us=3)
         program = _program(
-            toefl_waiver_conditions=["English-medium institution (3+ years required)"]
+            toefl_waiver_conditions=["English-medium institution 3+ years required"]
         )
         result = check_toefl(profile, program)
 
@@ -212,7 +212,7 @@ class TestCheckToefl:
         """Waiver specifies 3+ years but user has only 2."""
         profile = _profile(is_international=True, years_at_us=2)
         program = _program(
-            toefl_waiver_conditions=["English-medium institution (3+ years required)"]
+            toefl_waiver_conditions=["English-medium institution 3+ years required"]
         )
         result = check_toefl(profile, program)
 

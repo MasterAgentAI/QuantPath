@@ -1,0 +1,95 @@
+id: northwestern-mfe
+name: Northwestern MFE
+full_name: Master of Science in Financial Engineering
+university: Northwestern University
+department: McCormick School of Engineering - Department of Industrial Engineering & Management Sciences
+website: https://www.mccormick.northwestern.edu/industrial/academics/graduate/mfe/
+quantnet_ranking: null
+
+admissions:
+  class_size: 40
+  acceptance_rate: 0.20
+  avg_gpa: 3.75
+  gre_quant_avg: 168
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "intermediate"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Strongly recommended for competitive applicants"
+    - category: optimization
+      note: "Relevant to IEMS curriculum"
+    - category: stochastic_calculus
+      note: "Helpful for derivatives coursework"
+  languages: [cpp, python]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "1565"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 95
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-15"
+      decision_by: "2026-02-28"
+    - round: 2
+      date: "2026-03-01"
+      decision_by: "2026-04-15"
+
+application:
+  fee: 95
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: academic preparation, why MFE, and career goals"
+    - type: short_answer
+      count: 1
+      max_words: 300
+      prompt: "Describe a quantitative problem you solved"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation after initial review; virtual"
+
+special:
+  - "Engineering school rigor with proximity to Chicago trading firms"
+  - "Access to Kellogg School of Management electives"
+  - "Strong placement in Chicago proprietary trading and market making"
+  - "15-month program with summer practicum"
+
+tags: [stem, engineering_dept, chicago, trading_placement, cross_school_electives]

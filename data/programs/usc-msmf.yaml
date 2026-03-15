@@ -1,0 +1,88 @@
+id: usc-msmf
+name: USC MSMF
+full_name: Master of Science in Mathematical Finance
+university: University of Southern California
+department: Department of Mathematics
+website: https://dornsife.usc.edu/mathematics/msmf/
+quantnet_ranking: null
+
+admissions:
+  class_size: 25
+  acceptance_rate: 0.20
+  avg_gpa: 3.60
+  gre_quant_avg: 166
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Strongly recommended"
+    - category: real_analysis
+      note: "Recommended for theoretical depth"
+    - category: partial_differential_equations
+      note: "Helpful for pricing models coursework"
+  languages: [python, cpp]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE/GMAT optional; strong quantitative record may suffice"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 90
+      ielts: 6.5
+      duolingo: 115
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-15"
+    - round: 2
+      date: "2026-04-01"
+      decision_by: "2026-05-15"
+
+application:
+  fee: 90
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: background in mathematics and interest in mathematical finance"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: none
+    format: "No interview required"
+
+special:
+  - "Mathematics department program with strong theoretical foundation"
+  - "Small cohort allows close faculty mentorship"
+  - "Access to Los Angeles financial and tech industry"
+  - "PDE-based approach to derivatives pricing"
+
+tags: [stem, math_dept, west_coast, small_cohort, theoretical]

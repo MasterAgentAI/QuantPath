@@ -1,0 +1,92 @@
+id: ucla-mfe
+name: UCLA MFE
+full_name: Master of Financial Engineering
+university: University of California, Los Angeles
+department: Anderson School of Management
+website: https://www.anderson.ucla.edu/degrees/master-of-financial-engineering
+quantnet_ranking: 11
+
+admissions:
+  class_size: 70
+  acceptance_rate: 0.15
+  avg_gpa: 3.70
+  gre_quant_avg: 168
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Strongly recommended"
+    - category: real_analysis
+      note: "Beneficial for advanced coursework"
+    - category: numerical_methods
+      note: "Helpful for computational finance courses"
+  languages: [cpp, python, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE/GMAT optional for 2026 cycle"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 87
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-15"
+      decision_by: "2026-02-28"
+    - round: 2
+      date: "2026-03-15"
+      decision_by: "2026-05-01"
+
+application:
+  fee: 135
+  essays:
+    - type: short_answer
+      count: 2
+      max_words: 500
+      prompt: "Why MFE at UCLA and career objectives"
+    - type: short_answer
+      count: 1
+      max_words: 300
+      prompt: "Describe a quantitative project or experience"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation after application review; in-person or virtual"
+
+special:
+  - "15-month program with summer internship built in"
+  - "Strong ties to West Coast finance and tech industry"
+  - "Access to Anderson School MBA-level electives"
+  - "Career services with dedicated MFE placement team"
+
+tags: [stem, west_coast, cpp_heavy, internship_built_in, anderson]

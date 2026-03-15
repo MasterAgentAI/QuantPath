@@ -1,0 +1,95 @@
+id: gatech-qcf
+name: GaTech QCF
+full_name: Master of Science in Quantitative and Computational Finance
+university: Georgia Institute of Technology
+department: Scheller College of Business & College of Sciences & College of Engineering
+website: https://www.scheller.gatech.edu/degree-programs/ms-quantitative-computational-finance/
+quantnet_ranking: 12
+
+admissions:
+  class_size: 35
+  acceptance_rate: 0.20
+  avg_gpa: 3.75
+  gre_quant_avg: 168
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Recommended for competitive applicants"
+    - category: numerical_methods
+      note: "Useful for computational coursework"
+    - category: optimization
+      note: "Helpful for portfolio theory courses"
+  languages: [cpp, python]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "5248"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution in approved country"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-15"
+    - round: 2
+      date: "2026-03-15"
+      decision_by: "2026-05-01"
+
+application:
+  fee: 95
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose describing academic background and career goals"
+    - type: short_answer
+      count: 1
+      max_words: 300
+      prompt: "Why GaTech QCF"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation; typically virtual"
+
+special:
+  - "Interdisciplinary program spanning three colleges"
+  - "Small cohort with strong peer collaboration"
+  - "Access to Georgia Tech research in machine learning and optimization"
+  - "Lower cost of living in Atlanta vs. coastal cities"
+
+tags: [stem, interdisciplinary, small_cohort, affordable, southeast]

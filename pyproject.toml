@@ -32,6 +32,10 @@ dev = [
     "pytest>=7.0",
     "ruff>=0.1.0",
 ]
+web = [
+    "streamlit>=1.30.0",
+    "plotly>=5.0.0",
+]
 
 [project.scripts]
 quantpath = "cli.main:main"
