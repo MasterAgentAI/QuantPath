@@ -4,15 +4,20 @@ full_name: Master of Science in Mathematical Finance
 university: Boston University
 department: Questrom School of Business
 website: https://www.bu.edu/questrom/degree-programs/ms-mathematical-finance/
-quantnet_ranking: 15
+quantnet_ranking: 22
 
 admissions:
-  class_size: 30
-  acceptance_rate: 0.20
+  class_size: 56
+  acceptance_rate: 0.806
   avg_gpa: 3.65
   gre_quant_avg: 167
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 84171
+  employment_rate_3m: 0.39
+  tuition_total: 104805
 
 prerequisites:
   required:

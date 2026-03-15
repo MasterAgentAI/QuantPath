@@ -248,28 +248,38 @@ projects:
 
 ## Programs Covered
 
-| Program | University | QuantNet Rank |
-|---------|-----------|---------------|
-| MSCF | Carnegie Mellon | #1 |
-| MFin | Princeton | #2 |
-| MFE | Baruch College | #3 |
-| MFE | UC Berkeley | #4 |
-| MSFE | Columbia | #5 |
-| MFE | NYU Tandon | #6 |
-| MFin | MIT | #7 |
-| MCF | Stanford | #8 |
-| MSFM | UChicago | #9 |
-| MFE | Cornell | #10 |
-| MFE | UCLA | #11 |
-| QCF | Georgia Tech | #12 |
-| MQF | Rutgers | #13 |
-| MFE | U Michigan | #14 |
-| MSMF | Boston U | #15 |
-| CFRM | U Washington | #16 |
-| MFM | Johns Hopkins | - |
-| MFE | Northwestern | - |
-| MSMF | USC | - |
-| MMF | U Toronto | - |
+28 programs with data from the **QuantNet 2026 Rankings** and official program websites.
+
+| Rank | Program | University | Class Size | Accept Rate | Avg Salary |
+|------|---------|-----------|-----------|-------------|------------|
+| #1 | MFE | Baruch College | 20 | 4.0% | $178,824 |
+| #2 | MFin | Princeton | 44 | 5.4% | $160,217 |
+| #3 | MSCF | Carnegie Mellon | 108 | 17.2% | $134,259 |
+| #4 | MSFE | Columbia (IEOR) | 136 | 13.3% | $138,000 |
+| #5 | MFin | MIT Sloan | 126 | 8.3% | $140,140 |
+| #6 | MFE | UC Berkeley | 76 | 17.4% | $154,383 |
+| #7 | MSFM | UChicago | 118 | 22.0% | $123,867 |
+| #8 | QCF | Georgia Tech | 99 | 30.2% | $114,684 |
+| #9 | MAFN | Columbia (Math) | 101 | 22.3% | $122,692 |
+| #10 | MFM | NC State | 64 | 16.7% | $105,350 |
+| #11 | MFE | Cornell | 53 | 20.7% | $115,000 |
+| #12 | MS Math Finance | NYU Courant | 37 | 22.5% | $126,000 |
+| #13 | MFE | NYU Tandon | 154 | 38.1% | $107,478 |
+| #14 | MFE | UCLA | 79 | 36.0% | $118,270 |
+| #15 | MSQF | Fordham | 61 | 59.4% | $135,500 |
+| #16 | CFRM | U Washington | 41 | 53.9% | $118,375 |
+| #17 | MSFE | UIUC | 30 | 50.7% | $105,200 |
+| #18 | MSMF | UNC Charlotte | 19 | 88.2% | $104,375 |
+| #19 | MQF | Rutgers | 48 | 86.4% | $111,110 |
+| #20 | MFE | Stevens | 59 | 68.0% | $110,982 |
+| #21 | MFM | U Minnesota | 15 | 80.7% | $106,163 |
+| #22 | MSMF | Boston U | 56 | 80.6% | $84,171 |
+| #23 | MFM | Johns Hopkins | 29 | 50.7% | - |
+| - | MCF | Stanford | ~10 | ~5% | - |
+| - | MFE | U Michigan | 40 | - | - |
+| - | MFE | Northwestern | 40 | - | - |
+| - | MSMF | USC | 25 | - | - |
+| - | MMF | U Toronto | 30 | - | - |
 
 ## Contributing
 
@@ -294,7 +304,7 @@ We welcome contributions! The most impactful ways to help:
 - [x] GitHub Actions CI
 - [x] Interview question bank (52 questions, 7 categories)
 - [x] Streamlit web dashboard
-- [x] 20 programs database
+- [x] 28 programs database (QuantNet 2026 rankings)
 - [ ] Course optimizer (fill gaps optimally)
 - [ ] AI essay coach (Claude API)
 - [ ] University course databases (auto-map courses)

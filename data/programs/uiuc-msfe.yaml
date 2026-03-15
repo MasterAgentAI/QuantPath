@@ -1,0 +1,97 @@
+id: uiuc-msfe
+name: UIUC MSFE
+full_name: Master of Science in Financial Engineering
+university: University of Illinois Urbana-Champaign
+department: Department of Industrial & Enterprise Systems Engineering
+website: https://ise.illinois.edu/academics/graduate-programs/msfe
+quantnet_ranking: 17
+
+admissions:
+  class_size: 30
+  acceptance_rate: 0.507
+  avg_gpa: 3.70
+  gre_quant_avg: 167
+  international_pct: null
+  no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 105200
+  employment_rate_3m: 0.84
+  tuition_total: 79191
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Recommended for competitive applicants"
+    - category: stochastic_processes
+      note: "Helpful for core courses"
+    - category: numerical_methods
+      note: "Useful for computational finance modules"
+  languages: [python, cpp]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "1836"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 96
+      ielts: 6.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-15"
+      decision_by: "2026-02-28"
+    - round: 2
+      date: "2026-02-15"
+      decision_by: "2026-04-15"
+
+application:
+  fee: 90
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: academic background, research interests, and career goals"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: none
+    format: null
+
+special:
+  - "Engineering school program with strong quantitative rigor"
+  - "Access to Illinois CS and Statistics departments — top-ranked nationally"
+  - "Small cohort enables close faculty mentorship"
+  - "Proximity to Chicago trading firms for placement"
+  - "STEM-designated"
+
+tags: [stem, engineering_dept, midwest, small_cohort, chicago_proximity]

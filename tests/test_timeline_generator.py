@@ -1,23 +1,21 @@
 """Tests for core.timeline_generator."""
 
-import pytest
 from datetime import date
 
 from core.models import DeadlineRound, ProgramData
 from core.timeline_generator import (
-    _parse_date,
-    _add_months,
-    generate_timeline,
+    CAT_APPLICATION,
+    CAT_DEADLINE,
+    CAT_DECISION,
+    CAT_INTERVIEW,
+    CAT_TEST,
     PRIORITY_CRITICAL,
     PRIORITY_HIGH,
     PRIORITY_MEDIUM,
-    CAT_DEADLINE,
-    CAT_APPLICATION,
-    CAT_DECISION,
-    CAT_TEST,
-    CAT_INTERVIEW,
+    _add_months,
+    _parse_date,
+    generate_timeline,
 )
-
 
 # ===================================================================
 # _parse_date

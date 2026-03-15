@@ -7,12 +7,17 @@ website: https://bcf.princeton.edu/master-in-finance/
 quantnet_ranking: 2
 
 admissions:
-  class_size: 35
-  acceptance_rate: 0.05
+  class_size: 44
+  acceptance_rate: 0.054
   avg_gpa: 3.90
   gre_quant_avg: 170
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 160217
+  employment_rate_3m: 0.97
+  tuition_total: 130420
 
 prerequisites:
   required:

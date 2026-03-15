@@ -1,0 +1,94 @@
+id: uminn-mfm
+name: UMinn MFM
+full_name: Master of Financial Mathematics
+university: University of Minnesota
+department: School of Mathematics
+website: https://mcfam.umn.edu/
+quantnet_ranking: 21
+
+admissions:
+  class_size: 15
+  acceptance_rate: 0.807
+  avg_gpa: 3.50
+  gre_quant_avg: 165
+  international_pct: null
+  no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 106163
+  employment_rate_3m: 0.80
+  tuition_total: 52675
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Recommended"
+    - category: real_analysis
+      note: "Helpful for stochastic calculus courses"
+    - category: numerical_methods
+      note: "Useful for computational work"
+  languages: [python, cpp, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: false
+    exemption: "GRE optional"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 79
+      ielts: 6.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-15"
+    - round: 2
+      date: "2026-04-15"
+      decision_by: "2026-06-01"
+
+application:
+  fee: 75
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: mathematical background and career goals"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: none
+    format: null
+
+special:
+  - "Housed in School of Mathematics — strong theoretical foundation"
+  - "Center for Financial and Actuarial Mathematics (MCFAM)"
+  - "Small cohort with close faculty mentorship"
+  - "Affordable tuition relative to peer programs"
+  - "Minneapolis has growing fintech and insurance/risk sectors"
+
+tags: [stem, math_dept, midwest, small_cohort, affordable, gre_optional]

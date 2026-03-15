@@ -1,10 +1,8 @@
 """Tests for core.test_requirements (GRE and TOEFL checks)."""
 
-import pytest
 
 from core.models import ProgramData, TestScores, UserProfile
 from core.test_requirements import check_gre, check_toefl
-
 
 # ===================================================================
 # Helpers

@@ -11,7 +11,6 @@ from core.models import (
 )
 from core.school_ranker import _classify, _compute_fit_score, rank_schools
 
-
 # ===================================================================
 # _classify
 # ===================================================================

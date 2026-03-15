@@ -1,23 +1,23 @@
-id: usc-msmf
-name: USC MSMF
-full_name: Master of Science in Mathematical Finance
-university: University of Southern California
-department: Department of Mathematics
-website: https://dornsife.usc.edu/mathematics/msmf/
-quantnet_ranking: null
+id: fordham-msqf
+name: Fordham MSQF
+full_name: Master of Science in Quantitative Finance
+university: Fordham University
+department: Gabelli School of Business
+website: https://www.fordham.edu/gabelli-school-of-business/academic-programs/graduate-programs/ms-in-quantitative-finance/
+quantnet_ranking: 15
 
 admissions:
-  class_size: 25
-  acceptance_rate: 0.20
-  avg_gpa: 3.60
-  gre_quant_avg: 166
+  class_size: 61
+  acceptance_rate: 0.594
+  avg_gpa: 3.50
+  gre_quant_avg: 165
   international_pct: null
   no_work_experience_pct: null
 
 outcomes:
-  avg_base_salary: null
-  employment_rate_3m: null
-  tuition_total: null
+  avg_base_salary: 135500
+  employment_rate_3m: 0.83
+  tuition_total: 98039
 
 prerequisites:
   required:
@@ -38,26 +38,26 @@ prerequisites:
       min_grade: null
   recommended:
     - category: differential_equations
-      note: "Strongly recommended"
+      note: "Recommended"
     - category: real_analysis
-      note: "Recommended for theoretical depth"
-    - category: partial_differential_equations
-      note: "Helpful for pricing models coursework"
-  languages: [python, cpp]
+      note: "Helpful for advanced coursework"
+    - category: econometrics
+      note: "Useful for applied finance courses"
+  languages: [python, r]
 
 tests:
   gre:
     required: false
     accepts_gmat: true
-    exemption: "GRE/GMAT optional; strong quantitative record may suffice"
+    exemption: "GRE/GMAT optional"
     code: null
   toefl:
     waiver_conditions:
       - "Degree from English-medium institution"
     min_scores:
       toefl_ibt: 90
-      ielts: 6.5
-      duolingo: 115
+      ielts: 7.0
+      duolingo: null
 
 deadlines:
   cycle: "Fall 2026"
@@ -71,23 +71,24 @@ deadlines:
       decision_by: "2026-05-15"
 
 application:
-  fee: 90
+  fee: 70
   essays:
     - type: short_answer
       count: 1
       max_words: 500
-      prompt: "Statement of purpose: background in mathematics and interest in mathematical finance"
+      prompt: "Statement of purpose: academic background and career aspirations"
   video: null
-  recommendations: 3
+  recommendations: 2
   resume_max_pages: null
   interview:
     type: none
-    format: "No interview required"
+    format: null
 
 special:
-  - "Mathematics department program with strong theoretical foundation"
-  - "Small cohort allows close faculty mentorship"
-  - "Access to Los Angeles financial and tech industry"
-  - "PDE-based approach to derivatives pricing"
+  - "Strong salary outcomes ($135,500) relative to acceptance rate"
+  - "NYC Lincoln Center and midtown Manhattan location"
+  - "Gabelli School of Business provides strong finance network"
+  - "Higher acceptance rate makes it a solid target/safety school"
+  - "STEM-designated program"
 
-tags: [stem, math_dept, west_coast, small_cohort, theoretical]
+tags: [stem, business_school, nyc, gre_optional, accessible]

@@ -4,15 +4,20 @@ full_name: Master of Science in Computational Finance
 university: Carnegie Mellon University
 department: Tepper School of Business & Dietrich College & Heinz College & Mellon College of Science
 website: https://www.cmu.edu/mscf/
-quantnet_ranking: 1
+quantnet_ranking: 3
 
 admissions:
   class_size: 108
-  acceptance_rate: 0.10
+  acceptance_rate: 0.172
   avg_gpa: 3.86
   gre_quant_avg: 169
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 134259
+  employment_rate_3m: 1.00
+  tuition_total: 104615
 
 prerequisites:
   required:

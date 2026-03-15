@@ -1,28 +1,28 @@
-id: usc-msmf
-name: USC MSMF
-full_name: Master of Science in Mathematical Finance
-university: University of Southern California
+id: ncstate-mfm
+name: NC State MFM
+full_name: Master of Financial Mathematics
+university: North Carolina State University
 department: Department of Mathematics
-website: https://dornsife.usc.edu/mathematics/msmf/
-quantnet_ranking: null
+website: https://financialmath.math.ncsu.edu/
+quantnet_ranking: 10
 
 admissions:
-  class_size: 25
-  acceptance_rate: 0.20
-  avg_gpa: 3.60
-  gre_quant_avg: 166
+  class_size: 64
+  acceptance_rate: 0.167
+  avg_gpa: 3.70
+  gre_quant_avg: 167
   international_pct: null
   no_work_experience_pct: null
 
 outcomes:
-  avg_base_salary: null
-  employment_rate_3m: null
-  tuition_total: null
+  avg_base_salary: 105350
+  employment_rate_3m: 1.00
+  tuition_total: 66048
 
 prerequisites:
   required:
     - category: calculus
-      level: "I-III"
+      level: "I-III (multivariable)"
       min_grade: null
     - category: linear_algebra
       level: "introductory"
@@ -40,24 +40,24 @@ prerequisites:
     - category: differential_equations
       note: "Strongly recommended"
     - category: real_analysis
-      note: "Recommended for theoretical depth"
-    - category: partial_differential_equations
-      note: "Helpful for pricing models coursework"
-  languages: [python, cpp]
+      note: "Helpful for advanced coursework"
+    - category: numerical_methods
+      note: "Useful for computational finance modules"
+  languages: [python, cpp, r]
 
 tests:
   gre:
-    required: false
-    accepts_gmat: true
-    exemption: "GRE/GMAT optional; strong quantitative record may suffice"
+    required: true
+    accepts_gmat: false
+    exemption: null
     code: null
   toefl:
     waiver_conditions:
       - "Degree from English-medium institution"
     min_scores:
-      toefl_ibt: 90
+      toefl_ibt: 80
       ielts: 6.5
-      duolingo: 115
+      duolingo: null
 
 deadlines:
   cycle: "Fall 2026"
@@ -71,23 +71,24 @@ deadlines:
       decision_by: "2026-05-15"
 
 application:
-  fee: 90
+  fee: 85
   essays:
     - type: short_answer
       count: 1
       max_words: 500
-      prompt: "Statement of purpose: background in mathematics and interest in mathematical finance"
+      prompt: "Statement of purpose describing mathematical background and career goals"
   video: null
   recommendations: 3
   resume_max_pages: null
   interview:
     type: none
-    format: "No interview required"
+    format: null
 
 special:
-  - "Mathematics department program with strong theoretical foundation"
-  - "Small cohort allows close faculty mentorship"
-  - "Access to Los Angeles financial and tech industry"
-  - "PDE-based approach to derivatives pricing"
+  - "100% employment rate at 3 months — top placement among all ranked programs"
+  - "Mathematics department with strong computational focus"
+  - "Excellent value: competitive tuition with strong outcomes"
+  - "Research Triangle location (proximity to SAS, banking in Charlotte)"
+  - "Smaller program with close faculty interaction"
 
-tags: [stem, math_dept, west_coast, small_cohort, theoretical]
+tags: [stem, math_dept, southeast, value_program, high_employment, research_triangle]

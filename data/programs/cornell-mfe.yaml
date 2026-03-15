@@ -4,15 +4,20 @@ full_name: Master of Financial Engineering
 university: Cornell University
 department: School of Operations Research and Information Engineering (ORIE)
 website: https://www.orie.cornell.edu/orie/programs/cfem
-quantnet_ranking: 10
+quantnet_ranking: 11
 
 admissions:
-  class_size: 55
-  acceptance_rate: null
+  class_size: 53
+  acceptance_rate: 0.207
   avg_gpa: 3.80
   gre_quant_avg: 169
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 115000
+  employment_rate_3m: 0.84
+  tuition_total: 106889
 
 prerequisites:
   required:

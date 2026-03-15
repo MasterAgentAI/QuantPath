@@ -4,15 +4,20 @@ full_name: Master of Science in Quantitative and Computational Finance
 university: Georgia Institute of Technology
 department: Scheller College of Business & College of Sciences & College of Engineering
 website: https://www.scheller.gatech.edu/degree-programs/ms-quantitative-computational-finance/
-quantnet_ranking: 12
+quantnet_ranking: 8
 
 admissions:
-  class_size: 35
-  acceptance_rate: 0.20
+  class_size: 99
+  acceptance_rate: 0.302
   avg_gpa: 3.75
   gre_quant_avg: 168
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 114684
+  employment_rate_3m: 0.96
+  tuition_total: 66132
 
 prerequisites:
   required:

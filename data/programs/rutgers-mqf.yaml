@@ -4,15 +4,20 @@ full_name: Master of Quantitative Finance
 university: Rutgers University
 department: Department of Mathematics & Statistics
 website: https://www.mqf.rutgers.edu/
-quantnet_ranking: 13
+quantnet_ranking: 19
 
 admissions:
-  class_size: 40
-  acceptance_rate: 0.25
+  class_size: 48
+  acceptance_rate: 0.864
   avg_gpa: 3.60
   gre_quant_avg: 167
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 111110
+  employment_rate_3m: 0.75
+  tuition_total: 83910
 
 prerequisites:
   required:

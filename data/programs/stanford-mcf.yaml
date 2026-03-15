@@ -4,7 +4,7 @@ full_name: Master of Science in Mathematical and Computational Finance
 university: Stanford University
 department: Institute for Computational and Mathematical Engineering (ICME)
 website: https://icme.stanford.edu/academics/mcf
-quantnet_ranking: 8
+quantnet_ranking: null
 
 admissions:
   class_size: 10
@@ -13,6 +13,11 @@ admissions:
   gre_quant_avg: null
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: null
+  employment_rate_3m: null
+  tuition_total: null
 
 prerequisites:
   required:

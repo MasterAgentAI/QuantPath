@@ -235,20 +235,24 @@ def cmd_programs(args: argparse.Namespace) -> None:
     programs = load_all_programs()
 
     console.print()
-    table = Table(title="MFE Programs Database", border_style="cyan")
+    table = Table(title="MFE Programs Database (QuantNet 2026)", border_style="cyan")
+    table.add_column("#", justify="right", width=3)
     table.add_column("Program", style="bold")
     table.add_column("University")
-    table.add_column("Class")
-    table.add_column("Rate")
-    table.add_column("GPA")
+    table.add_column("Class", justify="right")
+    table.add_column("Rate", justify="right")
+    table.add_column("Salary", justify="right")
+    table.add_column("Emp 3m", justify="right")
     table.add_column("GRE")
 
     for p in programs:
+        rank = str(p.quantnet_ranking) if p.quantnet_ranking else "-"
         rate = f"{p.acceptance_rate:.0%}" if p.acceptance_rate else "N/A"
-        gpa = f"{p.avg_gpa:.2f}" if p.avg_gpa else "N/A"
         size = str(p.class_size) if p.class_size else "N/A"
+        salary = f"${p.avg_base_salary:,}" if p.avg_base_salary else "N/A"
+        emp = f"{p.employment_rate_3m:.0%}" if p.employment_rate_3m else "N/A"
         gre = "Required" if p.gre_required else "Optional"
-        table.add_row(p.name, p.university, size, rate, gpa, gre)
+        table.add_row(rank, p.name, p.university, size, rate, salary, emp, gre)
 
     console.print(table)
     console.print()
@@ -354,6 +358,24 @@ def cmd_compare(args: argparse.Namespace) -> None:
         *[str(len(p.prerequisites_required)) for p in selected],
     )
 
+    # Tuition
+    table.add_row(
+        "Tuition",
+        *[f"${p.tuition_total:,}" if p.tuition_total else "N/A" for p in selected],
+    )
+
+    # Avg Salary
+    table.add_row(
+        "Avg Base Salary",
+        *[f"${p.avg_base_salary:,}" if p.avg_base_salary else "N/A" for p in selected],
+    )
+
+    # Employment Rate
+    table.add_row(
+        "Employment (3m)",
+        *[f"{p.employment_rate_3m:.0%}" if p.employment_rate_3m else "N/A" for p in selected],
+    )
+
     # Interview type
     table.add_row(
         "Interview",
@@ -361,6 +383,12 @@ def cmd_compare(args: argparse.Namespace) -> None:
             p.interview_type.replace("_", " ").title() if p.interview_type else "N/A"
             for p in selected
         ],
+    )
+
+    # QuantNet Ranking
+    table.add_row(
+        "QuantNet Rank",
+        *[f"#{p.quantnet_ranking}" if p.quantnet_ranking else "N/R" for p in selected],
     )
 
     console.print(table)

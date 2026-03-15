@@ -186,6 +186,11 @@ class ProgramData:
     interview_type: str = ""
     interview_format: str = ""
 
+    # Outcomes (from QuantNet ranking data)
+    avg_base_salary: Optional[int] = None
+    employment_rate_3m: Optional[float] = None
+    tuition_total: Optional[int] = None
+
     # Extras
     special: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)

@@ -7,12 +7,17 @@ website: https://amath.washington.edu/ms-computational-finance-risk-management
 quantnet_ranking: 16
 
 admissions:
-  class_size: 45
-  acceptance_rate: 0.30
+  class_size: 41
+  acceptance_rate: 0.539
   avg_gpa: 3.60
   gre_quant_avg: 166
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 118375
+  employment_rate_3m: 0.89
+  tuition_total: 52116
 
 prerequisites:
   required:

@@ -4,15 +4,20 @@ full_name: Master of Financial Engineering
 university: University of California, Los Angeles
 department: Anderson School of Management
 website: https://www.anderson.ucla.edu/degrees/master-of-financial-engineering
-quantnet_ranking: 11
+quantnet_ranking: 14
 
 admissions:
-  class_size: 70
-  acceptance_rate: 0.15
+  class_size: 79
+  acceptance_rate: 0.36
   avg_gpa: 3.70
   gre_quant_avg: 168
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 118270
+  employment_rate_3m: 0.66
+  tuition_total: 96845
 
 prerequisites:
   required:

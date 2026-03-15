@@ -1,0 +1,93 @@
+id: stevens-mfe
+name: Stevens MFE
+full_name: Master of Science in Financial Engineering
+university: Stevens Institute of Technology
+department: School of Business
+website: https://www.stevens.edu/program/financial-engineering-master-science
+quantnet_ranking: 20
+
+admissions:
+  class_size: 59
+  acceptance_rate: 0.68
+  avg_gpa: 3.40
+  gre_quant_avg: 164
+  international_pct: null
+  no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 110982
+  employment_rate_3m: 0.77
+  tuition_total: 58396
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Strongly recommended"
+    - category: numerical_methods
+      note: "Useful for computational work"
+    - category: econometrics
+      note: "Helpful for applied coursework"
+  languages: [python, cpp, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE/GMAT optional"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 86
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-15"
+    - round: 2
+      date: "2026-04-15"
+      decision_by: "2026-06-01"
+
+application:
+  fee: 60
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: academic preparation and career goals"
+  video: null
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: none
+    format: null
+
+special:
+  - "Located in Hoboken, NJ — direct NYC access across the Hudson River"
+  - "Strong value proposition with competitive tuition"
+  - "STEM-designated program"
+  - "Part-time option available for working professionals"
+
+tags: [stem, nyc_proximity, affordable, flexible_format, business_school]

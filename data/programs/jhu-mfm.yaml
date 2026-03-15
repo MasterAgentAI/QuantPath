@@ -4,15 +4,20 @@ full_name: Master of Science in Finance (Financial Mathematics)
 university: Johns Hopkins University
 department: Carey Business School
 website: https://carey.jhu.edu/programs/master-science-programs/ms-finance
-quantnet_ranking: null
+quantnet_ranking: 23
 
 admissions:
-  class_size: 35
-  acceptance_rate: 0.25
+  class_size: 29
+  acceptance_rate: 0.507
   avg_gpa: 3.65
   gre_quant_avg: 167
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: null
+  employment_rate_3m: 0.75
+  tuition_total: 95205
 
 prerequisites:
   required:

@@ -4,11 +4,10 @@ import pytest
 
 from core.models import Course, Prerequisite, PrerequisiteMatch, ProgramData, UserProfile
 from core.prerequisite_matcher import (
-    match_prerequisites,
-    _grade_meets_minimum,
     _find_matching_courses,
+    _grade_meets_minimum,
+    match_prerequisites,
 )
-
 
 # ===================================================================
 # _grade_meets_minimum
@@ -225,7 +224,9 @@ class TestMatchPrerequisites:
         ]
         program = self._make_program(
             required=[Prerequisite(category="calculus")],
-            recommended=[Prerequisite(category="stochastic_calculus", note="helpful for derivatives")],
+            recommended=[Prerequisite(
+                category="stochastic_calculus", note="helpful for derivatives",
+            )],
         )
         profile = self._make_profile(courses)
         result = match_prerequisites(profile, program)

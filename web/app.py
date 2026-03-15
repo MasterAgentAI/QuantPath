@@ -316,10 +316,10 @@ def page_program_explorer() -> None:
             "Rank": p.quantnet_ranking if p.quantnet_ranking else None,
             "Class Size": p.class_size if p.class_size else None,
             "Acceptance Rate": f"{p.acceptance_rate:.0%}" if p.acceptance_rate else "N/A",
-            "Avg GPA": f"{p.avg_gpa:.2f}" if p.avg_gpa else "N/A",
+            "Avg Salary": f"${p.avg_base_salary:,}" if p.avg_base_salary else "N/A",
+            "Emp 3m": f"{p.employment_rate_3m:.0%}" if p.employment_rate_3m else "N/A",
+            "Tuition": f"${p.tuition_total:,}" if p.tuition_total else "N/A",
             "GRE": "Required" if p.gre_required else "Optional",
-            "TOEFL Min": p.toefl_min_ibt if p.toefl_min_ibt else None,
-            "Fee": f"${p.application_fee}" if p.application_fee else "N/A",
         })
 
     st.dataframe(rows, use_container_width=True, hide_index=True)
@@ -337,13 +337,20 @@ def page_program_explorer() -> None:
         prog = next(p for p in programs if p.name == selected_name)
 
         with st.expander(f"{prog.name} -- {prog.university}", expanded=True):
-            d1, d2, d3 = st.columns(3)
+            d1, d2, d3, d4 = st.columns(4)
             d1.metric("Class Size", prog.class_size or "N/A")
             d2.metric(
                 "Acceptance Rate",
                 f"{prog.acceptance_rate:.0%}" if prog.acceptance_rate else "N/A",
             )
-            d3.metric("Avg GPA", f"{prog.avg_gpa:.2f}" if prog.avg_gpa else "N/A")
+            d3.metric(
+                "Avg Salary",
+                f"${prog.avg_base_salary:,}" if prog.avg_base_salary else "N/A",
+            )
+            d4.metric(
+                "Employment 3m",
+                f"{prog.employment_rate_3m:.0%}" if prog.employment_rate_3m else "N/A",
+            )
 
             st.markdown("**Required Prerequisites:**")
             if prog.prerequisites_required:
@@ -431,6 +438,21 @@ def page_program_comparison() -> None:
     _comparison_row(
         "Avg GPA",
         [f"{p.avg_gpa:.2f}" if p.avg_gpa else "N/A" for p in chosen],
+    )
+
+    _comparison_row(
+        "Tuition",
+        [f"${p.tuition_total:,}" if p.tuition_total else "N/A" for p in chosen],
+    )
+
+    _comparison_row(
+        "Avg Base Salary",
+        [f"${p.avg_base_salary:,}" if p.avg_base_salary else "N/A" for p in chosen],
+    )
+
+    _comparison_row(
+        "Employment (3m)",
+        [f"{p.employment_rate_3m:.0%}" if p.employment_rate_3m else "N/A" for p in chosen],
     )
 
     _comparison_row(

@@ -14,6 +14,11 @@ admissions:
   international_pct: null
   no_work_experience_pct: null
 
+outcomes:
+  avg_base_salary: null
+  employment_rate_3m: null
+  tuition_total: null
+
 prerequisites:
   required:
     - category: calculus

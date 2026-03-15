@@ -4,15 +4,20 @@ full_name: Master of Science in Financial Engineering
 university: Columbia University
 department: Department of Industrial Engineering and Operations Research (IEOR)
 website: https://msfe.ieor.columbia.edu/
-quantnet_ranking: 5
+quantnet_ranking: 4
 
 admissions:
-  class_size: 46
-  acceptance_rate: null
+  class_size: 136
+  acceptance_rate: 0.133
   avg_gpa: 3.90
   gre_quant_avg: 169
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 138000
+  employment_rate_3m: 0.87
+  tuition_total: 97200
 
 prerequisites:
   required:

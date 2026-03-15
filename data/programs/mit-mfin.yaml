@@ -4,15 +4,20 @@ full_name: Master of Finance
 university: Massachusetts Institute of Technology
 department: MIT Sloan School of Management
 website: https://mitsloan.mit.edu/mfin
-quantnet_ranking: 7
+quantnet_ranking: 5
 
 admissions:
   class_size: 126
-  acceptance_rate: null
+  acceptance_rate: 0.083
   avg_gpa: 3.80
   gre_quant_avg: 170
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 140140
+  employment_rate_3m: 0.98
+  tuition_total: 129450
 
 prerequisites:
   required:

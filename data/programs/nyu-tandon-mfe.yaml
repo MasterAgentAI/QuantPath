@@ -4,15 +4,20 @@ full_name: Master of Science in Financial Engineering
 university: New York University
 department: Tandon School of Engineering, Department of Finance and Risk Engineering
 website: https://engineering.nyu.edu/academics/programs/financial-engineering-ms
-quantnet_ranking: 6
+quantnet_ranking: 13
 
 admissions:
-  class_size: 125
-  acceptance_rate: null
+  class_size: 154
+  acceptance_rate: 0.381
   avg_gpa: 3.83
   gre_quant_avg: 169
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 107478
+  employment_rate_3m: 0.88
+  tuition_total: 83325
 
 prerequisites:
   required:

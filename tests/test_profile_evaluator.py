@@ -2,20 +2,19 @@
 
 import pytest
 
-from core.models import Course, UserProfile, TestScores, EvaluationResult
+from core.models import Course, EvaluationResult, TestScores, UserProfile
 from core.profile_evaluator import (
-    grade_to_score,
-    _gpa_to_score,
-    _best_score_for_category,
-    _best_score_for_categories,
-    _count_courses,
-    _has_major,
-    evaluate,
-    DIMENSION_WEIGHTS,
     _GAP_THRESHOLD,
     _STRENGTH_THRESHOLD,
+    DIMENSION_WEIGHTS,
+    _best_score_for_categories,
+    _best_score_for_category,
+    _count_courses,
+    _gpa_to_score,
+    _has_major,
+    evaluate,
+    grade_to_score,
 )
-
 
 # ===================================================================
 # grade_to_score

@@ -66,6 +66,8 @@ def _parse_program(raw: dict[str, Any]) -> ProgramData:
     application = raw.get("application", {})
     interview = application.get("interview", {})
 
+    outcomes = raw.get("outcomes", {})
+
     return ProgramData(
         id=raw.get("id", ""),
         name=raw.get("name", ""),
@@ -112,6 +114,10 @@ def _parse_program(raw: dict[str, Any]) -> ProgramData:
         resume_max_pages=application.get("resume_max_pages"),
         interview_type=interview.get("type", ""),
         interview_format=interview.get("format", ""),
+        # Outcomes
+        avg_base_salary=outcomes.get("avg_base_salary"),
+        employment_rate_3m=outcomes.get("employment_rate_3m"),
+        tuition_total=outcomes.get("tuition_total"),
         # Extras
         special=raw.get("special", []),
         tags=raw.get("tags", []),

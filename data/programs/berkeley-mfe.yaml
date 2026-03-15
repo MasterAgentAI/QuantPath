@@ -4,15 +4,20 @@ full_name: Master of Financial Engineering
 university: University of California, Berkeley
 department: Haas School of Business
 website: https://mfe.haas.berkeley.edu/
-quantnet_ranking: 4
+quantnet_ranking: 6
 
 admissions:
-  class_size: 80
-  acceptance_rate: 0.12
+  class_size: 76
+  acceptance_rate: 0.174
   avg_gpa: 3.80
   gre_quant_avg: 169
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 154383
+  employment_rate_3m: 0.90
+  tuition_total: 87046
 
 prerequisites:
   required:

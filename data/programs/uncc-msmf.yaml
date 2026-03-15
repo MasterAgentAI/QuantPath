@@ -1,0 +1,94 @@
+id: uncc-msmf
+name: UNC Charlotte MSMF
+full_name: Master of Science in Mathematical Finance
+university: University of North Carolina at Charlotte
+department: Department of Mathematics and Statistics
+website: https://math.charlotte.edu/graduate-programs/ms-mathematical-finance/
+quantnet_ranking: 18
+
+admissions:
+  class_size: 19
+  acceptance_rate: 0.882
+  avg_gpa: 3.40
+  gre_quant_avg: 163
+  international_pct: null
+  no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 104375
+  employment_rate_3m: 1.00
+  tuition_total: 52386
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: differential_equations
+      note: "Recommended"
+    - category: numerical_methods
+      note: "Helpful for computational coursework"
+    - category: real_analysis
+      note: "Beneficial but not required"
+  languages: [python, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE/GMAT optional"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution"
+    min_scores:
+      toefl_ibt: 80
+      ielts: 6.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-03-01"
+      decision_by: "2026-05-01"
+    - round: 2
+      date: "2026-06-01"
+      decision_by: "2026-07-15"
+
+application:
+  fee: 75
+  essays:
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "Statement of purpose: academic background and career goals in quantitative finance"
+  video: null
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: none
+    format: null
+
+special:
+  - "100% employment rate at 3 months — tied for best among all ranked programs"
+  - "Charlotte is the second-largest US banking center (Bank of America, Wells Fargo)"
+  - "Extremely affordable tuition with strong employment outcomes"
+  - "High acceptance rate makes it an excellent safety school"
+  - "Small class size with personalized attention"
+
+tags: [stem, math_dept, southeast, safety_school, value_program, banking_hub, high_employment]

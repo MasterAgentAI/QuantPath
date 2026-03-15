@@ -4,15 +4,20 @@ full_name: Master of Financial Engineering
 university: Baruch College, City University of New York
 department: Department of Mathematics
 website: https://mfe.baruch.cuny.edu/
-quantnet_ranking: 3
+quantnet_ranking: 1
 
 admissions:
-  class_size: 30
-  acceptance_rate: 0.08
+  class_size: 20
+  acceptance_rate: 0.04
   avg_gpa: 3.84
   gre_quant_avg: 170
   international_pct: null
   no_work_experience_pct: null
+
+outcomes:
+  avg_base_salary: 178824
+  employment_rate_3m: 1.00
+  tuition_total: 45090
 
 prerequisites:
   required:
