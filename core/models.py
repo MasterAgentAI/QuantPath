@@ -10,10 +10,10 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Optional
 
-
 # ---------------------------------------------------------------------------
 # Course category taxonomy
 # ---------------------------------------------------------------------------
+
 
 class CourseCategory(str, Enum):
     """Canonical taxonomy of course categories recognised by the scorer."""
@@ -58,6 +58,7 @@ class CourseCategory(str, Enum):
 # Course
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class Course:
     """A single course on the user's transcript."""
@@ -74,6 +75,7 @@ class Course:
 # ---------------------------------------------------------------------------
 # User profile
 # ---------------------------------------------------------------------------
+
 
 @dataclass
 class TestScores:
@@ -113,6 +115,7 @@ class UserProfile:
 # ---------------------------------------------------------------------------
 # Program data (loaded from YAML)
 # ---------------------------------------------------------------------------
+
 
 @dataclass
 class Prerequisite:
@@ -191,6 +194,7 @@ class ProgramData:
 # ---------------------------------------------------------------------------
 # Evaluation outputs
 # ---------------------------------------------------------------------------
+
 
 @dataclass
 class EvaluationResult:

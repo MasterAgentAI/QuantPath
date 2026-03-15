@@ -7,13 +7,13 @@ recommendation with a priority level.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
-
 
 # ===================================================================
 # Recommendation data
 # ===================================================================
+
 
 @dataclass
 class GapRecommendation:
@@ -36,42 +36,66 @@ class GapRecommendation:
 
 _FACTOR_ACTIONS: dict[str, str] = {
     # Math dimension
-    "calculus_series":      "Take Calculus III or equivalent (multivariable calculus is required by nearly all programs)",
-    "linear_algebra":       "Take a Linear Algebra course with proof-based content (MATH 415 level or above)",
-    "probability":          "Take a calculus-based Probability course (e.g., STAT 400 or equivalent)",
-    "ode_pde":              "Take Differential Equations (ODE); PDE is a strong plus for top-5 programs",
-    "real_analysis":        "Take Real Analysis / Real Variables (strongly recommended for CMU, Baruch, Princeton)",
-    "numerical_analysis":   "Take Numerical Analysis or Numerical Methods (CS 450 / MATH 450 level)",
-    "stochastic_processes": "Take Stochastic Calculus or Stochastic Processes (recommended for top-5 programs)",
-
+    "calculus_series": (
+        "Take Calculus III or equivalent"
+        " (multivariable calculus is required by nearly all programs)"
+    ),
+    "linear_algebra": (
+        "Take a Linear Algebra course with proof-based content"
+        " (MATH 415 level or above)"
+    ),
+    "probability": "Take calculus-based Probability (e.g. STAT 400)",
+    "ode_pde": "Take Differential Equations (ODE); PDE is a plus for top-5",
+    "real_analysis": (
+        "Take Real Analysis / Real Variables"
+        " (strongly recommended for CMU, Baruch, Princeton)"
+    ),
+    "numerical_analysis": "Take Numerical Analysis or Numerical Methods",
+    "stochastic_processes": (
+        "Take Stochastic Calculus or Stochastic Processes"
+        " (recommended for top-5 programs)"
+    ),
     # Statistics dimension
-    "math_stats":             "Take Mathematical Statistics at the 400 level (e.g., STAT 410)",
-    "time_series":            "Take Time Series Analysis (STAT 429 or equivalent)",
-    "econometrics":           "Take an Econometrics course (ECON 480 or equivalent)",
-    "stat_learning_ml":       "Take Statistical Learning or Machine Learning (STAT 432 / CS 446)",
-    "stat_computing":         "Take Statistical Computing (STAT 428 / R or Python-based)",
-    "courses_400_level_count": "Enroll in more 400-level statistics courses to strengthen your transcript",
-
+    "math_stats": "Take Mathematical Statistics at 400 level (e.g. STAT 410)",
+    "time_series": "Take Time Series Analysis (STAT 429 or equivalent)",
+    "econometrics": "Take an Econometrics course (ECON 480 or equivalent)",
+    "stat_learning_ml": "Take Statistical Learning or ML (STAT 432 / CS 446)",
+    "stat_computing": "Take Statistical Computing (STAT 428 / R or Python)",
+    "courses_400_level_count": (
+        "Enroll in more 400-level statistics courses"
+        " to strengthen your transcript"
+    ),
     # CS dimension
-    "cpp_proficiency":      "Take a C++ programming course (essential for Baruch, CMU, and most top programs)",
-    "python_proficiency":   "Take a Python programming course or complete substantial Python projects",
-    "data_structures_algo": "Take Data Structures and Algorithms (CS 225 + CS 374 or equivalent)",
-    "ml_course":            "Take a Machine Learning course (CS 446 / STAT 432 level)",
-    "numerical_computing":  "Take Numerical Computing or Scientific Computing (CS 450 level)",
-    "is_cs_major":          "Consider adding a CS minor or taking additional CS electives to strengthen your profile",
-
+    "cpp_proficiency": (
+        "Take a C++ programming course"
+        " (essential for Baruch, CMU, and most top programs)"
+    ),
+    "python_proficiency": (
+        "Take a Python course or complete substantial Python projects"
+    ),
+    "data_structures_algo": "Take Data Structures and Algorithms (CS 225+374)",
+    "ml_course": "Take a Machine Learning course (CS 446 / STAT 432 level)",
+    "numerical_computing": "Take Numerical/Scientific Computing (CS 450)",
+    "is_cs_major": (
+        "Consider adding a CS minor or taking additional CS electives"
+    ),
     # Finance/Econ dimension
-    "micro_macro":            "Take Intermediate Micro and Macro Economics courses",
-    "investments_finance":    "Take an Investments or Corporate Finance course",
-    "derivatives":            "Take a Derivatives/Options Pricing course or Financial Risk Management",
-    "risk_management":        "Take a Risk Management or Financial Risk course",
-    "financial_econometrics": "Take Financial Econometrics (ECON 472 or equivalent)",
-    "game_theory":            "Take Game Theory (useful but lower priority for most MFE programs)",
-
+    "micro_macro": "Take Intermediate Micro and Macro Economics courses",
+    "investments_finance": "Take an Investments or Corporate Finance course",
+    "derivatives": "Take Derivatives/Options Pricing or Financial Risk Mgmt",
+    "risk_management": "Take a Risk Management or Financial Risk course",
+    "financial_econometrics": "Take Financial Econometrics (ECON 472)",
+    "game_theory": "Take Game Theory (lower priority for most MFE programs)",
     # GPA dimension
-    "cumulative_gpa": "Focus on raising cumulative GPA by excelling in remaining coursework",
-    "quant_gpa":      "Prioritize high grades in quantitative courses (math, stats, CS) to boost quant GPA",
-    "trend":          "Take challenging 400/500-level courses and earn strong grades to show upward trend",
+    "cumulative_gpa": "Focus on raising GPA by excelling in remaining courses",
+    "quant_gpa": (
+        "Prioritize high grades in quant courses"
+        " (math, stats, CS) to boost quant GPA"
+    ),
+    "trend": (
+        "Take challenging 400/500-level courses"
+        " and earn strong grades to show upward trend"
+    ),
 }
 
 
@@ -92,6 +116,7 @@ def _priority_for_score(score: float) -> str:
 # ===================================================================
 # Public API
 # ===================================================================
+
 
 def analyze_gaps(
     gaps: list[dict[str, Any]],
@@ -116,10 +141,11 @@ def analyze_gaps(
         dimension = gap.get("dimension", "")
         score = gap.get("score", 0.0)
 
-        action = _FACTOR_ACTIONS.get(
-            factor,
-            f"Improve your {factor.replace('_', ' ')} background with additional coursework or projects",
+        fallback = (
+            f"Improve your {factor.replace('_', ' ')} background"
+            " with additional coursework or projects"
         )
+        action = _FACTOR_ACTIONS.get(factor, fallback)
         priority = _priority_for_score(score)
 
         recommendations.append(

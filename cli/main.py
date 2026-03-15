@@ -2,8 +2,6 @@
 """QuantPath CLI — MFE application toolkit."""
 
 import argparse
-import sys
-from pathlib import Path
 
 from rich.console import Console
 from rich.panel import Panel
@@ -119,7 +117,9 @@ def cmd_evaluate(args: argparse.Namespace) -> None:
             if score == 0:
                 console.print(f"     - {factor} [dim]({dim})[/dim]: [red]Missing[/red]")
             else:
-                console.print(f"     - {factor} [dim]({dim})[/dim]: [yellow]{score:.1f}/10[/yellow]")
+                console.print(
+                    f"     - {factor} [dim]({dim})[/dim]: [yellow]{score:.1f}/10[/yellow]"
+                )
         console.print()
 
     # Strengths
@@ -145,13 +145,13 @@ def cmd_match(args: argparse.Namespace) -> None:
             return
 
     console.print()
-    console.print(
-        Panel("Prerequisite Match Report", border_style="cyan")
-    )
+    console.print(Panel("Prerequisite Match Report", border_style="cyan"))
 
     for program in programs:
         match = match_prerequisites(profile, program)
-        color = "green" if match.match_score >= 0.8 else "yellow" if match.match_score >= 0.6 else "red"
+        color = (
+            "green" if match.match_score >= 0.8 else "yellow" if match.match_score >= 0.6 else "red"
+        )
 
         console.print(f"\n  [bold]{program.name}[/bold] ({program.university})")
         console.print(f"  Match: [{color}]{match.match_score:.0%}[/{color}]")
@@ -180,13 +180,17 @@ def cmd_tests(args: argparse.Namespace) -> None:
         toefl = check_toefl(profile, program)
 
         gre_str = (
-            "[green]Exempt[/green]" if gre["exempt"]
-            else "[red]REQUIRED[/red]" if gre["required"]
+            "[green]Exempt[/green]"
+            if gre["exempt"]
+            else "[red]REQUIRED[/red]"
+            if gre["required"]
             else "[yellow]Optional[/yellow]"
         )
         toefl_str = (
-            "[green]Waived[/green]" if toefl["waived"]
-            else "[red]REQUIRED[/red]" if toefl["required"]
+            "[green]Waived[/green]"
+            if toefl["waived"]
+            else "[red]REQUIRED[/red]"
+            if toefl["required"]
             else "[yellow]Check[/yellow]"
         )
         table.add_row(program.name, gre_str, toefl_str)
@@ -214,7 +218,13 @@ def cmd_timeline(args: argparse.Namespace) -> None:
             console.print(f"\n  [bold cyan]── {month} ──[/bold cyan]")
             current_month = month
 
-        priority_icon = "🔴" if event["priority"] == "critical" else "🟡" if event["priority"] == "high" else "⚪"
+        priority_icon = (
+            "🔴"
+            if event["priority"] == "critical"
+            else "🟡"
+            if event["priority"] == "high"
+            else "⚪"
+        )
         console.print(f"  {priority_icon} {d.strftime('%b %d')}  {event['action']}")
 
     console.print()
@@ -347,7 +357,10 @@ def cmd_compare(args: argparse.Namespace) -> None:
     # Interview type
     table.add_row(
         "Interview",
-        *[p.interview_type.replace("_", " ").title() if p.interview_type else "N/A" for p in selected],
+        *[
+            p.interview_type.replace("_", " ").title() if p.interview_type else "N/A"
+            for p in selected
+        ],
     )
 
     console.print(table)
@@ -382,7 +395,9 @@ def cmd_interview(args: argparse.Namespace) -> None:
 
         total = sum(len(c.questions) for c in categories)
         console.print(table)
-        console.print(f"\n  [bold]{total}[/bold] questions across [bold]{len(categories)}[/bold] categories\n")
+        console.print(
+            f"\n  [bold]{total}[/bold] questions across [bold]{len(categories)}[/bold] categories\n"
+        )
         return
 
     # Build the question pool based on filters.
@@ -479,9 +494,7 @@ def cmd_interview(args: argparse.Namespace) -> None:
     diff_counts = {}
     for q in questions:
         diff_counts[q.difficulty] = diff_counts.get(q.difficulty, 0) + 1
-    diff_summary = "  ".join(
-        f"{_difficulty_badge(d)}: {c}" for d, c in sorted(diff_counts.items())
-    )
+    diff_summary = "  ".join(f"{_difficulty_badge(d)}: {c}" for d, c in sorted(diff_counts.items()))
 
     console.print(
         Panel(
@@ -509,7 +522,10 @@ def cmd_gaps(args: argparse.Namespace) -> None:
     )
 
     if not result.gaps:
-        console.print("  [bold green]No gaps found -- your profile looks strong across all dimensions![/bold green]")
+        console.print(
+            "  [bold green]No gaps found -- your profile looks"
+            " strong across all dimensions![/bold green]"
+        )
         console.print()
         return
 
@@ -587,7 +603,7 @@ def main() -> None:
     p_tests.add_argument("--profile", "-p", required=True, help="Path to profile YAML")
 
     # timeline
-    p_timeline = subparsers.add_parser("timeline", help="Generate application timeline")
+    subparsers.add_parser("timeline", help="Generate application timeline")
 
     # programs
     subparsers.add_parser("programs", help="List all programs")
@@ -595,22 +611,30 @@ def main() -> None:
     # compare
     p_compare = subparsers.add_parser("compare", help="Compare 2-3 programs side-by-side")
     p_compare.add_argument(
-        "--programs", required=True,
+        "--programs",
+        required=True,
         help="Comma-separated program IDs (e.g., cmu-mscf,baruch-mfe,berkeley-mfe)",
     )
 
     # interview
     p_interview = subparsers.add_parser("interview", help="Practice MFE interview questions")
-    p_interview.add_argument("--category", "-c", help="Filter by category ID (e.g. probability, finance)")
     p_interview.add_argument(
-        "--difficulty", "-d",
+        "--category", "-c", help="Filter by category ID (e.g. probability, finance)"
+    )
+    p_interview.add_argument(
+        "--difficulty",
+        "-d",
         choices=["easy", "medium", "hard"],
         help="Filter by difficulty level",
     )
-    p_interview.add_argument("--program", help="Show questions for a specific program (e.g. baruch-mfe)")
     p_interview.add_argument(
-        "--count", "-n",
-        type=int, default=5,
+        "--program", help="Show questions for a specific program (e.g. baruch-mfe)"
+    )
+    p_interview.add_argument(
+        "--count",
+        "-n",
+        type=int,
+        default=5,
         help="Number of questions to display (default: 5)",
     )
     p_interview.add_argument(

@@ -14,8 +14,8 @@ import yaml
 from .models import (
     Course,
     DeadlineRound,
-    ProgramData,
     Prerequisite,
+    ProgramData,
     TestScores,
     UserProfile,
 )
@@ -43,6 +43,7 @@ def _programs_dir() -> Path:
 # ---------------------------------------------------------------------------
 # Programme loaders
 # ---------------------------------------------------------------------------
+
 
 def _parse_prerequisite(raw: dict[str, Any]) -> Prerequisite:
     """Convert a raw YAML prerequisite dict into a Prerequisite object."""
@@ -73,34 +74,25 @@ def _parse_program(raw: dict[str, Any]) -> ProgramData:
         department=raw.get("department", ""),
         website=raw.get("website", ""),
         quantnet_ranking=raw.get("quantnet_ranking"),
-
         # Admissions
         class_size=admissions.get("class_size", 0),
         acceptance_rate=admissions.get("acceptance_rate", 0.0),
         avg_gpa=admissions.get("avg_gpa", 0.0),
         gre_quant_avg=admissions.get("gre_quant_avg"),
         international_pct=admissions.get("international_pct"),
-
         # Prerequisites
-        prerequisites_required=[
-            _parse_prerequisite(p) for p in prereqs.get("required", [])
-        ],
-        prerequisites_recommended=[
-            _parse_prerequisite(p) for p in prereqs.get("recommended", [])
-        ],
+        prerequisites_required=[_parse_prerequisite(p) for p in prereqs.get("required", [])],
+        prerequisites_recommended=[_parse_prerequisite(p) for p in prereqs.get("recommended", [])],
         languages=prereqs.get("languages", []),
-
         # Tests -- GRE
         gre_required=gre.get("required", False),
         gre_accepts_gmat=gre.get("accepts_gmat", False),
         gre_exemption=gre.get("exemption"),
         gre_code=gre.get("code"),
-
         # Tests -- TOEFL
         toefl_waiver_conditions=toefl.get("waiver_conditions", []),
         toefl_min_ibt=(toefl.get("min_scores") or {}).get("toefl_ibt"),
         toefl_min_ielts=(toefl.get("min_scores") or {}).get("ielts"),
-
         # Deadlines
         deadline_cycle=deadlines.get("cycle", ""),
         deadline_note=deadlines.get("note", ""),
@@ -112,7 +104,6 @@ def _parse_program(raw: dict[str, Any]) -> ProgramData:
             )
             for r in deadlines.get("rounds", [])
         ],
-
         # Application
         application_fee=application.get("fee", 0),
         essays=application.get("essays", []),
@@ -121,7 +112,6 @@ def _parse_program(raw: dict[str, Any]) -> ProgramData:
         resume_max_pages=application.get("resume_max_pages"),
         interview_type=interview.get("type", ""),
         interview_format=interview.get("format", ""),
-
         # Extras
         special=raw.get("special", []),
         tags=raw.get("tags", []),
@@ -179,6 +169,7 @@ def load_all_programs() -> list[ProgramData]:
 # ---------------------------------------------------------------------------
 # User profile loader
 # ---------------------------------------------------------------------------
+
 
 def _parse_course(raw: dict[str, Any]) -> Course:
     """Convert a raw YAML course dict into a Course object."""

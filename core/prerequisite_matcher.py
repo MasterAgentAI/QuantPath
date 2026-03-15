@@ -6,9 +6,8 @@ recommended) prerequisites and returns a structured match report.
 
 from __future__ import annotations
 
-from .models import Course, PrerequisiteMatch, Prerequisite, ProgramData, UserProfile
+from .models import Course, PrerequisiteMatch, ProgramData, UserProfile
 from .profile_evaluator import grade_to_score
-
 
 # ===================================================================
 # Category matching map
@@ -20,50 +19,54 @@ from .profile_evaluator import grade_to_score
 
 _CATEGORY_MAP: dict[str, set[str]] = {
     # Math
-    "calculus":                 {"calculus"},
-    "linear_algebra":           {"linear_algebra"},
-    "probability":              {"probability"},
-    "statistics":               {"statistics"},
-    "differential_equations":   {"ode", "pde"},
-    "ode":                      {"ode"},
-    "pde":                      {"pde"},
-    "real_analysis":            {"real_analysis"},
-    "numerical_methods":        {"numerical_analysis"},
-    "numerical_analysis":       {"numerical_analysis"},
-    "stochastic_calculus":      {"stochastic_processes"},
-    "stochastic_processes":     {"stochastic_processes"},
-
+    "calculus": {"calculus"},
+    "linear_algebra": {"linear_algebra"},
+    "probability": {"probability"},
+    "statistics": {"statistics"},
+    "differential_equations": {"ode", "pde"},
+    "ode": {"ode"},
+    "pde": {"pde"},
+    "real_analysis": {"real_analysis"},
+    "numerical_methods": {"numerical_analysis"},
+    "numerical_analysis": {"numerical_analysis"},
+    "stochastic_calculus": {"stochastic_processes"},
+    "stochastic_processes": {"stochastic_processes"},
     # Stats
-    "econometrics":             {"econometrics", "financial_econometrics"},
-    "time_series":              {"time_series"},
-    "stat_computing":           {"stat_computing"},
-    "stat_learning":            {"stat_learning", "machine_learning"},
-
+    "econometrics": {"econometrics", "financial_econometrics"},
+    "time_series": {"time_series"},
+    "stat_computing": {"stat_computing"},
+    "stat_learning": {"stat_learning", "machine_learning"},
     # CS / Programming
-    "programming":              {"programming_cpp", "programming_python"},
-    "programming_cpp":          {"programming_cpp"},
-    "programming_python":       {"programming_python"},
-    "data_structures":          {"data_structures"},
-    "algorithms":               {"algorithms"},
-    "machine_learning":         {"machine_learning", "stat_learning"},
-
+    "programming": {"programming_cpp", "programming_python"},
+    "programming_cpp": {"programming_cpp"},
+    "programming_python": {"programming_python"},
+    "data_structures": {"data_structures"},
+    "algorithms": {"algorithms"},
+    "machine_learning": {"machine_learning", "stat_learning"},
     # Finance / Econ
-    "finance":                  {"finance"},
-    "microeconomics":           {"microeconomics"},
-    "macroeconomics":           {"macroeconomics"},
-    "risk_management":          {"risk_management"},
-    "financial_econometrics":   {"financial_econometrics"},
-    "game_theory":              {"game_theory"},
+    "finance": {"finance"},
+    "microeconomics": {"microeconomics"},
+    "macroeconomics": {"macroeconomics"},
+    "risk_management": {"risk_management"},
+    "financial_econometrics": {"financial_econometrics"},
+    "game_theory": {"game_theory"},
     "partial_differential_equations": {"pde"},
 }
 
 
 # Grade comparison (letter grades -> ordinal for min_grade checks).
 _GRADE_ORDER: dict[str, int] = {
-    "A+": 10, "A": 9, "A-": 8,
-    "B+": 7, "B": 6, "B-": 5,
-    "C+": 4, "C": 3, "C-": 2,
-    "D": 1, "F": 0,
+    "A+": 10,
+    "A": 9,
+    "A-": 8,
+    "B+": 7,
+    "B": 6,
+    "B-": 5,
+    "C+": 4,
+    "C": 3,
+    "C-": 2,
+    "D": 1,
+    "F": 0,
 }
 
 
@@ -97,6 +100,7 @@ def _find_matching_courses(
 # ===================================================================
 # Public API
 # ===================================================================
+
 
 def match_prerequisites(
     profile: UserProfile,
@@ -158,11 +162,13 @@ def match_prerequisites(
             )
             continue
 
-        matched.append({
-            **entry,
-            "course": best.name,
-            "student_grade": best.grade,
-        })
+        matched.append(
+            {
+                **entry,
+                "course": best.name,
+                "student_grade": best.grade,
+            }
+        )
 
     # Check recommended prerequisites (warnings only).
     for prereq in program.prerequisites_recommended:
@@ -170,8 +176,7 @@ def match_prerequisites(
         if not candidates:
             note = prereq.note or prereq.category
             warnings.append(
-                f"Recommended: {prereq.category} -- {note} "
-                f"(not found in your coursework)."
+                f"Recommended: {prereq.category} -- {note} (not found in your coursework)."
             )
 
     # Compute match score.

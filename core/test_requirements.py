@@ -9,10 +9,10 @@ from __future__ import annotations
 
 from .models import ProgramData, UserProfile
 
-
 # ===================================================================
 # GRE
 # ===================================================================
+
 
 def check_gre(
     profile: UserProfile,
@@ -62,7 +62,9 @@ def check_gre(
         if program.gre_quant_avg is not None:
             diff = profile.test_scores.gre_quant - program.gre_quant_avg
             if diff >= 0:
-                score_note += f" This meets/exceeds the programme average ({program.gre_quant_avg})."
+                score_note += (
+                    f" This meets/exceeds the programme average ({program.gre_quant_avg})."
+                )
             else:
                 score_note += (
                     f" The programme average is {program.gre_quant_avg} "
@@ -83,6 +85,7 @@ def check_gre(
 # ===================================================================
 # TOEFL / English proficiency
 # ===================================================================
+
 
 def check_toefl(
     profile: UserProfile,

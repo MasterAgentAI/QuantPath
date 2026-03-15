@@ -11,7 +11,6 @@ from typing import Any
 
 from .models import ProgramData
 
-
 # ===================================================================
 # Constants
 # ===================================================================
@@ -37,6 +36,7 @@ CAT_PREPARATION = "preparation"
 # Internal helpers
 # ===================================================================
 
+
 def _parse_date(date_str: str) -> date | None:
     """Parse a YYYY-MM-DD string, returning None on failure."""
     try:
@@ -56,6 +56,7 @@ def _add_months(d: date, months: int) -> date:
     month = (month - 1) % 12 + 1
     # Clamp day.
     import calendar
+
     max_day = calendar.monthrange(year, month)[1]
     day = min(d.day, max_day)
     return date(year, month, day)
@@ -69,6 +70,7 @@ def _first_of_month(d: date) -> date:
 # ===================================================================
 # Preparation milestones (relative to earliest deadline)
 # ===================================================================
+
 
 def _preparation_milestones(
     earliest_deadline: date,
@@ -86,79 +88,89 @@ def _preparation_milestones(
     gre_start = _add_months(earliest_deadline, -6)
     gre_test = _add_months(earliest_deadline, -3)
 
-    milestones.extend([
-        {
-            "date": max(start, gre_start).isoformat(),
-            "action": "Begin GRE preparation (if required by target programmes)",
-            "category": CAT_TEST,
-            "priority": PRIORITY_HIGH,
-        },
-        {
-            "date": max(start, _add_months(earliest_deadline, -4)).isoformat(),
-            "action": "Take GRE diagnostic / practice test",
-            "category": CAT_TEST,
-            "priority": PRIORITY_MEDIUM,
-        },
-        {
-            "date": max(start, gre_test).isoformat(),
-            "action": "Take GRE (allows time for retake if needed)",
-            "category": CAT_TEST,
-            "priority": PRIORITY_CRITICAL,
-        },
-    ])
+    milestones.extend(
+        [
+            {
+                "date": max(start, gre_start).isoformat(),
+                "action": "Begin GRE preparation (if required by target programmes)",
+                "category": CAT_TEST,
+                "priority": PRIORITY_HIGH,
+            },
+            {
+                "date": max(start, _add_months(earliest_deadline, -4)).isoformat(),
+                "action": "Take GRE diagnostic / practice test",
+                "category": CAT_TEST,
+                "priority": PRIORITY_MEDIUM,
+            },
+            {
+                "date": max(start, gre_test).isoformat(),
+                "action": "Take GRE (allows time for retake if needed)",
+                "category": CAT_TEST,
+                "priority": PRIORITY_CRITICAL,
+            },
+        ]
+    )
 
     # TOEFL (if applicable, 3-4 months before).
     toefl_target = _add_months(earliest_deadline, -3)
-    milestones.append({
-        "date": max(start, toefl_target).isoformat(),
-        "action": "Take TOEFL/IELTS (if required)",
-        "category": CAT_TEST,
-        "priority": PRIORITY_HIGH,
-    })
+    milestones.append(
+        {
+            "date": max(start, toefl_target).isoformat(),
+            "action": "Take TOEFL/IELTS (if required)",
+            "category": CAT_TEST,
+            "priority": PRIORITY_HIGH,
+        }
+    )
 
     # Recommendations (4-5 months before).
     rec_ask = _add_months(earliest_deadline, -5)
     rec_remind = _add_months(earliest_deadline, -2)
-    milestones.extend([
-        {
-            "date": max(start, rec_ask).isoformat(),
-            "action": "Identify and approach recommenders",
-            "category": CAT_RECOMMENDATION,
-            "priority": PRIORITY_HIGH,
-        },
-        {
-            "date": max(start, rec_remind).isoformat(),
-            "action": "Send reminder to recommenders; confirm submission status",
-            "category": CAT_RECOMMENDATION,
-            "priority": PRIORITY_MEDIUM,
-        },
-    ])
+    milestones.extend(
+        [
+            {
+                "date": max(start, rec_ask).isoformat(),
+                "action": "Identify and approach recommenders",
+                "category": CAT_RECOMMENDATION,
+                "priority": PRIORITY_HIGH,
+            },
+            {
+                "date": max(start, rec_remind).isoformat(),
+                "action": "Send reminder to recommenders; confirm submission status",
+                "category": CAT_RECOMMENDATION,
+                "priority": PRIORITY_MEDIUM,
+            },
+        ]
+    )
 
     # Essays (3-4 months before).
     essay_start = _add_months(earliest_deadline, -4)
     essay_review = _add_months(earliest_deadline, -2)
-    milestones.extend([
-        {
-            "date": max(start, essay_start).isoformat(),
-            "action": "Begin drafting personal statements and essays",
-            "category": CAT_ESSAY,
-            "priority": PRIORITY_HIGH,
-        },
-        {
-            "date": max(start, essay_review).isoformat(),
-            "action": "Finalise essays; get peer / advisor review",
-            "category": CAT_ESSAY,
-            "priority": PRIORITY_HIGH,
-        },
-    ])
+    milestones.extend(
+        [
+            {
+                "date": max(start, essay_start).isoformat(),
+                "action": "Begin drafting personal statements and essays",
+                "category": CAT_ESSAY,
+                "priority": PRIORITY_HIGH,
+            },
+            {
+                "date": max(start, essay_review).isoformat(),
+                "action": "Finalise essays; get peer / advisor review",
+                "category": CAT_ESSAY,
+                "priority": PRIORITY_HIGH,
+            },
+        ]
+    )
 
     # Resume and general prep.
-    milestones.append({
-        "date": max(start, _add_months(earliest_deadline, -5)).isoformat(),
-        "action": "Update resume; highlight quantitative and programming experience",
-        "category": CAT_PREPARATION,
-        "priority": PRIORITY_MEDIUM,
-    })
+    milestones.append(
+        {
+            "date": max(start, _add_months(earliest_deadline, -5)).isoformat(),
+            "action": "Update resume; highlight quantitative and programming experience",
+            "category": CAT_PREPARATION,
+            "priority": PRIORITY_MEDIUM,
+        }
+    )
 
     return milestones
 
@@ -166,6 +178,7 @@ def _preparation_milestones(
 # ===================================================================
 # Public API
 # ===================================================================
+
 
 def generate_timeline(
     programs: list[ProgramData],
@@ -208,39 +221,43 @@ def generate_timeline(
             all_deadlines.append(dl)
 
             # Application deadline item.
-            items.append({
-                "date": dl.isoformat(),
-                "action": (
-                    f"[{prog.name}] Round {rd.round} application deadline"
-                ),
-                "category": CAT_DEADLINE,
-                "priority": PRIORITY_CRITICAL,
-            })
+            items.append(
+                {
+                    "date": dl.isoformat(),
+                    "action": (f"[{prog.name}] Round {rd.round} application deadline"),
+                    "category": CAT_DEADLINE,
+                    "priority": PRIORITY_CRITICAL,
+                }
+            )
 
             # Submit application reminder (1 week before deadline).
             submit_reminder = dl - timedelta(days=7)
             if submit_reminder >= start_date:
-                items.append({
-                    "date": submit_reminder.isoformat(),
-                    "action": (
-                        f"[{prog.name}] Finalise and submit Round {rd.round} "
-                        f"application (deadline: {dl.isoformat()})"
-                    ),
-                    "category": CAT_APPLICATION,
-                    "priority": PRIORITY_HIGH,
-                })
+                items.append(
+                    {
+                        "date": submit_reminder.isoformat(),
+                        "action": (
+                            f"[{prog.name}] Finalise and submit Round {rd.round} "
+                            f"application (deadline: {dl.isoformat()})"
+                        ),
+                        "category": CAT_APPLICATION,
+                        "priority": PRIORITY_HIGH,
+                    }
+                )
 
             # Decision date.
             dec = _parse_date(rd.decision_by) if rd.decision_by else None
             if dec:
-                items.append({
-                    "date": dec.isoformat(),
-                    "action": (
-                        f"[{prog.name}] Round {rd.round} decision expected by this date"
-                    ),
-                    "category": CAT_DECISION,
-                    "priority": PRIORITY_MEDIUM,
-                })
+                items.append(
+                    {
+                        "date": dec.isoformat(),
+                        "action": (
+                            f"[{prog.name}] Round {rd.round} decision expected by this date"
+                        ),
+                        "category": CAT_DECISION,
+                        "priority": PRIORITY_MEDIUM,
+                    }
+                )
 
         # Interview prep (if programme has interviews).
         if prog.interview_type:
@@ -254,15 +271,17 @@ def generate_timeline(
                 prep_date = _add_months(first_dl, -1)
                 if prep_date >= start_date:
                     fmt_note = f" ({prog.interview_format})" if prog.interview_format else ""
-                    items.append({
-                        "date": prep_date.isoformat(),
-                        "action": (
-                            f"[{prog.name}] Prepare for interview "
-                            f"({prog.interview_type}){fmt_note}"
-                        ),
-                        "category": CAT_INTERVIEW,
-                        "priority": PRIORITY_HIGH,
-                    })
+                    items.append(
+                        {
+                            "date": prep_date.isoformat(),
+                            "action": (
+                                f"[{prog.name}] Prepare for interview "
+                                f"({prog.interview_type}){fmt_note}"
+                            ),
+                            "category": CAT_INTERVIEW,
+                            "priority": PRIORITY_HIGH,
+                        }
+                    )
 
     # Add generic preparation milestones based on earliest deadline.
     if all_deadlines:

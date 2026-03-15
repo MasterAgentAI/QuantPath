@@ -18,20 +18,19 @@ from typing import Any
 
 from .models import Course, EvaluationResult, UserProfile
 
-
 # ===================================================================
 # Grade conversion
 # ===================================================================
 
 _LETTER_TO_SCORE: dict[str, float] = {
     "A+": 10.0,
-    "A":  10.0,
+    "A": 10.0,
     "A-": 9.0,
     "B+": 8.0,
-    "B":  7.0,
+    "B": 7.0,
     "B-": 6.0,
     "C+": 5.0,
-    "C":  4.0,
+    "C": 4.0,
 }
 
 
@@ -87,6 +86,7 @@ def grade_to_score(grade: str) -> float:
 # Factor helpers
 # ===================================================================
 
+
 def _best_score_for_categories(
     courses: list[Course],
     categories: set[str],
@@ -94,11 +94,7 @@ def _best_score_for_categories(
     """Return the highest grade score among courses whose category is in
     *categories*.  Returns 0.0 when no matching course exists (a gap).
     """
-    scores = [
-        grade_to_score(c.grade)
-        for c in courses
-        if c.category in categories
-    ]
+    scores = [grade_to_score(c.grade) for c in courses if c.category in categories]
     return max(scores) if scores else 0.0
 
 
@@ -116,8 +112,7 @@ def _count_courses(
     return sum(
         1
         for c in courses
-        if (categories is None or c.category in categories)
-        and c.level >= min_level
+        if (categories is None or c.category in categories) and c.level >= min_level
     )
 
 
@@ -139,6 +134,7 @@ def _has_major(profile: UserProfile, keywords: set[str]) -> bool:
 # Each scorer returns (dimension_score, factor_details) where
 # factor_details is a list of dicts: {factor, score, weight, courses}.
 
+
 def _score_math(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
     """Math dimension (weight 0.30).
 
@@ -153,12 +149,12 @@ def _score_math(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
     """
     cw = profile.coursework
     factors = [
-        ("calculus_series",      0.20, _best_score_for_category(cw, "calculus")),
-        ("linear_algebra",       0.20, _best_score_for_category(cw, "linear_algebra")),
-        ("probability",          0.15, _best_score_for_category(cw, "probability")),
-        ("ode_pde",              0.10, _best_score_for_categories(cw, {"ode", "pde"})),
-        ("real_analysis",        0.15, _best_score_for_category(cw, "real_analysis")),
-        ("numerical_analysis",   0.10, _best_score_for_category(cw, "numerical_analysis")),
+        ("calculus_series", 0.20, _best_score_for_category(cw, "calculus")),
+        ("linear_algebra", 0.20, _best_score_for_category(cw, "linear_algebra")),
+        ("probability", 0.15, _best_score_for_category(cw, "probability")),
+        ("ode_pde", 0.10, _best_score_for_categories(cw, {"ode", "pde"})),
+        ("real_analysis", 0.15, _best_score_for_category(cw, "real_analysis")),
+        ("numerical_analysis", 0.10, _best_score_for_category(cw, "numerical_analysis")),
         ("stochastic_processes", 0.10, _best_score_for_category(cw, "stochastic_processes")),
     ]
     return _weighted_result(factors)
@@ -180,18 +176,25 @@ def _score_statistics(profile: UserProfile) -> tuple[float, list[dict[str, Any]]
     # For the 400-level count factor, we normalise: 0 courses -> 0,
     # 1 -> 5, 2 -> 7, 3+ -> 10.
     stat_categories = {
-        "statistics", "econometrics", "time_series",
-        "stat_learning", "stat_computing",
+        "statistics",
+        "econometrics",
+        "time_series",
+        "stat_learning",
+        "stat_computing",
     }
     n400 = _count_courses(cw, stat_categories, min_level=400)
     count_score = min(10.0, {0: 0.0, 1: 5.0, 2: 7.0}.get(n400, 10.0))
 
     factors = [
-        ("math_stats",              0.25, _best_score_for_category(cw, "statistics")),
-        ("time_series",             0.20, _best_score_for_category(cw, "time_series")),
-        ("econometrics",            0.15, _best_score_for_category(cw, "econometrics")),
-        ("stat_learning_ml",        0.15, _best_score_for_categories(cw, {"stat_learning", "machine_learning"})),
-        ("stat_computing",          0.10, _best_score_for_category(cw, "stat_computing")),
+        ("math_stats", 0.25, _best_score_for_category(cw, "statistics")),
+        ("time_series", 0.20, _best_score_for_category(cw, "time_series")),
+        ("econometrics", 0.15, _best_score_for_category(cw, "econometrics")),
+        (
+            "stat_learning_ml",
+            0.15,
+            _best_score_for_categories(cw, {"stat_learning", "machine_learning"}),
+        ),
+        ("stat_computing", 0.10, _best_score_for_category(cw, "stat_computing")),
         ("courses_400_level_count", 0.15, count_score),
     ]
     return _weighted_result(factors)
@@ -213,12 +216,16 @@ def _score_cs(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
     cs_major_score = 10.0 if _has_major(profile, {"computer science", "computing"}) else 0.0
 
     factors = [
-        ("cpp_proficiency",      0.30, _best_score_for_category(cw, "programming_cpp")),
-        ("python_proficiency",   0.20, _best_score_for_category(cw, "programming_python")),
-        ("data_structures_algo", 0.20, _best_score_for_categories(cw, {"data_structures", "algorithms"})),
-        ("ml_course",            0.10, _best_score_for_category(cw, "machine_learning")),
-        ("numerical_computing",  0.10, _best_score_for_category(cw, "numerical_analysis")),
-        ("is_cs_major",          0.10, cs_major_score),
+        ("cpp_proficiency", 0.30, _best_score_for_category(cw, "programming_cpp")),
+        ("python_proficiency", 0.20, _best_score_for_category(cw, "programming_python")),
+        (
+            "data_structures_algo",
+            0.20,
+            _best_score_for_categories(cw, {"data_structures", "algorithms"}),
+        ),
+        ("ml_course", 0.10, _best_score_for_category(cw, "machine_learning")),
+        ("numerical_computing", 0.10, _best_score_for_category(cw, "numerical_analysis")),
+        ("is_cs_major", 0.10, cs_major_score),
     ]
     return _weighted_result(factors)
 
@@ -236,12 +243,12 @@ def _score_finance_econ(profile: UserProfile) -> tuple[float, list[dict[str, Any
     """
     cw = profile.coursework
     factors = [
-        ("micro_macro",            0.20, _best_score_for_categories(cw, {"microeconomics", "macroeconomics"})),
-        ("investments_finance",    0.25, _best_score_for_category(cw, "finance")),
-        ("derivatives",            0.15, _best_score_for_categories(cw, {"finance", "risk_management"})),
-        ("risk_management",        0.15, _best_score_for_category(cw, "risk_management")),
+        ("micro_macro", 0.20, _best_score_for_categories(cw, {"microeconomics", "macroeconomics"})),
+        ("investments_finance", 0.25, _best_score_for_category(cw, "finance")),
+        ("derivatives", 0.15, _best_score_for_categories(cw, {"finance", "risk_management"})),
+        ("risk_management", 0.15, _best_score_for_category(cw, "risk_management")),
         ("financial_econometrics", 0.15, _best_score_for_category(cw, "financial_econometrics")),
-        ("game_theory",            0.10, _best_score_for_category(cw, "game_theory")),
+        ("game_theory", 0.10, _best_score_for_category(cw, "game_theory")),
     ]
     return _weighted_result(factors)
 
@@ -265,9 +272,7 @@ def _score_gpa(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
 
     # Trend estimation: a simple proxy is to check whether the user has
     # many 400/500-level courses with good grades (improving trajectory).
-    upper_courses = [
-        c for c in profile.coursework if c.level >= 400
-    ]
+    upper_courses = [c for c in profile.coursework if c.level >= 400]
     if upper_courses:
         avg_upper = sum(grade_to_score(c.grade) for c in upper_courses) / len(upper_courses)
         trend_score = min(10.0, avg_upper)
@@ -276,8 +281,8 @@ def _score_gpa(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
 
     factors = [
         ("cumulative_gpa", 0.50, cum_score),
-        ("quant_gpa",      0.30, quant_score),
-        ("trend",          0.20, trend_score),
+        ("quant_gpa", 0.30, quant_score),
+        ("trend", 0.20, trend_score),
     ]
     return _weighted_result(factors)
 
@@ -330,6 +335,7 @@ def _gpa_to_score(gpa: float) -> float:
 # Weighted-average helper
 # ===================================================================
 
+
 def _weighted_result(
     factors: list[tuple[str, float, float]],
 ) -> tuple[float, list[dict[str, Any]]]:
@@ -339,8 +345,7 @@ def _weighted_result(
     """
     total = sum(w * s for _, w, s in factors)
     details = [
-        {"factor": name, "weight": weight, "score": score}
-        for name, weight, score in factors
+        {"factor": name, "weight": weight, "score": score} for name, weight, score in factors
     ]
     return total, details
 
@@ -351,15 +356,15 @@ def _weighted_result(
 
 # Dimension weights (must sum to 1.0).
 DIMENSION_WEIGHTS: dict[str, float] = {
-    "math":         0.30,
-    "statistics":   0.20,
-    "cs":           0.20,
+    "math": 0.30,
+    "statistics": 0.20,
+    "cs": 0.20,
     "finance_econ": 0.15,
-    "gpa":          0.15,
+    "gpa": 0.15,
 }
 
 # Thresholds
-_GAP_THRESHOLD = 6.0    # factors below this are flagged as gaps
+_GAP_THRESHOLD = 6.0  # factors below this are flagged as gaps
 _STRENGTH_THRESHOLD = 9.0  # factors at or above this are strengths
 
 
@@ -386,11 +391,11 @@ def evaluate(profile: UserProfile) -> EvaluationResult:
         (filled later by the school ranker).
     """
     scorers: dict[str, Any] = {
-        "math":         _score_math,
-        "statistics":   _score_statistics,
-        "cs":           _score_cs,
+        "math": _score_math,
+        "statistics": _score_statistics,
+        "cs": _score_cs,
         "finance_econ": _score_finance_econ,
-        "gpa":          _score_gpa,
+        "gpa": _score_gpa,
     }
 
     dimension_scores: dict[str, float] = {}
@@ -416,10 +421,7 @@ def evaluate(profile: UserProfile) -> EvaluationResult:
                 strengths.append(entry)
 
     # Overall score.
-    overall = sum(
-        DIMENSION_WEIGHTS[dim] * dimension_scores[dim]
-        for dim in DIMENSION_WEIGHTS
-    )
+    overall = sum(DIMENSION_WEIGHTS[dim] * dimension_scores[dim] for dim in DIMENSION_WEIGHTS)
 
     return EvaluationResult(
         dimension_scores=dimension_scores,

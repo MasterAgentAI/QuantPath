@@ -15,10 +15,10 @@ from typing import Any
 from .models import EvaluationResult, ProgramData, UserProfile
 from .prerequisite_matcher import match_prerequisites
 
-
 # ===================================================================
 # Classification logic
 # ===================================================================
+
 
 def _classify(
     user_gpa: float,
@@ -107,6 +107,7 @@ def _compute_fit_score(
 # Public API
 # ===================================================================
 
+
 def rank_schools(
     profile: UserProfile,
     programs: list[ProgramData],
@@ -163,16 +164,18 @@ def rank_schools(
             overall_eval_score=evaluation.overall_score,
         )
 
-        results.append({
-            "program_id": prog.id,
-            "name": prog.name,
-            "university": prog.university,
-            "category": category,
-            "fit_score": fit,
-            "prereq_match_score": pmatch.match_score,
-            "acceptance_rate": prog.acceptance_rate,
-            "avg_gpa": prog.avg_gpa,
-        })
+        results.append(
+            {
+                "program_id": prog.id,
+                "name": prog.name,
+                "university": prog.university,
+                "category": category,
+                "fit_score": fit,
+                "prereq_match_score": pmatch.match_score,
+                "acceptance_rate": prog.acceptance_rate,
+                "avg_gpa": prog.avg_gpa,
+            }
+        )
 
     # Sort each bucket by fit_score descending.
     results.sort(key=lambda r: -r["fit_score"])
