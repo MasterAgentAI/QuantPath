@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["core*", "cli*"]
+
+[project]
+name = "quantpath"
+version = "0.1.0"
+description = "Open-source MFE application toolkit — profile evaluation, prerequisite matching, and school selection"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Yicheng Yang", email = "yy85@illinois.edu"},
+]
+keywords = ["mfe", "financial-engineering", "graduate-admissions", "quantitative-finance"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Topic :: Education",
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+quantpath = "cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/YichengYang-Ethan/QuantPath"
+Repository = "https://github.com/YichengYang-Ethan/QuantPath"
+Issues = "https://github.com/YichengYang-Ethan/QuantPath/issues"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

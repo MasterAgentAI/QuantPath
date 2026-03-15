@@ -1,0 +1,96 @@
+id: columbia-msfe
+name: Columbia MSFE
+full_name: Master of Science in Financial Engineering
+university: Columbia University
+department: Department of Industrial Engineering and Operations Research (IEOR)
+website: https://msfe.ieor.columbia.edu/
+quantnet_ranking: 5
+
+admissions:
+  class_size: 46
+  acceptance_rate: null
+  avg_gpa: 3.90
+  gre_quant_avg: 169
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "proficiency expected"
+      min_grade: null
+  recommended:
+    - category: stochastic_processes
+      note: "Strongly recommended for competitive applicants"
+    - category: real_analysis
+      note: "Beneficial for theoretical coursework"
+    - category: optimization
+      note: "Helpful for IEOR-based curriculum"
+  languages: [python, cpp, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE optional for 2026 cycle"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-15"
+      decision_by: "2026-03-01"
+      note: "Priority"
+    - round: 2
+      date: "2026-02-15"
+      decision_by: "2026-04-01"
+      note: "Regular"
+
+application:
+  fee: 100
+  essays:
+    - type: personal_statement
+      count: 1
+      max_words: 500
+      prompt: "Academic background, career goals, and interest in MSFE"
+    - type: short_answer
+      count: 1
+      max_words: 500
+      prompt: "What you will contribute to the MSFE community"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: async_video
+    format: "Asynchronous recorded video interview for shortlisted candidates"
+
+special:
+  - "GRE optional for 2026 admission cycle"
+  - "3 recommendations required; 2 should be academic"
+  - "IEOR department provides strong operations research foundation"
+  - "Located on Columbia's Morningside Heights campus in NYC"
+  - "Access to Columbia's extensive Wall Street alumni network"
+  - "Async video interview for shortlisted applicants"
+
+tags: [stem, gre_optional, nyc, ieor_department, async_video_interview, ivy_league]

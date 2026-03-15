@@ -1,0 +1,96 @@
+id: mit-mfin
+name: MIT MFin
+full_name: Master of Finance
+university: Massachusetts Institute of Technology
+department: MIT Sloan School of Management
+website: https://mitsloan.mit.edu/mfin
+quantnet_ranking: 7
+
+admissions:
+  class_size: 126
+  acceptance_rate: null
+  avg_gpa: 3.80
+  gre_quant_avg: 170
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "Python proficiency required (assessed via test)"
+      min_grade: null
+  recommended:
+    - category: stochastic_calculus
+      note: "Strongly recommended for competitive applicants"
+    - category: real_analysis
+      note: "Helpful for advanced coursework"
+    - category: econometrics
+      note: "Useful for applied finance track"
+  languages: [python, r]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: true
+    exemption: "GRE optional but 'strongly encouraged'"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2026-01-05"
+      decision_by: "2026-03-15"
+
+application:
+  fee: 150
+  essays:
+    - type: short_answer
+      count: 3
+      max_words: 200
+      prompt: "Three short-answer questions on career goals and motivation"
+    - type: personal_statement
+      count: 1
+      max_words: 250
+      prompt: "The World That Shaped You - describe formative experiences"
+  video:
+    duration_seconds: 60
+    type: "recorded"
+    count: 2
+    note: "Two 60-second video statements on specified prompts"
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: required
+    format: "Required interview includes quantitative assessment component and behavioral questions"
+
+special:
+  - "GRE optional but 'strongly encouraged'; Q170 median among enrolled"
+  - "Python proficiency test required as part of application"
+  - "1 of 3 recommendations must specifically address quantitative abilities"
+  - "REQUIRED interview with quantitative assessment + behavioral component"
+  - "'The World That Shaped You' essay (250 words) is a signature element"
+  - "12-month or 18-month track available"
+  - "MIT Sloan Action Learning projects integrated into curriculum"
+
+tags: [stem, python_test, required_interview, quant_assessment, strongly_encouraged_gre, action_learning]

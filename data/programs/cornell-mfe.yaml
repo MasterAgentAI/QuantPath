@@ -1,0 +1,92 @@
+id: cornell-mfe
+name: Cornell MFE
+full_name: Master of Financial Engineering
+university: Cornell University
+department: School of Operations Research and Information Engineering (ORIE)
+website: https://www.orie.cornell.edu/orie/programs/cfem
+quantnet_ranking: 10
+
+admissions:
+  class_size: 55
+  acceptance_rate: null
+  avg_gpa: 3.80
+  gre_quant_avg: 169
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "proficiency expected"
+      min_grade: null
+  recommended:
+    - category: stochastic_processes
+      note: "Strongly recommended for competitive applicants"
+    - category: real_analysis
+      note: "Helpful for theoretical coursework"
+    - category: optimization
+      note: "Useful given ORIE department foundation"
+  languages: [python, cpp, r]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: true
+    exemption: null
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-01"
+      decision_by: "2026-02-15"
+
+application:
+  fee: 105
+  essays:
+    - type: academic_sop
+      count: 1
+      max_words: 1000
+      prompt: "Academic Statement of Purpose covering research interests, academic preparation, and career goals"
+    - type: personal_statement
+      count: 1
+      max_words: 1000
+      prompt: "Personal statement describing experiences, motivations, and contributions to the program"
+  video: null
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: async_video
+    format: "Asynchronous recorded video interview for shortlisted candidates"
+
+special:
+  - "GRE REQUIRED; preferred over GMAT"
+  - "2 recommendations minimum, 3 preferred"
+  - "3-semester program: first two semesters in Ithaca, final semester in NYC (Cornell Tech/Roosevelt Island)"
+  - "Single application deadline - December 1"
+  - "ORIE department provides strong operations research and optimization foundation"
+  - "NYC semester includes industry practicum and networking"
+  - "Ivy League with unique dual-campus structure"
+
+tags: [stem, gre_required, three_semester, nyc_campus, orie_department, ivy_league, async_video_interview, dual_campus]

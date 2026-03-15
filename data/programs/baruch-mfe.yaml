@@ -1,0 +1,99 @@
+id: baruch-mfe
+name: Baruch MFE
+full_name: Master of Financial Engineering
+university: Baruch College, City University of New York
+department: Department of Mathematics
+website: https://mfe.baruch.cuny.edu/
+quantnet_ranking: 3
+
+admissions:
+  class_size: 30
+  acceptance_rate: 0.08
+  avg_gpa: 3.84
+  gre_quant_avg: 170
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: "B+"
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: "B+"
+    - category: differential_equations
+      level: "ODE"
+      min_grade: "B+"
+    - category: probability
+      level: "advanced/calculus-based"
+      min_grade: "B+"
+    - category: statistics
+      level: "introductory"
+      min_grade: "B+"
+    - category: programming
+      level: "proficiency in C++"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Strongly recommended; tested in interview"
+    - category: numerical_methods
+      note: "Helpful for coursework"
+    - category: partial_differential_equations
+      note: "Beneficial for derivatives pricing courses"
+  languages: [cpp, python]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: false
+    exemption: "Program administers its own Quantitative Assessment in lieu of GRE"
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 90
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-11-01"
+      decision_by: "2025-12-15"
+    - round: 2
+      date: "2025-12-01"
+      decision_by: "2026-01-31"
+    - round: 3
+      date: "2026-01-15"
+      decision_by: "2026-03-01"
+    - round: 4
+      date: "2026-03-15"
+      decision_by: "2026-04-30"
+
+application:
+  fee: 75
+  essays:
+    - type: personal_statement
+      count: 1
+      max_words: null
+      prompt: "Statement of purpose describing background, goals, and fit"
+  video: null
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: required
+    format: "Two rounds: (1) C++ programming and math fundamentals, (2) advanced math and probability"
+
+special:
+  - "No GRE required; program administers its own Quantitative Assessment"
+  - "TWO-ROUND TECHNICAL INTERVIEW required for all applicants (C++ coding + math)"
+  - "Prerequisites require minimum B+ grade"
+  - "One of the most math/C++ intensive programs"
+  - "Exceptionally strong placement relative to program cost"
+  - "Located in NYC Financial District"
+
+tags: [stem, quant_assessment, cpp_heavy, technical_interview, nyc, value_program]

@@ -1,0 +1,101 @@
+id: berkeley-mfe
+name: Berkeley MFE
+full_name: Master of Financial Engineering
+university: University of California, Berkeley
+department: Haas School of Business
+website: https://mfe.haas.berkeley.edu/
+quantnet_ranking: 4
+
+admissions:
+  class_size: 80
+  acceptance_rate: 0.12
+  avg_gpa: 3.80
+  gre_quant_avg: 169
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: numerical_analysis
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "proficiency in C++/Python"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Strongly recommended for competitive applicants"
+    - category: stochastic_calculus
+      note: "Helpful preparation for core courses"
+    - category: econometrics
+      note: "Useful for applied finance modules"
+  languages: [python, cpp, r]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: true
+    exemption: "US bachelor's with GPA >= 3.70"
+    code: "0342"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 90
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Spring 2027"
+  note: "Proxy for Spring 2028; Berkeley MFE starts in SPRING, not Fall"
+  rounds:
+    - round: 1
+      date: "2026-01-14"
+      decision_by: "2026-03-15"
+    - round: 2
+      date: "2026-04-01"
+      decision_by: "2026-06-01"
+    - round: 3
+      date: "2026-07-15"
+      decision_by: "2026-09-01"
+
+application:
+  fee: 275
+  essays:
+    - type: short_answer
+      count: 3
+      max_words: 300
+      prompt: "Multiple essay questions covering career goals, leadership, and contributions to the program"
+  video:
+    duration_seconds: 120
+    type: "recorded"
+  recommendations: 2
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation after application review"
+
+special:
+  - "SPRING START (March) - not a standard Fall start"
+  - "12-month intensive program with industry practicum"
+  - "GRE exemption available for US bachelor's with GPA >= 3.70"
+  - "Strong emphasis on applied finance and data science"
+  - "Silicon Valley proximity enables fintech placement"
+  - "Capstone project with industry sponsor"
+
+tags: [stem, spring_start, gre_exemption, applied_finance, silicon_valley, practicum]

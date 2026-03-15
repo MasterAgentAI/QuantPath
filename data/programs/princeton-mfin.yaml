@@ -1,0 +1,91 @@
+id: princeton-mfin
+name: Princeton MFin
+full_name: Master in Finance
+university: Princeton University
+department: Bendheim Center for Finance
+website: https://bcf.princeton.edu/master-in-finance/
+quantnet_ranking: 2
+
+admissions:
+  class_size: 35
+  acceptance_rate: 0.05
+  avg_gpa: 3.90
+  gre_quant_avg: 170
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III (multivariable)"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: real_analysis
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: stochastic_calculus
+      note: "Strongly recommended for competitive applicants"
+    - category: partial_differential_equations
+      note: "Beneficial for coursework preparation"
+    - category: numerical_methods
+      note: "Helpful background"
+  languages: [python, cpp, matlab]
+
+tests:
+  gre:
+    required: false
+    accepts_gmat: false
+    exemption: null
+    code: null
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.0
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-15"
+      decision_by: "2026-03-01"
+
+application:
+  fee: 90
+  essays:
+    - type: personal_statement
+      count: 1
+      max_words: 500
+      prompt: "Personal background and motivation for MFin"
+    - type: academic_sop
+      count: 1
+      max_words: 500
+      prompt: "Academic interests and career goals in finance"
+  video: null
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation; typically conducted by faculty"
+
+special:
+  - "Two-year program (4 semesters)"
+  - "MATH ASSESSMENT required as part of application"
+  - "GRE optional but Q167 median among admitted students"
+  - "Summer internship between Year 1 and Year 2"
+  - "Small cohort enables close faculty mentorship"
+  - "Senior thesis or research project required"
+
+tags: [stem, two_year, math_assessment, highly_selective, research_oriented]

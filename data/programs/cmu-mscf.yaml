@@ -1,0 +1,97 @@
+id: cmu-mscf
+name: CMU MSCF
+full_name: Master of Science in Computational Finance
+university: Carnegie Mellon University
+department: Tepper School of Business & Dietrich College & Heinz College & Mellon College of Science
+website: https://www.cmu.edu/mscf/
+quantnet_ranking: 1
+
+admissions:
+  class_size: 108
+  acceptance_rate: 0.10
+  avg_gpa: 3.86
+  gre_quant_avg: 169
+  international_pct: null
+  no_work_experience_pct: null
+
+prerequisites:
+  required:
+    - category: calculus
+      level: "I-III"
+      min_grade: null
+    - category: differential_equations
+      level: "ODE"
+      min_grade: null
+    - category: linear_algebra
+      level: "introductory"
+      min_grade: null
+    - category: probability
+      level: "calculus-based"
+      min_grade: null
+    - category: statistics
+      level: "introductory"
+      min_grade: null
+    - category: programming
+      level: "introductory"
+      min_grade: null
+  recommended:
+    - category: real_analysis
+      note: "Strongly recommended for competitive applicants"
+    - category: stochastic_calculus
+      note: "Helpful but not required"
+    - category: numerical_methods
+      note: "Beneficial for coursework preparation"
+  languages: [cpp, python, r]
+
+tests:
+  gre:
+    required: true
+    accepts_gmat: false
+    exemption: null
+    code: "5765"
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (2+ years)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.5
+      duolingo: null
+
+deadlines:
+  cycle: "Fall 2026"
+  note: "Proxy for Fall 2027; programs maintain similar dates year-over-year"
+  rounds:
+    - round: 1
+      date: "2025-12-01"
+      decision_by: "2026-02-15"
+    - round: 2
+      date: "2026-03-01"
+      decision_by: "2026-04-15"
+
+application:
+  fee: 125
+  essays:
+    - type: short_answer
+      count: 2
+      max_words: 350
+      prompt: "Why MSCF and career goals"
+    - type: short_answer
+      count: 1
+      max_words: 350
+      prompt: "Describe a challenging experience"
+  video:
+    duration_seconds: 90
+    type: "recorded"
+  recommendations: 3
+  resume_max_pages: null
+  interview:
+    type: invite_only
+    format: "By invitation after application review"
+
+special:
+  - "Joint program across four CMU schools"
+  - "Pittsburgh campus (first 2 semesters) then NYC campus (final semester)"
+  - "Mini-semester structure with intensive courses"
+  - "Strong placement in sell-side and buy-side quant roles"
+
+tags: [stem, nyc_campus, cpp_heavy, multi_school, top_ranked]

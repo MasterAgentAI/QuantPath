@@ -1,0 +1,281 @@
+# QuantPath User Profile Example
+# Fill in your information and run: quantpath evaluate --profile my_profile.yaml
+
+personal:
+  name: "Yicheng Yang"
+  university: "University of Illinois Urbana-Champaign"
+  majors: ["Computer Science", "Economics", "Statistics"]
+  gpa: 4.0
+  is_international: true
+  years_at_us_institution: 2
+  prior_institution:
+    name: "Soochow University"
+    country: "China"
+    gpa: 3.8
+    years: 2
+
+test_scores:
+  gre_quant: null      # not yet taken
+  gre_verbal: null
+  toefl_ibt: null      # waived for most programs
+
+courses:
+  # === Math ===
+  - code: "MATH-ADV-I"
+    name: "Advanced Mathematics I (Calculus I)"
+    category: calculus
+    grade: 97           # numeric grade accepted
+    university: "Soochow University"
+
+  - code: "MATH-ADV-II"
+    name: "Advanced Mathematics II (Calculus II)"
+    category: calculus
+    grade: 95
+    university: "Soochow University"
+
+  - code: "MATH 241"
+    name: "Calculus III"
+    category: calculus
+    grade: "CR"         # transfer credit
+    university: "UIUC"
+
+  - code: "MATH-LA"
+    name: "Linear Algebra"
+    category: linear_algebra
+    grade: 76            # weakness
+    university: "Soochow University"
+
+  - code: "MATH 415"
+    name: "Applied Linear Algebra"
+    category: linear_algebra
+    grade: "CR"
+    university: "UIUC"
+
+  - code: "MATH 441"
+    name: "Differential Equations"
+    category: ode
+    grade: null          # planned Summer 2026
+    status: planned
+    semester: "Summer 2026"
+
+  - code: "MATH 447"
+    name: "Real Variables"
+    category: real_analysis
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+
+  # === Statistics ===
+  - code: "STAT 400"
+    name: "Statistics and Probability I"
+    category: probability
+    grade: "CR"
+    university: "UIUC"
+
+  - code: "STAT 410"
+    name: "Statistics and Probability II"
+    category: statistics
+    grade: null
+    status: in_progress
+    semester: "Spring 2026"
+    level: 400
+
+  - code: "STAT 425"
+    name: "Statistical Modeling I"
+    category: statistics
+    grade: null
+    status: in_progress
+    semester: "Spring 2026"
+    level: 400
+
+  - code: "STAT 429"
+    name: "Time Series Analysis"
+    category: time_series
+    grade: null
+    status: in_progress
+    semester: "Spring 2026"
+    level: 400
+
+  - code: "STAT 432"
+    name: "Basics of Statistical Learning"
+    category: stat_learning
+    grade: null
+    status: in_progress
+    semester: "Spring 2026"
+    level: 400
+
+  - code: "STAT 433"
+    name: "Stochastic Processes"
+    category: stochastic_processes
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+    level: 400
+
+  - code: "STAT 428"
+    name: "Statistical Computing"
+    category: stat_computing
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+    level: 400
+
+  - code: "STAT 426"
+    name: "Statistical Modeling II"
+    category: statistics
+    grade: null
+    status: planned
+    semester: "Spring 2027"
+    level: 400
+
+  # === Computer Science ===
+  - code: "CS 124"
+    name: "Introduction to CS I"
+    category: programming_cpp
+    grade: "A"
+    university: "UIUC"
+
+  - code: "CS 128"
+    name: "Introduction to CS II"
+    category: programming_cpp
+    grade: "A"
+    university: "UIUC"
+
+  - code: "CS 225"
+    name: "Data Structures"
+    category: data_structures
+    grade: "A"
+    university: "UIUC"
+    level: 200
+
+  - code: "CS 233"
+    name: "Computer Architecture"
+    category: other
+    grade: "A"
+    university: "UIUC"
+
+  - code: "CS 374"
+    name: "Introduction to Algorithms"
+    category: algorithms
+    grade: null
+    status: in_progress
+    semester: "Spring 2026"
+    level: 300
+
+  - code: "CS 446"
+    name: "Machine Learning"
+    category: machine_learning
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+    level: 400
+
+  - code: "CS 450"
+    name: "Numerical Analysis"
+    category: numerical_analysis
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+    level: 400
+
+  - code: "CS 411"
+    name: "Database Systems"
+    category: database
+    grade: null
+    status: planned
+    semester: "Summer 2026"
+    level: 400
+
+  - code: "PYTHON-SU"
+    name: "Programming and Application: Python"
+    category: programming_python
+    grade: 88
+    university: "Soochow University"
+
+  # === Economics / Finance ===
+  - code: "ECON-MICRO"
+    name: "Microeconomics I"
+    category: microeconomics
+    grade: 90
+    university: "Soochow University"
+
+  - code: "ECON-IMICRO-II"
+    name: "Intermediate Microeconomics II"
+    category: microeconomics
+    grade: 96
+    university: "Soochow University"
+
+  - code: "ECON-MACRO"
+    name: "Macroeconomics"
+    category: macroeconomics
+    grade: 94
+    university: "Soochow University"
+
+  - code: "ECON-IMACRO"
+    name: "Intermediate Macroeconomics"
+    category: macroeconomics
+    grade: 94
+    university: "Soochow University"
+
+  - code: "ECON 469"
+    name: "Economics of Risk"
+    category: risk_management
+    grade: "A+"
+    university: "UIUC"
+    level: 400
+
+  - code: "ECON 472"
+    name: "Financial Econometrics"
+    category: financial_econometrics
+    grade: null
+    status: planned
+    semester: "Fall 2026"
+    level: 400
+
+  - code: "FIN-SEC"
+    name: "Securities Investment"
+    category: finance
+    grade: 87
+    university: "Soochow University"
+
+  - code: "ECON-GAME"
+    name: "Game Theory"
+    category: game_theory
+    grade: 91
+    university: "Soochow University"
+
+  - code: "ECON-MONEY"
+    name: "Monetary Banking II"
+    category: finance
+    grade: 98
+    university: "Soochow University"
+
+  - code: "ECON 203"
+    name: "Economic Statistics II"
+    category: econometrics
+    grade: "A+"
+    university: "UIUC"
+    level: 200
+
+experience:
+  - type: internship
+    title: "Quantitative Research Intern"
+    description: "Built futures trading strategy based on cointegration theory; portfolio placed top 0.3% in national competition"
+    duration_months: 3
+
+projects:
+  - name: "Coinjure"
+    description: "Agent-native prediction market trading system"
+    url: "https://github.com/ulab-uiuc/prediction-market-cli"
+    highlights:
+      - "1,270+ exploitable cross-platform relations discovered"
+      - "Dual-platform support (Polymarket + Kalshi)"
+      - "Full backtesting engine with live trading integration"
+
+  - name: "Market Bubble Index Dashboard"
+    description: "7-indicator composite market risk dashboard with drawdown probability model"
+    url: "https://github.com/YichengYang-Ethan/Market-Bubble-Index-Dashboard"
+    highlights:
+      - "Drawdown prediction AUC 0.802"
+      - "Two strategies beat Buy & Hold (Sharpe 0.70 vs 0.67)"
+      - "React + Python, deployed on GitHub Pages"
