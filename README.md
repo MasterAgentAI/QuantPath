@@ -259,6 +259,16 @@ projects:
 | MCF | Stanford | #8 |
 | MSFM | UChicago | #9 |
 | MFE | Cornell | #10 |
+| MFE | UCLA | #11 |
+| QCF | Georgia Tech | #12 |
+| MQF | Rutgers | #13 |
+| MFE | U Michigan | #14 |
+| MSMF | Boston U | #15 |
+| CFRM | U Washington | #16 |
+| MFM | Johns Hopkins | - |
+| MFE | Northwestern | - |
+| MSMF | USC | - |
+| MMF | U Toronto | - |
 
 ## Contributing
 
@@ -279,13 +289,13 @@ We welcome contributions! The most impactful ways to help:
 - [x] CLI interface
 - [x] Program comparison (`compare`)
 - [x] Gap analysis with recommendations (`gaps`)
-- [x] Unit test suite (120 tests)
+- [x] Unit test suite (173 tests)
 - [x] GitHub Actions CI
-- [ ] Web dashboard (Next.js)
+- [x] Interview question bank (52 questions, 7 categories)
+- [x] Streamlit web dashboard
+- [x] 20 programs database
 - [ ] Course optimizer (fill gaps optimally)
-- [ ] AI essay coach
-- [ ] Interview question database
-- [ ] More programs (20+)
+- [ ] AI essay coach (Claude API)
 - [ ] University course databases (auto-map courses)
 
 ## License
