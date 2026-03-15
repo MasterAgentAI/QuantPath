@@ -41,10 +41,10 @@ _FACTOR_ACTIONS: dict[str, str] = {
         " (multivariable calculus is required by nearly all programs)"
     ),
     "linear_algebra": (
-        "Take a Linear Algebra course with proof-based content"
-        " (MATH 415 level or above)"
+        "Take a proof-based Linear Algebra course"
+        " (upper-division or graduate level)"
     ),
-    "probability": "Take calculus-based Probability (e.g. STAT 400)",
+    "probability": "Take a calculus-based Probability Theory course",
     "ode_pde": "Take Differential Equations (ODE); PDE is a plus for top-5",
     "real_analysis": (
         "Take Real Analysis / Real Variables"
@@ -56,13 +56,13 @@ _FACTOR_ACTIONS: dict[str, str] = {
         " (recommended for top-5 programs)"
     ),
     # Statistics dimension
-    "math_stats": "Take Mathematical Statistics at 400 level (e.g. STAT 410)",
-    "time_series": "Take Time Series Analysis (STAT 429 or equivalent)",
-    "econometrics": "Take an Econometrics course (ECON 480 or equivalent)",
-    "stat_learning_ml": "Take Statistical Learning or ML (STAT 432 / CS 446)",
-    "stat_computing": "Take Statistical Computing (STAT 428 / R or Python)",
+    "math_stats": "Take Mathematical Statistics at the 400+ level",
+    "time_series": "Take a Time Series Analysis course",
+    "econometrics": "Take an Econometrics course",
+    "stat_learning_ml": "Take Statistical Learning or Machine Learning",
+    "stat_computing": "Take Statistical Computing (R or Python-based)",
     "courses_400_level_count": (
-        "Enroll in more 400-level statistics courses"
+        "Enroll in more upper-division statistics courses"
         " to strengthen your transcript"
     ),
     # CS dimension
@@ -71,20 +71,20 @@ _FACTOR_ACTIONS: dict[str, str] = {
         " (essential for Baruch, CMU, and most top programs)"
     ),
     "python_proficiency": (
-        "Take a Python course or complete substantial Python projects"
+        "Take a Python course or build substantial Python projects"
     ),
-    "data_structures_algo": "Take Data Structures and Algorithms (CS 225+374)",
-    "ml_course": "Take a Machine Learning course (CS 446 / STAT 432 level)",
-    "numerical_computing": "Take Numerical/Scientific Computing (CS 450)",
+    "data_structures_algo": "Take Data Structures and Algorithms",
+    "ml_course": "Take a Machine Learning course",
+    "numerical_computing": "Take Numerical or Scientific Computing",
     "is_cs_major": (
-        "Consider adding a CS minor or taking additional CS electives"
+        "Consider a CS minor or additional CS electives"
     ),
     # Finance/Econ dimension
-    "micro_macro": "Take Intermediate Micro and Macro Economics courses",
+    "micro_macro": "Take Intermediate Micro and Macro Economics",
     "investments_finance": "Take an Investments or Corporate Finance course",
     "derivatives": "Take Derivatives/Options Pricing or Financial Risk Mgmt",
     "risk_management": "Take a Risk Management or Financial Risk course",
-    "financial_econometrics": "Take Financial Econometrics (ECON 472)",
+    "financial_econometrics": "Take Financial Econometrics",
     "game_theory": "Take Game Theory (lower priority for most MFE programs)",
     # GPA dimension
     "cumulative_gpa": "Focus on raising GPA by excelling in remaining courses",

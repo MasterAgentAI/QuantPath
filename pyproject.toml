@@ -13,7 +13,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    {name = "Yicheng Yang", email = "yy85@illinois.edu"},
+    {name = "MasterAgentAI"},
 ]
 keywords = ["mfe", "financial-engineering", "graduate-admissions", "quantitative-finance"]
 classifiers = [
@@ -41,9 +41,9 @@ web = [
 quantpath = "cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/YichengYang-Ethan/QuantPath"
-Repository = "https://github.com/YichengYang-Ethan/QuantPath"
-Issues = "https://github.com/YichengYang-Ethan/QuantPath/issues"
+Homepage = "https://github.com/MasterAgentAI/QuantPath"
+Repository = "https://github.com/MasterAgentAI/QuantPath"
+Issues = "https://github.com/MasterAgentAI/QuantPath/issues"
 
 [tool.ruff]
 line-length = 100

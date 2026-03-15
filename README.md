@@ -29,27 +29,28 @@ QuantPath changes that.
 $ quantpath evaluate --profile my_profile.yaml
 
 ┌─ QuantPath Profile Evaluation ──────────────────┐
-│ Yicheng Yang | UIUC | GPA 4.0 | International   │
+│ Alex Chen | State University | GPA 3.78 | Intl    │
 └──────────────────────────────────────────────────┘
-  Math            9.5/10  ████████▌░
-  Statistics     10.0/10  ██████████
-  CS             10.0/10  ██████████
-  Finance/Econ    9.0/10  █████████░
-  GPA             9.5/10  ████████▌░
+  Math            8.2/10  ████████░░
+  Statistics      7.5/10  ███████▌░░
+  CS              7.0/10  ███████░░░
+  Finance/Econ    8.0/10  ████████░░
+  GPA             8.5/10  ████████▌░
 
-  OVERALL:        9.6/10  ██████████  Top 3-5 MFE Level
+  OVERALL:        7.8/10  ████████░░  Competitive
 
   🎯 Reach:   Princeton MFin, Stanford MCF, Baruch MFE
-  🎯 Target:  CMU MSCF, Columbia MSFE, MIT MFin
-  🎯 Safety:  NYU Tandon, UChicago MSFM, Cornell MFE
+  🎯 Target:  CMU MSCF, Berkeley MFE, MIT MFin
+  🎯 Safety:  UCLA MFE, GaTech QCF, Rutgers MQF
 
   ⚠️  Gaps Found:
-     - Linear Algebra: 76/100 (below Baruch B+ threshold)
+     - Stochastic Processes: Missing
+     - PDE: Missing
 
   ✅ Strengths:
-     - CS major (only 18% of CMU class)
-     - 3x C++ courses all A
-     - 7x 400-level Statistics courses
+     - Real Analysis A-
+     - Strong economics coursework
+     - Two quant internships
 ```
 
 ### Prerequisite Matcher
