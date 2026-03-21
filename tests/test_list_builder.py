@@ -51,9 +51,10 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
 
     We construct programmes to exercise each bucket.
     """
+    # Use synthetic IDs so the LR model has no data and falls back to heuristics.
     # Reach programmes: low acceptance rate or high avg GPA.
     reach_1 = ProgramData(
-        id="cmu-mscf",
+        id="test-reach-1",
         name="CMU MSCF",
         university="Carnegie Mellon University",
         acceptance_rate=0.05,
@@ -67,7 +68,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     reach_2 = ProgramData(
-        id="baruch-mfe",
+        id="test-reach-2",
         name="Baruch MFE",
         university="Baruch College, CUNY",
         acceptance_rate=0.04,
@@ -79,7 +80,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     reach_3 = ProgramData(
-        id="princeton-mfin",
+        id="test-reach-3",
         name="Princeton MFin",
         university="Princeton University",
         acceptance_rate=0.03,
@@ -90,7 +91,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     reach_4 = ProgramData(
-        id="mit-mfin",
+        id="test-reach-4",
         name="MIT MFin",
         university="MIT",
         acceptance_rate=0.06,
@@ -104,7 +105,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
 
     # Target programmes: moderate acceptance, GPA near user's.
     target_1 = ProgramData(
-        id="bu-msmf",
+        id="test-target-1",
         name="BU MSMF",
         university="Boston University",
         acceptance_rate=0.12,
@@ -116,7 +117,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     target_2 = ProgramData(
-        id="nyu-mfe",
+        id="test-target-2",
         name="NYU MFE",
         university="New York University",
         acceptance_rate=0.10,
@@ -128,7 +129,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     target_3 = ProgramData(
-        id="gatech-qcf",
+        id="test-target-3",
         name="GaTech QCF",
         university="Georgia Tech",
         acceptance_rate=0.14,
@@ -141,7 +142,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
 
     # Safety programmes: high acceptance, avg GPA well below user's.
     safety_1 = ProgramData(
-        id="rutgers-mqf",
+        id="test-safety-1",
         name="Rutgers MQF",
         university="Rutgers University",
         acceptance_rate=0.25,
@@ -152,7 +153,7 @@ def _make_programs(count: int = 9) -> list[ProgramData]:
         ],
     )
     safety_2 = ProgramData(
-        id="uconn-msqf",
+        id="test-safety-2",
         name="UConn MSQF",
         university="University of Connecticut",
         acceptance_rate=0.30,
@@ -248,8 +249,8 @@ class TestBucketCounts:
     def test_fewer_programmes_than_max(self) -> None:
         """When only 1 safety programme exists, we should get 1."""
         progs = _make_programs()
-        # Remove the second safety programme (uconn-msqf).
-        progs = [p for p in progs if p.id != "uconn-msqf"]
+        # Remove the second safety programme (test-safety-2).
+        progs = [p for p in progs if p.id != "test-safety-2"]
         sl = build_school_list(
             _make_profile(), progs, _default_evaluation(), max_safety=2,
         )
@@ -313,7 +314,7 @@ class TestEdgeCases:
 
     def test_single_programme(self) -> None:
         """A single reach programme should appear in reach only."""
-        progs = [_make_programs()[0]]  # CMU = reach
+        progs = [_make_programs()[0]]  # test-reach-1 = reach
         sl = build_school_list(_make_profile(), progs, _default_evaluation())
         assert len(sl.reach) == 1
         assert len(sl.target) == 0

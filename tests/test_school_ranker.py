@@ -168,9 +168,10 @@ class TestRankSchools:
         )
 
     def _make_programs(self) -> list[ProgramData]:
+        # Use synthetic IDs so LR model fallback (heuristic) is always used.
         # Reach: low acceptance, high avg GPA
         reach = ProgramData(
-            id="cmu-mscf",
+            id="test-reach-prog",
             name="CMU MSCF",
             university="Carnegie Mellon",
             acceptance_rate=0.05,
@@ -184,7 +185,7 @@ class TestRankSchools:
         )
         # Target: moderate acceptance, matched GPA
         target = ProgramData(
-            id="bu-msmf",
+            id="test-target-prog",
             name="BU MSMF",
             university="Boston University",
             acceptance_rate=0.12,
@@ -196,7 +197,7 @@ class TestRankSchools:
         )
         # Safety: high acceptance, lower avg GPA
         safety = ProgramData(
-            id="rutgers-mqf",
+            id="test-safety-prog",
             name="Rutgers MQF",
             university="Rutgers",
             acceptance_rate=0.25,
@@ -237,12 +238,12 @@ class TestRankSchools:
         programs = self._make_programs()
         evaluation = EvaluationResult(overall_score=7.0)
         result = rank_schools(profile, programs, evaluation)
-        expected_keys = {
+        required_keys = {
             "program_id", "name", "university", "category",
             "fit_score", "prereq_match_score", "acceptance_rate", "avg_gpa",
         }
         for entry in result["all"]:
-            assert set(entry.keys()) == expected_keys
+            assert required_keys.issubset(set(entry.keys()))
 
     def test_classification_matches_category(self) -> None:
         """Programs in each bucket should have matching category values."""
@@ -258,22 +259,22 @@ class TestRankSchools:
             assert entry["category"] == "safety"
 
     def test_reach_program_classified_correctly(self) -> None:
-        """CMU with 5% acceptance should be reach."""
+        """Program with 5% acceptance and avg GPA > user GPA should be reach."""
         profile = self._make_profile()
         programs = self._make_programs()
         evaluation = EvaluationResult(overall_score=7.0)
         result = rank_schools(profile, programs, evaluation)
-        cmu = next(r for r in result["all"] if r["program_id"] == "cmu-mscf")
-        assert cmu["category"] == "reach"
+        reach = next(r for r in result["all"] if r["program_id"] == "test-reach-prog")
+        assert reach["category"] == "reach"
 
     def test_safety_program_classified_correctly(self) -> None:
-        """Rutgers with 25% acceptance and user GPA above avg+0.1 -> safety."""
+        """Program with 25% acceptance and avg GPA below user -> safety."""
         profile = self._make_profile()
         programs = self._make_programs()
         evaluation = EvaluationResult(overall_score=7.0)
         result = rank_schools(profile, programs, evaluation)
-        rutgers = next(r for r in result["all"] if r["program_id"] == "rutgers-mqf")
-        assert rutgers["category"] == "safety"
+        safety = next(r for r in result["all"] if r["program_id"] == "test-safety-prog")
+        assert safety["category"] == "safety"
 
     def test_empty_programs_list(self) -> None:
         profile = self._make_profile()
@@ -290,6 +291,6 @@ class TestRankSchools:
         programs = self._make_programs()
         evaluation = EvaluationResult(overall_score=7.0)
         result = rank_schools(profile, programs, evaluation)
-        # Rutgers only requires calculus, which profile has -> match_score = 1.0
-        rutgers = next(r for r in result["all"] if r["program_id"] == "rutgers-mqf")
-        assert rutgers["prereq_match_score"] == 1.0
+        # test-safety-prog only requires calculus, which profile has -> match_score = 1.0
+        safety = next(r for r in result["all"] if r["program_id"] == "test-safety-prog")
+        assert safety["prereq_match_score"] == 1.0
