@@ -273,12 +273,23 @@ def _build_context(profile_path: str) -> str:
         if entries:
             lines.append(f"\n{tier.upper()} ({len(entries)} schools):")
             for entry in entries:
-                accept = getattr(entry, "acceptance_rate", 0) or 0
                 fit = getattr(entry, "fit_score", 0) or 0
                 reason = getattr(entry, "reason", "")
-                lines.append(
-                    f"  {entry.name:25s}  fit={fit:.0f}/100  accept={accept*100:.0f}%"
-                )
+                prob = getattr(entry, "admission_prob", None)
+                prob_low = getattr(entry, "prob_low", None)
+                prob_high = getattr(entry, "prob_high", None)
+
+                if prob is not None:
+                    ci_str = (
+                        f" [{prob_low:.0%}–{prob_high:.0%}]"
+                        if prob_low is not None and prob_high is not None
+                        else ""
+                    )
+                    prob_str = f"  P(admit)={prob:.0%}{ci_str}"
+                else:
+                    prob_str = "  P(admit)=N/A"
+
+                lines.append(f"  {entry.name:25s}  fit={fit:.0f}/100{prob_str}")
                 if reason:
                     lines.append(f"    → {reason}")
 

@@ -30,6 +30,9 @@ class SchoolListEntry:
     fit_score: float
     prereq_match_score: float
     reason: str  # why this school was selected
+    admission_prob: float | None = None   # bias-corrected P(admit) from LR
+    prob_low: float | None = None         # lower CI bound
+    prob_high: float | None = None        # upper CI bound
 
 
 @dataclass
@@ -233,6 +236,9 @@ def build_school_list(
                     fit_score=d["fit_score"],
                     prereq_match_score=d["prereq_match_score"],
                     reason=_generate_reason(d, category),
+                    admission_prob=d.get("admission_prob"),
+                    prob_low=d.get("prob_low"),
+                    prob_high=d.get("prob_high"),
                 )
             )
         return entries

@@ -216,6 +216,8 @@ def cmd_evaluate(args: argparse.Namespace) -> None:
 
 def cmd_match(args: argparse.Namespace) -> None:
     """Match prerequisites against specific programs."""
+    from core.lr_predictor import predict_prob_full
+
     profile = load_profile(args.profile)
     programs = load_all_programs()
 
@@ -224,6 +226,8 @@ def cmd_match(args: argparse.Namespace) -> None:
         if not programs:
             console.print(f"[red]Program '{args.program}' not found.[/red]")
             return
+
+    gre_quant = profile.test_scores.gre_quant
 
     console.print()
     console.print(Panel("Prerequisite Match Report", border_style="cyan"))
@@ -236,6 +240,17 @@ def cmd_match(args: argparse.Namespace) -> None:
 
         console.print(f"\n  [bold]{program.name}[/bold] ({program.university})")
         console.print(f"  Match: [{color}]{match.match_score:.0%}[/{color}]")
+
+        lr_pred = predict_prob_full(program.id, profile.gpa, gre_quant, profile)
+        if lr_pred is not None:
+            pcolor = "green" if lr_pred.prob >= 0.6 else "yellow" if lr_pred.prob >= 0.35 else "red"
+            ci_str = (
+                f" [dim][{lr_pred.prob_low:.0%}–{lr_pred.prob_high:.0%}][/dim]"
+                if lr_pred.prob_low is not None and lr_pred.prob_high is not None
+                else ""
+            )
+            bc_flag = " [dim](bias-corrected)[/dim]" if lr_pred.is_bias_corrected else ""
+            console.print(f"  P(Admit): [{pcolor}]{lr_pred.prob:.0%}[/{pcolor}]{ci_str}{bc_flag}")
 
         if match.missing:
             console.print(f"  [red]Missing:[/red] {', '.join(match.missing)}")
@@ -617,6 +632,18 @@ def cmd_interview(args: argparse.Namespace) -> None:
     console.print()
 
 
+def _fmt_prob(e: Any) -> str:
+    """Format admission_prob + CI for display, using pre-computed SchoolListEntry fields."""
+    prob = getattr(e, "admission_prob", None)
+    if prob is None:
+        return "[dim]N/A[/dim]"
+    pcolor = "green" if prob >= 0.6 else "yellow" if prob >= 0.35 else "red"
+    low = getattr(e, "prob_low", None)
+    high = getattr(e, "prob_high", None)
+    ci = f" [dim][{low:.0%}–{high:.0%}][/dim]" if low is not None and high is not None else ""
+    return f"[{pcolor}]{prob:.0%}[/{pcolor}]{ci}"
+
+
 def cmd_list(args: argparse.Namespace) -> None:
     """Build and display an optimised school application list."""
     profile = load_profile(args.profile)
@@ -625,9 +652,12 @@ def cmd_list(args: argparse.Namespace) -> None:
     evaluation = evaluate_profile(profile, projected=projected)
     school_list = build_school_list(profile, programs, evaluation)
 
-    # Determine GRE Quant score for LR prediction
-    gre_quant = profile.test_scores.gre_quant
-    gpa = profile.gpa
+    # Warn if GRE is missing — LR predictions fall back to training mean
+    if profile.test_scores.gre_quant is None:
+        console.print(
+            "  [yellow]Note: GRE Quant not provided — P(Admit) estimates use "
+            "program average GRE as a proxy and may be optimistic.[/yellow]"
+        )
 
     console.print()
     console.print(
@@ -637,7 +667,7 @@ def cmd_list(args: argparse.Namespace) -> None:
         )
     )
 
-    # One table per category.
+    # One table per category — P(Admit) uses pre-computed values from rank_schools
     for label, entries, style in [
         ("Reach", school_list.reach, "red"),
         ("Target", school_list.target, "yellow"),
@@ -654,30 +684,16 @@ def cmd_list(args: argparse.Namespace) -> None:
         table.add_column("University", min_width=18)
         table.add_column("Fit", justify="right", width=6)
         table.add_column("Prereq", justify="right", width=7)
-        table.add_column("P(Admit)", justify="right", width=9)
+        table.add_column("P(Admit)  [CI]", justify="right", width=20)
         table.add_column("Reason", min_width=28)
 
         for e in entries:
-            from core.lr_predictor import predict_prob_full
-            lr = predict_prob_full(e.program_id, gpa, gre_quant, profile)
-            if lr is not None:
-                pcolor = (
-                    "green" if lr.prob >= 0.6
-                    else "yellow" if lr.prob >= 0.35
-                    else "red"
-                )
-                prob_str = (
-                    f"[{pcolor}]{lr.prob:.0%}[/{pcolor}]"
-                    f" [dim][{lr.prob_low:.0%}–{lr.prob_high:.0%}][/dim]"
-                )
-            else:
-                prob_str = "[dim]N/A[/dim]"
             table.add_row(
                 e.name,
                 e.university,
                 f"{e.fit_score:.1f}",
                 f"{e.prereq_match_score:.0%}",
-                prob_str,
+                _fmt_prob(e),
                 e.reason,
             )
         console.print(table)

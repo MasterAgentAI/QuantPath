@@ -533,10 +533,22 @@ def page_profile_evaluation() -> None:
             continue
         with st.expander(f":{color}[{label}] ({len(schools)} programs)", expanded=True):
             for sch in schools:
-                c1, c2, c3 = st.columns([3, 1, 1])
+                c1, c2, c3, c4 = st.columns([3, 1, 1, 1])
                 c1.write(f"**{sch['name']}** -- {sch['university']}")
                 c2.write(f"Fit: {sch['fit_score']:.1f}/100")
                 c3.write(f"Prereq: {sch['prereq_match_score']:.0%}")
+                prob = sch.get("admission_prob")
+                if prob is not None:
+                    prob_low = sch.get("prob_low")
+                    prob_high = sch.get("prob_high")
+                    ci = (
+                        f" [{prob_low:.0%}–{prob_high:.0%}]"
+                        if prob_low is not None and prob_high is not None
+                        else ""
+                    )
+                    c4.write(f"P(Admit): {prob:.0%}{ci}")
+                else:
+                    c4.write("P(Admit): N/A")
 
 
 # ===================================================================
