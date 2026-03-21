@@ -1,9 +1,10 @@
 # QuantPath
 
-**Open-source MFE application toolkit** — profile evaluation, prerequisite matching, and school selection for top financial engineering programs.
+**Open-source MFE application toolkit** — AI-powered profile evaluation, prerequisite matching, and school selection for top financial engineering programs.
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Claude AI](https://img.shields.io/badge/Claude-AI%20Powered-orange.svg)
 
 ---
 
@@ -16,9 +17,9 @@ Every year, 15,000+ students apply to Master of Financial Engineering (MFE) prog
 - **"Which schools should I apply to?"** — No data-driven reach/target/safety classification
 - **"When are the deadlines?"** — Scattered across program websites, different round structures
 
-Consulting services charge **$4,500-10,000 per school**. QuantNet profile evaluations rely on volunteer responses with multi-day turnaround. **No AI or automated tool exists for MFE applicants.**
+Consulting services charge **$4,500-10,000 per school**. QuantNet profile evaluations rely on volunteer responses with multi-day turnaround.
 
-QuantPath changes that.
+QuantPath changes that — and now with **Claude AI integration**, you get a full expert advisory report in minutes.
 
 ## Features
 
@@ -145,35 +146,57 @@ $ quantpath gaps --profile my_profile.yaml
 
 ## Quick Start
 
+### Option A — AI-Powered (Recommended)
+
+Drop your resume or transcript as plain text. Claude parses it automatically and generates a full strategy report.
+
 ```bash
-# Install from source
 git clone https://github.com/MasterAgentAI/QuantPath.git
 cd QuantPath
-pip install -e .
+pip install -e . anthropic
 
-# Create your profile (copy and edit the example)
+export ANTHROPIC_API_KEY=your_key_here   # get at console.anthropic.com
+
+# Parse your resume/transcript → profile YAML
+python tools/parse_profile.py --output my_profile.yaml
+# (paste your resume text, press Ctrl+D when done)
+
+# Generate full AI advisory report
+python tools/advisor.py --profile my_profile.yaml --save report.md
+```
+
+The advisor report covers:
+- Competitive assessment across all 5 dimensions
+- Priority-ranked gaps with specific fix actions
+- Personalized reach/target/safety school list with rationale
+- 90-day action plan
+- SOP strategy and differentiators
+
+### Option B — Claude Code Integration
+
+If you use [Claude Code](https://claude.ai/code), this repo ships with a `CLAUDE.md` that turns Claude into a full MFE advisor. Just open this repo in Claude Code and say:
+
+> "Here is my resume: [paste]. Analyze my profile and tell me which MFE programs I should apply to."
+
+Claude will automatically parse your profile, run all evaluations, and give personalized advice — no YAML editing required.
+
+### Option C — Manual CLI
+
+```bash
+git clone https://github.com/MasterAgentAI/QuantPath.git
+cd QuantPath && pip install -e .
+
+# Create your profile
 cp examples/sample_profile.yaml my_profile.yaml
+# Edit my_profile.yaml with your info
 
-# Run evaluation
+# Run the full pipeline
 quantpath evaluate --profile my_profile.yaml
-
-# Compare programs
-quantpath compare --programs cmu-mscf,baruch-mfe,berkeley-mfe
-
-# Analyze gaps
-quantpath gaps --profile my_profile.yaml
-
-# Check all programs
-quantpath programs
-
-# Match prerequisites
-quantpath match --profile my_profile.yaml
-
-# Check test requirements
-quantpath tests --profile my_profile.yaml
-
-# Generate timeline
+quantpath gaps     --profile my_profile.yaml
+quantpath list     --profile my_profile.yaml
+quantpath roi
 quantpath timeline
+quantpath programs
 ```
 
 ## Profile YAML Format
@@ -312,6 +335,57 @@ The most critical dimension. Top programs (Baruch, Princeton, CMU) require stron
 | - | MSMF | USC | 25 | - | - |
 | - | MMF | U Toronto | 30 | - | - |
 
+## AI Tools
+
+### `tools/parse_profile.py` — Resume/Transcript Parser
+
+Converts unstructured text (resume paste, transcript copy) into a valid QuantPath profile YAML using Claude.
+
+```bash
+# From a file
+python tools/parse_profile.py --input resume.txt --output my_profile.yaml
+
+# From stdin (paste, then Ctrl+D)
+python tools/parse_profile.py --output my_profile.yaml
+
+# Combine resume + transcript
+cat resume.txt transcript.txt | python tools/parse_profile.py --output my_profile.yaml
+```
+
+Supports all grade formats: US letter (A/B+), percentages (90%), Chinese (优/良), Indian CGPA (8.5/10), UK classifications (First/2:1).
+
+### `tools/advisor.py` — AI Strategy Advisor
+
+Runs the complete QuantPath pipeline and streams an expert advisory report from Claude.
+
+```bash
+python tools/advisor.py --profile my_profile.yaml
+python tools/advisor.py --profile my_profile.yaml --save strategy_report.md
+```
+
+**Report sections:**
+- Executive Summary
+- Profile Scorecard (dimension-by-dimension analysis)
+- Top 3 Strengths
+- Critical Gaps (priority-ordered with specific fixes)
+- Recommended School List (Reach/Target/Safety with rationale)
+- Immediate Action Plan (next 90 days)
+- SOP Strategy (themes, narrative arc, differentiators)
+- Red Flags to Address
+
+### Claude Code Integration (`CLAUDE.md`)
+
+Open this repo in Claude Code. The `CLAUDE.md` file gives Claude a complete understanding of the tool, all commands, score interpretation, program database, and advisory patterns.
+
+You can then have a natural conversation:
+
+> "Analyze my profile" → Claude runs the full pipeline and explains results
+> "What courses should I take this semester?" → Claude checks gaps + optimizer
+> "Compare Baruch and CMU for me" → Claude runs comparison with context
+> "Help me write my SOP" → Claude coaches based on your specific profile
+
+---
+
 ## Contributing
 
 We welcome contributions! The most impactful ways to help:
@@ -336,9 +410,12 @@ We welcome contributions! The most impactful ways to help:
 - [x] Interview question bank (52 questions, 7 categories)
 - [x] Streamlit web dashboard
 - [x] 28 programs database (QuantNet 2026 rankings)
-- [ ] Course optimizer (fill gaps optimally)
-- [ ] AI essay coach (Claude API)
-- [ ] University course databases (auto-map courses)
+- [x] **AI resume/transcript parser** (`tools/parse_profile.py`)
+- [x] **AI strategy advisor** (`tools/advisor.py`)
+- [x] **Claude Code integration** (`CLAUDE.md`)
+- [ ] University course databases (auto-map courses from 50+ schools)
+- [ ] AI essay coach with SOP draft generation
+- [ ] Web frontend with PDF upload
 
 ## License
 
