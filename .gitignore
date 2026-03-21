@@ -14,3 +14,7 @@ venv/
 htmlcov/
 .ruff_cache/
 *.DS_Store
+
+# Personal profiles — keep local only
+profiles/
+*.yaml.local
