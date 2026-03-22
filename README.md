@@ -136,10 +136,10 @@ $ quantpath programs
 ```
 
 ### Program Comparison
-Compare programs side-by-side on key metrics.
+Compare programs side-by-side on key metrics. Add `--profile` to see your personalized P(Admit) for each.
 
 ```
-$ quantpath compare --programs cmu-mscf,baruch-mfe,berkeley-mfe
+$ quantpath compare --programs cmu-mscf,baruch-mfe,berkeley-mfe --profile my_profile.yaml
 
   Attribute          CMU MSCF        Baruch MFE       Berkeley MFE
   University         Carnegie Mellon  Baruch/CUNY      UC Berkeley
@@ -149,6 +149,8 @@ $ quantpath compare --programs cmu-mscf,baruch-mfe,berkeley-mfe
   GRE Required       Yes              No               Yes
   Application Fee    $125             $75              $275
   ...
+  P(Admit) *         21% [14%-30%]   5% [1%-25%]      19% [6%-45%]
+  * P(Admit) for Wei Zhang (GPA 3.74)
 ```
 
 ### Gap Analysis
@@ -165,6 +167,44 @@ $ quantpath gaps --profile my_profile.yaml
   Finance/Econ          finance     5.8/10   Medium    Add Derivatives or Risk Management course
 
   Summary:  1 Critical  3 High  1 Medium  (5 total gaps)
+```
+
+### Portfolio Optimizer
+Greedy marginal-value selection maximizing expected admissions under budget and school-count constraints.
+
+```
+$ quantpath portfolio --profile my_profile.yaml --n-schools 8 --budget 1500
+
+  Category  Program          P(Admit)  Fit   Fee     Exp. Contrib.
+  ──────────────────────────────────────────────────────────────────
+  Reach     CMU MSCF         21%       75.0  $125    +0.21
+  Reach     Berkeley MFE     19%       78.0  $275    +0.19
+  Target    UIUC MSFE        57%       87.0  $70     +0.57
+  Target    JHU MFM          55%       86.0  $80     +0.55
+  Target    UWash CFRM       65%       88.0  $85     +0.65
+  Safety    Rutgers MQF      85%       92.0  $70     +0.85
+  Safety    BU MSMF          82%       92.0  $80     +0.82
+
+  Expected admits: 3.84 schools
+  Total fees: $785
+```
+
+### What-If Analysis
+See how P(admit) changes across all programs under hypothetical GPA/GRE improvements.
+
+```
+$ quantpath whatif --profile my_profile.yaml --gpa 3.95 --gre 170
+
+  Program          P(now)  P(hyp)  Delta  Tier Change
+  ─────────────────────────────────────────────────────
+  NC State MFM     38%     53%     +15%   reach → target
+  USC MSMF         29%     40%     +11%   reach → target
+  UWash CFRM       65%     76%     +10%   target → safety
+  CMU MSCF         21%     29%      +8%
+  Baruch MFE        5%      6%      +1%
+  ...
+
+  3 program(s) would change tier.
 ```
 
 ## Quick Start
@@ -428,7 +468,7 @@ We welcome contributions! The most impactful ways to help:
 - [x] CLI interface
 - [x] Program comparison (`compare`)
 - [x] Gap analysis with recommendations (`gaps`)
-- [x] Unit test suite (173 tests)
+- [x] Unit test suite (465 tests)
 - [x] GitHub Actions CI
 - [x] Interview question bank (52 questions, 7 categories)
 - [x] Streamlit web dashboard
@@ -436,6 +476,10 @@ We welcome contributions! The most impactful ways to help:
 - [x] **AI resume/transcript parser** (`tools/parse_profile.py`)
 - [x] **AI strategy advisor** (`tools/advisor.py`)
 - [x] **Claude Code integration** (`CLAUDE.md`)
+- [x] **LR admission model** — bias-corrected P(admit) per program with 95% CI
+- [x] **Portfolio optimizer** — maximize expected admissions under budget constraints
+- [x] **What-if analysis** — see how GPA/GRE changes affect P(admit) across all programs
+- [x] **Profile-aware adjustments** — international status and internship experience factor into predictions
 - [ ] University course databases (auto-map courses from 50+ schools)
 - [ ] AI essay coach with SOP draft generation
 - [ ] Web frontend with PDF upload

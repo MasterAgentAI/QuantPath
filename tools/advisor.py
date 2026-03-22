@@ -22,14 +22,13 @@ Requirements:
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
-import os
-
-import anthropic
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import anthropic  # noqa: E402
 
 
 def _make_client() -> anthropic.Anthropic:
@@ -70,16 +69,6 @@ def _make_client() -> anthropic.Anthropic:
     raise RuntimeError(
         "No Anthropic credentials found. Set ANTHROPIC_API_KEY or ANTHROPIC_OAUTH_TOKEN."
     )
-
-from core.course_optimizer import optimize_courses
-from core.data_loader import load_all_programs, load_profile
-from core.gap_advisor import analyze_gaps
-from core.list_builder import build_school_list
-from core.prerequisite_matcher import match_prerequisites
-from core.profile_evaluator import evaluate as evaluate_profile
-from core.roi_calculator import calculate_roi
-from core.school_ranker import rank_schools
-from core.timeline_generator import generate_timeline
 
 # ---------------------------------------------------------------------------
 # System prompt
@@ -148,12 +137,20 @@ Anything in their profile that needs proactive explanation in the application (g
 
 def _build_context(profile_path: str) -> str:
     """Run the full QuantPath pipeline and return a structured context string."""
+    from core.course_optimizer import optimize_courses
+    from core.data_loader import load_all_programs, load_profile
+    from core.gap_advisor import analyze_gaps
+    from core.list_builder import build_school_list
+    from core.prerequisite_matcher import match_prerequisites
+    from core.profile_evaluator import evaluate as evaluate_profile
+    from core.roi_calculator import calculate_roi
+    from core.timeline_generator import generate_timeline
+
     profile = load_profile(profile_path)
     programs = load_all_programs()
 
     # Core pipeline
     result = evaluate_profile(profile)
-    rankings = rank_schools(profile, programs, result)
     gaps = analyze_gaps(result.gaps) if result.gaps else []
     course_recs = optimize_courses(profile, programs, max_courses=6)
     school_list = build_school_list(profile, programs, result)
@@ -230,7 +227,7 @@ def _build_context(profile_path: str) -> str:
         lines.append(f"  {label}: {score:.2f}/10  {bar}")
 
     if result.strengths:
-        lines.append(f"\nStrengths (score >= 9.0):")
+        lines.append("\nStrengths (score >= 9.0):")
         for s in result.strengths:
             lines.append(f"  + {s['factor']:30s} ({s['dimension']}) = {s['score']:.1f}")
 
@@ -244,7 +241,7 @@ def _build_context(profile_path: str) -> str:
 
     # ---- Course recommendations ----
     if course_recs:
-        lines.append(f"\n=== COURSE OPTIMIZATION RECOMMENDATIONS ===")
+        lines.append("\n=== COURSE OPTIMIZATION RECOMMENDATIONS ===")
         for i, rec in enumerate(course_recs, 1):
             lines.append(
                 f"  {i}. {rec.category:25s} impact={rec.impact_score:.3f}"

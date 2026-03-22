@@ -356,6 +356,8 @@ def cmd_programs(args: argparse.Namespace) -> None:
 
 def cmd_compare(args: argparse.Namespace) -> None:
     """Compare 2-3 programs side-by-side."""
+    from core.lr_predictor import predict_prob_full
+
     program_ids = [pid.strip() for pid in args.programs.split(",")]
 
     if len(program_ids) < 2 or len(program_ids) > 3:
@@ -371,6 +373,12 @@ def cmd_compare(args: argparse.Namespace) -> None:
             console.print(f"[red]Program '{pid}' not found.[/red]")
             return
         selected.append(programs_by_id[pid])
+
+    # Optional profile-specific P(admit) row
+    profile = None
+    profile_path = getattr(args, "profile", None)
+    if profile_path:
+        profile = load_profile(profile_path)
 
     console.print()
     console.print(
@@ -487,7 +495,28 @@ def cmd_compare(args: argparse.Namespace) -> None:
         *[f"#{p.quantnet_ranking}" if p.quantnet_ranking else "N/R" for p in selected],
     )
 
+    # P(Admit) — only when --profile is provided
+    if profile is not None:
+        gre_quant = profile.test_scores.gre_quant
+        prob_cells = []
+        for p in selected:
+            lr_pred = predict_prob_full(p.id, profile.gpa, gre_quant, profile)
+            if lr_pred is not None:
+                prob = lr_pred.prob
+                pcolor = "green" if prob >= 0.6 else "yellow" if prob >= 0.35 else "red"
+                ci = (
+                    f" [{lr_pred.prob_low:.0%}-{lr_pred.prob_high:.0%}]"
+                    if lr_pred.prob_low is not None and lr_pred.prob_high is not None
+                    else ""
+                )
+                prob_cells.append(f"[{pcolor}]{lr_pred.prob:.0%}[/{pcolor}]{ci}")
+            else:
+                prob_cells.append("[dim]N/A[/dim]")
+        table.add_row("P(Admit) *", *prob_cells)
+
     console.print(table)
+    if profile is not None:
+        console.print(f"  [dim]* P(Admit) for {profile.name} (GPA {profile.gpa})[/dim]")
     console.print()
 
 
@@ -1075,6 +1104,42 @@ def cmd_stats(args: argparse.Namespace) -> None:
         console.print(gpa_table)
         console.print()
 
+    # LR model quality summary
+    from core.lr_predictor import get_model_stats
+    from core.lr_predictor import has_model as _has_model
+
+    model_programs = [pid for pid in summary["programs"] if _has_model(pid)]
+    if model_programs:
+        console.print(Panel("LR Admission Model Quality", border_style="cyan"))
+        lr_table = Table(border_style="cyan")
+        lr_table.add_column("Program", style="bold")
+        lr_table.add_column("AUC", justify="right")
+        lr_table.add_column("Samples", justify="right")
+        lr_table.add_column("Bias Corrected")
+        lr_table.add_column("Features")
+
+        for pid in sorted(model_programs):
+            stats = get_model_stats(pid)
+            if stats is None:
+                continue
+            auc = stats.get("auc", 0)
+            auc_color = "green" if auc >= 0.65 else "yellow" if auc >= 0.55 else "red"
+            bc = "Yes" if stats.get("real_accept_rate") is not None else "No"
+            bc_color = "green" if bc == "Yes" else "dim"
+            lr_table.add_row(
+                pid,
+                f"[{auc_color}]{auc:.3f}[/{auc_color}]",
+                str(stats.get("n_total", 0)),
+                f"[{bc_color}]{bc}[/{bc_color}]",
+                ", ".join(stats.get("features", [])),
+            )
+
+        console.print(lr_table)
+        no_model = [pid for pid in summary["programs"] if not _has_model(pid)]
+        if no_model:
+            console.print(f"  [dim]No LR model: {', '.join(sorted(no_model))}[/dim]")
+        console.print()
+
 
 def cmd_calibrate(args: argparse.Namespace) -> None:
     """Calibrate scoring model using real admission data."""
@@ -1231,6 +1296,82 @@ def cmd_portfolio(args: argparse.Namespace) -> None:
     console.print()
 
 
+def cmd_whatif(args: argparse.Namespace) -> None:
+    """Show how P(admit) changes under hypothetical GPA/GRE improvements."""
+    from core.lr_predictor import has_model, predict_prob_full
+
+    profile = load_profile(args.profile)
+    gpa_now = profile.gpa
+    gre_now = profile.test_scores.gre_quant
+
+    gpa_hyp = getattr(args, "gpa", None) or gpa_now
+    gre_hyp = getattr(args, "gre", None) or gre_now
+
+    programs = load_all_programs()
+    prog_ids = [p.id for p in programs if has_model(p.id)]
+
+    console.print()
+    console.print(
+        Panel(
+            f"[bold]What-If Analysis[/bold] for {profile.name}\n"
+            f"Current: GPA {gpa_now}, GRE {gre_now or 'N/A'}  →  "
+            f"Hypothetical: GPA {gpa_hyp}, GRE {gre_hyp or 'N/A'}",
+            border_style="cyan",
+        )
+    )
+
+    table = Table(border_style="cyan", show_lines=True)
+    table.add_column("Program", style="bold", min_width=22)
+    table.add_column("P(now)", justify="right", width=8)
+    table.add_column("P(hyp)", justify="right", width=8)
+    table.add_column("Delta", justify="right", width=8)
+    table.add_column("Tier Change", width=14)
+
+    def _tier(p: float) -> str:
+        if p >= 0.70:
+            return "safety"
+        if p >= 0.40:
+            return "target"
+        return "reach"
+
+    rows = []
+    for pid in prog_ids:
+        p_now = predict_prob_full(pid, gpa_now, gre_now, profile)
+        p_hyp = predict_prob_full(pid, gpa_hyp, gre_hyp, profile)
+        if p_now is None or p_hyp is None:
+            continue
+        delta = p_hyp.prob - p_now.prob
+        tier_now = _tier(p_now.prob)
+        tier_hyp = _tier(p_hyp.prob)
+        rows.append((pid, p_now.prob, p_hyp.prob, delta, tier_now, tier_hyp))
+
+    rows.sort(key=lambda r: -r[3])  # sort by delta descending
+
+    for pid, p_now, p_hyp, delta, tier_now, tier_hyp in rows:
+        prog = next((p for p in programs if p.id == pid), None)
+        name = prog.name if prog else pid
+        now_color = "green" if p_now >= 0.6 else "yellow" if p_now >= 0.35 else "red"
+        hyp_color = "green" if p_hyp >= 0.6 else "yellow" if p_hyp >= 0.35 else "red"
+        d_color = "green" if delta > 0.01 else "dim" if abs(delta) <= 0.01 else "red"
+        tier_str = ""
+        if tier_now != tier_hyp:
+            tier_str = f"[green]{tier_now} → {tier_hyp}[/green]"
+        table.add_row(
+            name,
+            f"[{now_color}]{p_now:.0%}[/{now_color}]",
+            f"[{hyp_color}]{p_hyp:.0%}[/{hyp_color}]",
+            f"[{d_color}]{delta:+.0%}[/{d_color}]",
+            tier_str,
+        )
+
+    console.print(table)
+
+    upgrades = sum(1 for *_, tn, th in rows if tn != th)
+    if upgrades:
+        console.print(f"\n  [green]{upgrades} program(s) would change tier.[/green]")
+    console.print()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="quantpath",
@@ -1273,6 +1414,9 @@ def main() -> None:
         "--programs",
         required=True,
         help="Comma-separated program IDs (e.g., cmu-mscf,baruch-mfe,berkeley-mfe)",
+    )
+    p_compare.add_argument(
+        "--profile", "-p", help="Profile YAML — adds a personalized P(Admit) row"
     )
 
     # interview
@@ -1375,6 +1519,18 @@ def main() -> None:
         help="Max total application fees in USD (default: $2,000)",
     )
 
+    # whatif
+    p_whatif = subparsers.add_parser(
+        "whatif", help="Show how P(admit) changes with hypothetical GPA/GRE"
+    )
+    p_whatif.add_argument("--profile", "-p", required=True, help="Path to profile YAML")
+    p_whatif.add_argument(
+        "--gpa", type=float, help="Hypothetical GPA (default: current)"
+    )
+    p_whatif.add_argument(
+        "--gre", type=int, help="Hypothetical GRE Quant (default: current)"
+    )
+
     args = parser.parse_args()
 
     if args.command is None:
@@ -1396,6 +1552,7 @@ def main() -> None:
         "optimize": cmd_optimize,
         "list": cmd_list,
         "portfolio": cmd_portfolio,
+        "whatif": cmd_whatif,
     }
     commands[args.command](args)
 
