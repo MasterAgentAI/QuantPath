@@ -1,138 +1,3503 @@
 [
-  {"name": "Karan Jeswani", "url": "https://www.linkedin.com/in/jeswanikaran/", "program": "baruch-mfe", "headline": "Baruch MFE", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Boyu Wang", "url": "https://www.linkedin.com/in/boyu-dirk-wang/", "program": "baruch-mfe", "headline": "Baruch MFE - AQR Capital Management", "undergrad": null, "employer": "AQR Capital Management", "grad_year": null},
-  {"name": "Wei Dai", "url": "https://www.linkedin.com/in/weidai0825/", "program": "baruch-mfe", "headline": "M.S. in Financial Engineering at Baruch College", "undergrad": null, "employer": "Genwealth Capital", "grad_year": null},
-  {"name": "Padamati Sri Sai", "url": "https://www.linkedin.com/in/padamatisrisai/", "program": "baruch-mfe", "headline": "MS in Financial Engineering at Baruch College", "undergrad": "Indian Statistical Institute, Kolkata; IIM Indore", "employer": null, "grad_year": null},
-  {"name": "Yusu Kong", "url": "https://www.linkedin.com/in/yusu-kong-baruchmfe/", "program": "baruch-mfe", "headline": "M.S. in Financial Engineering Candidate at Baruch College, CUNY", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Xingyu (Tony) Zhu", "url": "https://www.linkedin.com/in/zhuxingyu88/", "program": "baruch-mfe", "headline": "M.S in Financial Engineering Candidate at Baruch College, CUNY", "undergrad": null, "employer": "Verition Fund Management LLC", "grad_year": null},
-  {"name": "Huihan Yang", "url": "https://www.linkedin.com/in/huihanyang/", "program": "baruch-mfe", "headline": "Baruch MFE - Qube Research & Technologies", "undergrad": null, "employer": "Qube Research & Technologies", "grad_year": null},
-  {"name": "Zijun Li", "url": "https://www.linkedin.com/in/zijun-li-baruch/", "program": "baruch-mfe", "headline": "Baruch College MS Financial Engineering", "undergrad": null, "employer": "Cubist Systematic Strategies", "grad_year": null},
-  {"name": "Boyu Yang", "url": "https://www.linkedin.com/in/bradleyboyuyang/", "program": "baruch-mfe", "headline": "Baruch MFE 2022-2023", "undergrad": null, "employer": null, "grad_year": "2023"},
-  {"name": "S. David Wu", "url": "https://www.linkedin.com/in/s-david-wu-2113806/", "program": "baruch-mfe", "headline": "Baruch College MFE Faculty/Admin", "undergrad": null, "employer": "Baruch College", "grad_year": null},
-  {"name": "Zhen Gao", "url": "https://www.linkedin.com/in/-zhen-gao/", "program": "baruch-mfe", "headline": "Baruch Master of Financial Engineering", "undergrad": null, "employer": "Point72", "grad_year": null},
-  {"name": "Yuanting Li", "url": "https://www.linkedin.com/in/yuantingli/", "program": "baruch-mfe", "headline": "Baruch MFE", "undergrad": null, "employer": null, "grad_year": "2023"},
-  {"name": "Suri Sun", "url": "https://www.linkedin.com/in/suri-sun/", "program": "baruch-mfe", "headline": "Financial Engineering and Data Science - Equity Delta One Trader", "undergrad": null, "employer": "Bank of America", "grad_year": null},
-  {"name": "Ming Fu", "url": "https://www.linkedin.com/in/ming-fu/", "program": "baruch-mfe", "headline": "Quant Trader - M.S. Financial Engineering at Baruch", "undergrad": null, "employer": "Virtu Financial", "grad_year": null},
-  {"name": "Jianxue Xiong", "url": "https://www.linkedin.com/in/jianxuexiong/", "program": "baruch-mfe", "headline": "MS in Financial Engineering at Baruch College, CUNY", "undergrad": null, "employer": "Brown Brothers Harriman", "grad_year": null},
-  {"name": "Bruce Weber", "url": "https://www.linkedin.com/in/weberbruce/", "program": "baruch-mfe", "headline": "Baruch MFE Faculty/Admin", "undergrad": null, "employer": "Baruch College", "grad_year": null},
-  {"name": "Nicholas (Nick) Serkes", "url": "https://www.linkedin.com/in/nicholas-serkes/", "program": "baruch-mfe", "headline": "Masters in Financial Engineering at Baruch", "undergrad": "Baylor University", "employer": "Balyasny Asset Management", "grad_year": null},
-  {"name": "Linting Wang", "url": "https://www.linkedin.com/in/linting-wang/", "program": "baruch-mfe", "headline": "Baruch MFE Fall 2026 Cohort", "undergrad": null, "employer": null, "grad_year": "2026"},
-  {"name": "Zilong Cheng", "url": "https://www.linkedin.com/in/zilong-cheng/", "program": "baruch-mfe", "headline": "Baruch MFE December 2019", "undergrad": null, "employer": "Point72", "grad_year": "2019"},
-  {"name": "Robert Simon", "url": "https://www.linkedin.com/in/robert-simon-060990119", "program": "cmu-mscf", "headline": "Executive Director - MS in Computational Finance at CMU", "undergrad": null, "employer": "Carnegie Mellon University", "grad_year": null},
-  {"name": "Naitik Lapsiya", "url": "https://www.linkedin.com/in/naitik-lapsiya/", "program": "cmu-mscf", "headline": "Quant Strat at Deutsche Bank", "undergrad": null, "employer": "Deutsche Bank", "grad_year": null},
-  {"name": "Mehul Salhotra", "url": "https://www.linkedin.com/in/mehulsalhotra", "program": "cmu-mscf", "headline": "CMU MSCF (MFE) Graduate", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Xuci (Sabrina) Mei", "url": "https://www.linkedin.com/in/sabrina-mei/", "program": "cmu-mscf", "headline": "Equity Derivatives Trading Strategist at BofA | CMU MSCF, Stats & ML", "undergrad": null, "employer": "Bank of America", "grad_year": null},
-  {"name": "Oscar Ma", "url": "https://www.linkedin.com/in/oscarmama/", "program": "cmu-mscf", "headline": "QT @ VALK | CMU MSCF 2025 | Swarthmore 2023", "undergrad": "Swarthmore College", "employer": "Mako Trading", "grad_year": "2025"},
-  {"name": "Yihan Zhang", "url": "https://www.linkedin.com/in/yihan-zhang-77b98a248/", "program": "cmu-mscf", "headline": "Quant @ Goldman Sachs | MSCF '24 CMU", "undergrad": null, "employer": "Goldman Sachs", "grad_year": "2024"},
-  {"name": "Helena Jiang", "url": "https://www.linkedin.com/in/helenajiang/", "program": "cmu-mscf", "headline": "MS in Computational Finance (MSCF) @ CMU '26 | Math & Econ @ Cornell '24", "undergrad": "Cornell University", "employer": "Optiver", "grad_year": "2026"},
-  {"name": "Bryce Earner", "url": "https://www.linkedin.com/in/bryceearner/", "program": "cmu-mscf", "headline": "Exotics Trader @ UBS | MSCF @ CMU", "undergrad": null, "employer": "UBS", "grad_year": null},
-  {"name": "Monica Shunhua Guo", "url": "https://www.linkedin.com/in/monica-shunhua-guo/", "program": "cmu-mscf", "headline": "Macro trader | CMU MSCF 2021-2022", "undergrad": "HKU", "employer": "Taula Capital", "grad_year": "2022"},
-  {"name": "Thomas Horstkamp", "url": "https://www.linkedin.com/in/thomashorstkamp/", "program": "cmu-mscf", "headline": "Quant Strategist Intern at Mercuria Energy | CMU MSCF '26 | CMU Math MS '24", "undergrad": "Carnegie Mellon University (Math MS)", "employer": "Mercuria Energy", "grad_year": "2026"},
-  {"name": "Aayush Jain", "url": "https://www.linkedin.com/in/aayush-jain-406315202/", "program": "cmu-mscf", "headline": "Goldman Sachs | CMU", "undergrad": null, "employer": "Goldman Sachs", "grad_year": null},
-  {"name": "Caroline Liu", "url": "https://www.linkedin.com/in/carolinemliu/", "program": "cmu-mscf", "headline": "Seeking Quant Internship | CMU MSCF 2027 | Wellesley Math & Econ 2024", "undergrad": "Wellesley College", "employer": null, "grad_year": "2027"},
-  {"name": "Young Wang", "url": "https://www.linkedin.com/in/young-wang-64779223/", "program": "cmu-mscf", "headline": "Master in Computational Finance (MSCF) Student at CMU Tepper", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Shijia (Scarlett) Li", "url": "https://www.linkedin.com/in/shijia-scarlett-li-15900814a/", "program": "cmu-mscf", "headline": "MSCF at CMU | Chicago Trading Company", "undergrad": null, "employer": "Chicago Trading Company", "grad_year": null},
-  {"name": "Spoorthy Malgireddy", "url": "https://www.linkedin.com/in/spoorthymalgireddy/", "program": "cmu-mscf", "headline": "CMU Tepper - BlackRock", "undergrad": null, "employer": "BlackRock", "grad_year": null},
-  {"name": "Yirun Wang", "url": "https://www.linkedin.com/in/yirunwangaaron/", "program": "cmu-mscf", "headline": "MS in Computational Finance at CMU | JPMorganChase", "undergrad": null, "employer": "JPMorganChase", "grad_year": null},
-  {"name": "Kevin Liu", "url": "https://www.linkedin.com/in/kevinliu040914/", "program": "cmu-mscf", "headline": "BSCF @ Carnegie Mellon University", "undergrad": "Carnegie Mellon University (undergrad)", "employer": null, "grad_year": null},
-  {"name": "Kaiqi Wu", "url": "https://www.linkedin.com/in/kaiqi-wu/", "program": "columbia-msfe", "headline": "Quant at Yield Book | Columbia MSFE", "undergrad": null, "employer": "LSEG (Yield Book)", "grad_year": null},
-  {"name": "Wanxuan (Caroline) Lin", "url": "https://www.linkedin.com/in/wxlin-caroline/", "program": "columbia-msfe", "headline": "Columbia MS in Financial Engineering | NYU B.A. Econ, CS Double Major", "undergrad": "NYU", "employer": null, "grad_year": null},
-  {"name": "Yachun Zhang", "url": "https://www.linkedin.com/in/yachun-zhang-856623139/", "program": "columbia-msfe", "headline": "Columbia Financial Engineering graduate | Barclays", "undergrad": null, "employer": "Barclays Investment Bank", "grad_year": null},
-  {"name": "Pragnya Akella", "url": "https://www.linkedin.com/in/pragnya-akella/", "program": "princeton-mfin", "headline": "Princeton MFin 2026 | JPMC | IIT Madras", "undergrad": "IIT Madras", "employer": "JP Morgan", "grad_year": "2026"},
-  {"name": "Jenny Jiang", "url": "https://www.linkedin.com/in/jenny-jiang-yuchen/", "program": "princeton-mfin", "headline": "Rates Trading Associate at BNP Paribas | Princeton MFin '24 | UC Berkeley '22", "undergrad": "UC Berkeley", "employer": "BNP Paribas", "grad_year": "2024"},
-  {"name": "Junhan Gu", "url": "https://www.linkedin.com/in/junhan-gu-855030158/", "program": "princeton-mfin", "headline": "Quantitative Researcher at Ergoteles Capital | Princeton BCF Master in Finance", "undergrad": null, "employer": "Ergoteles Capital", "grad_year": null},
-  {"name": "Yuchen Yu", "url": "https://www.linkedin.com/in/yuchen-yu/", "program": "princeton-mfin", "headline": "Princeton MFin '26 | Millennium QR Intern '25", "undergrad": null, "employer": "Millennium (intern)", "grad_year": "2026"},
-  {"name": "Hanfei Mao", "url": "https://www.linkedin.com/in/hanfei-mao-57695555/", "program": "princeton-mfin", "headline": "Princeton Master in Finance | Hedge Fund", "undergrad": null, "employer": "Hedge Fund", "grad_year": null},
-  {"name": "Ran Lei", "url": "https://www.linkedin.com/in/ran-lei-06547b1bb/", "program": "princeton-mfin", "headline": "Princeton MFin student | Peking University Guanghua", "undergrad": "Peking University (Guanghua)", "employer": null, "grad_year": null},
-  {"name": "Lucrezia Forcellini", "url": "https://www.linkedin.com/in/lucrezia-forcellini/", "program": "princeton-mfin", "headline": "Princeton MFin '25", "undergrad": null, "employer": null, "grad_year": "2025"},
-  {"name": "Daniel Zhuang", "url": "https://www.linkedin.com/in/danielmzhuang/", "program": "princeton-mfin", "headline": "Princeton MFin '27 | University of Toronto", "undergrad": "University of Toronto", "employer": null, "grad_year": "2027"},
-  {"name": "Anran (Judy) Xie", "url": "https://cn.linkedin.com/in/xie-anran-judy", "program": "princeton-mfin", "headline": "Princeton Master in Finance Student", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Rushil Patel", "url": "https://www.linkedin.com/in/rushilmpatel27/", "program": "mit-mfin", "headline": "MFin @ MIT Sloan", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Francesco Nardinocchi", "url": "https://www.linkedin.com/in/francesconardinocchi/", "program": "mit-mfin", "headline": "MIT MFin '26 | Bocconi | Wharton", "undergrad": "Bocconi University", "employer": null, "grad_year": "2026"},
-  {"name": "Qianqian Wang", "url": "https://uk.linkedin.com/in/qianqian-wang-9a4068197", "program": "mit-mfin", "headline": "MIT MFin 24", "undergrad": null, "employer": null, "grad_year": "2024"},
-  {"name": "Hanqi Zhang", "url": "https://www.linkedin.com/in/hanqi-zhang-a181941b6/", "program": "mit-mfin", "headline": "MIT MFin | HKU BBA(Acc&Fin)", "undergrad": "HKU", "employer": "Bain & Company", "grad_year": null},
-  {"name": "Tianyue Wang", "url": "https://www.linkedin.com/in/tianyue-wang-53253a82/", "program": "mit-mfin", "headline": "MIT MFin | Master of Finance at MIT Sloan", "undergrad": null, "employer": "TD", "grad_year": null},
-  {"name": "Filippo Caretti", "url": "https://www.linkedin.com/in/filippocaretti/", "program": "mit-mfin", "headline": "MIT MFin 2025", "undergrad": "Bocconi University", "employer": null, "grad_year": "2025"},
-  {"name": "Frederic Lucien", "url": "https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-lucien-31479a172/", "program": "berkeley-mfe", "headline": "Financial Engineer at SG Americas | UC Berkeley MFE", "undergrad": "ENSAE Paris", "employer": "Societe Generale", "grad_year": null},
-  {"name": "Fangzhou He", "url": "https://www.linkedin.com/in/fangzhou-john-he/", "program": "berkeley-mfe", "headline": "Master of Financial Engineering at UC Berkeley | Morgan Stanley", "undergrad": null, "employer": "Morgan Stanley", "grad_year": null},
-  {"name": "Kumar Yashaswi", "url": "https://uk.linkedin.com/in/kumar-yashaswi", "program": "berkeley-mfe", "headline": "UC Berkeley MFE | Goldman Sachs", "undergrad": null, "employer": "Goldman Sachs", "grad_year": null},
-  {"name": "Sudhansh Dua", "url": "https://www.linkedin.com/in/sudhansh-dua/", "program": "berkeley-mfe", "headline": "Fixed Income (GFICC) @ JPMAM | UC Berkeley MFE | LSE | IIT", "undergrad": "LSE; IIT", "employer": "JPMorgan Asset Mgmt", "grad_year": null},
-  {"name": "Samy Kobbite", "url": "https://uk.linkedin.com/in/samykobbite", "program": "berkeley-mfe", "headline": "UC Berkeley MFE 25", "undergrad": null, "employer": null, "grad_year": "2025"},
-  {"name": "Vincent Michel", "url": "https://www.linkedin.com/in/michvincent/", "program": "berkeley-mfe", "headline": "Berkeley MFE | TD Securities", "undergrad": null, "employer": "TD Securities", "grad_year": null},
-  {"name": "Matteo Di Venti", "url": "https://www.linkedin.com/in/mdiventi/", "program": "berkeley-mfe", "headline": "Algo Trading Quant Researcher @ UBS | Berkeley Haas MFE '24", "undergrad": null, "employer": "UBS", "grad_year": "2024"},
-  {"name": "Arshdeep Singla", "url": "https://www.linkedin.com/in/arshdeep-singla/", "program": "berkeley-mfe", "headline": "Portfolio Management @ GS | UC Berkeley MFE | D.E. Shaw | JPM | PwC", "undergrad": null, "employer": "Goldman Sachs", "grad_year": null},
-  {"name": "Cecilia Si Yi Wu", "url": "https://www.linkedin.com/in/cecilia-si-yi-wu/", "program": "berkeley-mfe", "headline": "UC Berkeley MFE | Morgan Stanley", "undergrad": null, "employer": "Morgan Stanley", "grad_year": null},
-  {"name": "Yifan Zhang", "url": "https://www.linkedin.com/in/yifan-zhang-94793b178/", "program": "berkeley-mfe", "headline": "Berkeley MFE | TransMarket Group", "undergrad": null, "employer": "TransMarket Group", "grad_year": null},
-  {"name": "Sofiane Bessaoud", "url": "https://www.linkedin.com/in/sofiane-bessaoud/", "program": "berkeley-mfe", "headline": "Quant Researcher at Engineers Gate | Berkeley MFE", "undergrad": null, "employer": "Engineers Gate", "grad_year": null},
-  {"name": "Ayushi Garg", "url": "https://www.linkedin.com/in/ayushi-garg-797928146/", "program": "berkeley-mfe", "headline": "UC Berkeley Haas MFE | Point72", "undergrad": null, "employer": "Point72", "grad_year": null},
-  {"name": "Theo Dillies", "url": "https://www.linkedin.com/in/th%C3%A9o-dillies/", "program": "berkeley-mfe", "headline": "UC Berkeley Haas MFE | AlphaGrep", "undergrad": null, "employer": "AlphaGrep", "grad_year": null},
-  {"name": "Tian (Jacob) Lan", "url": "https://www.linkedin.com/in/tian-jacob-lan-fintechrocks/", "program": "berkeley-mfe", "headline": "UC Berkeley Haas MFE '26", "undergrad": null, "employer": "BlackRock", "grad_year": "2026"},
-  {"name": "Joshua Chis", "url": "https://www.linkedin.com/in/jchismfe/", "program": "berkeley-mfe", "headline": "AI Engineer | MFE @ UC Berkeley 2026", "undergrad": null, "employer": null, "grad_year": "2026"},
-  {"name": "Yimin Z.", "url": "https://www.linkedin.com/in/yzhu-jimmy/", "program": "berkeley-mfe", "headline": "QR@CitSec | UCB MFE 23", "undergrad": "UMich & SJTU", "employer": "Citadel Securities", "grad_year": "2023"},
-  {"name": "Dylan Masters", "url": "https://www.linkedin.com/in/dylan-masters-8896a720b/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2025 Candidate", "undergrad": null, "employer": null, "grad_year": "2025"},
-  {"name": "Yiwen Wu", "url": "https://www.linkedin.com/in/yiwen-wu-oliver/", "program": "uchicago-msfm", "headline": "UChicago MSFM '25 | UMich Honor DS '24", "undergrad": "University of Michigan", "employer": null, "grad_year": "2025"},
-  {"name": "Yiwei Wang", "url": "https://www.linkedin.com/in/yiweiwang625/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2025 Candidate", "undergrad": null, "employer": "Northern Trust", "grad_year": "2025"},
-  {"name": "Hsiao-Chi Chen", "url": "https://www.linkedin.com/in/hsiaochichen2804/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2026 Candidate", "undergrad": null, "employer": null, "grad_year": "2026"},
-  {"name": "Mengjing (Cici) Yang", "url": "https://www.linkedin.com/in/ciciyang/", "program": "uchicago-msfm", "headline": "Quant | UChicago MSFM 2024", "undergrad": null, "employer": null, "grad_year": "2024"},
-  {"name": "Austin Galm", "url": "https://www.linkedin.com/in/agalm/", "program": "uchicago-msfm", "headline": "Quantitative Analyst, Calamos Investments | UChicago MSFM 2025", "undergrad": null, "employer": "Calamos Investments", "grad_year": "2025"},
-  {"name": "Xu Yan", "url": "https://www.linkedin.com/in/xu-yan-347126201/", "program": "uchicago-msfm", "headline": "Data Scientist at Navy Federal Credit Union | UChicago MSFM 23'", "undergrad": null, "employer": "Navy Federal Credit Union", "grad_year": "2023"},
-  {"name": "Jesse Freitag", "url": "https://www.linkedin.com/in/jesse-freitag-bb77b5199/", "program": "uchicago-msfm", "headline": "Incoming Quantitative Model Analyst @ U.S. Bank | UChicago FinMath Alum", "undergrad": null, "employer": "U.S. Bank", "grad_year": null},
-  {"name": "Jae Won Choi", "url": "https://www.linkedin.com/in/jae-won-choi-20623ab3/", "program": "uchicago-msfm", "headline": "UChicago MSFM graduate | BNP Paribas Quant Research & Trading", "undergrad": null, "employer": "BNP Paribas", "grad_year": null},
-  {"name": "Togay Atmaca", "url": "https://www.linkedin.com/in/togay-atmaca/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2025 Candidate | Bank of America", "undergrad": null, "employer": "Bank of America", "grad_year": "2025"},
-  {"name": "Thea Pan", "url": "https://www.linkedin.com/in/thea-pan-a20b5a1b1/", "program": "uchicago-msfm", "headline": "Systematic Trader at JPMC | UChicago MSFM 24'", "undergrad": null, "employer": "JPMorgan Chase", "grad_year": "2024"},
-  {"name": "Stephen Coley", "url": "https://www.linkedin.com/in/stephen-coley/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2025 Candidate | Seeking Quant Trading/Research/DS Roles", "undergrad": null, "employer": null, "grad_year": "2025"},
-  {"name": "Zixin Zhang", "url": "https://www.linkedin.com/in/zixinzhang2000/", "program": "uchicago-msfm", "headline": "Analyst at Goldman Sachs | MSFM at UChicago | BSc FE at CUFE", "undergrad": "CUFE (Central Univ of Finance & Econ)", "employer": "Goldman Sachs", "grad_year": null},
-  {"name": "Aadi Deshpande", "url": "https://www.linkedin.com/in/aadi-deshpande-b13045166/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2025 Candidate", "undergrad": null, "employer": "MGIC", "grad_year": "2025"},
-  {"name": "Lin Fang", "url": "https://www.linkedin.com/in/linnnfang/", "program": "uchicago-msfm", "headline": "UChicago MSFM 2026 Candidate", "undergrad": null, "employer": null, "grad_year": "2026"},
-  {"name": "Kunj Shah", "url": "https://www.linkedin.com/in/kunj-shah-9141931b3/", "program": "uchicago-msfm", "headline": "UChicago MSFM graduate | Tanius Technology", "undergrad": null, "employer": "Tanius Technology", "grad_year": null},
-  {"name": "Xinyi Zhang", "url": "https://www.linkedin.com/in/ariazxy/", "program": "uchicago-msfm", "headline": "Analyst at Goldman Sachs | UChicago MSFM 24' | Unimelb BCom 22'", "undergrad": "University of Melbourne", "employer": "Goldman Sachs", "grad_year": "2024"},
-  {"name": "Rain Condie", "url": "https://www.linkedin.com/in/rain-condie-5149941a0/", "program": "uchicago-msfm", "headline": "UChicago Financial Mathematics Masters | ex-Federal Reserve Bank of New York", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Ruiyang Qin", "url": "https://www.linkedin.com/in/ruiyang-qin-0ab0801a9/", "program": "uchicago-msfm", "headline": "CME Group Intern | UChicago MSFM | HKU BEcon&Fin", "undergrad": "HKU", "employer": "CME Group", "grad_year": null},
-  {"name": "Artem Ezhov", "url": "https://www.linkedin.com/in/artezhov/", "program": "cornell-mfe", "headline": "Fixed Income @ JPMorgan | Cornell MFE'24 | ORIE B.S. @ Cornell", "undergrad": "Cornell University (ORIE B.S.)", "employer": "JPMorgan", "grad_year": "2024"},
-  {"name": "Ananya Mohapatra", "url": "https://www.linkedin.com/in/ananyamohapatra/", "program": "cornell-mfe", "headline": "Master's in Financial Engineering from Cornell | Master's in Economics from BITS Pilani", "undergrad": "BITS Pilani", "employer": null, "grad_year": null},
-  {"name": "Fenghua Dong", "url": "https://www.linkedin.com/in/fenghua-dong-782260248/", "program": "cornell-mfe", "headline": "Model Risk Analyst at GM Financial | Cornell MFE Candidate", "undergrad": null, "employer": "GM Financial", "grad_year": null},
-  {"name": "Samara Silverman", "url": "https://www.linkedin.com/in/samara-silverman/", "program": "cornell-mfe", "headline": "Incoming Model Risk Analyst | Cornell", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Anastasia Tatarenko", "url": "https://www.linkedin.com/in/anastasia-tatarenko-mfe-quant/", "program": "cornell-mfe", "headline": "Cornell Financial Engineering | C2FO", "undergrad": null, "employer": "C2FO", "grad_year": null},
-  {"name": "Charlotte Xu", "url": "https://www.linkedin.com/in/chengruixu2000/", "program": "cornell-mfe", "headline": "Cornell Financial Engineering Manhattan | China Galaxy International", "undergrad": null, "employer": "China Galaxy International", "grad_year": null},
-  {"name": "Pengbo (Stella) Hao", "url": "https://www.linkedin.com/in/pengbo-hao/", "program": "cornell-mfe", "headline": "M.Eng in Financial Engineering at Cornell | UBS", "undergrad": null, "employer": "UBS", "grad_year": null},
-  {"name": "Zhichen Wang", "url": "https://www.linkedin.com/in/zhichen-wang-3a35671a6/", "program": "cornell-mfe", "headline": "Cornell Financial Engineering Manhattan | HSBC", "undergrad": null, "employer": "HSBC", "grad_year": null},
-  {"name": "Isidora Gajic", "url": "https://www.linkedin.com/in/igajic/", "program": "gatech-qcf", "headline": "Dual MS QCF & MS CSE Candidate at Georgia Tech | Seeking Quant Trader Role", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Aparna Gopakumar", "url": "https://www.linkedin.com/in/aparnagopakumar/", "program": "gatech-qcf", "headline": "MS QCF Candidate at Georgia Tech | Regions Bank", "undergrad": null, "employer": "Regions Bank", "grad_year": null},
-  {"name": "Jiale Yu", "url": "https://www.linkedin.com/in/jialeyu/", "program": "gatech-qcf", "headline": "Quant Strat @ Goldman Sachs | MS QCF @ Georgia Tech", "undergrad": null, "employer": "Goldman Sachs", "grad_year": null},
-  {"name": "Wuyi Tao", "url": "https://www.linkedin.com/in/wuyi-tao-b25675319/", "program": "gatech-qcf", "headline": "GT QCF 25' @GaTech | CUHK-Shenzhen", "undergrad": "CUHK-Shenzhen", "employer": null, "grad_year": "2025"},
-  {"name": "Prajwal Mohan Kumar", "url": "https://www.linkedin.com/in/prajwal-mohan-kumar/", "program": "gatech-qcf", "headline": "Georgia Tech MS QCF | building", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Luqi Xu", "url": "https://www.linkedin.com/in/luqi-xu-3a8b99231/", "program": "gatech-qcf", "headline": "MS QCF Candidate at Georgia Tech Scheller", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Kamen Iliev", "url": "https://www.linkedin.com/in/kamen-iliev/", "program": "gatech-qcf", "headline": "MS QCF Candidate at Georgia Tech Scheller", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Grace Zhu", "url": "https://www.linkedin.com/in/grace-zhu-5b102820a/", "program": "gatech-qcf", "headline": "MS QCF at Georgia Tech Scheller | Seeking Full-time Quant/DS", "undergrad": "University of Florida (Math + Econ)", "employer": null, "grad_year": null},
-  {"name": "Jinay Shah", "url": "https://www.linkedin.com/in/jinay25/", "program": "gatech-qcf", "headline": "MS QCF at Georgia Tech | Seeking Quant Research/Trading Internship", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Albert Huang", "url": "https://www.linkedin.com/in/albert-huang-5772a5287/", "program": "gatech-qcf", "headline": "QCF student at Georgia Tech | Peking University finance background", "undergrad": "Peking University", "employer": null, "grad_year": null},
-  {"name": "Samuel Bolduc", "url": "https://www.linkedin.com/in/samuel-bolduc/", "program": "gatech-qcf", "headline": "Georgia Tech QCF | KPMG", "undergrad": null, "employer": "KPMG", "grad_year": null},
-  {"name": "Fan Feng", "url": "https://www.linkedin.com/in/fanfrankfeng/", "program": "gatech-qcf", "headline": "MS QCF from Georgia Tech | Bank of America", "undergrad": null, "employer": "Bank of America", "grad_year": null},
-  {"name": "Rishab Chauhan", "url": "https://www.linkedin.com/in/rishab-chauhan/", "program": "gatech-qcf", "headline": "Georgia Tech QCF | Ledger Investing", "undergrad": null, "employer": "Ledger Investing", "grad_year": null},
-  {"name": "Aditya Pillai", "url": "https://www.linkedin.com/in/pillaiaditya/", "program": "gatech-qcf", "headline": "MS QCF Candidate at Georgia Tech | 5+ years Morningstar Indexes | FRM", "undergrad": null, "employer": "Morningstar", "grad_year": null},
-  {"name": "Dylan Kynoch", "url": "https://www.linkedin.com/in/dylkyn/", "program": "gatech-qcf", "headline": "MS QCF @ Georgia Tech | Aspiring Quant Developer/Trader", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Lingqi Wu", "url": "https://www.linkedin.com/in/lingqi-wu-81a1531a1/", "program": "gatech-qcf", "headline": "MS Quantitative and Computational Finance | Ernst & Young", "undergrad": null, "employer": "Ernst & Young", "grad_year": null},
-  {"name": "Wilson Williams", "url": "https://www.linkedin.com/in/wilsonewilliams/", "program": "gatech-qcf", "headline": "MS QCF December 2025 at Georgia Tech | Data Scientist at Equifax", "undergrad": null, "employer": "Equifax", "grad_year": "2025"},
-  {"name": "Zehao Yang", "url": "https://www.linkedin.com/in/zehaoyang/", "program": "nyu-courant", "headline": "Quantitative Researcher | NYU Courant", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Linglan Wang", "url": "https://www.linkedin.com/in/linglan-wang/", "program": "nyu-courant", "headline": "M.S in Mathematics in Finance at NYU Courant", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Yiming Ji", "url": "https://www.linkedin.com/in/yiming-j1/", "program": "nyu-courant", "headline": "M.S. in Mathematics in Finance @ NYU Courant", "undergrad": null, "employer": "Deutsche Bank", "grad_year": "2026"},
-  {"name": "Hua Jing", "url": "https://www.linkedin.com/in/huahanajing/", "program": "nyu-courant", "headline": "M.S. in Mathematics in Finance at NYU Courant", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Yuan (Leo) Zhao", "url": "https://www.linkedin.com/in/yuan-leo-zhao/", "program": "nyu-courant", "headline": "Quantitative Trading Book Senior Consultant at EY | NYU Courant Math in Finance", "undergrad": "NYU (undergrad)", "employer": "EY", "grad_year": null},
-  {"name": "Rui Yang", "url": "https://www.linkedin.com/in/rui-yang-riona/", "program": "nyu-courant", "headline": "M.S. in Mathematics in Finance at NYU Courant", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Linda Gentili", "url": "https://www.linkedin.com/in/lindagentili/", "program": "nyu-courant", "headline": "NYU Courant | Banca Profilo", "undergrad": null, "employer": "Banca Profilo", "grad_year": null},
-  {"name": "Wenwen Liu", "url": "https://www.linkedin.com/in/wenwenrita-liu6/", "program": "nyu-courant", "headline": "M.S. in Mathematics in Finance @ NYU Courant | Model Validation", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Lexi Yao", "url": "https://www.linkedin.com/in/lexiyao-nyu/en", "program": "nyu-courant", "headline": "M.S. in Mathematics in Finance at NYU Courant", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Yujia Hou", "url": "https://www.linkedin.com/in/yujia-hou/", "program": "nyu-tandon-msfe", "headline": "1st Year NYU Tandon MSFE Student", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Jifan He", "url": "https://www.linkedin.com/in/jifan-he/", "program": "nyu-tandon-msfe", "headline": "Quantitative Analyst at Bank of America | NYU Tandon MSFE", "undergrad": null, "employer": "Bank of America", "grad_year": null},
-  {"name": "Zhiyuan (Justin) Wei", "url": "https://www.linkedin.com/in/wei-justin/", "program": "nyu-tandon-msfe", "headline": "1st Year NYU Tandon MSFE Student", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Wanzhen Tang", "url": "https://www.linkedin.com/in/2002tangwanzhencharon/", "program": "nyu-tandon-msfe", "headline": "MS in Financial Engineering Student, NYU Tandon", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Zhaoxuan Lai", "url": "https://www.linkedin.com/in/zhaoxuanlai/", "program": "nyu-tandon-msfe", "headline": "NYU Tandon MSFE | Quantitative Analytics Associate at JPMorgan", "undergrad": null, "employer": "JPMorgan Chase", "grad_year": null},
-  {"name": "Jiarui Li", "url": "https://www.linkedin.com/in/jiaruili-jerry/", "program": "nyu-tandon-msfe", "headline": "MSFE @ NYU Tandon | CFA Level 2", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Junhao Mai", "url": "https://www.linkedin.com/in/junhao-mai/", "program": "nyu-tandon-msfe", "headline": "Analyst @ GS | 2024 NYU MSFE", "undergrad": "Colorado College", "employer": "Goldman Sachs", "grad_year": "2024"},
-  {"name": "Ramya Venkatesh", "url": "https://www.linkedin.com/in/ramyav23/", "program": "nyu-tandon-msfe", "headline": "NYU Tandon MSFE '25", "undergrad": null, "employer": null, "grad_year": "2025"},
-  {"name": "Zhengxuan Yan", "url": "https://www.linkedin.com/in/zhengxuan-yan-2051a117a/", "program": "nyu-tandon-msfe", "headline": "NYU Tandon MSFE | Fidelity Investments", "undergrad": null, "employer": "Fidelity Investments", "grad_year": null},
-  {"name": "Yu Meng", "url": "https://www.linkedin.com/in/yu-meng-work/", "program": "nyu-tandon-msfe", "headline": "MS in Financial Engineering from NYU Tandon", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Luyao Wang", "url": "https://www.linkedin.com/in/luyaowangseekingquantinternship/", "program": "nyu-tandon-msfe", "headline": "1st Year NYU Tandon MSFE Student", "undergrad": null, "employer": null, "grad_year": null},
-  {"name": "Debapriya Biswas", "url": "https://www.linkedin.com/in/debapriyabiswas-msfe/", "program": "nyu-tandon-msfe", "headline": "Valuation & Analytics Specialist Sr at Deloitte | MS Financial Engineering NYU", "undergrad": null, "employer": "Deloitte", "grad_year": null},
-  {"name": "Gitika Daswani", "url": "https://www.linkedin.com/in/gitika-daswani/", "program": "nyu-tandon-msfe", "headline": "M.S. Financial Engineering, NYU Tandon", "undergrad": null, "employer": "Orchestrade", "grad_year": null}
+  {
+    "name": "Karan Jeswani",
+    "url": "https://www.linkedin.com/in/jeswanikaran/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Boyu Wang",
+    "url": "https://www.linkedin.com/in/boyu-dirk-wang/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE - AQR Capital Management",
+    "undergrad": null,
+    "employer": "AQR Capital Management",
+    "grad_year": null
+  },
+  {
+    "name": "Wei Dai",
+    "url": "https://www.linkedin.com/in/weidai0825/",
+    "program": "baruch-mfe",
+    "headline": "M.S. in Financial Engineering at Baruch College",
+    "undergrad": null,
+    "employer": "Genwealth Capital",
+    "grad_year": null
+  },
+  {
+    "name": "Padamati Sri Sai",
+    "url": "https://www.linkedin.com/in/padamatisrisai/",
+    "program": "baruch-mfe",
+    "headline": "MS in Financial Engineering at Baruch College",
+    "undergrad": "Indian Statistical Institute, Kolkata; IIM Indore",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Yusu Kong",
+    "url": "https://www.linkedin.com/in/yusu-kong-baruchmfe/",
+    "program": "baruch-mfe",
+    "headline": "M.S. in Financial Engineering Candidate at Baruch College, CUNY",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Xingyu (Tony) Zhu",
+    "url": "https://www.linkedin.com/in/zhuxingyu88/",
+    "program": "baruch-mfe",
+    "headline": "M.S in Financial Engineering Candidate at Baruch College, CUNY",
+    "undergrad": null,
+    "employer": "Verition Fund Management LLC",
+    "grad_year": null
+  },
+  {
+    "name": "Huihan Yang",
+    "url": "https://www.linkedin.com/in/huihanyang/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE - Qube Research & Technologies",
+    "undergrad": null,
+    "employer": "Qube Research & Technologies",
+    "grad_year": null
+  },
+  {
+    "name": "Zijun Li",
+    "url": "https://www.linkedin.com/in/zijun-li-baruch/",
+    "program": "baruch-mfe",
+    "headline": "Baruch College MS Financial Engineering",
+    "undergrad": null,
+    "employer": "Cubist Systematic Strategies",
+    "grad_year": null
+  },
+  {
+    "name": "Boyu Yang",
+    "url": "https://www.linkedin.com/in/bradleyboyuyang/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE 2022-2023",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2023"
+  },
+  {
+    "name": "S. David Wu",
+    "url": "https://www.linkedin.com/in/s-david-wu-2113806/",
+    "program": "baruch-mfe",
+    "headline": "Baruch College MFE Faculty/Admin",
+    "undergrad": null,
+    "employer": "Baruch College",
+    "grad_year": null
+  },
+  {
+    "name": "Zhen Gao",
+    "url": "https://www.linkedin.com/in/-zhen-gao/",
+    "program": "baruch-mfe",
+    "headline": "Baruch Master of Financial Engineering",
+    "undergrad": null,
+    "employer": "Point72",
+    "grad_year": null
+  },
+  {
+    "name": "Yuanting Li",
+    "url": "https://www.linkedin.com/in/yuantingli/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2023"
+  },
+  {
+    "name": "Suri Sun",
+    "url": "https://www.linkedin.com/in/suri-sun/",
+    "program": "baruch-mfe",
+    "headline": "Financial Engineering and Data Science - Equity Delta One Trader",
+    "undergrad": null,
+    "employer": "Bank of America",
+    "grad_year": null
+  },
+  {
+    "name": "Ming Fu",
+    "url": "https://www.linkedin.com/in/ming-fu/",
+    "program": "baruch-mfe",
+    "headline": "Quant Trader - M.S. Financial Engineering at Baruch",
+    "undergrad": null,
+    "employer": "Virtu Financial",
+    "grad_year": null
+  },
+  {
+    "name": "Jianxue Xiong",
+    "url": "https://www.linkedin.com/in/jianxuexiong/",
+    "program": "baruch-mfe",
+    "headline": "MS in Financial Engineering at Baruch College, CUNY",
+    "undergrad": null,
+    "employer": "Brown Brothers Harriman",
+    "grad_year": null
+  },
+  {
+    "name": "Bruce Weber",
+    "url": "https://www.linkedin.com/in/weberbruce/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Faculty/Admin",
+    "undergrad": null,
+    "employer": "Baruch College",
+    "grad_year": null
+  },
+  {
+    "name": "Nicholas (Nick) Serkes",
+    "url": "https://www.linkedin.com/in/nicholas-serkes/",
+    "program": "baruch-mfe",
+    "headline": "Masters in Financial Engineering at Baruch",
+    "undergrad": "Baylor University",
+    "employer": "Balyasny Asset Management",
+    "grad_year": null
+  },
+  {
+    "name": "Linting Wang",
+    "url": "https://www.linkedin.com/in/linting-wang/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Fall 2026 Cohort",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2026"
+  },
+  {
+    "name": "Zilong Cheng",
+    "url": "https://www.linkedin.com/in/zilong-cheng/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE December 2019",
+    "undergrad": null,
+    "employer": "Point72",
+    "grad_year": "2019"
+  },
+  {
+    "name": "Robert Simon",
+    "url": "https://www.linkedin.com/in/robert-simon-060990119",
+    "program": "cmu-mscf",
+    "headline": "Executive Director - MS in Computational Finance at CMU",
+    "undergrad": null,
+    "employer": "Carnegie Mellon University",
+    "grad_year": null
+  },
+  {
+    "name": "Naitik Lapsiya",
+    "url": "https://www.linkedin.com/in/naitik-lapsiya/",
+    "program": "cmu-mscf",
+    "headline": "Quant Strat at Deutsche Bank",
+    "undergrad": null,
+    "employer": "Deutsche Bank",
+    "grad_year": null
+  },
+  {
+    "name": "Mehul Salhotra",
+    "url": "https://www.linkedin.com/in/mehulsalhotra",
+    "program": "cmu-mscf",
+    "headline": "CMU MSCF (MFE) Graduate",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Xuci (Sabrina) Mei",
+    "url": "https://www.linkedin.com/in/sabrina-mei/",
+    "program": "cmu-mscf",
+    "headline": "Equity Derivatives Trading Strategist at BofA | CMU MSCF, Stats & ML",
+    "undergrad": null,
+    "employer": "Bank of America",
+    "grad_year": null
+  },
+  {
+    "name": "Oscar Ma",
+    "url": "https://www.linkedin.com/in/oscarmama/",
+    "program": "cmu-mscf",
+    "headline": "QT @ VALK | CMU MSCF 2025 | Swarthmore 2023",
+    "undergrad": "Swarthmore College",
+    "employer": "Mako Trading",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Yihan Zhang",
+    "url": "https://www.linkedin.com/in/yihan-zhang-77b98a248/",
+    "program": "cmu-mscf",
+    "headline": "Quant @ Goldman Sachs | MSCF '24 CMU",
+    "undergrad": null,
+    "employer": "Goldman Sachs",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Helena Jiang",
+    "url": "https://www.linkedin.com/in/helenajiang/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance (MSCF) @ CMU '26 | Math & Econ @ Cornell '24",
+    "undergrad": "Cornell University",
+    "employer": "Optiver",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Bryce Earner",
+    "url": "https://www.linkedin.com/in/bryceearner/",
+    "program": "cmu-mscf",
+    "headline": "Exotics Trader @ UBS | MSCF @ CMU",
+    "undergrad": null,
+    "employer": "UBS",
+    "grad_year": null
+  },
+  {
+    "name": "Monica Shunhua Guo",
+    "url": "https://www.linkedin.com/in/monica-shunhua-guo/",
+    "program": "cmu-mscf",
+    "headline": "Macro trader | CMU MSCF 2021-2022",
+    "undergrad": "HKU",
+    "employer": "Taula Capital",
+    "grad_year": "2022"
+  },
+  {
+    "name": "Thomas Horstkamp",
+    "url": "https://www.linkedin.com/in/thomashorstkamp/",
+    "program": "cmu-mscf",
+    "headline": "Quant Strategist Intern at Mercuria Energy | CMU MSCF '26 | CMU Math MS '24",
+    "undergrad": "Carnegie Mellon University (Math MS)",
+    "employer": "Mercuria Energy",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Aayush Jain",
+    "url": "https://www.linkedin.com/in/aayush-jain-406315202/",
+    "program": "cmu-mscf",
+    "headline": "Goldman Sachs | CMU",
+    "undergrad": null,
+    "employer": "Goldman Sachs",
+    "grad_year": null
+  },
+  {
+    "name": "Caroline Liu",
+    "url": "https://www.linkedin.com/in/carolinemliu/",
+    "program": "cmu-mscf",
+    "headline": "Seeking Quant Internship | CMU MSCF 2027 | Wellesley Math & Econ 2024",
+    "undergrad": "Wellesley College",
+    "employer": null,
+    "grad_year": "2027"
+  },
+  {
+    "name": "Young Wang",
+    "url": "https://www.linkedin.com/in/young-wang-64779223/",
+    "program": "cmu-mscf",
+    "headline": "Master in Computational Finance (MSCF) Student at CMU Tepper",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Shijia (Scarlett) Li",
+    "url": "https://www.linkedin.com/in/shijia-scarlett-li-15900814a/",
+    "program": "cmu-mscf",
+    "headline": "MSCF at CMU | Chicago Trading Company",
+    "undergrad": null,
+    "employer": "Chicago Trading Company",
+    "grad_year": null
+  },
+  {
+    "name": "Spoorthy Malgireddy",
+    "url": "https://www.linkedin.com/in/spoorthymalgireddy/",
+    "program": "cmu-mscf",
+    "headline": "CMU Tepper - BlackRock",
+    "undergrad": null,
+    "employer": "BlackRock",
+    "grad_year": null
+  },
+  {
+    "name": "Yirun Wang",
+    "url": "https://www.linkedin.com/in/yirunwangaaron/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance at CMU | JPMorganChase",
+    "undergrad": null,
+    "employer": "JPMorganChase",
+    "grad_year": null
+  },
+  {
+    "name": "Kevin Liu",
+    "url": "https://www.linkedin.com/in/kevinliu040914/",
+    "program": "cmu-mscf",
+    "headline": "BSCF @ Carnegie Mellon University",
+    "undergrad": "Carnegie Mellon University (undergrad)",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Kaiqi Wu",
+    "url": "https://www.linkedin.com/in/kaiqi-wu/",
+    "program": "columbia-msfe",
+    "headline": "Quant at Yield Book | Columbia MSFE",
+    "undergrad": null,
+    "employer": "LSEG (Yield Book)",
+    "grad_year": null
+  },
+  {
+    "name": "Wanxuan (Caroline) Lin",
+    "url": "https://www.linkedin.com/in/wxlin-caroline/",
+    "program": "columbia-msfe",
+    "headline": "Columbia MS in Financial Engineering | NYU B.A. Econ, CS Double Major",
+    "undergrad": "NYU",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Yachun Zhang",
+    "url": "https://www.linkedin.com/in/yachun-zhang-856623139/",
+    "program": "columbia-msfe",
+    "headline": "Columbia Financial Engineering graduate | Barclays",
+    "undergrad": null,
+    "employer": "Barclays Investment Bank",
+    "grad_year": null
+  },
+  {
+    "name": "Pragnya Akella",
+    "url": "https://www.linkedin.com/in/pragnya-akella/",
+    "program": "princeton-mfin",
+    "headline": "Princeton MFin 2026 | JPMC | IIT Madras",
+    "undergrad": "IIT Madras",
+    "employer": "JP Morgan",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Jenny Jiang",
+    "url": "https://www.linkedin.com/in/jenny-jiang-yuchen/",
+    "program": "princeton-mfin",
+    "headline": "Rates Trading Associate at BNP Paribas | Princeton MFin '24 | UC Berkeley '22",
+    "undergrad": "UC Berkeley",
+    "employer": "BNP Paribas",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Junhan Gu",
+    "url": "https://www.linkedin.com/in/junhan-gu-855030158/",
+    "program": "princeton-mfin",
+    "headline": "Quantitative Researcher at Ergoteles Capital | Princeton BCF Master in Finance",
+    "undergrad": null,
+    "employer": "Ergoteles Capital",
+    "grad_year": null
+  },
+  {
+    "name": "Yuchen Yu",
+    "url": "https://www.linkedin.com/in/yuchen-yu/",
+    "program": "princeton-mfin",
+    "headline": "Princeton MFin '26 | Millennium QR Intern '25",
+    "undergrad": null,
+    "employer": "Millennium (intern)",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Hanfei Mao",
+    "url": "https://www.linkedin.com/in/hanfei-mao-57695555/",
+    "program": "princeton-mfin",
+    "headline": "Princeton Master in Finance | Hedge Fund",
+    "undergrad": null,
+    "employer": "Hedge Fund",
+    "grad_year": null
+  },
+  {
+    "name": "Ran Lei",
+    "url": "https://www.linkedin.com/in/ran-lei-06547b1bb/",
+    "program": "princeton-mfin",
+    "headline": "Princeton MFin student | Peking University Guanghua",
+    "undergrad": "Peking University (Guanghua)",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Lucrezia Forcellini",
+    "url": "https://www.linkedin.com/in/lucrezia-forcellini/",
+    "program": "princeton-mfin",
+    "headline": "Princeton MFin '25",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Daniel Zhuang",
+    "url": "https://www.linkedin.com/in/danielmzhuang/",
+    "program": "princeton-mfin",
+    "headline": "Princeton MFin '27 | University of Toronto",
+    "undergrad": "University of Toronto",
+    "employer": null,
+    "grad_year": "2027"
+  },
+  {
+    "name": "Anran (Judy) Xie",
+    "url": "https://cn.linkedin.com/in/xie-anran-judy",
+    "program": "princeton-mfin",
+    "headline": "Princeton Master in Finance Student",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Rushil Patel",
+    "url": "https://www.linkedin.com/in/rushilmpatel27/",
+    "program": "mit-mfin",
+    "headline": "MFin @ MIT Sloan",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Francesco Nardinocchi",
+    "url": "https://www.linkedin.com/in/francesconardinocchi/",
+    "program": "mit-mfin",
+    "headline": "MIT MFin '26 | Bocconi | Wharton",
+    "undergrad": "Bocconi University",
+    "employer": null,
+    "grad_year": "2026"
+  },
+  {
+    "name": "Qianqian Wang",
+    "url": "https://uk.linkedin.com/in/qianqian-wang-9a4068197",
+    "program": "mit-mfin",
+    "headline": "MIT MFin 24",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2024"
+  },
+  {
+    "name": "Hanqi Zhang",
+    "url": "https://www.linkedin.com/in/hanqi-zhang-a181941b6/",
+    "program": "mit-mfin",
+    "headline": "MIT MFin | HKU BBA(Acc&Fin)",
+    "undergrad": "HKU",
+    "employer": "Bain & Company",
+    "grad_year": null
+  },
+  {
+    "name": "Tianyue Wang",
+    "url": "https://www.linkedin.com/in/tianyue-wang-53253a82/",
+    "program": "mit-mfin",
+    "headline": "MIT MFin | Master of Finance at MIT Sloan",
+    "undergrad": null,
+    "employer": "TD",
+    "grad_year": null
+  },
+  {
+    "name": "Filippo Caretti",
+    "url": "https://www.linkedin.com/in/filippocaretti/",
+    "program": "mit-mfin",
+    "headline": "MIT MFin 2025",
+    "undergrad": "Bocconi University",
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Frederic Lucien",
+    "url": "https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-lucien-31479a172/",
+    "program": "berkeley-mfe",
+    "headline": "Financial Engineer at SG Americas | UC Berkeley MFE",
+    "undergrad": "ENSAE Paris",
+    "employer": "Societe Generale",
+    "grad_year": null
+  },
+  {
+    "name": "Fangzhou He",
+    "url": "https://www.linkedin.com/in/fangzhou-john-he/",
+    "program": "berkeley-mfe",
+    "headline": "Master of Financial Engineering at UC Berkeley | Morgan Stanley",
+    "undergrad": null,
+    "employer": "Morgan Stanley",
+    "grad_year": null
+  },
+  {
+    "name": "Kumar Yashaswi",
+    "url": "https://uk.linkedin.com/in/kumar-yashaswi",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE | Goldman Sachs",
+    "undergrad": null,
+    "employer": "Goldman Sachs",
+    "grad_year": null
+  },
+  {
+    "name": "Sudhansh Dua",
+    "url": "https://www.linkedin.com/in/sudhansh-dua/",
+    "program": "berkeley-mfe",
+    "headline": "Fixed Income (GFICC) @ JPMAM | UC Berkeley MFE | LSE | IIT",
+    "undergrad": "LSE; IIT",
+    "employer": "JPMorgan Asset Mgmt",
+    "grad_year": null
+  },
+  {
+    "name": "Samy Kobbite",
+    "url": "https://uk.linkedin.com/in/samykobbite",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE 25",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Vincent Michel",
+    "url": "https://www.linkedin.com/in/michvincent/",
+    "program": "berkeley-mfe",
+    "headline": "Berkeley MFE | TD Securities",
+    "undergrad": null,
+    "employer": "TD Securities",
+    "grad_year": null
+  },
+  {
+    "name": "Matteo Di Venti",
+    "url": "https://www.linkedin.com/in/mdiventi/",
+    "program": "berkeley-mfe",
+    "headline": "Algo Trading Quant Researcher @ UBS | Berkeley Haas MFE '24",
+    "undergrad": null,
+    "employer": "UBS",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Arshdeep Singla",
+    "url": "https://www.linkedin.com/in/arshdeep-singla/",
+    "program": "berkeley-mfe",
+    "headline": "Portfolio Management @ GS | UC Berkeley MFE | D.E. Shaw | JPM | PwC",
+    "undergrad": null,
+    "employer": "Goldman Sachs",
+    "grad_year": null
+  },
+  {
+    "name": "Cecilia Si Yi Wu",
+    "url": "https://www.linkedin.com/in/cecilia-si-yi-wu/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE | Morgan Stanley",
+    "undergrad": null,
+    "employer": "Morgan Stanley",
+    "grad_year": null
+  },
+  {
+    "name": "Yifan Zhang",
+    "url": "https://www.linkedin.com/in/yifan-zhang-94793b178/",
+    "program": "berkeley-mfe",
+    "headline": "Berkeley MFE | TransMarket Group",
+    "undergrad": null,
+    "employer": "TransMarket Group",
+    "grad_year": null
+  },
+  {
+    "name": "Sofiane Bessaoud",
+    "url": "https://www.linkedin.com/in/sofiane-bessaoud/",
+    "program": "berkeley-mfe",
+    "headline": "Quant Researcher at Engineers Gate | Berkeley MFE",
+    "undergrad": null,
+    "employer": "Engineers Gate",
+    "grad_year": null
+  },
+  {
+    "name": "Ayushi Garg",
+    "url": "https://www.linkedin.com/in/ayushi-garg-797928146/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley Haas MFE | Point72",
+    "undergrad": null,
+    "employer": "Point72",
+    "grad_year": null
+  },
+  {
+    "name": "Theo Dillies",
+    "url": "https://www.linkedin.com/in/th%C3%A9o-dillies/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley Haas MFE | AlphaGrep",
+    "undergrad": null,
+    "employer": "AlphaGrep",
+    "grad_year": null
+  },
+  {
+    "name": "Tian (Jacob) Lan",
+    "url": "https://www.linkedin.com/in/tian-jacob-lan-fintechrocks/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley Haas MFE '26",
+    "undergrad": null,
+    "employer": "BlackRock",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Joshua Chis",
+    "url": "https://www.linkedin.com/in/jchismfe/",
+    "program": "berkeley-mfe",
+    "headline": "AI Engineer | MFE @ UC Berkeley 2026",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2026"
+  },
+  {
+    "name": "Yimin Z.",
+    "url": "https://www.linkedin.com/in/yzhu-jimmy/",
+    "program": "berkeley-mfe",
+    "headline": "QR@CitSec | UCB MFE 23",
+    "undergrad": "UMich & SJTU",
+    "employer": "Citadel Securities",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Dylan Masters",
+    "url": "https://www.linkedin.com/in/dylan-masters-8896a720b/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2025 Candidate",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Yiwen Wu",
+    "url": "https://www.linkedin.com/in/yiwen-wu-oliver/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM '25 | UMich Honor DS '24",
+    "undergrad": "University of Michigan",
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Yiwei Wang",
+    "url": "https://www.linkedin.com/in/yiweiwang625/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2025 Candidate",
+    "undergrad": null,
+    "employer": "Northern Trust",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Hsiao-Chi Chen",
+    "url": "https://www.linkedin.com/in/hsiaochichen2804/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2026"
+  },
+  {
+    "name": "Mengjing (Cici) Yang",
+    "url": "https://www.linkedin.com/in/ciciyang/",
+    "program": "uchicago-msfm",
+    "headline": "Quant | UChicago MSFM 2024",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2024"
+  },
+  {
+    "name": "Austin Galm",
+    "url": "https://www.linkedin.com/in/agalm/",
+    "program": "uchicago-msfm",
+    "headline": "Quantitative Analyst, Calamos Investments | UChicago MSFM 2025",
+    "undergrad": null,
+    "employer": "Calamos Investments",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Xu Yan",
+    "url": "https://www.linkedin.com/in/xu-yan-347126201/",
+    "program": "uchicago-msfm",
+    "headline": "Data Scientist at Navy Federal Credit Union | UChicago MSFM 23'",
+    "undergrad": null,
+    "employer": "Navy Federal Credit Union",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Jesse Freitag",
+    "url": "https://www.linkedin.com/in/jesse-freitag-bb77b5199/",
+    "program": "uchicago-msfm",
+    "headline": "Incoming Quantitative Model Analyst @ U.S. Bank | UChicago FinMath Alum",
+    "undergrad": null,
+    "employer": "U.S. Bank",
+    "grad_year": null
+  },
+  {
+    "name": "Jae Won Choi",
+    "url": "https://www.linkedin.com/in/jae-won-choi-20623ab3/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM graduate | BNP Paribas Quant Research & Trading",
+    "undergrad": null,
+    "employer": "BNP Paribas",
+    "grad_year": null
+  },
+  {
+    "name": "Togay Atmaca",
+    "url": "https://www.linkedin.com/in/togay-atmaca/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2025 Candidate | Bank of America",
+    "undergrad": null,
+    "employer": "Bank of America",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Thea Pan",
+    "url": "https://www.linkedin.com/in/thea-pan-a20b5a1b1/",
+    "program": "uchicago-msfm",
+    "headline": "Systematic Trader at JPMC | UChicago MSFM 24'",
+    "undergrad": null,
+    "employer": "JPMorgan Chase",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Stephen Coley",
+    "url": "https://www.linkedin.com/in/stephen-coley/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2025 Candidate | Seeking Quant Trading/Research/DS Roles",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Zixin Zhang",
+    "url": "https://www.linkedin.com/in/zixinzhang2000/",
+    "program": "uchicago-msfm",
+    "headline": "Analyst at Goldman Sachs | MSFM at UChicago | BSc FE at CUFE",
+    "undergrad": "CUFE (Central Univ of Finance & Econ)",
+    "employer": "Goldman Sachs",
+    "grad_year": null
+  },
+  {
+    "name": "Aadi Deshpande",
+    "url": "https://www.linkedin.com/in/aadi-deshpande-b13045166/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2025 Candidate",
+    "undergrad": null,
+    "employer": "MGIC",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Lin Fang",
+    "url": "https://www.linkedin.com/in/linnnfang/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2026"
+  },
+  {
+    "name": "Kunj Shah",
+    "url": "https://www.linkedin.com/in/kunj-shah-9141931b3/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM graduate | Tanius Technology",
+    "undergrad": null,
+    "employer": "Tanius Technology",
+    "grad_year": null
+  },
+  {
+    "name": "Xinyi Zhang",
+    "url": "https://www.linkedin.com/in/ariazxy/",
+    "program": "uchicago-msfm",
+    "headline": "Analyst at Goldman Sachs | UChicago MSFM 24' | Unimelb BCom 22'",
+    "undergrad": "University of Melbourne",
+    "employer": "Goldman Sachs",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Rain Condie",
+    "url": "https://www.linkedin.com/in/rain-condie-5149941a0/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago Financial Mathematics Masters | ex-Federal Reserve Bank of New York",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Ruiyang Qin",
+    "url": "https://www.linkedin.com/in/ruiyang-qin-0ab0801a9/",
+    "program": "uchicago-msfm",
+    "headline": "CME Group Intern | UChicago MSFM | HKU BEcon&Fin",
+    "undergrad": "HKU",
+    "employer": "CME Group",
+    "grad_year": null
+  },
+  {
+    "name": "Artem Ezhov",
+    "url": "https://www.linkedin.com/in/artezhov/",
+    "program": "cornell-mfe",
+    "headline": "Fixed Income @ JPMorgan | Cornell MFE'24 | ORIE B.S. @ Cornell",
+    "undergrad": "Cornell University (ORIE B.S.)",
+    "employer": "JPMorgan",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Ananya Mohapatra",
+    "url": "https://www.linkedin.com/in/ananyamohapatra/",
+    "program": "cornell-mfe",
+    "headline": "Master's in Financial Engineering from Cornell | Master's in Economics from BITS Pilani",
+    "undergrad": "BITS Pilani",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Fenghua Dong",
+    "url": "https://www.linkedin.com/in/fenghua-dong-782260248/",
+    "program": "cornell-mfe",
+    "headline": "Model Risk Analyst at GM Financial | Cornell MFE Candidate",
+    "undergrad": null,
+    "employer": "GM Financial",
+    "grad_year": null
+  },
+  {
+    "name": "Samara Silverman",
+    "url": "https://www.linkedin.com/in/samara-silverman/",
+    "program": "cornell-mfe",
+    "headline": "Incoming Model Risk Analyst | Cornell",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Anastasia Tatarenko",
+    "url": "https://www.linkedin.com/in/anastasia-tatarenko-mfe-quant/",
+    "program": "cornell-mfe",
+    "headline": "Cornell Financial Engineering | C2FO",
+    "undergrad": null,
+    "employer": "C2FO",
+    "grad_year": null
+  },
+  {
+    "name": "Charlotte Xu",
+    "url": "https://www.linkedin.com/in/chengruixu2000/",
+    "program": "cornell-mfe",
+    "headline": "Cornell Financial Engineering Manhattan | China Galaxy International",
+    "undergrad": null,
+    "employer": "China Galaxy International",
+    "grad_year": null
+  },
+  {
+    "name": "Pengbo (Stella) Hao",
+    "url": "https://www.linkedin.com/in/pengbo-hao/",
+    "program": "cornell-mfe",
+    "headline": "M.Eng in Financial Engineering at Cornell | UBS",
+    "undergrad": null,
+    "employer": "UBS",
+    "grad_year": null
+  },
+  {
+    "name": "Zhichen Wang",
+    "url": "https://www.linkedin.com/in/zhichen-wang-3a35671a6/",
+    "program": "cornell-mfe",
+    "headline": "Cornell Financial Engineering Manhattan | HSBC",
+    "undergrad": null,
+    "employer": "HSBC",
+    "grad_year": null
+  },
+  {
+    "name": "Isidora Gajic",
+    "url": "https://www.linkedin.com/in/igajic/",
+    "program": "gatech-qcf",
+    "headline": "Dual MS QCF & MS CSE Candidate at Georgia Tech | Seeking Quant Trader Role",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Aparna Gopakumar",
+    "url": "https://www.linkedin.com/in/aparnagopakumar/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate at Georgia Tech | Regions Bank",
+    "undergrad": null,
+    "employer": "Regions Bank",
+    "grad_year": null
+  },
+  {
+    "name": "Jiale Yu",
+    "url": "https://www.linkedin.com/in/jialeyu/",
+    "program": "gatech-qcf",
+    "headline": "Quant Strat @ Goldman Sachs | MS QCF @ Georgia Tech",
+    "undergrad": null,
+    "employer": "Goldman Sachs",
+    "grad_year": null
+  },
+  {
+    "name": "Wuyi Tao",
+    "url": "https://www.linkedin.com/in/wuyi-tao-b25675319/",
+    "program": "gatech-qcf",
+    "headline": "GT QCF 25' @GaTech | CUHK-Shenzhen",
+    "undergrad": "CUHK-Shenzhen",
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Prajwal Mohan Kumar",
+    "url": "https://www.linkedin.com/in/prajwal-mohan-kumar/",
+    "program": "gatech-qcf",
+    "headline": "Georgia Tech MS QCF | building",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Luqi Xu",
+    "url": "https://www.linkedin.com/in/luqi-xu-3a8b99231/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate at Georgia Tech Scheller",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Kamen Iliev",
+    "url": "https://www.linkedin.com/in/kamen-iliev/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate at Georgia Tech Scheller",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Grace Zhu",
+    "url": "https://www.linkedin.com/in/grace-zhu-5b102820a/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF at Georgia Tech Scheller | Seeking Full-time Quant/DS",
+    "undergrad": "University of Florida (Math + Econ)",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Jinay Shah",
+    "url": "https://www.linkedin.com/in/jinay25/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF at Georgia Tech | Seeking Quant Research/Trading Internship",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Albert Huang",
+    "url": "https://www.linkedin.com/in/albert-huang-5772a5287/",
+    "program": "gatech-qcf",
+    "headline": "QCF student at Georgia Tech | Peking University finance background",
+    "undergrad": "Peking University",
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Samuel Bolduc",
+    "url": "https://www.linkedin.com/in/samuel-bolduc/",
+    "program": "gatech-qcf",
+    "headline": "Georgia Tech QCF | KPMG",
+    "undergrad": null,
+    "employer": "KPMG",
+    "grad_year": null
+  },
+  {
+    "name": "Fan Feng",
+    "url": "https://www.linkedin.com/in/fanfrankfeng/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF from Georgia Tech | Bank of America",
+    "undergrad": null,
+    "employer": "Bank of America",
+    "grad_year": null
+  },
+  {
+    "name": "Rishab Chauhan",
+    "url": "https://www.linkedin.com/in/rishab-chauhan/",
+    "program": "gatech-qcf",
+    "headline": "Georgia Tech QCF | Ledger Investing",
+    "undergrad": null,
+    "employer": "Ledger Investing",
+    "grad_year": null
+  },
+  {
+    "name": "Aditya Pillai",
+    "url": "https://www.linkedin.com/in/pillaiaditya/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate at Georgia Tech | 5+ years Morningstar Indexes | FRM",
+    "undergrad": null,
+    "employer": "Morningstar",
+    "grad_year": null
+  },
+  {
+    "name": "Dylan Kynoch",
+    "url": "https://www.linkedin.com/in/dylkyn/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF @ Georgia Tech | Aspiring Quant Developer/Trader",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Lingqi Wu",
+    "url": "https://www.linkedin.com/in/lingqi-wu-81a1531a1/",
+    "program": "gatech-qcf",
+    "headline": "MS Quantitative and Computational Finance | Ernst & Young",
+    "undergrad": null,
+    "employer": "Ernst & Young",
+    "grad_year": null
+  },
+  {
+    "name": "Wilson Williams",
+    "url": "https://www.linkedin.com/in/wilsonewilliams/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF December 2025 at Georgia Tech | Data Scientist at Equifax",
+    "undergrad": null,
+    "employer": "Equifax",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Zehao Yang",
+    "url": "https://www.linkedin.com/in/zehaoyang/",
+    "program": "nyu-courant",
+    "headline": "Quantitative Researcher | NYU Courant",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Linglan Wang",
+    "url": "https://www.linkedin.com/in/linglan-wang/",
+    "program": "nyu-courant",
+    "headline": "M.S in Mathematics in Finance at NYU Courant",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Yiming Ji",
+    "url": "https://www.linkedin.com/in/yiming-j1/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance @ NYU Courant",
+    "undergrad": null,
+    "employer": "Deutsche Bank",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Hua Jing",
+    "url": "https://www.linkedin.com/in/huahanajing/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance at NYU Courant",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Yuan (Leo) Zhao",
+    "url": "https://www.linkedin.com/in/yuan-leo-zhao/",
+    "program": "nyu-courant",
+    "headline": "Quantitative Trading Book Senior Consultant at EY | NYU Courant Math in Finance",
+    "undergrad": "NYU (undergrad)",
+    "employer": "EY",
+    "grad_year": null
+  },
+  {
+    "name": "Rui Yang",
+    "url": "https://www.linkedin.com/in/rui-yang-riona/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance at NYU Courant",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Linda Gentili",
+    "url": "https://www.linkedin.com/in/lindagentili/",
+    "program": "nyu-courant",
+    "headline": "NYU Courant | Banca Profilo",
+    "undergrad": null,
+    "employer": "Banca Profilo",
+    "grad_year": null
+  },
+  {
+    "name": "Wenwen Liu",
+    "url": "https://www.linkedin.com/in/wenwenrita-liu6/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance @ NYU Courant | Model Validation",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Lexi Yao",
+    "url": "https://www.linkedin.com/in/lexiyao-nyu/en",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance at NYU Courant",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Yujia Hou",
+    "url": "https://www.linkedin.com/in/yujia-hou/",
+    "program": "nyu-tandon-msfe",
+    "headline": "1st Year NYU Tandon MSFE Student",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Jifan He",
+    "url": "https://www.linkedin.com/in/jifan-he/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Quantitative Analyst at Bank of America | NYU Tandon MSFE",
+    "undergrad": null,
+    "employer": "Bank of America",
+    "grad_year": null
+  },
+  {
+    "name": "Zhiyuan (Justin) Wei",
+    "url": "https://www.linkedin.com/in/wei-justin/",
+    "program": "nyu-tandon-msfe",
+    "headline": "1st Year NYU Tandon MSFE Student",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Wanzhen Tang",
+    "url": "https://www.linkedin.com/in/2002tangwanzhencharon/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering Student, NYU Tandon",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Zhaoxuan Lai",
+    "url": "https://www.linkedin.com/in/zhaoxuanlai/",
+    "program": "nyu-tandon-msfe",
+    "headline": "NYU Tandon MSFE | Quantitative Analytics Associate at JPMorgan",
+    "undergrad": null,
+    "employer": "JPMorgan Chase",
+    "grad_year": null
+  },
+  {
+    "name": "Jiarui Li",
+    "url": "https://www.linkedin.com/in/jiaruili-jerry/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MSFE @ NYU Tandon | CFA Level 2",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Junhao Mai",
+    "url": "https://www.linkedin.com/in/junhao-mai/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Analyst @ GS | 2024 NYU MSFE",
+    "undergrad": "Colorado College",
+    "employer": "Goldman Sachs",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Ramya Venkatesh",
+    "url": "https://www.linkedin.com/in/ramyav23/",
+    "program": "nyu-tandon-msfe",
+    "headline": "NYU Tandon MSFE '25",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": "2025"
+  },
+  {
+    "name": "Zhengxuan Yan",
+    "url": "https://www.linkedin.com/in/zhengxuan-yan-2051a117a/",
+    "program": "nyu-tandon-msfe",
+    "headline": "NYU Tandon MSFE | Fidelity Investments",
+    "undergrad": null,
+    "employer": "Fidelity Investments",
+    "grad_year": null
+  },
+  {
+    "name": "Yu Meng",
+    "url": "https://www.linkedin.com/in/yu-meng-work/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering from NYU Tandon",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Luyao Wang",
+    "url": "https://www.linkedin.com/in/luyaowangseekingquantinternship/",
+    "program": "nyu-tandon-msfe",
+    "headline": "1st Year NYU Tandon MSFE Student",
+    "undergrad": null,
+    "employer": null,
+    "grad_year": null
+  },
+  {
+    "name": "Debapriya Biswas",
+    "url": "https://www.linkedin.com/in/debapriyabiswas-msfe/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Valuation & Analytics Specialist Sr at Deloitte | MS Financial Engineering NYU",
+    "undergrad": null,
+    "employer": "Deloitte",
+    "grad_year": null
+  },
+  {
+    "name": "Gitika Daswani",
+    "url": "https://www.linkedin.com/in/gitika-daswani/",
+    "program": "nyu-tandon-msfe",
+    "headline": "M.S. Financial Engineering, NYU Tandon",
+    "undergrad": null,
+    "employer": "Orchestrade",
+    "grad_year": null
+  },
+  {
+    "name": "Shawn Roy",
+    "url": "https://www.linkedin.com/in/shawnroi/",
+    "program": "baruch-mfe",
+    "headline": "Quant Trader at CTC | Baruch MFE",
+    "undergrad": "",
+    "employer": "Chicago Trading Company",
+    "grad_year": ""
+  },
+  {
+    "name": "Gabriele Bernardino",
+    "url": "https://www.linkedin.com/in/gabriele-bernardino/",
+    "program": "baruch-mfe",
+    "headline": "Quant Researcher at Point72 | Baruch MFE | Bocconi CLEF",
+    "undergrad": "Bocconi University",
+    "employer": "Point72",
+    "grad_year": ""
+  },
+  {
+    "name": "Kai Zhang",
+    "url": "https://www.linkedin.com/in/zhang-kai/",
+    "program": "baruch-mfe",
+    "headline": "HAP Capital | Baruch MFE",
+    "undergrad": "",
+    "employer": "HAP Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Kai Zhang (QR)",
+    "url": "https://www.linkedin.com/in/kai-zhang-baruchmfe/",
+    "program": "baruch-mfe",
+    "headline": "Quantitative Researcher at J.P. Morgan | Baruch MFE",
+    "undergrad": "",
+    "employer": "J.P. Morgan",
+    "grad_year": ""
+  },
+  {
+    "name": "Yiyang Fan",
+    "url": "https://www.linkedin.com/in/yiyang-fan-b67175289/",
+    "program": "baruch-mfe",
+    "headline": "MFE @ Baruch | Verition Fund Management",
+    "undergrad": "",
+    "employer": "Verition Fund Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Yi Zheng",
+    "url": "https://www.linkedin.com/in/yi-zheng-mfe/",
+    "program": "baruch-mfe",
+    "headline": "Incoming Trader at Virtu | Baruch MFE | Tsinghua",
+    "undergrad": "Tsinghua University",
+    "employer": "Virtu Financial",
+    "grad_year": ""
+  },
+  {
+    "name": "Andrew Verzino",
+    "url": "https://www.linkedin.com/in/drew-verzino/",
+    "program": "baruch-mfe",
+    "headline": "Incoming Baruch MFE",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yan Yan",
+    "url": "https://www.linkedin.com/in/yan-yan-winston/",
+    "program": "baruch-mfe",
+    "headline": "Fox Run Management | Baruch MFE",
+    "undergrad": "",
+    "employer": "Fox Run Management",
+    "grad_year": ""
+  },
+  {
+    "name": "(Tony) Haobo Zhang",
+    "url": "https://www.linkedin.com/in/tony-haobo-zhang/",
+    "program": "baruch-mfe",
+    "headline": "Quantitative Research at AllianceBernstein | Baruch MFE",
+    "undergrad": "",
+    "employer": "AllianceBernstein",
+    "grad_year": ""
+  },
+  {
+    "name": "Junxian (Camilla) Chen",
+    "url": "https://www.linkedin.com/in/junxian-chen/",
+    "program": "baruch-mfe",
+    "headline": "Goldman Sachs | Baruch MFE",
+    "undergrad": "",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Adrian Baran",
+    "url": "https://www.linkedin.com/in/adrian-baran-028395194/",
+    "program": "baruch-mfe",
+    "headline": "Equity Research Associate | Baruch MFE",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Shaofan Wu",
+    "url": "https://www.linkedin.com/in/shaofan-wu/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE | PKU Stats & Econ",
+    "undergrad": "Peking University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Pasquale Bifulco",
+    "url": "https://www.linkedin.com/in/pasquale-bifulco-311b6129a/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yueting Jiang",
+    "url": "https://www.linkedin.com/in/yuetingjiang/",
+    "program": "baruch-mfe",
+    "headline": "Bank of America Merrill Lynch | Baruch MFE",
+    "undergrad": "",
+    "employer": "Bank of America",
+    "grad_year": ""
+  },
+  {
+    "name": "Tao Tang",
+    "url": "https://www.linkedin.com/in/tao-tang-cfa-frm-a7759722/",
+    "program": "baruch-mfe",
+    "headline": "Director at Mizuho | Baruch MFE",
+    "undergrad": "",
+    "employer": "Mizuho",
+    "grad_year": ""
+  },
+  {
+    "name": "Likun Ouyang",
+    "url": "https://www.linkedin.com/in/likun-ouyang/",
+    "program": "baruch-mfe",
+    "headline": "Millennium | Baruch MFE",
+    "undergrad": "",
+    "employer": "Millennium",
+    "grad_year": ""
+  },
+  {
+    "name": "Dan Stefanica",
+    "url": "https://www.linkedin.com/in/danstefanica",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Program Director",
+    "undergrad": "",
+    "employer": "Baruch College",
+    "grad_year": ""
+  },
+  {
+    "name": "Jing Chen (AXQ)",
+    "url": "https://www.linkedin.com/in/jing-chen-10a86737/",
+    "program": "baruch-mfe",
+    "headline": "AXQ Capital | Baruch MFE",
+    "undergrad": "",
+    "employer": "AXQ Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Jing (Victor) Chen",
+    "url": "https://www.linkedin.com/in/jingvictorchen/",
+    "program": "baruch-mfe",
+    "headline": "CTO & Portfolio Manager at AXQ Capital | Baruch MFE",
+    "undergrad": "",
+    "employer": "AXQ Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Luxi Tang",
+    "url": "https://www.linkedin.com/in/luxitang/",
+    "program": "baruch-mfe",
+    "headline": "Numerix | Baruch MFE",
+    "undergrad": "",
+    "employer": "Numerix",
+    "grad_year": ""
+  },
+  {
+    "name": "Zeqi Wang",
+    "url": "https://www.linkedin.com/in/zeqi-wang/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE 2022-2023",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Arsh Deep",
+    "url": "https://www.linkedin.com/in/arshdeepbaruch/",
+    "program": "baruch-mfe",
+    "headline": "Formerly Goldman Sachs | Incoming Baruch MFE Fall 2025",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Kevin Griffin",
+    "url": "https://www.linkedin.com/in/kevin-t-griffin/",
+    "program": "baruch-mfe",
+    "headline": "Chicago Trading Company | Baruch MFE",
+    "undergrad": "",
+    "employer": "Chicago Trading Company",
+    "grad_year": ""
+  },
+  {
+    "name": "Dhruv Joshi",
+    "url": "https://www.linkedin.com/in/dhruv-joshi7/",
+    "program": "baruch-mfe",
+    "headline": "Incoming Baruch MFE Fall 2026",
+    "undergrad": "",
+    "employer": "Societe Generale",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Tashfiq Souad",
+    "url": "https://www.linkedin.com/in/tashfiq-souad/",
+    "program": "baruch-mfe",
+    "headline": "50Five Capital | Baruch MFE",
+    "undergrad": "",
+    "employer": "50Five Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Lei Zhang",
+    "url": "https://www.linkedin.com/in/lei-zhang-baruchmfe/en",
+    "program": "baruch-mfe",
+    "headline": "Quant Analyst at Goldman Sachs | Baruch MFE",
+    "undergrad": "",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Simon Xiong",
+    "url": "https://www.linkedin.com/in/simon-xiong/",
+    "program": "baruch-mfe",
+    "headline": "Quant Research Intern at IMC Trading | Baruch MFE",
+    "undergrad": "",
+    "employer": "IMC Trading",
+    "grad_year": ""
+  },
+  {
+    "name": "Ze Wang",
+    "url": "https://www.linkedin.com/in/danielwangze/",
+    "program": "baruch-mfe",
+    "headline": "Alphadyne Asset Management | Baruch MFE",
+    "undergrad": "",
+    "employer": "Alphadyne Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Richard Griffiths",
+    "url": "https://www.linkedin.com/in/richard-griffiths-b000498/",
+    "program": "baruch-mfe",
+    "headline": "AWR Capital | Baruch MFE",
+    "undergrad": "",
+    "employer": "AWR Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Bo Yuan",
+    "url": "https://www.linkedin.com/in/yuanbo589/",
+    "program": "baruch-mfe",
+    "headline": "Tudor Investment Corporation | Baruch MFE",
+    "undergrad": "",
+    "employer": "Tudor Investment Corporation",
+    "grad_year": ""
+  },
+  {
+    "name": "Xinlu Xiao",
+    "url": "https://www.linkedin.com/in/xinluxiao/",
+    "program": "baruch-mfe",
+    "headline": "Millennium | Baruch MFE",
+    "undergrad": "",
+    "employer": "Millennium",
+    "grad_year": ""
+  },
+  {
+    "name": "Junhao Yu",
+    "url": "https://www.linkedin.com/in/junhao-yu-baruchmfe/",
+    "program": "baruch-mfe",
+    "headline": "Quant Researcher Intern at Point72 | Baruch MFE",
+    "undergrad": "",
+    "employer": "Point72",
+    "grad_year": ""
+  },
+  {
+    "name": "Yishu Dai",
+    "url": "https://www.linkedin.com/in/yishu-dai-baruchmfe/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Candidate | Assenagon Asset Management",
+    "undergrad": "",
+    "employer": "Assenagon Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Hanyi L.",
+    "url": "https://www.linkedin.com/in/hanyili/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Candidate | Squarepoint Capital",
+    "undergrad": "",
+    "employer": "Squarepoint Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Soo Yong Kim",
+    "url": "https://www.linkedin.com/in/soo-yong-kim/",
+    "program": "baruch-mfe",
+    "headline": "MS Candidate in Financial Engineering | Baruch",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Nuo Xu",
+    "url": "https://www.linkedin.com/in/nuoxu/",
+    "program": "baruch-mfe",
+    "headline": "Baruch MFE Candidate | Brown MS Biostatistics",
+    "undergrad": "Brown University",
+    "employer": "Columbia University Medical Center",
+    "grad_year": ""
+  },
+  {
+    "name": "Fuyuhiro Ito",
+    "url": "https://www.linkedin.com/in/fuyuhiro-ito-9a69a1261/",
+    "program": "baruch-mfe",
+    "headline": "GSF | Baruch MFE",
+    "undergrad": "",
+    "employer": "GSF",
+    "grad_year": ""
+  },
+  {
+    "name": "Harper Rui",
+    "url": "https://www.linkedin.com/in/harper-rui/",
+    "program": "baruch-mfe",
+    "headline": "Credit Algo Quant at Bank of America | Baruch MFE",
+    "undergrad": "",
+    "employer": "Bank of America",
+    "grad_year": ""
+  },
+  {
+    "name": "Brian MacSweeney",
+    "url": "https://www.linkedin.com/in/brian-macsweeney/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance Student at Carnegie Mellon",
+    "undergrad": "Connecticut College",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Alexia Bai",
+    "url": "https://www.linkedin.com/in/alexia-bai/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance Student at CMU | Seeking QR Roles",
+    "undergrad": "University of Waterloo",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Queeta Hewitt Welch",
+    "url": "https://www.linkedin.com/in/queeta-hewitt-welch-66745730/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance at CMU",
+    "undergrad": "Webster University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Frank Yang",
+    "url": "https://www.linkedin.com/in/frank-yang-60207b221/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance Student at CMU | MSCF '26",
+    "undergrad": "NYU",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Danny Li",
+    "url": "https://www.linkedin.com/in/dannyli2/",
+    "program": "cmu-mscf",
+    "headline": "StatML & Computational Finance at Carnegie Mellon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Paul Gerlach",
+    "url": "https://www.linkedin.com/in/paul-gerlach-6476678b/",
+    "program": "cmu-mscf",
+    "headline": "Master of Science in Computational Finance at CMU",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Nisha Sen",
+    "url": "https://www.linkedin.com/in/nisha-sen-8107271aa/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance at CMU | UIUC Applied Math",
+    "undergrad": "UIUC",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Jason Cheng",
+    "url": "https://www.linkedin.com/in/jasonmcheng/",
+    "program": "cmu-mscf",
+    "headline": "Computational Finance @ CMU | bp",
+    "undergrad": "",
+    "employer": "bp",
+    "grad_year": ""
+  },
+  {
+    "name": "Dhruv Baid",
+    "url": "https://www.linkedin.com/in/dhruv-baid/",
+    "program": "cmu-mscf",
+    "headline": "Chicago Trading Company | CMU MSCF",
+    "undergrad": "",
+    "employer": "Chicago Trading Company",
+    "grad_year": ""
+  },
+  {
+    "name": "Emma Chen",
+    "url": "https://www.linkedin.com/in/emma-chen2022/",
+    "program": "cmu-mscf",
+    "headline": "Computational Finance and Stat/ML at CMU | BNP Paribas",
+    "undergrad": "",
+    "employer": "BNP Paribas",
+    "grad_year": ""
+  },
+  {
+    "name": "Sydney Fife",
+    "url": "https://www.linkedin.com/in/sydneyfife/",
+    "program": "cmu-mscf",
+    "headline": "MS in Computational Finance at CMU | Seeking Quant Strategist Internship",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Lorena Rodriguez",
+    "url": "https://www.linkedin.com/in/lorenarp/",
+    "program": "cmu-mscf",
+    "headline": "MSc Computational Finance @ CMU",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Binyuan Yan",
+    "url": "https://www.linkedin.com/in/binyuanyan/",
+    "program": "cmu-mscf",
+    "headline": "Quant Strats @ Goldman Sachs | MS Computational Finance @ CMU",
+    "undergrad": "UC San Diego",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Tongtong Jia",
+    "url": "https://www.linkedin.com/in/tongtong-jia-kiko/",
+    "program": "cmu-mscf",
+    "headline": "Quant Strats at Deutsche Bank | CMU MSCF 2025",
+    "undergrad": "HKUST",
+    "employer": "Deutsche Bank",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Leo Xu",
+    "url": "https://www.linkedin.com/in/xu-leo/",
+    "program": "cmu-mscf",
+    "headline": "Quant Summer Analyst @ Citi | Computational Finance + AI @ CMU",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": ""
+  },
+  {
+    "name": "Yujing (Emily) Zhang",
+    "url": "https://www.linkedin.com/in/yujing-emily-zhang/",
+    "program": "cmu-mscf",
+    "headline": "Summer Associate, Equity | CMU MSCF 2025",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Bopei Nie",
+    "url": "https://www.linkedin.com/in/bopei-nie/",
+    "program": "cmu-mscf",
+    "headline": "Incoming Commodities Quant Researcher | CMU MSCF",
+    "undergrad": "",
+    "employer": "Millennium",
+    "grad_year": ""
+  },
+  {
+    "name": "Tianyu Wu",
+    "url": "https://www.linkedin.com/in/tianyuwu0821/",
+    "program": "cmu-mscf",
+    "headline": "CMU MSCF 27' | President Women in Quant Finance",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2027"
+  },
+  {
+    "name": "Xinjue (Cindy) Y.",
+    "url": "https://www.linkedin.com/in/cindyyxj/",
+    "program": "cmu-mscf",
+    "headline": "Citi Markets Quantitative Analysis Analyst | CMU MSCF '25",
+    "undergrad": "UNC",
+    "employer": "Citi",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Vignesh Raja S.",
+    "url": "https://www.linkedin.com/in/vrsb/",
+    "program": "cmu-mscf",
+    "headline": "KIMC Summer Fellow | Ex-ExxonMobil QA | CMU MSCF '26",
+    "undergrad": "",
+    "employer": "KAUST Investment Management",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Ruixuan Liu",
+    "url": "https://www.linkedin.com/in/ruixuan-liu-421261152/",
+    "program": "cmu-mscf",
+    "headline": "Quantitative Researcher | CMU MSCF '24 | UMich '22",
+    "undergrad": "University of Michigan",
+    "employer": "GMO",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Xingdian Zhao",
+    "url": "https://www.linkedin.com/in/xingdian-zhao-abby1219/",
+    "program": "cmu-mscf",
+    "headline": "Data Analyst @ Cubist, Point72 | CMU MSCF '25",
+    "undergrad": "",
+    "employer": "Cubist/Point72",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Yifan Zhao",
+    "url": "https://www.linkedin.com/in/yifan-zhao-andrew/",
+    "program": "cmu-mscf",
+    "headline": "Equity derivatives quant at RBC Capital Markets | CMU MSCF",
+    "undergrad": "",
+    "employer": "RBC Capital Markets",
+    "grad_year": ""
+  },
+  {
+    "name": "Maria Jose Ruiz Rodriguez",
+    "url": "https://www.linkedin.com/in/mar%C3%ADa-jos%C3%A9-ruiz-rodr%C3%ADguez-75bb12179/",
+    "program": "cmu-mscf",
+    "headline": "Risk Management Associate at Calamos | CMU MSCF 2025",
+    "undergrad": "",
+    "employer": "Calamos Investments",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Jianlin (Isaac) Chen",
+    "url": "https://www.linkedin.com/in/jianlin-chen/",
+    "program": "cmu-mscf",
+    "headline": "Quant Researcher @ Trexquant | CMU MSCF",
+    "undergrad": "",
+    "employer": "Trexquant",
+    "grad_year": ""
+  },
+  {
+    "name": "Jamie Ren",
+    "url": "https://www.linkedin.com/in/jren19/",
+    "program": "cmu-mscf",
+    "headline": "Data Scientist | QR Intern Squarepoint | CMU MSCF 2025",
+    "undergrad": "",
+    "employer": "Squarepoint Capital",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Lingke Yuan",
+    "url": "https://www.linkedin.com/in/yuanlingke/",
+    "program": "cmu-mscf",
+    "headline": "Quant Research Analyst at Forest Creek Capital | CMU MSCF",
+    "undergrad": "HKU",
+    "employer": "Forest Creek Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Han Yan",
+    "url": "https://www.linkedin.com/in/han-yan-143450205/",
+    "program": "cmu-mscf",
+    "headline": "CMU MSCF Class of 2024",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Susan Storrick Timko",
+    "url": "https://www.linkedin.com/in/susantimko/",
+    "program": "cmu-mscf",
+    "headline": "Director, Academic Advising at CMU MSCF",
+    "undergrad": "",
+    "employer": "Carnegie Mellon University",
+    "grad_year": ""
+  },
+  {
+    "name": "Silvia Du",
+    "url": "https://www.linkedin.com/in/silviadu/",
+    "program": "princeton-mfin",
+    "headline": "Associate @ BAM | 24' MFin @ Princeton",
+    "undergrad": "",
+    "employer": "Balyasny Asset Management",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Pedro Albin",
+    "url": "https://www.linkedin.com/in/pedro-albin/",
+    "program": "princeton-mfin",
+    "headline": "MFin at Princeton University",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Judy Mao",
+    "url": "https://www.linkedin.com/in/judymao/",
+    "program": "princeton-mfin",
+    "headline": "Morgan Stanley | Princeton MFin 2023",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Peize Li",
+    "url": "https://www.linkedin.com/in/peize-li-85194221b/",
+    "program": "princeton-mfin",
+    "headline": "Citadel Securities | Princeton MFin",
+    "undergrad": "Peking University",
+    "employer": "Citadel Securities",
+    "grad_year": ""
+  },
+  {
+    "name": "Haoqian Zhang",
+    "url": "https://www.linkedin.com/in/haoqian-zhang-28a221259/",
+    "program": "princeton-mfin",
+    "headline": "MFin Student @ Princeton University",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Siddhartha Kahali",
+    "url": "https://www.linkedin.com/in/siddhartha-kahali/",
+    "program": "princeton-mfin",
+    "headline": "Quantitative Researcher at Arrowstreet Capital | Princeton MFin",
+    "undergrad": "IIT Delhi",
+    "employer": "Arrowstreet Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Raghav Sood",
+    "url": "https://www.linkedin.com/in/raghavsood98/",
+    "program": "princeton-mfin",
+    "headline": "Master in Finance Candidate at Princeton | PanAgora",
+    "undergrad": "",
+    "employer": "PanAgora Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Serena Gao",
+    "url": "https://www.linkedin.com/in/serena-gao-137076137/",
+    "program": "princeton-mfin",
+    "headline": "MFin @ Princeton | CMU BSCF '20",
+    "undergrad": "Carnegie Mellon University",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Sicheng Chen",
+    "url": "https://www.linkedin.com/in/sicheng-chen-a4ba982a4/",
+    "program": "princeton-mfin",
+    "headline": "Virtu Financial | Princeton MFin",
+    "undergrad": "",
+    "employer": "Virtu Financial",
+    "grad_year": ""
+  },
+  {
+    "name": "Cindy Ning-Li",
+    "url": "https://www.linkedin.com/in/cindy-ning-li-866203118/",
+    "program": "princeton-mfin",
+    "headline": "UBS | Princeton MFin",
+    "undergrad": "",
+    "employer": "UBS",
+    "grad_year": ""
+  },
+  {
+    "name": "Elisabetta Cavallo",
+    "url": "https://www.linkedin.com/in/elisabetta-cavallo/",
+    "program": "princeton-mfin",
+    "headline": "Brevan Howard | Princeton MFin",
+    "undergrad": "",
+    "employer": "Brevan Howard",
+    "grad_year": ""
+  },
+  {
+    "name": "Shuo (Kevin) Diao",
+    "url": "https://www.linkedin.com/in/sdiao/",
+    "program": "princeton-mfin",
+    "headline": "Master in Finance at Princeton | J.P. Morgan",
+    "undergrad": "",
+    "employer": "J.P. Morgan",
+    "grad_year": ""
+  },
+  {
+    "name": "Jianwen Peng",
+    "url": "https://www.linkedin.com/in/jianwen-peng/",
+    "program": "princeton-mfin",
+    "headline": "Morgan Stanley | Princeton MFin",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": ""
+  },
+  {
+    "name": "Camy Liu",
+    "url": "https://www.linkedin.com/in/camy-liu-914988a0/",
+    "program": "princeton-mfin",
+    "headline": "Squarepoint Capital | Princeton MFin",
+    "undergrad": "",
+    "employer": "Squarepoint Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Margherita Magenta",
+    "url": "https://www.linkedin.com/in/margherita-magenta/",
+    "program": "mit-mfin",
+    "headline": "MIT Sloan MFin Candidate",
+    "undergrad": "Bocconi University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Harsh Kumar",
+    "url": "https://www.linkedin.com/in/harsh-kumar-mit/",
+    "program": "mit-mfin",
+    "headline": "MFin Candidate @ MIT Sloan",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Ludovico Ghitturi",
+    "url": "https://www.linkedin.com/in/ludovicoghitturi/",
+    "program": "mit-mfin",
+    "headline": "Quantitative Researcher at Quantbot Technologies | MIT MFin",
+    "undergrad": "",
+    "employer": "Quantbot Technologies",
+    "grad_year": ""
+  },
+  {
+    "name": "Marcus Imbert",
+    "url": "https://www.linkedin.com/in/marcus-imbert/",
+    "program": "mit-mfin",
+    "headline": "Credit Trading at JPMorgan | MIT MFin",
+    "undergrad": "",
+    "employer": "JPMorgan",
+    "grad_year": ""
+  },
+  {
+    "name": "Jiazheng Liu",
+    "url": "https://www.linkedin.com/in/jiazheng-liu/",
+    "program": "mit-mfin",
+    "headline": "PwC | MIT Sloan MFin",
+    "undergrad": "",
+    "employer": "PwC",
+    "grad_year": ""
+  },
+  {
+    "name": "Phoenix Li",
+    "url": "https://www.linkedin.com/in/phoenix26/",
+    "program": "mit-mfin",
+    "headline": "Research Analyst at Point72 | MIT Sloan MFin",
+    "undergrad": "",
+    "employer": "Point72",
+    "grad_year": ""
+  },
+  {
+    "name": "Martin Borsoi",
+    "url": "https://www.linkedin.com/in/martin-borsoi-cfa-0105b120/",
+    "program": "mit-mfin",
+    "headline": "Citadel | MIT Sloan MFin",
+    "undergrad": "",
+    "employer": "Citadel",
+    "grad_year": ""
+  },
+  {
+    "name": "Koumudi Mantha",
+    "url": "https://www.linkedin.com/in/koumudi-mantha-7b6b9193/",
+    "program": "mit-mfin",
+    "headline": "QMS Capital Management | MIT Sloan MFin",
+    "undergrad": "",
+    "employer": "QMS Capital Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Devin Connolly",
+    "url": "https://www.linkedin.com/in/devin-connolly/",
+    "program": "mit-mfin",
+    "headline": "Jump Trading LLC | MIT MFin",
+    "undergrad": "",
+    "employer": "Jump Trading",
+    "grad_year": ""
+  },
+  {
+    "name": "Jared Day",
+    "url": "https://www.linkedin.com/in/jared-day-62358a177/",
+    "program": "mit-mfin",
+    "headline": "PJT Partners | MIT MFin '23 | NYU Stern '21",
+    "undergrad": "NYU Stern",
+    "employer": "PJT Partners",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Yinan Huang",
+    "url": "https://www.linkedin.com/in/mollyhuang/",
+    "program": "mit-mfin",
+    "headline": "Master of Finance at MIT Sloan | McKinsey",
+    "undergrad": "",
+    "employer": "McKinsey & Company",
+    "grad_year": ""
+  },
+  {
+    "name": "Aashrit Cunchala",
+    "url": "https://www.linkedin.com/in/aashrit-cunchala-859236202/",
+    "program": "mit-mfin",
+    "headline": "MIT MFin 2026 | Applied Math/DS @ Pitt",
+    "undergrad": "University of Pittsburgh",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Osman Monla",
+    "url": "https://www.linkedin.com/in/osman-monla/",
+    "program": "mit-mfin",
+    "headline": "Quantitative Researcher @ Trexquant | MIT MFin",
+    "undergrad": "CentraleSupelec",
+    "employer": "Trexquant",
+    "grad_year": ""
+  },
+  {
+    "name": "Boyang Li",
+    "url": "https://www.linkedin.com/in/boyangli0504/",
+    "program": "mit-mfin",
+    "headline": "Quant Researcher | MIT MFin 23'",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Taeyeon Tania Kim",
+    "url": "https://www.linkedin.com/in/tae-yeon-tania-kim/",
+    "program": "mit-mfin",
+    "headline": "MFin '27 @MIT | LSE",
+    "undergrad": "LSE",
+    "employer": "",
+    "grad_year": "2027"
+  },
+  {
+    "name": "Cathy Wang",
+    "url": "https://www.linkedin.com/in/cathy-wang-profile-z2369wan/",
+    "program": "mit-mfin",
+    "headline": "MIT Sloan MFin",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Alex Jiangjun Yu",
+    "url": "https://www.linkedin.com/in/alexjiangjunyu/",
+    "program": "columbia-msfe",
+    "headline": "Master Student in Financial Engineering at Columbia",
+    "undergrad": "UC San Diego",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Chen Ye",
+    "url": "https://www.linkedin.com/in/chen-ye-9406412a4/",
+    "program": "columbia-msfe",
+    "headline": "Columbia MS in Financial Engineering '26 | UBS",
+    "undergrad": "Fudan University",
+    "employer": "UBS",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Paul Neubauer",
+    "url": "https://www.linkedin.com/in/paulneubauer/",
+    "program": "columbia-msfe",
+    "headline": "Data Scientist | Columbia MFE",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yuyang Xu",
+    "url": "https://www.linkedin.com/in/yuyang-alyssa-xu/",
+    "program": "columbia-msfe",
+    "headline": "Graduate at Columbia (Financial Engineering) | Peking University",
+    "undergrad": "Peking University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Anna Li",
+    "url": "https://www.linkedin.com/in/anna-li-058005141/",
+    "program": "columbia-msfe",
+    "headline": "MS in Financial Engineering @ Columbia | Hermes Capital",
+    "undergrad": "",
+    "employer": "Hermes Capital Advisors",
+    "grad_year": ""
+  },
+  {
+    "name": "Yiqi Feng",
+    "url": "https://www.linkedin.com/in/yiqi-feng/",
+    "program": "columbia-msfe",
+    "headline": "Goldman Sachs | Columbia MSFE",
+    "undergrad": "",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Elior Illouz",
+    "url": "https://www.linkedin.com/in/elior-illouz-8639a3123/",
+    "program": "columbia-msfe",
+    "headline": "Bank of America | Columbia FE Fellowship",
+    "undergrad": "",
+    "employer": "Bank of America",
+    "grad_year": ""
+  },
+  {
+    "name": "Amandeep Singh",
+    "url": "https://www.linkedin.com/in/amandeepsingh27/",
+    "program": "columbia-msfe",
+    "headline": "Financial Engineering graduate from Columbia",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Chintan Doshi",
+    "url": "https://www.linkedin.com/in/doshichintan/",
+    "program": "columbia-msfe",
+    "headline": "Balyasny Asset Management | Columbia MS Financial Engineering",
+    "undergrad": "",
+    "employer": "Balyasny Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Yutian Chen",
+    "url": "https://www.linkedin.com/in/chen-yutian/",
+    "program": "columbia-msfe",
+    "headline": "Senior Investigator @Cboe | MS Financial Engineering Columbia",
+    "undergrad": "",
+    "employer": "Cboe Global Markets",
+    "grad_year": ""
+  },
+  {
+    "name": "Chirjeev Singh",
+    "url": "https://www.linkedin.com/in/chirjeevsingh/",
+    "program": "columbia-msfe",
+    "headline": "Quantitative Researcher/Trader at DRW | Columbia",
+    "undergrad": "",
+    "employer": "DRW",
+    "grad_year": ""
+  },
+  {
+    "name": "Yiying Wang",
+    "url": "https://www.linkedin.com/in/yiying-wang-7a3358191/",
+    "program": "columbia-msfe",
+    "headline": "Federal Home Loan Bank of Indianapolis | Columbia FE",
+    "undergrad": "",
+    "employer": "FHLBI",
+    "grad_year": ""
+  },
+  {
+    "name": "Jasmine Lee",
+    "url": "https://www.linkedin.com/in/jasminelee00/",
+    "program": "columbia-msfe",
+    "headline": "TP ICAP | Columbia MS Financial Engineering",
+    "undergrad": "",
+    "employer": "TP ICAP",
+    "grad_year": ""
+  },
+  {
+    "name": "Colton Spence",
+    "url": "https://www.linkedin.com/in/cjspence/",
+    "program": "columbia-msfe",
+    "headline": "SCALP Trade | Columbia MS Financial Engineering '24",
+    "undergrad": "",
+    "employer": "SCALP Trade",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Richard Li",
+    "url": "https://www.linkedin.com/in/rickyli02/",
+    "program": "columbia-msfe",
+    "headline": "MS in Financial Engineering at Columbia IEOR",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Qingyang (Emma) Zhang",
+    "url": "https://www.linkedin.com/in/qingyangemmazhang/",
+    "program": "columbia-msfe",
+    "headline": "Quantitative Finance Associate at BNP Paribas | Columbia MSFE",
+    "undergrad": "",
+    "employer": "BNP Paribas",
+    "grad_year": ""
+  },
+  {
+    "name": "Eric Dong",
+    "url": "https://www.linkedin.com/in/ejdong",
+    "program": "columbia-msfe",
+    "headline": "MS Financial Engineering @ Columbia",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Barry (Yihe) Tian",
+    "url": "https://www.linkedin.com/in/barry-yihe-tian-610644351/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley Haas MFE 2026 | UCSD '24",
+    "undergrad": "UC San Diego",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Beihan Niu",
+    "url": "https://www.linkedin.com/in/beihan-niu/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE 26' | Quant Researcher | Senior Actuarial Associate",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Aryaman Awasthi",
+    "url": "https://www.linkedin.com/in/aryaman-awasthi99/",
+    "program": "berkeley-mfe",
+    "headline": "MFE @ UC Berkeley 2026",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Alexandre Cohen",
+    "url": "https://www.linkedin.com/in/alexandre-cohen-6b197862/",
+    "program": "berkeley-mfe",
+    "headline": "BNP Paribas | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "BNP Paribas",
+    "grad_year": ""
+  },
+  {
+    "name": "Oscar Ninou",
+    "url": "https://www.linkedin.com/in/oscarninou/",
+    "program": "berkeley-mfe",
+    "headline": "Quantitative Researcher | MFE @ UC Berkeley '26 | ESPCI Paris",
+    "undergrad": "ESPCI Paris",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Sidhanth Kapila",
+    "url": "https://www.linkedin.com/in/sidhanth-kapila-6a78a7213/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE 26 | USC MS CS 25 | USC CSBA 24",
+    "undergrad": "USC",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Jane Xin",
+    "url": "https://www.linkedin.com/in/jile-xin/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE | Nankai University",
+    "undergrad": "Nankai University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Wei (David) Qi",
+    "url": "https://www.linkedin.com/in/wei-qi-david/",
+    "program": "berkeley-mfe",
+    "headline": "GTS | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "GTS",
+    "grad_year": ""
+  },
+  {
+    "name": "Charles Dezons",
+    "url": "https://www.linkedin.com/in/charles-dezons-ucb/",
+    "program": "berkeley-mfe",
+    "headline": "MFE Student at UC Berkeley",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Somay Chopra",
+    "url": "https://www.linkedin.com/in/somay-chopra/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE'26 | Ex-Quant @ GS | IIT Kgp '22",
+    "undergrad": "IIT Kharagpur",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Chunni Jiang",
+    "url": "https://www.linkedin.com/in/chunni-jiang/",
+    "program": "berkeley-mfe",
+    "headline": "Morgan Stanley Fixed Income Associate Strats | UC Berkeley MFE '24",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Zexing Yang",
+    "url": "https://www.linkedin.com/in/zexing-yang/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE 26' | Seeking Quantitative Roles",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Sacha Apelbaum",
+    "url": "https://www.linkedin.com/in/sacha-apelbaum/",
+    "program": "berkeley-mfe",
+    "headline": "Walleye Capital | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "Walleye Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Wenhui (Tracy) Ge",
+    "url": "https://www.linkedin.com/in/wenhui-ge/",
+    "program": "berkeley-mfe",
+    "headline": "Berkeley Haas MFE 26 | Quantitative Researcher",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Rohan Rishi",
+    "url": "https://www.linkedin.com/in/rohan-rishi-19436312b/",
+    "program": "berkeley-mfe",
+    "headline": "Private Equity | QR and ML | Berkeley Haas MFE",
+    "undergrad": "Indian Statistical Institute",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Anuj Jain",
+    "url": "https://www.linkedin.com/in/anuj-jain-quant/",
+    "program": "berkeley-mfe",
+    "headline": "Building | MFE @Berkeley | CS @UCSD",
+    "undergrad": "UC San Diego",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Shashwat Mishra",
+    "url": "https://www.linkedin.com/in/shashwat-ucb/",
+    "program": "berkeley-mfe",
+    "headline": "Goldman Sachs | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Jiayuan Guo",
+    "url": "https://www.linkedin.com/in/jiayuan-guo/",
+    "program": "berkeley-mfe",
+    "headline": "UCB MFE '26 | UofT RC '24",
+    "undergrad": "University of Toronto",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Haomeng Wang",
+    "url": "https://www.linkedin.com/in/frank-haomeng-wang/",
+    "program": "berkeley-mfe",
+    "headline": "Morgan Stanley | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": ""
+  },
+  {
+    "name": "Aaryaman Gupta",
+    "url": "https://www.linkedin.com/in/aaryaman-gupta/",
+    "program": "berkeley-mfe",
+    "headline": "Quantitative Trader in Rates Algo Trading at UBS | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "UBS",
+    "grad_year": ""
+  },
+  {
+    "name": "Dahou Zheng",
+    "url": "https://www.linkedin.com/in/dahou-zheng-a7339615a/",
+    "program": "berkeley-mfe",
+    "headline": "Crypto Quant at DigiFinex | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "DigiFinex",
+    "grad_year": ""
+  },
+  {
+    "name": "Nathan Boyer",
+    "url": "https://www.linkedin.com/in/nathan-boyer-14b736111/",
+    "program": "berkeley-mfe",
+    "headline": "Deutsche Bank | UC Berkeley MFE",
+    "undergrad": "",
+    "employer": "Deutsche Bank",
+    "grad_year": ""
+  },
+  {
+    "name": "Shivesh Prakash",
+    "url": "https://www.linkedin.com/in/shivesh777/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley MFE | JPMC NYC QR Intern",
+    "undergrad": "",
+    "employer": "JPMorgan",
+    "grad_year": ""
+  },
+  {
+    "name": "Jiayi Y.",
+    "url": "https://www.linkedin.com/in/jiayi-y/",
+    "program": "berkeley-mfe",
+    "headline": "UC Berkeley Haas MFE 2026",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Shane Gladson",
+    "url": "https://www.linkedin.com/in/shane-gladson/",
+    "program": "uchicago-msfm",
+    "headline": "Junior Quant Developer at DV Trading | UChicago MSFM",
+    "undergrad": "",
+    "employer": "DV Trading",
+    "grad_year": ""
+  },
+  {
+    "name": "Daniel Zhou",
+    "url": "https://www.linkedin.com/in/daniel-zhou-/",
+    "program": "uchicago-msfm",
+    "headline": "MSFM '25 student @ UChicago",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Felix Poirier",
+    "url": "https://www.linkedin.com/in/felix-poirier/",
+    "program": "uchicago-msfm",
+    "headline": "Graduate Msc Financial Math @ UChicago | Maroon+ Scholar",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Arjun Doshi",
+    "url": "https://www.linkedin.com/in/arjundoshi221/",
+    "program": "uchicago-msfm",
+    "headline": "QR Analyst @ RV Capital | Financial Mathematics @UChicago",
+    "undergrad": "",
+    "employer": "RV Capital",
+    "grad_year": ""
+  },
+  {
+    "name": "Martin Zhang",
+    "url": "https://www.linkedin.com/in/xianjie-martin-zhang/",
+    "program": "uchicago-msfm",
+    "headline": "Evolution Asset Management | UChicago MSFM",
+    "undergrad": "",
+    "employer": "Evolution Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Sidharth Saha",
+    "url": "https://www.linkedin.com/in/sidharth-saha-489940174/",
+    "program": "uchicago-msfm",
+    "headline": "MSFM Candidate @ UChicago | LPL Financial",
+    "undergrad": "",
+    "employer": "LPL Financial",
+    "grad_year": ""
+  },
+  {
+    "name": "Sok Han (Kevin) Jang",
+    "url": "https://www.linkedin.com/in/sokhanjang/",
+    "program": "uchicago-msfm",
+    "headline": "Treasury @ 174PG | UChicago MSFM 2023",
+    "undergrad": "",
+    "employer": "174PG",
+    "grad_year": "2023"
+  },
+  {
+    "name": "Mark Hendricks",
+    "url": "https://www.linkedin.com/in/mark-hendricks-9248671ba/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM Faculty/Admin",
+    "undergrad": "",
+    "employer": "University of Chicago",
+    "grad_year": ""
+  },
+  {
+    "name": "Andrew Yang",
+    "url": "https://www.linkedin.com/in/andrew-yang-b35700176/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate | Seeking QF Internship",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Aryaa Gunavante",
+    "url": "https://www.linkedin.com/in/aryaa-gunavante/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Scott Hanna",
+    "url": "https://www.linkedin.com/in/william-scott-hanna/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate | William & Mary",
+    "undergrad": "William & Mary",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Phoebe Fingold",
+    "url": "https://www.linkedin.com/in/phoebefingold/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Dafu Zhu",
+    "url": "https://www.linkedin.com/in/dafu-zhu/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM '26 | Seeking Quant Internship",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Rajdeep Choudhury",
+    "url": "https://www.linkedin.com/in/choudhuryrajdeep/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 | QR @ J.P. Morgan | IIT Kharagpur",
+    "undergrad": "IIT Kharagpur",
+    "employer": "J.P. Morgan",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Wan Hwang",
+    "url": "https://www.linkedin.com/in/wan-hwang-a3a433208/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Yuting Li",
+    "url": "https://www.linkedin.com/in/yuting-li-4146a4287/",
+    "program": "uchicago-msfm",
+    "headline": "Incoming MSFM candidate @UChicago",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Andrew Arbitman",
+    "url": "https://www.linkedin.com/in/andrew-arbitman-a7a335276/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM 2026 Candidate",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Zheng Guo",
+    "url": "https://www.linkedin.com/in/zhengguo-simon/",
+    "program": "uchicago-msfm",
+    "headline": "UChicago MSFM '26 | Incoming QR | Manteio Capital",
+    "undergrad": "",
+    "employer": "Manteio Capital",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Francis Yuan",
+    "url": "https://www.linkedin.com/in/yeyuan-francis/",
+    "program": "cornell-mfe",
+    "headline": "MEng Financial Engineering @ Cornell | UIUC",
+    "undergrad": "UIUC",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Ziyi Tang",
+    "url": "https://www.linkedin.com/in/ziyi-tang-1395743b",
+    "program": "cornell-mfe",
+    "headline": "Senior QRA at MIO Partners | Cornell CFEM",
+    "undergrad": "",
+    "employer": "MIO Partners",
+    "grad_year": ""
+  },
+  {
+    "name": "Olivia Liang",
+    "url": "https://www.linkedin.com/in/olivia-liang-ucb2020/",
+    "program": "cornell-mfe",
+    "headline": "AVP @ Bank of America | MFE @ Cornell | UC Berkeley",
+    "undergrad": "UC Berkeley",
+    "employer": "Bank of America",
+    "grad_year": ""
+  },
+  {
+    "name": "Elina Z.",
+    "url": "https://www.linkedin.com/in/elina-fuwei-zhuang/",
+    "program": "cornell-mfe",
+    "headline": "MFE @ Cornell | CS & Math @ Queen's | QR & Data Science",
+    "undergrad": "Queen's University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Chengyue Zhang",
+    "url": "https://www.linkedin.com/in/cz525/",
+    "program": "cornell-mfe",
+    "headline": "Hedge Fund Quant Analyst | Cornell MFE 24",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Hanyong Lin",
+    "url": "https://www.linkedin.com/in/hanyonglin/",
+    "program": "cornell-mfe",
+    "headline": "Cornell ORIE M.Eng. '25 | CITI Quant Summer Analyst",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Jun Chang",
+    "url": "https://www.linkedin.com/in/jun-chang-33a65212b/",
+    "program": "cornell-mfe",
+    "headline": "Quant Analyst at Citi | Cornell MFE",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": ""
+  },
+  {
+    "name": "Zhining Chen",
+    "url": "https://www.linkedin.com/in/zhining-chen-27113b100/",
+    "program": "cornell-mfe",
+    "headline": "Citi | Cornell MFE",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": ""
+  },
+  {
+    "name": "Ian Konigsberg",
+    "url": "https://www.linkedin.com/in/ian-konigsberg-5b20b415b/",
+    "program": "cornell-mfe",
+    "headline": "Master of Financial Engineering Student at Cornell",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Hanyue Yang",
+    "url": "https://www.linkedin.com/in/hanyueyang/",
+    "program": "cornell-mfe",
+    "headline": "Associate at BlackRock | Cornell FE",
+    "undergrad": "",
+    "employer": "BlackRock",
+    "grad_year": ""
+  },
+  {
+    "name": "Michael Thompson",
+    "url": "https://www.linkedin.com/in/m-thompson4/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF @ Georgia Tech | Lunar Trading",
+    "undergrad": "",
+    "employer": "Lunar Trading",
+    "grad_year": ""
+  },
+  {
+    "name": "Xiaowei Zhu",
+    "url": "https://www.linkedin.com/in/xiaowei-zhu-4b031019b/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF at Georgia Tech | Seeking QR/Trader Internship",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Sriya Nelluri",
+    "url": "https://www.linkedin.com/in/sriya-nelluri/",
+    "program": "gatech-qcf",
+    "headline": "Incoming MS QCF Spring '26 at Georgia Tech | Ex-Goldman Sachs",
+    "undergrad": "NIT Trichy",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Vy Vo",
+    "url": "https://www.linkedin.com/in/vy-vo-/",
+    "program": "gatech-qcf",
+    "headline": "Georgia Tech MS QCF '26",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Ziyi Wang",
+    "url": "https://www.linkedin.com/in/ziyiwang6/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF & CSE Candidate at Georgia Tech",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Gabriel Montes",
+    "url": "https://www.linkedin.com/in/gabriel-montes-5459171b5/",
+    "program": "gatech-qcf",
+    "headline": "Quant Trader Applicant | MS QCF Georgia Tech | All Options",
+    "undergrad": "",
+    "employer": "All Options",
+    "grad_year": ""
+  },
+  {
+    "name": "Simiao (Zoe) Zhao",
+    "url": "https://www.linkedin.com/in/simiaozhao/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF at Georgia Tech '25 | OSU Alum",
+    "undergrad": "Ohio State University",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Divyangi Singh",
+    "url": "https://www.linkedin.com/in/divyangisingh26/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate at Georgia Tech Scheller",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Rajath Sathyanarayana",
+    "url": "https://www.linkedin.com/in/rajath-sathyanarayana-40479716a/",
+    "program": "gatech-qcf",
+    "headline": "Quant Finance @ Georgia Tech | ML @ CMU | Ex-Amazon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Jingwei Li",
+    "url": "https://www.linkedin.com/in/jingwei-li-zavier/",
+    "program": "gatech-qcf",
+    "headline": "Dual MS in QCF & CSE @ Georgia Tech | CUFE",
+    "undergrad": "CUFE",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Aakash Ramesh",
+    "url": "https://www.linkedin.com/in/aramesh342/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF Candidate @ Georgia Tech | Deloitte",
+    "undergrad": "IISER Pune",
+    "employer": "Deloitte",
+    "grad_year": ""
+  },
+  {
+    "name": "Srihas Gunda",
+    "url": "https://www.linkedin.com/in/srihas-gunda-x414141/",
+    "program": "gatech-qcf",
+    "headline": "MS QCF @Georgia Tech | Aspiring quant",
+    "undergrad": "",
+    "employer": "Rakuten Mobile",
+    "grad_year": ""
+  },
+  {
+    "name": "Chen Zhao",
+    "url": "https://www.linkedin.com/in/chen-zhao-cz/",
+    "program": "nyu-courant",
+    "headline": "Mathematics in Finance from NYU Courant",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Shuo Qi",
+    "url": "https://www.linkedin.com/in/shuo-qi/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance at NYU Courant | Citi",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": ""
+  },
+  {
+    "name": "Shunwei (David) Du",
+    "url": "https://www.linkedin.com/in/shunwei-david-du/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Math in Finance at NYU Courant | PanAgora",
+    "undergrad": "NYU",
+    "employer": "PanAgora Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Aarushi Singh (SDE)",
+    "url": "https://www.linkedin.com/in/aarushi-singh-7762a9205/",
+    "program": "nyu-courant",
+    "headline": "SDE Intern @ Amazon | MS Math Finance Candidate @ NYU Courant",
+    "undergrad": "",
+    "employer": "Amazon",
+    "grad_year": ""
+  },
+  {
+    "name": "Aarushi Singh",
+    "url": "https://www.linkedin.com/in/aarushisingh470/",
+    "program": "nyu-courant",
+    "headline": "MS in Mathematics in Finance Candidate @ NYU Courant",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Ruize Chen",
+    "url": "https://www.linkedin.com/in/ruize-chen/",
+    "program": "nyu-courant",
+    "headline": "Associate at Mizuho | M.S. in Math Finance at NYU Courant",
+    "undergrad": "University of Rochester",
+    "employer": "Mizuho",
+    "grad_year": ""
+  },
+  {
+    "name": "Xinran Liu",
+    "url": "https://www.linkedin.com/in/xinran-liu-nyu/",
+    "program": "nyu-courant",
+    "headline": "MS of Math in Finance at NYU Courant | QR | ML",
+    "undergrad": "UC Irvine",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Kaiwen (Kai) Zhou",
+    "url": "https://www.linkedin.com/in/kaiwen-kai-zhou/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Mathematics in Finance @ NYU Courant",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Simar Oberoi",
+    "url": "https://www.linkedin.com/in/simaroberoi/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Math Finance from NYU Courant | Morgan Stanley",
+    "undergrad": "University of Waterloo",
+    "employer": "Morgan Stanley",
+    "grad_year": ""
+  },
+  {
+    "name": "Ziyuan Zhao",
+    "url": "https://www.linkedin.com/in/ziyuan-zhao/",
+    "program": "nyu-courant",
+    "headline": "MS in Math in Finance Candidate at NYU Courant",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Wei-Han Huang",
+    "url": "https://www.linkedin.com/in/wei-hanhuang/",
+    "program": "nyu-courant",
+    "headline": "M.S. Mathematics in Finance at NYU Courant",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Peter Zhang",
+    "url": "https://www.linkedin.com/in/peter-zhang-53b660217/",
+    "program": "nyu-courant",
+    "headline": "M.S. in Math Finance Candidate at NYU Courant | NYU",
+    "undergrad": "NYU",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Zixu (Robin) Zhai",
+    "url": "https://www.linkedin.com/in/zixu-robin-zhai/",
+    "program": "nyu-courant",
+    "headline": "Math in Finance MS at NYU Courant | NYU Math & Econ",
+    "undergrad": "NYU",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Aristo Liu",
+    "url": "https://www.linkedin.com/in/aristoliu/",
+    "program": "nyu-courant",
+    "headline": "Columbia University | NYU Courant Math in Finance",
+    "undergrad": "",
+    "employer": "Columbia University",
+    "grad_year": ""
+  },
+  {
+    "name": "Bowen Zhao",
+    "url": "https://www.linkedin.com/in/zhaobowen/",
+    "program": "nyu-tandon-msfe",
+    "headline": "2nd Year MS in Financial Engineering at NYU Tandon",
+    "undergrad": "University of Washington",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Shubham Shende",
+    "url": "https://www.linkedin.com/in/shubhamshende01/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS Financial Engineering Student at NYU Tandon | CFA L2",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Ziming Wang",
+    "url": "https://www.linkedin.com/in/ziming-wangnyu/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering Student at NYU Tandon",
+    "undergrad": "Shanghai Jiao Tong University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yixin Xu",
+    "url": "https://www.linkedin.com/in/yixin-xu-uci/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Goldman Sachs | NYU Tandon MSFE",
+    "undergrad": "",
+    "employer": "Goldman Sachs",
+    "grad_year": ""
+  },
+  {
+    "name": "Arnav Sinha",
+    "url": "https://www.linkedin.com/in/arnav-sinha/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Quant Research Intern | MS Financial Engineering NYU Tandon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Ishaan Chaturvedi",
+    "url": "https://www.linkedin.com/in/ishaan-chaturvedi-ic/",
+    "program": "nyu-tandon-msfe",
+    "headline": "Market Risk at Societe Generale | NYU Tandon FE",
+    "undergrad": "",
+    "employer": "Societe Generale",
+    "grad_year": ""
+  },
+  {
+    "name": "Tiangu Zhang",
+    "url": "https://www.linkedin.com/in/tianguzhang/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering Student at NYU Tandon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Xin Huang",
+    "url": "https://www.linkedin.com/in/xinhuang888/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering from NYU Tandon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Suxiang Zhong",
+    "url": "https://www.linkedin.com/in/suxiang-zhong-6b6327276/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering at NYU Tandon | Acadia Data",
+    "undergrad": "",
+    "employer": "Acadia Data",
+    "grad_year": ""
+  },
+  {
+    "name": "Barry Blecherman",
+    "url": "https://www.linkedin.com/in/barry-blecherman-699137/",
+    "program": "nyu-tandon-msfe",
+    "headline": "MS in Financial Engineering at NYU Tandon 2026",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2026"
+  },
+  {
+    "name": "Zhijing Wu",
+    "url": "https://www.linkedin.com/in/zhijing-wu-8346a7247/",
+    "program": "nyu-tandon-msfe",
+    "headline": "NYU Tandon MS in Financial Engineering",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Jiayu Liu",
+    "url": "https://www.linkedin.com/in/jiayu-carina-liu/",
+    "program": "nyu-tandon-msfe",
+    "headline": "M.S. Financial Engineering NYU Tandon",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Fatma Soliman",
+    "url": "https://www.linkedin.com/in/fatma-soliman-866b3a224/",
+    "program": "nyu-tandon-msfe",
+    "headline": "NYU MS Financial Engineering | BBA Finance",
+    "undergrad": "Baruch College",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yvonne Z.",
+    "url": "https://www.linkedin.com/in/yvonne-z/",
+    "program": "ucla-mfe",
+    "headline": "UCLA Anderson MFE Student | Morgan Stanley",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": ""
+  },
+  {
+    "name": "Junho Kim",
+    "url": "https://www.linkedin.com/in/junhokim94/",
+    "program": "ucla-mfe",
+    "headline": "MFE 2025 at UCLA Anderson",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Siddhant Kumar",
+    "url": "https://www.linkedin.com/in/sidd11/",
+    "program": "ucla-mfe",
+    "headline": "Yayati | UCLA Anderson MFE",
+    "undergrad": "",
+    "employer": "Yayati",
+    "grad_year": ""
+  },
+  {
+    "name": "Xiaoyue Wang",
+    "url": "https://www.linkedin.com/in/xiaoyue-wang-53a363188/",
+    "program": "ucla-mfe",
+    "headline": "UCLA Master of Financial Engineering",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Rahul Gogawat",
+    "url": "https://www.linkedin.com/in/rahul-gogawat-a32a6695/",
+    "program": "ucla-mfe",
+    "headline": "Manager, Financial Engineer at ICE | UCLA MFE",
+    "undergrad": "",
+    "employer": "ICE",
+    "grad_year": ""
+  },
+  {
+    "name": "Coco (Yike) Li",
+    "url": "https://www.linkedin.com/in/coco-yike-li-a219a1242/",
+    "program": "ucla-mfe",
+    "headline": "MFE Candidate @ UCLA Anderson",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Jessica Peng",
+    "url": "https://www.linkedin.com/in/jessica-peng-44569015b/",
+    "program": "ucla-mfe",
+    "headline": "MFE'25 Student Council President @ UCLA Anderson",
+    "undergrad": "",
+    "employer": "AXS",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Aryan Chopra",
+    "url": "https://www.linkedin.com/in/aryan--chopra/",
+    "program": "ucla-mfe",
+    "headline": "UCLA Anderson MFE'25 | PwC | CFA Level II Candidate",
+    "undergrad": "",
+    "employer": "PwC",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Manas Baviskar",
+    "url": "https://www.linkedin.com/in/manasbaviskar/",
+    "program": "ucla-mfe",
+    "headline": "MFE Candidate at UCLA Anderson | Ex-UBS, Morgan Stanley",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yasaswy Aluri",
+    "url": "https://www.linkedin.com/in/yasaswyaluri/",
+    "program": "ucla-mfe",
+    "headline": "Senior Financial Engineer at ICE | UCLA MFE '24 | BITS Pilani",
+    "undergrad": "BITS Pilani",
+    "employer": "ICE",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Mihnea Popa",
+    "url": "https://www.linkedin.com/in/mihnea-popa-2a7894295/",
+    "program": "ucla-mfe",
+    "headline": "MFE at UCLA Anderson",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Aditya Shankar",
+    "url": "https://www.linkedin.com/in/aditya-a-shankar/",
+    "program": "ucla-mfe",
+    "headline": "MFE at UCLA Anderson | Aspiring Investment Banker",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Pranay Kumar",
+    "url": "https://www.linkedin.com/in/pranaykumarnj/",
+    "program": "ucla-mfe",
+    "headline": "Master of Financial Engineering @ UCLA Anderson",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Kamaljith Singh",
+    "url": "https://www.linkedin.com/in/kamaljith-singh/",
+    "program": "ucla-mfe",
+    "headline": "Morgan Stanley | UCLA Anderson MFE",
+    "undergrad": "",
+    "employer": "Morgan Stanley",
+    "grad_year": ""
+  },
+  {
+    "name": "Aryan Jain",
+    "url": "https://www.linkedin.com/in/aryan-jain2909/",
+    "program": "ucla-mfe",
+    "headline": "Quantitative Research | UCLA Anderson MFE'25",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Bingqing Wu",
+    "url": "https://www.linkedin.com/in/bqing-wu/",
+    "program": "ucla-mfe",
+    "headline": "Market Risk Analyst @ UBS | UCLA Anderson MFE",
+    "undergrad": "",
+    "employer": "UBS",
+    "grad_year": ""
+  },
+  {
+    "name": "Ananya Mathu",
+    "url": "https://www.linkedin.com/in/ananyamathu/",
+    "program": "ucla-mfe",
+    "headline": "Risk and Quantitative Strategy at Capital One | UCLA MFE",
+    "undergrad": "",
+    "employer": "Capital One",
+    "grad_year": ""
+  },
+  {
+    "name": "Lev Butin",
+    "url": "https://www.linkedin.com/in/lev-butin-392726323/",
+    "program": "rutgers-mqf",
+    "headline": "MQF Student @ Rutgers | Econ @MSU",
+    "undergrad": "MSU",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Akshay Joshi",
+    "url": "https://www.linkedin.com/in/akshay-girish-joshi/",
+    "program": "rutgers-mqf",
+    "headline": "Capital Market Risk Quant at U.S. Bank | Rutgers MQF",
+    "undergrad": "",
+    "employer": "U.S. Bank",
+    "grad_year": ""
+  },
+  {
+    "name": "Xiaoting (Lisa) Liu",
+    "url": "https://www.linkedin.com/in/lisaliu2608/",
+    "program": "rutgers-mqf",
+    "headline": "Lead Quant Specialist for MBS | Wells Fargo | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Wells Fargo",
+    "grad_year": ""
+  },
+  {
+    "name": "Mohammed Zaid",
+    "url": "https://www.linkedin.com/in/zed228/",
+    "program": "rutgers-mqf",
+    "headline": "M.S. Quantitative Finance at Rutgers",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Amogh Krishnan",
+    "url": "https://www.linkedin.com/in/amogh-krishnan/",
+    "program": "rutgers-mqf",
+    "headline": "Citi | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Citi",
+    "grad_year": ""
+  },
+  {
+    "name": "Timothy CW Lu",
+    "url": "https://www.linkedin.com/in/timothy-cw-lu/",
+    "program": "rutgers-mqf",
+    "headline": "M.S. Quantitative Finance @ Rutgers Business School",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Lakshay Garg",
+    "url": "https://www.linkedin.com/in/garglakshay/",
+    "program": "rutgers-mqf",
+    "headline": "EY | Rutgers MQF",
+    "undergrad": "",
+    "employer": "EY",
+    "grad_year": ""
+  },
+  {
+    "name": "Stella Lu",
+    "url": "https://www.linkedin.com/in/stella-lu816/",
+    "program": "rutgers-mqf",
+    "headline": "Bloomberg LP | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Bloomberg LP",
+    "grad_year": ""
+  },
+  {
+    "name": "Ren Yang",
+    "url": "https://www.linkedin.com/in/ren-yang-120480131/",
+    "program": "rutgers-mqf",
+    "headline": "Prudential Chief Investment Office | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Prudential",
+    "grad_year": ""
+  },
+  {
+    "name": "Yanzhong Huang",
+    "url": "https://www.linkedin.com/in/yanzhonghuang/",
+    "program": "rutgers-mqf",
+    "headline": "Quantel Asset Management | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Quantel Asset Management",
+    "grad_year": ""
+  },
+  {
+    "name": "Bo Ni",
+    "url": "https://www.linkedin.com/in/anibo1994/",
+    "program": "rutgers-mqf",
+    "headline": "Barclays | Rutgers MQF",
+    "undergrad": "",
+    "employer": "Barclays",
+    "grad_year": ""
+  },
+  {
+    "name": "Jiahui Zhou",
+    "url": "https://www.linkedin.com/in/jeffryzzhou/",
+    "program": "rutgers-mqf",
+    "headline": "InfiniteQuant | Rutgers MQF Class of 2024 President",
+    "undergrad": "",
+    "employer": "InfiniteQuant",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Karan Raina",
+    "url": "https://www.linkedin.com/in/karan-raina-59314713a/",
+    "program": "rutgers-mqf",
+    "headline": "Senior Product Specialist, Risk at FactSet | Rutgers MQF",
+    "undergrad": "",
+    "employer": "FactSet",
+    "grad_year": ""
+  },
+  {
+    "name": "Gabriel Ribero",
+    "url": "https://www.linkedin.com/in/gabriel-ribero/",
+    "program": "rutgers-mqf",
+    "headline": "M.S. in Quantitative Finance @Rutgers",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Qinxuan Jiang",
+    "url": "https://www.linkedin.com/in/qinxuan-jiang-b577321b5/",
+    "program": "rutgers-mqf",
+    "headline": "Barclays | Rutgers MQF 2022",
+    "undergrad": "",
+    "employer": "Barclays",
+    "grad_year": "2022"
+  },
+  {
+    "name": "Yuxin Cao",
+    "url": "https://www.linkedin.com/in/yuxincao1203/",
+    "program": "rutgers-mqf",
+    "headline": "ZD Global Group | Rutgers MQF",
+    "undergrad": "",
+    "employer": "ZD Global Group",
+    "grad_year": ""
+  },
+  {
+    "name": "Rany Stephan",
+    "url": "https://www.linkedin.com/in/ranystephan/",
+    "program": "stanford-mcf",
+    "headline": "MS MCF @ Stanford University ICME",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yeolanda (Sidai) Huang",
+    "url": "https://www.linkedin.com/in/yeolanda-sidai-huang-1b6902193/",
+    "program": "stanford-mcf",
+    "headline": "Stanford ICME MCF | CMU '22 CompFi + StatML",
+    "undergrad": "Carnegie Mellon University",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Qingqing (Annie) Yu",
+    "url": "https://www.linkedin.com/in/qingqingyu05/",
+    "program": "stanford-mcf",
+    "headline": "Stanford ICME MCF '24 | UCI Math '22",
+    "undergrad": "UC Irvine",
+    "employer": "",
+    "grad_year": "2024"
+  },
+  {
+    "name": "Siddhant S.",
+    "url": "https://www.linkedin.com/in/siddhantsukhani/",
+    "program": "stanford-mcf",
+    "headline": "Stanford ICME MCF | BS Math GaTech",
+    "undergrad": "Georgia Tech",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Zetian Li",
+    "url": "https://www.linkedin.com/in/zetianli1003/",
+    "program": "stanford-mcf",
+    "headline": "Stanford ICME MCF | Waterloo Alumni | Liquid AI",
+    "undergrad": "University of Waterloo",
+    "employer": "Liquid AI",
+    "grad_year": ""
+  },
+  {
+    "name": "Can Huang",
+    "url": "https://www.linkedin.com/in/canhuang123/",
+    "program": "stanford-mcf",
+    "headline": "MS @ Stanford ICME-MCF",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yu Luo",
+    "url": "https://www.linkedin.com/in/yu-luo-b18b22232/",
+    "program": "uiuc-msfe",
+    "headline": "MS Financial Engineering at UIUC | Capital One",
+    "undergrad": "",
+    "employer": "Capital One",
+    "grad_year": ""
+  },
+  {
+    "name": "Binglian (Lucy) Luo",
+    "url": "https://www.linkedin.com/in/binglian-lucy-luo-55223521b/",
+    "program": "uiuc-msfe",
+    "headline": "MS in Financial Engineering at UIUC",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Liang Zhang",
+    "url": "https://www.linkedin.com/in/liang-zhang-a2158326b/",
+    "program": "uiuc-msfe",
+    "headline": "MS in Financial Engineering at UIUC | China Guangfa Bank",
+    "undergrad": "",
+    "employer": "China Guangfa Bank",
+    "grad_year": ""
+  },
+  {
+    "name": "Fan Xia",
+    "url": "https://www.linkedin.com/in/fanxia26/",
+    "program": "uiuc-msfe",
+    "headline": "MS in Financial Engineering at UIUC | Dec 2025",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": "2025"
+  },
+  {
+    "name": "Advaith Upadhya",
+    "url": "https://www.linkedin.com/in/advaith-upadhya/",
+    "program": "uiuc-msfe",
+    "headline": "MS in Financial Engineering at UIUC",
+    "undergrad": "",
+    "employer": "",
+    "grad_year": ""
+  },
+  {
+    "name": "Yiming Zou",
+    "url": "https://www.linkedin.com/in/yiming-zou-17861321a/",
+    "program": "uiuc-msfe",
+    "headline": "Senior Associate, Quantitative Analysis at Capital One | UIUC MSFE",
+    "undergrad": "",
+    "employer": "Capital One",
+    "grad_year": ""
+  },
+  {
+    "name": "Renjie Hu",
+    "url": "https://www.linkedin.com/in/renjieh2/",
+    "program": "uiuc-msfe",
+    "headline": "OCC | UIUC MSFE",
+    "undergrad": "",
+    "employer": "OCC",
+    "grad_year": ""
+  },
+  {
+    "name": "Sean Chou",
+    "url": "https://www.linkedin.com/in/seanchou-/",
+    "program": "uiuc-msfe",
+    "headline": "Quantitative Advisory Services Senior at EY | UIUC",
+    "undergrad": "",
+    "employer": "EY",
+    "grad_year": ""
+  },
+  {
+    "name": "Wenning Li",
+    "url": "https://www.linkedin.com/in/wenning-li/",
+    "program": "uiuc-msfe",
+    "headline": "PGIM Fixed Income | UIUC MSFE Faculty",
+    "undergrad": "",
+    "employer": "PGIM Fixed Income",
+    "grad_year": ""
+  }
 ]
