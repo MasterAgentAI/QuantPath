@@ -71,43 +71,107 @@ PROGRAM_NAME_MAP: dict[int, str] = {}
 
 
 def load_data() -> pd.DataFrame:
-    """Load and preprocess the feature matrix."""
-    df = pd.read_csv(_FEATURE_MATRIX)
+    """Build feature matrix directly from training_data_full.csv.
 
-    # Replace empty strings and 'nan' with actual NaN
+    This avoids the program_id encoding mismatch between
+    prepare_training_data.py's feature_matrix.csv and our own encoding.
+    We do our own encoding here so program names are always known.
+    """
+    global PROGRAM_ID_MAP, PROGRAM_NAME_MAP
+
+    full_path = _PROJECT_ROOT / "data" / "admissions" / "training_data_full.csv"
+    df = pd.read_csv(full_path)
     df = df.replace({"": np.nan, "nan": np.nan})
 
-    # Convert types
-    for col in FEATURE_COLS:
-        df[col] = pd.to_numeric(df[col], errors="coerce")
-    df["result_binary"] = pd.to_numeric(df["result_binary"], errors="coerce")
-    df["program_id"] = pd.to_numeric(df["program_id"], errors="coerce")
+    # Filter to records with valid result
+    df = df[df["result"].isin(["accepted", "rejected", "waitlisted"])].copy()
+    df["result_binary"] = (df["result"] == "accepted").astype(int)
 
-    # Drop rows without a result
-    df = df.dropna(subset=["result_binary"])
-    df["result_binary"] = df["result_binary"].astype(int)
-    df["program_id"] = df["program_id"].fillna(-1).astype(int)
+    # Build program encoding (our own, consistent)
+    programs = sorted(df["program"].dropna().unique())
+    PROGRAM_ID_MAP = {name: i for i, name in enumerate(programs)}
+    PROGRAM_NAME_MAP = {i: name for name, i in PROGRAM_ID_MAP.items()}
+    df["program_id"] = df["program"].map(PROGRAM_ID_MAP).fillna(-1).astype(int)
 
-    # Add missing indicator features
+    # Encode features
+    df["gpa_normalized"] = pd.to_numeric(df["gpa"], errors="coerce")
+    df["gre_quant"] = pd.to_numeric(df["gre_quant"], errors="coerce")
+
+    # Undergrad tier encoding
+    tier_map = {"T10": 1, "C9": 1, "T20": 2, "985": 2, "T30": 3, "211": 3,
+                "T50": 4, "top_intl": 2, "intl": 4, "other_cn": 5, "other": 5}
+    df["undergrad_tier_encoded"] = df["undergrad_tier"].map(tier_map)
+
+    # Intern score
+    intern_map = {"us_top_quant": 10, "us_quant": 8, "us_bb": 7, "us_finance": 6,
+                  "cn_top": 6, "us_tech": 5, "cn_finance": 4, "other": 2, "none": 0}
+    df["intern_score"] = df["intern_level"].map(intern_map)
+
+    # Research score
+    research_map = {"published": 3, "significant": 2, "minor": 1, "none": 0}
+    df["research_score"] = df["research_level"].map(research_map).fillna(0)
+
+    # International flag
+    nat_intl = {"chinese": 1, "indian": 1, "korean": 1, "other_asian": 1,
+                "european": 1, "other": 1, "us": 0}
+    df["is_international"] = df["nationality"].map(nat_intl)
+
+    # Gender
+    df["is_female"] = (df["gender"] == "F").astype(float)
+    df.loc[df["gender"].isna() | (df["gender"] == "unknown"), "is_female"] = np.nan
+
+    # Major relevance
+    df["major_relevance_score"] = pd.to_numeric(df.get("major_relevance"), errors="coerce")
+
+    # Missing indicators
     df["has_gpa"] = (~df["gpa_normalized"].isna()).astype(float)
     df["has_gre"] = (~df["gre_quant"].isna()).astype(float)
     df["has_tier"] = (~df["undergrad_tier_encoded"].isna()).astype(float)
     df["has_intern"] = (~df["intern_score"].isna()).astype(float)
     df["has_nationality"] = (~df["is_international"].isna()).astype(float)
 
+    print(f"  Program map: {len(PROGRAM_ID_MAP)} programs")
     return df
 
 
 def build_program_maps(df: pd.DataFrame) -> None:
-    """Build program ID ↔ name mappings."""
+    """Build program ID ↔ name mappings from the ACTUAL feature matrix.
+
+    The feature_matrix.csv has integer program_ids assigned by
+    prepare_training_data.py. We need to recover the name→id mapping
+    from training_data_model.csv which has both program name and the
+    same integer encoding.
+    """
     global PROGRAM_ID_MAP, PROGRAM_NAME_MAP
-    # Load from training_data_full.csv to get program names
+
+    model_path = _PROJECT_ROOT / "data" / "admissions" / "training_data_model.csv"
+    fm_path = _PROJECT_ROOT / "data" / "admissions" / "feature_matrix.csv"
+
+    # Reconstruct the EXACT encoding used by prepare_training_data.py:
+    # It reads training_data_full.csv programs, gets canonical names,
+    # sorts them, and assigns integer IDs alphabetically.
+    # We replicate that logic here.
     full_path = _PROJECT_ROOT / "data" / "admissions" / "training_data_full.csv"
     if full_path.exists():
         full_df = pd.read_csv(full_path, usecols=["program"], dtype=str)
-        programs = sorted(full_df["program"].dropna().unique())
-        PROGRAM_ID_MAP = {name: i for i, name in enumerate(programs)}
-        PROGRAM_NAME_MAP = {i: name for name, i in PROGRAM_ID_MAP.items()}
+        # Get unique programs from feature_matrix (which has the actual IDs used)
+        fm_df = pd.read_csv(fm_path, usecols=["program_id"])
+        actual_pids = sorted(fm_df["program_id"].dropna().unique())
+
+        # The encoding in prepare_training_data.py is:
+        # sorted(set(PROGRAM_CANONICAL.values())) → enumerate
+        # We don't have PROGRAM_CANONICAL here, but we can recover it:
+        # Read training_data_model.csv which has program names, and
+        # feature_matrix which has program_id. They share the same source rows.
+        if model_path.exists():
+            model_df = pd.read_csv(model_path, usecols=["program"], dtype=str)
+            # Build map from unique (program, count) to figure out pid assignment
+            programs_in_model = sorted(model_df["program"].dropna().unique())
+            # The encoding is: sorted unique canonical names → 0,1,2,...
+            PROGRAM_ID_MAP = {name: i for i, name in enumerate(programs_in_model)}
+            PROGRAM_NAME_MAP = {i: name for name, i in PROGRAM_ID_MAP.items()}
+
+    print(f"  Program map: {len(PROGRAM_ID_MAP)} programs")
 
 
 def train_gpboost(df: pd.DataFrame) -> tuple:
@@ -261,17 +325,21 @@ def compute_bias_corrections(
     """Compute per-program bias corrections using real acceptance rates."""
     corrections = {}
 
+    # Build name map directly (don't rely on global state)
+    name_map = {pid: name for name, pid in PROGRAM_ID_MAP.items()}
+
     # Get learned random effects
+    sorted_pids = sorted(df["program_id"].unique())
     random_effects = gp_model.predict(
-        group_data_pred=np.array([[pid] for pid in sorted(df["program_id"].unique())]),
+        group_data_pred=np.array([[pid] for pid in sorted_pids]),
     )
     if isinstance(random_effects, dict):
         re_means = random_effects["mu"]
     else:
         re_means = random_effects
 
-    for i, pid in enumerate(sorted(df["program_id"].unique())):
-        name = PROGRAM_NAME_MAP.get(pid, "")
+    for i, pid in enumerate(sorted_pids):
+        name = name_map.get(pid, PROGRAM_NAME_MAP.get(pid, ""))
         if name in REAL_ACCEPT_RATES:
             real_rate = REAL_ACCEPT_RATES[name]
             # Training accept rate for this program
@@ -361,7 +429,7 @@ def main() -> None:
     # Load data
     print("\nLoading data...")
     df = load_data()
-    build_program_maps(df)
+    # Program maps built inside load_data()
     print(f"  Records: {len(df)}")
     print(f"  Programs: {df['program_id'].nunique()}")
     print(f"  Accept/Reject: {(df['result_binary']==1).sum()}/{(df['result_binary']==0).sum()}")
