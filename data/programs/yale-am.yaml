@@ -7,11 +7,14 @@ website: https://applied.math.yale.edu/graduate-program
 quantnet_ranking: null
 
 admissions:
-  class_size: 15
-  acceptance_rate: 0.08
+  class_size: 3
+  total_enrolled: 1
+  total_applied: 56
+  acceptance_rate: 0.05
   avg_gpa: 3.9
   gre_quant_avg: 170
-  international_pct: 0.50
+  international_pct: 0.80
+  total_grad_students: 5
 
 prerequisites:
   required:
@@ -42,11 +45,16 @@ application:
 
 outcomes:
   avg_base_salary: 145000
-  tuition_total: 95000
+  tuition_per_year: 44500
+  tuition_total: 89000
 
 special:
-  - "PhD-track master's — many students continue to PhD"
+  - "PhD-track master's — MS awarded only to students who withdraw from PhD program"
   - "Strong connections to Yale School of Management"
-  - "Small cohort, highly selective"
+  - "Extremely small cohort (~3 admitted per year from ~56 applicants)"
+  - "80% international students"
+  - "Covers financial mathematics, numerical analysis, scientific computing"
+  - "Co-advising strongly encouraged (theory + domain expert)"
+  - "DGS: Ronald Coifman"
 
-tags: [applied-math, yale, quant-finance, phd-track]
+tags: [applied-math, yale, quant-finance, phd-track, computational-math]

@@ -1,49 +1,60 @@
 # QuantPath
 
-**MFE admission prediction engine** — GPBoost mixed-effects model on 12,800+ records across 34 programs. Profile scoring, prerequisite matching, and data-driven school ranking.
+**MFE admission prediction engine** — GPBoost mixed-effects model on 13,100+ records across 31 programs. Profile scoring, prerequisite matching, and data-driven school ranking.
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
 [![CI](https://github.com/MasterAgentAI/QuantPath/actions/workflows/ci.yml/badge.svg)](https://github.com/MasterAgentAI/QuantPath/actions)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE-AGPL-3.0)
 [![Data: CC BY-NC-SA 4.0](https://img.shields.io/badge/Data-CC_BY--NC--SA_4.0-lightgrey.svg)](data/LICENSE)
 ![Tests](https://img.shields.io/badge/tests-465%20passed-brightgreen.svg)
-![Data](https://img.shields.io/badge/data-12%2C800%2B%20records-blue.svg)
-![Programs](https://img.shields.io/badge/programs-29%20MFE-orange.svg)
+![Data](https://img.shields.io/badge/data-13%2C100%2B%20records-blue.svg)
+![Programs](https://img.shields.io/badge/programs-15%20focused%20(31%20total)-orange.svg)
 ![Model](https://img.shields.io/badge/model-AUC%200.723-brightgreen.svg)
 
 ---
 
 ## Why QuantPath
 
-Consulting services charge **$4,500–10,000 per school**. QuantPath provides the same analysis for free — multi-dimensional profile scoring, admission probability with confidence intervals, and personalized gap analysis across 34 MFE programs.
+Consulting services charge **$4,500--10,000 per school**. QuantPath provides the same analysis for free -- multi-dimensional profile scoring, admission probability with confidence intervals, and personalized gap analysis across 15 focused MFE programs (31 total in database).
 
 ```
-$ quantpath evaluate --profile my_profile.yaml
+$ quantpath predict --profile my_profile.yaml
 
-  Math              8.4/10  ████████░░
-  Statistics        9.0/10  █████████░
-  CS                9.8/10  ██████████
-  Finance/Econ      9.4/10  █████████░
-  GPA               10.0/10 ██████████
+  QuantPath Admission Prediction (v2 Model)
+  Ethan Yang | UIUC | GPA 4.0 | International
 
-  OVERALL:  9.2/10  Top 5-10 MFE Level
+  Program                P(admit)   Category
+  ─────────────────────────────────────────────
+  Princeton MFin           18%      reach
+  Baruch MFE               22%      reach
+  Berkeley MFE             35%      reach
+  CMU MSCF                 38%      reach
+  MIT MFin                 25%      reach
+  Columbia FE              42%      target
+  Yale AM                  15%      reach
+  Stanford MCF             20%      reach
+  UChicago MSFM            55%      target
+  NYU Courant              52%      target
+  Columbia MSFE            48%      target
+  Cornell MFE              58%      target
+  Columbia MAFN            62%      target
+  NYU Tandon MFE           72%      safety
+  GaTech QCF               75%      safety
 
-  Reach:   Berkeley, CMU, Columbia MSFE, Columbia FE, UCLA, Princeton, MIT, Stanford, Baruch
-  Target:  NYU Tandon, GaTech, UMich, UChicago, Cornell, Columbia MAFN, NYU Courant
-  Safety:  UIUC, BU, Rutgers, UWash, JHU, USC
+  15 programs evaluated (Tier 0 + Tier 1)
 ```
 
 ## Data
 
 | Dataset | Records | Source |
 |---------|---------|--------|
-| Admission records | **12,800+** | GradCafe, QuantNet, Reddit, 1point3acres (accepted/rejected/waitlisted) |
+| Admission records | **13,100+** | GradCafe, QuantNet, Reddit, 1point3acres, ChaseDream (accepted/rejected/waitlisted) |
 | LinkedIn alumni | **930** | 20 MFE programs (employer, undergrad school, graduation year) |
-| Program database | **29** | QuantNet 2026 Rankings + official sites (prerequisites, deadlines, salaries) |
+| Program database | **31** | QuantNet 2026 Rankings + official sites (prerequisites, deadlines, salaries) |
 
 ## Model
 
-**v2 (current)**: GPBoost — LightGBM gradient boosting with per-program random intercepts. Trained on 11,012 labeled records, 13 features, 41 programs. AUC 0.723, Brier 0.206 (5-fold CV).
+**v2 (current)**: GPBoost -- LightGBM gradient boosting with per-program random intercepts. Trained on 11,100+ labeled records, 13 features, 31 programs. AUC 0.723, Brier 0.206 (5-fold CV).
 
 Feature importance (data-driven):
 
@@ -65,8 +76,8 @@ Feature importance (data-driven):
 
 | Command | Description |
 |---------|-------------|
-| `quantpath predict` | **Admission prediction** — P(admit) for all 29 programs, reach/target/safety (no transcript needed) |
-| `quantpath evaluate` | Profile assessment — 5-dimension score (37 sub-factors) with gaps and strengths |
+| **`quantpath predict`** | **Primary entry point** -- P(admit) for 15 focused programs, reach/target/safety (no transcript needed) |
+| `quantpath evaluate` | Profile assessment -- 5-dimension score (37 sub-factors) with gaps and strengths |
 | `quantpath list` | Personalized reach/target/safety school list with P(admit) + CI |
 | `quantpath match --program cmu-mscf` | Prerequisite match for a specific program |
 | `quantpath gaps` | Priority-ranked gaps with recommended actions |
@@ -100,7 +111,7 @@ cd QuantPath && pip install -e .
 cp examples/sample_profile.yaml my_profile.yaml
 # Edit with your courses, GPA, experience
 
-# Quick school prediction (only needs GPA + university + experience)
+# Predict admission probability across 15 focused programs (primary entry point)
 quantpath predict --profile my_profile.yaml
 
 # Detailed course evaluation (needs full transcript)
@@ -121,27 +132,34 @@ export ANTHROPIC_API_KEY=your_key
 python tools/advisor.py --profile my_profile.yaml --save report.md
 ```
 
-## Programs (Top 15)
+## Programs (15 Focused — Tier 0 + Tier 1)
+
+**Tier 0** (elite, <10% acceptance or unique positioning):
 
 | # | Program | University | Class | Rate | Avg GPA | Salary |
 |---|---------|-----------|-------|------|---------|--------|
-| 1 | MFE | Baruch College | 20 | 4% | 3.84 | $179K |
-| 2 | MFin | Princeton | 44 | 5% | — | $160K |
-| 3 | MSCF | Carnegie Mellon | 108 | 17% | 3.86 | $134K |
-| 4 | MSFE | Columbia (IEOR) | 136 | 13% | 3.90 | $138K |
+| 1 | MFin | Princeton | 44 | 5% | 3.90 | $160K |
+| 2 | MFE | Baruch College | 20 | 4% | 3.84 | $179K |
+| 3 | MFE | UC Berkeley | 76 | 17% | 3.80 | $154K |
+| 4 | MSCF | Carnegie Mellon | 108 | 17% | 3.86 | $134K |
 | 5 | MFin | MIT Sloan | 126 | 8% | 3.80 | $140K |
-| 6 | MFE | UC Berkeley | 76 | 17% | 3.80 | $154K |
-| 7 | MSFM | UChicago | 118 | 22% | — | $124K |
-| 8 | QCF | Georgia Tech | 99 | 30% | — | $115K |
-| 9 | MAFN | Columbia (Math) | 101 | 22% | — | $123K |
-| 10 | MFM | NC State | 64 | 17% | — | $105K |
-| 11 | MFE | Cornell | 53 | 21% | — | $115K |
-| 12 | MathFin | NYU Courant | 37 | 23% | — | $126K |
-| 13 | MFE | NYU Tandon | 154 | 38% | 3.83 | $107K |
-| 14 | MFE | UCLA | 79 | 36% | — | $118K |
-| 15 | MSQF | Fordham | 61 | 59% | — | $136K |
+| 6 | MSFE | Columbia FE (Econ) | 25 | 5% | 3.90 | $150K |
+| 7 | AM | Yale | 3 | 5% | 3.90 | $145K |
+| 8 | MCF | Stanford | 10 | 5% | 3.90 | -- |
 
-Full 29-program database (including Columbia MS Financial Economics) with deadlines, prerequisites, essay requirements, and interview formats in `data/programs/`.
+**Tier 1** (highly competitive, strong placement):
+
+| # | Program | University | Class | Rate | Avg GPA | Salary |
+|---|---------|-----------|-------|------|---------|--------|
+| 9 | MSFM | UChicago | 118 | 22% | 3.80 | $124K |
+| 10 | MathFin | NYU Courant | 37 | 23% | 3.85 | $126K |
+| 11 | MSFE | Columbia (IEOR) | 136 | 13% | 3.90 | $138K |
+| 12 | MFE | Cornell | 53 | 21% | 3.80 | $115K |
+| 13 | MAFN | Columbia (Math) | 101 | 22% | 3.80 | $123K |
+| 14 | MFE | NYU Tandon | 154 | 38% | 3.83 | $107K |
+| 15 | QCF | Georgia Tech | 99 | 30% | 3.75 | $115K |
+
+Full 31-program database with deadlines, prerequisites, essay requirements, and interview formats in `data/programs/`.
 
 ## Course Categories
 
@@ -190,8 +208,8 @@ QuantPath/
 │   ├── prepare_training_data.py  # Data cleaning + feature matrix generation
 │   └── collect_multidim.py       # Multi-source data collection pipeline
 ├── data/
-│   ├── programs/            # 29 program YAML files
-│   ├── admissions/          # 12,800+ records (CSV + JSON)
+│   ├── programs/            # 31 program YAML files
+│   ├── admissions/          # 13,100+ records (CSV + JSON)
 │   └── models/              # GPBoost v2 (.bin + .json) + 21 LR models
 └── tests/                   # 465 tests, <1s runtime
 ```
