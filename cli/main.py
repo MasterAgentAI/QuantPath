@@ -40,11 +40,78 @@ def bar(score: float, width: int = 10) -> str:
     return "█" * filled + "░" * (width - filled)
 
 
+def _quick_profile_interactive() -> str:
+    """Interactive prompt to build a minimal profile YAML. Returns temp file path."""
+    import tempfile
+
+    console.print("\n[bold]Quick Profile Builder[/bold]")
+    console.print("Answer a few questions to get your admission predictions.\n")
+
+    name = input("  Your name: ").strip() or "Applicant"
+    gpa = input("  GPA (e.g. 3.85): ").strip()
+    university = input("  University (e.g. Peking University, UIUC): ").strip()
+    majors_raw = input("  Major(s), comma-separated (e.g. Math, CS): ").strip()
+    is_intl = input("  International student? (y/n): ").strip().lower()
+    gre = input("  GRE Quant score (press Enter to skip): ").strip()
+
+    console.print("\n  [dim]Internships (press Enter when done):[/dim]")
+    internships = []
+    while True:
+        company = input("    Company name (or Enter to finish): ").strip()
+        if not company:
+            break
+        internships.append(company)
+
+    has_paper = input("  Do you have a published paper? (y/n): ").strip().lower()
+    has_research = input("  Any research experience? (y/n): ").strip().lower()
+
+    # Build YAML
+    lines = ["personal:"]
+    lines.append(f'  name: "{name}"')
+    if gpa:
+        lines.append(f"  gpa: {gpa}")
+    if university:
+        lines.append(f'  university: "{university}"')
+    if majors_raw:
+        majors = [m.strip() for m in majors_raw.split(",")]
+        lines.append(f"  majors: {majors}")
+    lines.append(f"  is_international: {'true' if is_intl == 'y' else 'false'}")
+
+    if gre:
+        lines.append("\ntest_scores:")
+        lines.append(f"  gre_quant: {gre}")
+
+    if internships:
+        lines.append("\nexperience:")
+        for c in internships:
+            lines.append(f'  - {{type: internship, company: "{c}"}}')
+
+    if has_paper == "y" or has_research == "y":
+        lines.append("\nprojects:")
+        if has_paper == "y":
+            lines.append('  - {name: "Research", has_paper: true}')
+        elif has_research == "y":
+            lines.append('  - {name: "Research", description: "Research experience"}')
+
+    yaml_content = "\n".join(lines)
+    tmp = tempfile.NamedTemporaryFile(suffix=".yaml", mode="w", delete=False)
+    tmp.write(yaml_content)
+    tmp.close()
+
+    console.print(f"\n  [green]Profile saved to {tmp.name}[/green]\n")
+    return tmp.name
+
+
 def cmd_predict(args: argparse.Namespace) -> None:
     """Pure v2 model prediction — reach/target/safety without course evaluation."""
     from core.lr_predictor import predict_prob_full, predict_prob_v2
 
-    profile = load_profile(args.profile)
+    if args.profile:
+        profile = load_profile(args.profile)
+    else:
+        # Interactive mode
+        tmp_path = _quick_profile_interactive()
+        profile = load_profile(tmp_path)
     programs = load_all_programs()
 
     gre_quant = None
@@ -1632,7 +1699,10 @@ def main() -> None:
         "predict",
         help="Predict reach/target/safety using v2 model (no detailed transcript needed)",
     )
-    p_predict.add_argument("--profile", "-p", required=True, help="Path to profile YAML")
+    p_predict.add_argument(
+        "--profile", "-p", required=False, default=None,
+        help="Path to profile YAML (omit for interactive mode)",
+    )
 
     args = parser.parse_args()
 
