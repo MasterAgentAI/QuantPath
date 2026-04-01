@@ -380,6 +380,18 @@ def predict_prob_v2(
         logit_prob += correction_shift
         prob = _sigmoid(logit_prob)
 
+    # Per-program quality gate: if v2 AUC for this program is < 0.50,
+    # the model is worse than random — fall back to v1 if available
+    _WEAK_V2_PROGRAMS = {
+        "stevens-mfe", "michigan-qfr", "ncstate-mfm", "toronto-mmf",
+        "fordham-msqf", "rutgers-mqf", "uiuc-msfe", "ucla-mfe",
+        "finance-unknown", "or-unknown",
+    }
+    if program_id in _WEAK_V2_PROGRAMS:
+        v1_result = predict_prob_full(program_id, gpa, gre, profile)
+        if v1_result is not None:
+            return v1_result
+
     prob = round(max(0.001, min(0.999, prob)), 4)
 
     # CI from v2 model AUC

@@ -18,53 +18,53 @@
     "has_nationality"
   ],
   "feature_importance": {
-    "gpa_normalized": 960.23,
-    "gre_quant": 344.88,
-    "undergrad_tier_encoded": 4031.9,
-    "intern_score": 385.09,
-    "research_score": 886.33,
-    "is_international": 876.9,
-    "is_female": 220.09,
-    "major_relevance_score": 0.0,
-    "has_gpa": 13.19,
-    "has_gre": 1.03,
-    "has_tier": 981.41,
-    "has_intern": 189.73,
-    "has_nationality": 86.06
+    "gpa_normalized": 963.8,
+    "gre_quant": 337.42,
+    "undergrad_tier_encoded": 1759.2,
+    "intern_score": 620.89,
+    "research_score": 424.15,
+    "is_international": 679.13,
+    "is_female": 167.03,
+    "major_relevance_score": 5296.15,
+    "has_gpa": 21.0,
+    "has_gre": 1.97,
+    "has_tier": 238.46,
+    "has_intern": 313.03,
+    "has_nationality": 82.38
   },
   "cv_metrics": {
-    "auc": 0.7118,
-    "brier_score": 0.2089,
+    "auc": 0.7229,
+    "brier_score": 0.2057,
     "n_folds": 5,
     "fold_details": [
       {
         "fold": 1,
-        "auc": 0.7061472193761287,
-        "brier": 0.20995048981862235,
+        "auc": 0.718048268984967,
+        "brier": 0.20663112592486657,
         "n": 2203
       },
       {
         "fold": 2,
-        "auc": 0.7206445038194088,
-        "brier": 0.20628110410262132,
+        "auc": 0.7344055081697667,
+        "brier": 0.20225833688865819,
         "n": 2203
       },
       {
         "fold": 3,
-        "auc": 0.7112057990149219,
-        "brier": 0.2091399963407452,
+        "auc": 0.7209434115937433,
+        "brier": 0.20672036419942152,
         "n": 2202
       },
       {
         "fold": 4,
-        "auc": 0.7208195266652664,
-        "brier": 0.2068158890862632,
+        "auc": 0.7303762415284571,
+        "brier": 0.20378976028081816,
         "n": 2202
       },
       {
         "fold": 5,
-        "auc": 0.7020858964081944,
-        "brier": 0.21227928856851228,
+        "auc": 0.7127052781838212,
+        "brier": 0.209089569832144,
         "n": 2202
       }
     ]
@@ -74,7 +74,7 @@
       "real_rate": 0.04,
       "train_rate": 0.5646,
       "correction": -3.4381,
-      "learned_re": 0.5636
+      "learned_re": 0.5635
     },
     "berkeley-mfe": {
       "real_rate": 0.174,
@@ -86,19 +86,19 @@
       "real_rate": 0.806,
       "train_rate": 0.7752,
       "correction": 0.1864,
-      "learned_re": 0.7737
+      "learned_re": 0.7735
     },
     "cmu-mscf": {
       "real_rate": 0.172,
       "train_rate": 0.5914,
       "correction": -1.9413,
-      "learned_re": 0.5908
+      "learned_re": 0.5907
     },
     "columbia-mafn": {
       "real_rate": 0.223,
       "train_rate": 0.4667,
       "correction": -1.1147,
-      "learned_re": 0.4762
+      "learned_re": 0.477
     },
     "columbia-msfe": {
       "real_rate": 0.133,
@@ -108,81 +108,81 @@
     },
     "cornell-mfe": {
       "real_rate": 0.207,
-      "train_rate": 0.5065,
-      "correction": -1.3692,
-      "learned_re": 0.5064
+      "train_rate": 0.5076,
+      "correction": -1.3735,
+      "learned_re": 0.5075
     },
     "fordham-msqf": {
       "real_rate": 0.594,
       "train_rate": 0.8132,
       "correction": -1.0903,
-      "learned_re": 0.7914
+      "learned_re": 0.7891
     },
     "gatech-qcf": {
       "real_rate": 0.302,
-      "train_rate": 0.604,
-      "correction": -1.2599,
-      "learned_re": 0.6022
+      "train_rate": 0.6073,
+      "correction": -1.274,
+      "learned_re": 0.6053
     },
     "jhu-mfm": {
       "real_rate": 0.507,
       "train_rate": 0.6132,
       "correction": -0.4328,
-      "learned_re": 0.607
+      "learned_re": 0.6063
     },
     "mit-mfin": {
       "real_rate": 0.083,
       "train_rate": 0.6547,
       "correction": -3.0421,
-      "learned_re": 0.6538
+      "learned_re": 0.6537
     },
     "ncstate-mfm": {
       "real_rate": 0.167,
       "train_rate": 0.8212,
       "correction": -3.1315,
-      "learned_re": 0.8071
+      "learned_re": 0.8056
     },
     "nyu-courant": {
       "real_rate": 0.225,
-      "train_rate": 0.6,
-      "correction": -1.6422,
-      "learned_re": 0.5623
+      "train_rate": 0.5455,
+      "correction": -1.4191,
+      "learned_re": 0.5282
     },
     "nyu-tandon-mfe": {
       "real_rate": 0.381,
-      "train_rate": 0.5799,
-      "correction": -0.8078,
-      "learned_re": 0.5782
+      "train_rate": 0.5782,
+      "correction": -0.8006,
+      "learned_re": 0.5763
     },
     "princeton-mfin": {
       "real_rate": 0.054,
       "train_rate": 0.3559,
       "correction": -2.27,
-      "learned_re": 0.3585
+      "learned_re": 0.3588
     },
     "rutgers-mqf": {
       "real_rate": 0.864,
       "train_rate": 0.8313,
       "correction": 0.2539,
-      "learned_re": 0.8179
+      "learned_re": 0.8164
     },
     "stanford-mcf": {
       "real_rate": 0.05,
       "train_rate": 0.2821,
       "correction": -2.0101,
-      "learned_re": 0.289
+      "learned_re": 0.2898
     },
     "stevens-mfe": {
       "real_rate": 0.68,
       "train_rate": 0.9545,
       "correction": -2.2908,
-      "learned_re": 0.9051
+      "learned_re": 0.9002
     },
     "toronto-mmf": {
       "real_rate": 0.3,
-      "train_rate": 0.5579,
-      "correction": -1.0799,
-      "learned_re": 0.5561
+      "train_rate": 0.5521,
+      "correction": -1.0564,
+      "learned_re": 0.5503
     },
     "uchicago-msfm": {
       "real_rate": 0.22,
@@ -194,31 +194,31 @@
       "real_rate": 0.36,
       "train_rate": 0.645,
       "correction": -1.1725,
-      "learned_re": 0.6406
+      "learned_re": 0.6401
     },
     "uiuc-msfe": {
       "real_rate": 0.507,
       "train_rate": 0.699,
       "correction": -0.8145,
-      "learned_re": 0.6949
+      "learned_re": 0.6944
     },
     "umich-mfe": {
       "real_rate": 0.3,
       "train_rate": 0.5769,
       "correction": -1.1575,
-      "learned_re": 0.5624
+      "learned_re": 0.561
     },
     "uminn-mfm": {
       "real_rate": 0.807,
       "train_rate": 0.7273,
       "correction": 0.4498,
-      "learned_re": 0.6907
+      "learned_re": 0.6872
     },
     "usc-msmf": {
       "real_rate": 0.4,
       "train_rate": 0.4706,
       "correction": -0.2877,
-      "learned_re": 0.4718
+      "learned_re": 0.472
     },
     "uwash-cfrm": {
       "real_rate": 0.539,
@@ -303,7 +303,7 @@
   "training_stats": {
     "n_samples": 11012,
     "n_programs": 41,
-    "accept_rate": 0.6185
+    "accept_rate": 0.6057
   },
   "model_binary_path": "admission_model_v2.bin"
 }
