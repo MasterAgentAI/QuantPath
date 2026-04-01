@@ -64,7 +64,8 @@ Feature importance (data-driven):
 
 | Command | Description |
 |---------|-------------|
-| `quantpath evaluate` | 5-dimension profile score (37 sub-factors) with gaps and strengths |
+| `quantpath predict` | **Admission prediction** — P(admit) for all 29 programs, reach/target/safety (no transcript needed) |
+| `quantpath evaluate` | Profile assessment — 5-dimension score (37 sub-factors) with gaps and strengths |
 | `quantpath list` | Personalized reach/target/safety school list with P(admit) + CI |
 | `quantpath match --program cmu-mscf` | Prerequisite match for a specific program |
 | `quantpath gaps` | Priority-ranked gaps with recommended actions |
@@ -98,10 +99,12 @@ cd QuantPath && pip install -e .
 cp examples/sample_profile.yaml my_profile.yaml
 # Edit with your courses, GPA, experience
 
-# Run the full pipeline
+# Quick school prediction (only needs GPA + university + experience)
+quantpath predict --profile my_profile.yaml
+
+# Detailed course evaluation (needs full transcript)
 quantpath evaluate --profile my_profile.yaml
 quantpath gaps     --profile my_profile.yaml
-quantpath list     --profile my_profile.yaml
 ```
 
 For the v2 model (GPBoost, recommended):

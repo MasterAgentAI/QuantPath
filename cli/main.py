@@ -39,7 +39,7 @@ def bar(score: float, width: int = 10) -> str:
 
 def cmd_predict(args: argparse.Namespace) -> None:
     """Pure v2 model prediction — reach/target/safety without course evaluation."""
-    from core.lr_predictor import predict_prob_v2, predict_prob_full
+    from core.lr_predictor import predict_prob_full, predict_prob_v2
 
     profile = load_profile(args.profile)
     programs = load_all_programs()
