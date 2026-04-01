@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Tests](https://img.shields.io/badge/tests-465%20passed-brightgreen.svg)
 ![Data](https://img.shields.io/badge/data-12%2C800%2B%20records-blue.svg)
-![Programs](https://img.shields.io/badge/programs-34%20MFE-orange.svg)
+![Programs](https://img.shields.io/badge/programs-29%20MFE-orange.svg)
 ![Model](https://img.shields.io/badge/model-AUC%200.716-brightgreen.svg)
 
 ---
@@ -27,9 +27,9 @@ $ quantpath evaluate --profile my_profile.yaml
 
   OVERALL:  9.2/10  Top 5-10 MFE Level
 
-  Reach:   Berkeley MFE, CMU MSCF, Columbia MSFE, UCLA, Princeton, MIT, Stanford, Baruch
-  Target:  NYU Tandon, UIUC, GaTech, UMich, UChicago, Cornell, Columbia MAFN
-  Safety:  BU, Rutgers, UWash, JHU, USC
+  Reach:   Berkeley, CMU, Columbia MSFE, Columbia FE, UCLA, Princeton, MIT, Stanford, Baruch
+  Target:  NYU Tandon, GaTech, UMich, UChicago, Cornell, Columbia MAFN, NYU Courant
+  Safety:  UIUC, BU, Rutgers, UWash, JHU, USC
 ```
 
 ## Data
@@ -38,7 +38,7 @@ $ quantpath evaluate --profile my_profile.yaml
 |---------|---------|--------|
 | Admission records | **12,800+** | GradCafe, QuantNet, Reddit, 1point3acres (accepted/rejected/waitlisted) |
 | LinkedIn alumni | **930** | 20 MFE programs (employer, undergrad school, graduation year) |
-| Program database | **28** | QuantNet 2026 Rankings (prerequisites, deadlines, salaries, class profiles) |
+| Program database | **29** | QuantNet 2026 Rankings + official sites (prerequisites, deadlines, salaries) |
 
 ## Model
 
@@ -137,7 +137,7 @@ python tools/advisor.py --profile my_profile.yaml --save report.md
 | 14 | MFE | UCLA | 79 | 36% | — | $118K |
 | 15 | MSQF | Fordham | 61 | 59% | — | $136K |
 
-Full 28-program database with deadlines, prerequisites, essay requirements, and interview formats in `data/programs/`.
+Full 29-program database (including Columbia MS Financial Economics) with deadlines, prerequisites, essay requirements, and interview formats in `data/programs/`.
 
 ## Course Categories
 
@@ -186,7 +186,7 @@ QuantPath/
 │   ├── prepare_training_data.py  # Data cleaning + feature matrix generation
 │   └── collect_multidim.py       # Multi-source data collection pipeline
 ├── data/
-│   ├── programs/            # 28 program YAML files
+│   ├── programs/            # 29 program YAML files
 │   ├── admissions/          # 12,800+ records (CSV + JSON)
 │   └── models/              # GPBoost v2 (.bin + .json) + 21 LR models
 └── tests/                   # 465 tests, <1s runtime
