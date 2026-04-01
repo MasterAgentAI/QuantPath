@@ -21,7 +21,7 @@ Consulting services charge **$4,500--10,000 per school**. QuantPath provides the
 $ quantpath predict --profile my_profile.yaml
 
   QuantPath Admission Prediction (v2 Model)
-  Ethan Yang | UIUC | GPA 4.0 | International
+  Sample Applicant | Top 30 University | GPA 4.0 | International
 
   Program                P(admit)   Category
   ─────────────────────────────────────────────

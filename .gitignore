@@ -20,3 +20,5 @@ profiles/
 *.yaml.local
 data/admissions/raw_1p3a/.browser_state/
 data/admissions/raw_1p3a/*.txt
+profiles/*.yaml
+!profiles/README.md

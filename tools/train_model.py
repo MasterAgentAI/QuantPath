@@ -255,7 +255,7 @@ def main() -> None:
             print(f"  {prog}: {n}条")
 
     if args.eval:
-        print("\n评估：Ethan Yang的预测概率（GPA=4.0, GRE=170）")
+        print("\nSample prediction (GPA=4.0, GRE=170):")
         print(f"{'项目':<22} {'P(录取)':>10}")
         print("-" * 35)
         for prog in sorted(models.keys()):
