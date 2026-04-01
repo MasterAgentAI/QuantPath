@@ -1,0 +1,64 @@
+id: columbia-msfe-econ
+name: MSFE
+full_name: MS in Financial Economics
+university: Columbia University
+department: Columbia Business School
+website: https://academics.business.columbia.edu/msfe
+quantnet_ranking: null
+
+admissions:
+  class_size: 25
+  acceptance_rate: 0.05
+  avg_gpa: 3.9
+  gre_quant_avg: 170
+  international_pct: 0.60
+
+prerequisites:
+  required:
+    - {category: calculus, level: "I-III"}
+    - {category: linear_algebra, level: introductory}
+    - {category: probability, level: calculus-based}
+    - {category: statistics, level: introductory}
+    - {category: real_analysis, note: "Required — advanced undergraduate level"}
+    - {category: programming, level: introductory}
+  recommended:
+    - {category: stochastic_calculus, note: "Strongly recommended"}
+    - {category: optimization, note: "Helpful for coursework"}
+    - {category: econometrics, note: "Financial econometrics background valued"}
+    - {category: machine_learning, note: "Increasingly valued"}
+  languages: [python, r]
+
+tests:
+  gre_required: true
+  gre_accepts_gmat: true
+  toefl_min_ibt: 100
+  toefl_min_ielts: 7.5
+
+deadlines:
+  deadline_cycle: "2026-2027"
+  deadline_rounds:
+    - {round: 1, date: "2026-10-15"}
+    - {round: 2, date: "2027-01-15"}
+
+application:
+  application_fee: 250
+  recommendations: 3
+  interview_type: "Invitation only"
+  interview_format: "Technical + Behavioral"
+  essays:
+    - {prompt: "Why MSFE at Columbia Business School?", max_words: 500}
+
+outcomes:
+  avg_base_salary: 150000
+  employment_rate_3m: 0.92
+  tuition_total: 120000
+
+special:
+  - "Administered by Program for Financial Studies (PFS)"
+  - "10 of 16 courses must be PhD-level — most rigorous MFE curriculum"
+  - "Students are indistinguishable from finance PhD candidates in ability"
+  - "2-year program (unique among MFE programs)"
+  - "Work experience highly desirable but not required"
+  - "Undergrad major distribution: Economics 39%, Math 22%, Engineering 9%, CS 9%"
+
+tags: [mfe, columbia, business-school, phd-level, 2-year, quant-finance]

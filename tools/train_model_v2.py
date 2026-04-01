@@ -64,6 +64,7 @@ REAL_ACCEPT_RATES = {
     "jhu-mfm": 0.507, "stanford-mcf": 0.05, "umich-mfe": 0.30,
     "northwestern-mfe": 0.30, "usc-msmf": 0.40, "utoronto-mmf": 0.30,
     "toronto-mmf": 0.30,  # alternate name in training data
+    "columbia-msfe-econ": 0.05,  # Columbia Business School MS Financial Economics
 }
 
 # Program name to ID mapping (from feature_matrix)
