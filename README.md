@@ -17,6 +17,8 @@
 
 Consulting services charge **$4,500--10,000 per school**. QuantPath provides the same analysis for free -- multi-dimensional profile scoring, admission probability with confidence intervals, and personalized gap analysis across 15 focused MFE programs (31 total in database).
 
+**Community calibration:** Applicants and maintainers also post **anonymized profiles**, `quantpath predict` output, and **actual results** to GitHub issues labeled [`data-contribution`](https://github.com/MasterAgentAI/QuantPath/issues?q=is%3Aissue+label%3Adata-contribution). That stream is used to spot systematic gaps (e.g., same-university different-degree programs, waitlists) that offline metrics alone do not show.
+
 ```
 $ quantpath predict --profile my_profile.yaml
 
@@ -59,6 +61,8 @@ $ quantpath predict --profile my_profile.yaml
 **v2 (fallback)**: GPBoost -- LightGBM gradient boosting with per-program random intercepts. Trained on 11,100+ labeled records, 13 features, 31 programs. AUC 0.723, Brier 0.206 (5-fold CV). Used for programs without a v1 model.
 
 **Bias correction**: Self-reported data has survivor bias (65% accept rate in data vs 4-30% real). The model replaces the biased intercept with logit(*r*) where *r* is the official acceptance rate, preserving learned feature slopes ([King & Zeng 2001](https://gking.harvard.edu/files/abs/0s-abs.shtml)).
+
+**Beyond CV metrics:** Labeled [`data-contribution`](https://github.com/MasterAgentAI/QuantPath/issues?q=is%3Aissue+label%3Adata-contribution) issues add **case-level** checks against real outcomes. On **strictly comparable** rows (same focused program id as in `quantpath predict`, clear admit vs reject, binary threshold at P=0.5), historically reviewed batches align with realized decisions **~75–76%** of the time—**illustrative**, not a guarantee: many posts mix non-focused programs, waitlists, or degree names that do not map 1:1 to a single YAML id.
 
 ## Features
 
@@ -237,6 +241,8 @@ quantpath contribute-upload
 ```
 
 **Privacy:** All data is anonymized before submission — university names are replaced with tiers (e.g. "US T30"), company names with categories (e.g. "top quant"). You choose per-field whether to share the original value or the anonymized version.
+
+**After you submit:** Contributions land as GitHub issues (same [`data-contribution`](https://github.com/MasterAgentAI/QuantPath/issues?q=is%3Aissue+label%3Adata-contribution) label). They are used for **calibration discussions**, future feature and tier tweaks, and documentation—not for training the public model until explicitly merged into the licensed dataset pipeline.
 
 ## License
 
