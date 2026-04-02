@@ -235,7 +235,10 @@ def cmd_predict(args: argparse.Namespace) -> None:
             + ", ".join(skipped) + ")[/dim]"
         )
     console.print()
-    model_label = "GPBoost v2 model (AUC 0.723)" if _v2_available else "v1 logistic regression fallback"
+    model_label = (
+        "GPBoost v2 model (AUC 0.723)" if _v2_available
+        else "v1 logistic regression fallback"
+    )
     console.print(
         f"  [dim]Predictions from {model_label}. "
         "Based on GPA, university tier, internships, research, nationality, major. "
