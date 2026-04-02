@@ -41,8 +41,8 @@ def bar(score: float, width: int = 10) -> str:
 
 
 def _quick_profile_interactive() -> str:
-    """Interactive prompt to build a minimal profile YAML. Returns temp file path."""
-    import tempfile
+    """Interactive prompt to build a minimal profile YAML. Returns saved file path."""
+    import os
 
     console.print("\n[bold]Quick Profile Builder[/bold]")
     console.print("Answer a few questions to get your admission predictions.\n")
@@ -103,12 +103,34 @@ def _quick_profile_interactive() -> str:
             lines.append('  - {name: "Research", description: "Research experience"}')
 
     yaml_content = "\n".join(lines)
-    tmp = tempfile.NamedTemporaryFile(suffix=".yaml", mode="w", delete=False)
-    tmp.write(yaml_content)
-    tmp.close()
 
-    console.print(f"\n  [green]Profile saved to {tmp.name}[/green]\n")
-    return tmp.name
+    profiles_dir = os.path.join(os.path.dirname(__file__), "..", "profiles")
+    os.makedirs(profiles_dir, exist_ok=True)
+
+    safe_name = name.lower().replace(" ", "_")[:20] or "my_profile"
+    profile_path = os.path.join(profiles_dir, f"{safe_name}.yaml")
+
+    if os.path.exists(profile_path):
+        profile_path = os.path.join(
+            profiles_dir,
+            f"{safe_name}_{int(__import__('time').time())}.yaml",
+        )
+
+    with open(profile_path, "w") as f:
+        f.write(yaml_content)
+
+    abs_path = os.path.abspath(profile_path)
+    console.print(f"\n  [green]Profile saved to {abs_path}[/green]")
+    console.print(
+        "  [dim]You can now run other commands with this profile:[/dim]"
+    )
+    console.print(
+        f"  [dim]  quantpath evaluate --profile {abs_path}[/dim]"
+    )
+    console.print(
+        f"  [dim]  quantpath gaps     --profile {abs_path}[/dim]\n"
+    )
+    return abs_path
 
 
 def cmd_predict(args: argparse.Namespace) -> None:
@@ -2039,9 +2061,13 @@ class _FriendlyParser(argparse.ArgumentParser):
             console.print(
                 f"\n  [yellow]{self.prog}: --profile is required.[/yellow]\n"
             )
-            console.print("  [bold]Option A[/bold] — Quick start (no profile needed):")
-            console.print("    quantpath predict\n")
-            console.print("  [bold]Option B[/bold] — Create a profile first:")
+            console.print("  [bold]Option A[/bold] — Run predict first (auto-creates a profile):")
+            console.print("    quantpath predict")
+            console.print(
+                "    [dim]# this saves a profile you can reuse"
+                " with other commands[/dim]\n"
+            )
+            console.print("  [bold]Option B[/bold] — Create a profile manually:")
             console.print("    cp examples/sample_profile.yaml profiles/my_profile.yaml")
             console.print("    # edit the file with your courses and GPA")
             console.print(f"    {self.prog} --profile profiles/my_profile.yaml\n")
