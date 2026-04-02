@@ -656,30 +656,30 @@
       "gre_quant"
     ],
     "coef": [
-      0.569132,
-      0.075967
+      1.227946,
+      0.416616
     ],
-    "intercept": -0.184822,
+    "intercept": -1.570561,
     "means": [
-      3.6854,
-      167.5527
+      3.6947,
+      164.4706
     ],
     "stds": [
-      0.2624,
-      4.1583
+      0.2833,
+      6.05
     ],
-    "n_total": 500,
-    "n_accepted": 25,
-    "n_rejected": 475,
-    "accept_rate": 0.05,
+    "n_total": 17,
+    "n_accepted": 4,
+    "n_rejected": 13,
+    "accept_rate": 0.2353,
     "real_accept_rate": 0.05,
-    "auc": 0.65,
-    "gpa_p25": 3.7,
+    "auc": 0.7885,
+    "gpa_p25": 3.6,
     "gpa_p50": 3.85,
-    "gpa_p75": 3.95,
-    "gre_p25": 167.0,
-    "gre_p50": 169.0,
-    "gre_p75": 170.0
+    "gpa_p75": 3.89,
+    "gre_p25": 163.0,
+    "gre_p50": 168.0,
+    "gre_p75": 168.0
   },
   "yale-am": {
     "features": [
@@ -687,29 +687,29 @@
       "gre_quant"
     ],
     "coef": [
-      0.941844,
-      0.03555
+      0.939427,
+      0.329595
     ],
-    "intercept": -1.754474,
+    "intercept": -1.350531,
     "means": [
-      3.7604,
-      167.9357
+      3.8033,
+      169.2
     ],
     "stds": [
-      0.204,
-      3.6754
+      0.0989,
+      1.1075
     ],
-    "n_total": 56,
-    "n_accepted": 3,
-    "n_rejected": 53,
-    "accept_rate": 0.054,
+    "n_total": 15,
+    "n_accepted": 4,
+    "n_rejected": 11,
+    "accept_rate": 0.2667,
     "real_accept_rate": 0.05,
-    "auc": 0.7,
-    "gpa_p25": 3.7,
-    "gpa_p50": 3.85,
-    "gpa_p75": 3.95,
-    "gre_p25": 167.0,
-    "gre_p50": 169.0,
+    "auc": 0.9773,
+    "gpa_p25": 3.72,
+    "gpa_p50": 3.82,
+    "gpa_p75": 3.88,
+    "gre_p25": 168.0,
+    "gre_p50": 170.0,
     "gre_p75": 170.0
   }
 }
