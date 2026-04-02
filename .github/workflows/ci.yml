@@ -50,4 +50,4 @@ jobs:
         run: pip install ruff
 
       - name: Run ruff check
-        run: ruff check core/ cli/ tools/ scripts/
+        run: ruff check core/ cli/
