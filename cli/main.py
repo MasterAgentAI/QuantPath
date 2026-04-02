@@ -2031,12 +2031,32 @@ def cmd_whatif(args: argparse.Namespace) -> None:
     console.print()
 
 
+class _FriendlyParser(argparse.ArgumentParser):
+    """Override error() to give actionable hints when --profile is missing."""
+
+    def error(self, message: str) -> None:
+        if "--profile" in message:
+            console.print(
+                f"\n  [yellow]{self.prog}: --profile is required.[/yellow]\n"
+            )
+            console.print("  [bold]Option A[/bold] — Quick start (no profile needed):")
+            console.print("    quantpath predict\n")
+            console.print("  [bold]Option B[/bold] — Create a profile first:")
+            console.print("    cp examples/sample_profile.yaml profiles/my_profile.yaml")
+            console.print("    # edit the file with your courses and GPA")
+            console.print(f"    {self.prog} --profile profiles/my_profile.yaml\n")
+            raise SystemExit(2)
+        super().error(message)
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(
+    parser = _FriendlyParser(
         prog="quantpath",
         description="QuantPath — Open-source MFE application toolkit",
     )
-    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+    subparsers = parser.add_subparsers(
+        dest="command", help="Available commands", parser_class=_FriendlyParser,
+    )
 
     # evaluate
     p_eval = subparsers.add_parser("evaluate", help="Evaluate your profile")
