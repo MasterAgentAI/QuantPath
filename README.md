@@ -68,7 +68,7 @@ Feature importance (data-driven):
 | 6 | Research | 424 | Published → significant → none |
 | 7 | GRE Quant | 337 | Low importance (threshold filter) |
 
-**v1 (fallback)**: Per-program logistic regression on GPA + GRE Quant with bias correction. 21 trained models. Used when GPBoost is not installed.
+**v1 (fallback)**: Per-program logistic regression on GPA + GRE Quant with bias correction. 23 trained models. Used when GPBoost is not installed.
 
 **Bias correction**: Self-reported data has survivor bias (65% accept rate in data vs 4-30% real). The model replaces the biased intercept with logit(*r*) where *r* is the official acceptance rate, preserving learned feature slopes ([King & Zeng 2001](https://gking.harvard.edu/files/abs/0s-abs.shtml)).
 
@@ -117,12 +117,6 @@ quantpath predict --profile my_profile.yaml
 # Detailed course evaluation (needs full transcript)
 quantpath evaluate --profile my_profile.yaml
 quantpath gaps     --profile my_profile.yaml
-```
-
-For the v2 model (GPBoost, recommended):
-```bash
-pip install gpboost numpy
-# v2 model is automatically used when gpboost is installed
 ```
 
 For AI-powered analysis:
@@ -210,7 +204,7 @@ QuantPath/
 ├── data/
 │   ├── programs/            # 31 program YAML files
 │   ├── admissions/          # 13,100+ records (CSV + JSON)
-│   └── models/              # GPBoost v2 (.bin + .json) + 21 LR models
+│   └── models/              # GPBoost v2 (.bin + .json) + 23 LR models
 └── tests/                   # 465 tests, <1s runtime
 ```
 
