@@ -243,6 +243,204 @@ def cmd_predict(args: argparse.Namespace) -> None:
         "No course-level data required.[/dim]"
     )
 
+    # Offer to contribute anonymized data
+    console.print()
+    try:
+        contribute = input(
+            "  Help improve predictions — contribute your anonymized data? (y/n): "
+        ).strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        contribute = "n"
+    if contribute == "y":
+        _submit_contribution(profile, results)
+
+
+# ===================================================================
+# ANONYMOUS DATA CONTRIBUTION
+# ===================================================================
+
+def _classify_university(uni: str) -> str:
+    """Map university name to anonymous tier. No original name is kept."""
+    uni = uni.lower()
+    _T10 = ["mit", "stanford", "caltech", "princeton", "harvard",
+             "chicago", "penn", "columbia", "berkeley", "yale"]
+    _T20 = ["cornell", "carnegie mellon", "cmu", "duke", "northwestern",
+             "johns hopkins", "rice", "vanderbilt", "ucla", "michigan"]
+    _T30 = ["nyu", "uiuc", "illinois", "georgia tech", "gatech",
+             "wisconsin", "purdue", "unc"]
+    _TOP_INTL = ["tsinghua", "peking", "imperial", "lse", "oxford",
+                  "cambridge", "eth", "epfl"]
+    _C9 = ["zhejiang", "fudan", "sjtu", "shanghai jiao tong", "ustc", "nanjing"]
+    if any(s in uni for s in _T10):
+        return "US T10"
+    if any(s in uni for s in _T20):
+        return "US T20"
+    if any(s in uni for s in _T30):
+        return "US T30"
+    if any(s in uni for s in _TOP_INTL):
+        return "Top International"
+    if any(s in uni for s in _C9):
+        return "China C9"
+    return "Other"
+
+
+def _classify_internships(work_exp: list) -> str:
+    """Summarize internships as anonymous categories."""
+    internships = [
+        e for e in work_exp
+        if isinstance(e, dict) and e.get("type") == "internship"
+    ]
+    if not internships:
+        return "None"
+
+    _TOP_QUANT = ["citadel", "jane street", "two sigma", "de shaw", "hrt",
+                   "hudson river", "jump", "imc", "optiver", "sig",
+                   "susquehanna", "five rings", "tower research"]
+    _QUANT = ["aqr", "point72", "millennium", "bridgewater", "worldquant",
+               "man group", "balyasny", "cubist", "drw"]
+    _BB = ["goldman", "morgan stanley", "jpmorgan", "jp morgan",
+            "bank of america", "citi", "barclays", "ubs"]
+
+    categories = []
+    for exp in internships:
+        combined = (
+            str(exp.get("company", "")) + " "
+            + str(exp.get("description", "")) + " "
+            + str(exp.get("title", ""))
+        ).lower()
+        if any(f in combined for f in _TOP_QUANT):
+            categories.append("top quant (US)")
+        elif any(f in combined for f in _QUANT):
+            categories.append("quant fund (US)")
+        elif any(f in combined for f in _BB):
+            categories.append("bulge bracket (US)")
+        elif "quant" in combined or "trading" in combined:
+            if "china" in combined or "cn" in combined:
+                categories.append("quant (China)")
+            else:
+                categories.append("quant (other)")
+        elif "china" in combined or "cn" in combined:
+            categories.append("finance (China)")
+        else:
+            categories.append("other")
+    return f"{len(internships)}x: " + ", ".join(categories)
+
+
+def _classify_major(majors: list) -> str:
+    """Map majors to anonymous category."""
+    if not majors:
+        return "Unknown"
+    combined = " " + " ".join(majors).lower() + " "
+    quant_kw = ["math", "stat", "physics", "computer"]
+    n_quant = sum(1 for kw in quant_kw if kw in combined)
+    if n_quant >= 2:
+        return "Multi-quant (math/stats/CS)"
+    if n_quant >= 1:
+        return "Quant-related"
+    if any(kw in combined for kw in ["econ", "finance"]):
+        return "Econ/Finance"
+    return "Other"
+
+
+def _submit_contribution(profile, results: list) -> None:
+    """Anonymize profile + predictions and submit as a GitHub issue."""
+    import subprocess
+
+    # Build anonymized profile
+    anon_lines = []
+    anon_lines.append(f"- GPA: {profile.gpa}")
+    gre = getattr(profile.test_scores, "gre_quant", None) if profile.test_scores else None
+    if gre:
+        anon_lines.append(f"- GRE Quant: {gre}")
+    anon_lines.append(
+        f"- University Tier: {_classify_university(profile.university)}"
+    )
+    anon_lines.append(f"- Major Category: {_classify_major(profile.majors)}")
+    anon_lines.append(
+        f"- International: {'yes' if profile.is_international else 'no'}"
+    )
+    anon_lines.append(
+        f"- Internships: {_classify_internships(profile.work_experience)}"
+    )
+    has_paper = any(
+        isinstance(p, dict) and p.get("has_paper")
+        for p in profile.projects
+    )
+    has_research = len(profile.projects) > 0
+    if has_paper:
+        anon_lines.append("- Research: Published paper")
+    elif has_research:
+        anon_lines.append("- Research: Yes (no paper)")
+    else:
+        anon_lines.append("- Research: No")
+
+    # Prediction results
+    pred_lines = []
+    for r in sorted(results, key=lambda x: -x["prob"]):
+        cat = r["category"]
+        pred_lines.append(
+            f"- {r['name']} ({r['university']}): "
+            f"{r['prob']:.0%} [{r['prob_low']:.0%}-{r['prob_high']:.0%}] "
+            f"— {cat}"
+        )
+
+    # Outcome checklist
+    outcome_lines = []
+    for r in sorted(results, key=lambda x: -x["prob"]):
+        outcome_lines.append(f"- [ ] {r['name']} ({r['university']}): pending")
+
+    # Show preview
+    console.print("\n  [bold]Data to be shared (anonymized):[/bold]")
+    console.print()
+    for line in anon_lines:
+        console.print(f"    {line}")
+    console.print()
+
+    try:
+        confirm = input("  Submit this to GitHub? (y/n): ").strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        confirm = "n"
+    if confirm != "y":
+        console.print("  [dim]Cancelled.[/dim]")
+        return
+
+    body = (
+        "## Anonymized Profile\n\n"
+        + "\n".join(anon_lines)
+        + "\n\n## Prediction Results\n\n"
+        + "\n".join(pred_lines)
+        + "\n\n## Actual Outcomes (please update later!)\n\n"
+        + "\n".join(outcome_lines)
+        + "\n\n---\n*Auto-generated by `quantpath predict`*"
+    )
+
+    try:
+        subprocess.run(
+            [
+                "gh", "issue", "create",
+                "--repo", "MasterAgentAI/QuantPath",
+                "--title", "[data] Anonymous admission contribution",
+                "--label", "data-contribution",
+                "--body", body,
+            ],
+            check=True,
+        )
+        console.print("\n  [green]Submitted! Thank you for contributing.[/green]")
+        console.print(
+            "  [dim]Please come back and update your actual outcomes "
+            "when you receive decisions.[/dim]"
+        )
+    except FileNotFoundError:
+        console.print(
+            "\n  [yellow]GitHub CLI (gh) not found. "
+            "Install it: https://cli.github.com[/yellow]"
+        )
+    except subprocess.CalledProcessError:
+        console.print(
+            "\n  [yellow]Failed to create issue. "
+            "Make sure you're logged in: gh auth login[/yellow]"
+        )
+
 
 def cmd_evaluate(args: argparse.Namespace) -> None:
     """Evaluate a user profile against MFE programs."""
