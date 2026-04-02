@@ -1,60 +1,73 @@
+# Yale SOM — Master in Asset Management (MMS), i.e. Asset Management (often abbreviated AM).
+# Program id `yale-am` — NOT Yale GSAS Applied Mathematics.
+# In applicant posts the Yale leg is sometimes discussed under M2M / dual-degree labels; same SOM program.
 id: yale-am
-name: AM
-full_name: MA in Applied Mathematics
+name: Asset Management
+full_name: Master in Asset Management
 university: Yale University
-department: Department of Applied Mathematics
-website: https://applied.math.yale.edu/graduate-program
+department: Yale School of Management
+website: https://som.yale.edu/programs/mms-asset-management
 quantnet_ranking: null
 
 admissions:
-  class_size: 3
-  total_enrolled: 1
-  total_applied: 56
-  acceptance_rate: 0.05
-  avg_gpa: 3.9
-  gre_quant_avg: 170
-  international_pct: 0.80
-  total_grad_students: 5
+  class_size: 66
+  acceptance_rate: 0.10
+  avg_gpa: 3.85
+  gre_quant_avg: 168
+  international_pct: 0.45
 
 prerequisites:
   required:
     - {category: calculus, level: "I-III"}
-    - {category: linear_algebra, level: advanced}
-    - {category: real_analysis, level: required}
+    - {category: linear_algebra, level: introductory}
     - {category: probability, level: calculus-based}
+    - {category: statistics, level: intermediate}
+    - {category: finance, level: introductory}
     - {category: programming, level: introductory}
   recommended:
-    - {category: stochastic_calculus}
-    - {category: pde}
-    - {category: numerical_analysis}
-  languages: [python, matlab]
+    - {category: econometrics}
+    - {category: machine_learning}
+    - {category: portfolio_theory}
+  languages: [python, r]
 
 tests:
-  gre_required: true
-  toefl_min_ibt: 100
+  gre:
+    required: false
+    accepts_gmat: true
+  toefl:
+    waiver_conditions:
+      - "Degree from English-medium institution (per SOM policy)"
+    min_scores:
+      toefl_ibt: 100
+      ielts: 7.0
 
 deadlines:
-  deadline_cycle: "2026-2027"
-  deadline_rounds:
-    - {round: 1, date: "2027-01-02"}
+  cycle: "2026-2027"
+  note: "Verify annual dates on SOM admissions site"
+  rounds:
+    - round: 1
+      date: "2027-01-07"
+      decision_by: ""
 
 application:
-  application_fee: 105
-  recommendations: 3
-  interview_type: "Not required"
+  fee: 250
+  recommendations: 2
+  interview:
+    type: "By invitation"
+    format: "Behavioral and fit; verify current process on SOM site"
 
 outcomes:
-  avg_base_salary: 145000
-  tuition_per_year: 44500
-  tuition_total: 89000
+  avg_base_salary: null
+  employment_rate_3m: null
+  tuition_total: null
 
 special:
-  - "PhD-track master's — MS awarded only to students who withdraw from PhD program"
-  - "Strong connections to Yale School of Management"
-  - "Extremely small cohort (~3 admitted per year from ~56 applicants)"
-  - "80% international students"
-  - "Covers financial mathematics, numerical analysis, scientific computing"
-  - "Co-advising strongly encouraged (theory + domain expert)"
-  - "DGS: Ronald Coifman"
+  - "Yale SOM MMS in Asset Management — portfolio theory, institutional investing, quantitative AM"
+  - "Community shorthand: AM = Asset Management; do not confuse with Applied Mathematics"
+  - "M2M / dual-degree: partner-school + Yale leg posts may label the Yale side as M2M; verify against SOM MMS-AM"
+  - "STEM designation: verify current DHS STEM list for MMS-AM"
+  - "GRE or GMAT accepted; class profiles report strong quant scores"
+  - "Cohort size has grown in recent years; see official class profile (~40–66)"
+  - "Distinct from Yale GSAS Applied Mathematics graduate program"
 
-tags: [applied-math, yale, quant-finance, phd-track, computational-math]
+tags: [asset-management, yale, som, mms, m2m-pathway, quant-finance, institutional-investing]

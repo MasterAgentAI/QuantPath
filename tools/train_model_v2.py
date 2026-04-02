@@ -67,7 +67,7 @@ REAL_ACCEPT_RATES = {
     "northwestern-mfe": 0.30, "usc-msmf": 0.40, "utoronto-mmf": 0.30,
     "toronto-mmf": 0.30,  # alternate name in training data
     "columbia-msfe-econ": 0.05,  # Columbia Business School MS Financial Economics
-    "yale-am": 0.08,  # Yale MA Applied Mathematics
+    "yale-am": 0.08,  # Yale SOM Asset Management (MMS); M2M/dual posts may refer to same program; prior tuned separately
     "stanford-mse": 0.10,  # Stanford MS Management Science & Engineering
 }
 
