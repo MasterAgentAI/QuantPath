@@ -54,19 +54,7 @@ $ quantpath predict --profile my_profile.yaml
 
 ## Model
 
-**v1 (primary)**: Per-program logistic regression on GPA + GRE Quant with bias correction and enhanced profile adjustments. 27 trained models covering all 15 focused programs.
-
-Profile adjustments (logit space, data-calibrated):
-
-| Signal | Adjustment | Example |
-|--------|-----------|---------|
-| Undergrad tier | +0.30 to +0.80 | T10 +0.80, C9 +0.70, T20 +0.50 |
-| Internship quality | +0.15 to +0.80 | Jane Street +0.80, Goldman +0.45, generic +0.15 |
-| Internship count | +0.15/each | Diminishing, up to 3 extra |
-| Published paper | +0.40 | Conference or journal paper |
-| Research experience | +0.20 | Research project without publication |
-| Major relevance | +0.15 to +0.30 | Dual quant major +0.30, single +0.15 |
-| International | -0.25 | Non-US nationality |
+**v1 (primary)**: Per-program logistic regression on GPA + GRE Quant with bias correction and profile adjustments for undergrad tier, internship quality, research, and major relevance. 27 trained models covering all 15 focused programs.
 
 **v2 (fallback)**: GPBoost -- LightGBM gradient boosting with per-program random intercepts. Trained on 11,100+ labeled records, 13 features, 31 programs. AUC 0.723, Brier 0.206 (5-fold CV). Used for programs without a v1 model.
 
