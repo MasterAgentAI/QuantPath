@@ -287,10 +287,10 @@ QuantPath/
 # Clone and install
 git clone https://github.com/MasterAgentAI/QuantPath.git
 cd QuantPath
-pip install -e .
+pip3 install -e .
 
 # For AI tools (parse_profile.py, advisor.py)
-pip install anthropic
+pip3 install anthropic
 export ANTHROPIC_API_KEY=your_key_here
 
 # Run tests to verify everything works

@@ -94,7 +94,7 @@ $ quantpath predict --profile my_profile.yaml
 
 ```bash
 git clone https://github.com/MasterAgentAI/QuantPath.git
-cd QuantPath && pip install -e .
+cd QuantPath && pip3 install -e .
 
 # Create profile from the example template
 cp examples/sample_profile.yaml my_profile.yaml
@@ -110,7 +110,7 @@ quantpath gaps     --profile my_profile.yaml
 
 For AI-powered analysis:
 ```bash
-pip install anthropic
+pip3 install anthropic
 export ANTHROPIC_API_KEY=your_key
 python tools/advisor.py --profile my_profile.yaml --save report.md
 ```
