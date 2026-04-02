@@ -155,7 +155,7 @@ def cmd_predict(args: argparse.Namespace) -> None:
         Panel(
             f"{profile.name} | {profile.university} | GPA {profile.gpa}"
             + (" | International" if profile.is_international else ""),
-            title="QuantPath Admission Prediction (v2 Model)",
+            title="QuantPath Admission Prediction",
             style="bold",
         )
     )
@@ -166,9 +166,11 @@ def cmd_predict(args: argparse.Namespace) -> None:
     for prog in programs:
         if prog.id not in _FOCUSED_PROGRAMS:
             continue
-        pred = predict_prob_v2(prog.id, profile.gpa, gre_quant, profile)
+        # v1 first (better per-applicant discrimination via GPA/GRE),
+        # fall back to v2 for programs without a v1 model.
+        pred = predict_prob_full(prog.id, profile.gpa, gre_quant, profile)
         if pred is None:
-            pred = predict_prob_full(prog.id, profile.gpa, gre_quant, profile)
+            pred = predict_prob_v2(prog.id, profile.gpa, gre_quant, profile)
         if pred is None:
             skipped.append(prog.university + " " + (prog.full_name or prog.name))
             continue

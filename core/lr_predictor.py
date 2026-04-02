@@ -50,8 +50,6 @@ _v2_meta: dict | None = None
 
 # Profile-signal adjustments (logit space)
 _ADJ_INTERNATIONAL = -0.25
-_ADJ_INTERNSHIP_1  =  0.10
-_ADJ_INTERNSHIP_2  =  0.20   # replaces _ADJ_INTERNSHIP_1 for 2+
 
 
 @dataclass
@@ -130,20 +128,118 @@ def _compute_logit(
 
 
 def _profile_adjustment(profile: "UserProfile") -> float:
-    """Compute logit adjustment from profile signals."""
+    """Compute logit adjustment from profile signals.
+
+    Uses the same tiered scoring as v2 feature extraction but returns a
+    single logit-space adjustment.  Calibrated so that the strongest
+    possible profile (T10 undergrad + top-quant internships + published
+    paper + quant major) receives roughly +3.0 logit (shifts 4% → ~50%),
+    while a weak profile receives ~0 or slightly negative.
+    """
     adj = 0.0
 
+    # --- Nationality ---
     if getattr(profile, "is_international", False):
         adj += _ADJ_INTERNATIONAL
 
-    n_internships = sum(
-        1 for exp in getattr(profile, "work_experience", [])
-        if isinstance(exp, dict) and exp.get("type") == "internship"
+    # --- Undergrad tier (+0 to +0.80) ---
+    uni = getattr(profile, "university", "").lower()
+    if uni:
+        _T10 = ["mit", "stanford", "caltech", "princeton", "harvard",
+                 "chicago", "penn", "columbia", "berkeley", "yale"]
+        _T20 = ["cornell", "carnegie mellon", "cmu", "duke", "northwestern",
+                 "johns hopkins", "rice", "vanderbilt", "ucla", "michigan"]
+        _T30 = ["nyu", "uiuc", "illinois", "georgia tech", "gatech",
+                 "wisconsin", "purdue", "unc"]
+        _C9 = ["tsinghua", "peking", "zhejiang", "fudan", "sjtu",
+                "shanghai jiao tong", "ustc", "nanjing"]
+        _985 = ["wuhan", "sun yat-sen", "huazhong", "sichuan", "tianjin",
+                 "southeast", "dalian"]
+        _TOP_INTL = ["imperial", "lse", "oxford", "cambridge", "eth",
+                      "epfl", "nus", "hku", "hkust"]
+        if any(s in uni for s in _T10):
+            adj += 0.80
+        elif any(s in uni for s in _C9):
+            adj += 0.70
+        elif any(s in uni for s in _T20):
+            adj += 0.50
+        elif any(s in uni for s in _985):
+            adj += 0.40
+        elif any(s in uni for s in _TOP_INTL):
+            adj += 0.50
+        elif any(s in uni for s in _T30):
+            adj += 0.30
+
+    # --- Internship quality (+0 to +1.20) ---
+    work_exps = getattr(profile, "work_experience", [])
+    internships = [
+        e for e in work_exps
+        if isinstance(e, dict) and e.get("type") == "internship"
+    ]
+    if internships:
+        _US_TOP_QUANT = [
+            "citadel", "jane street", "two sigma", "de shaw", "hrt",
+            "hudson river", "jump", "imc", "optiver", "sig",
+            "susquehanna", "five rings", "tower research",
+        ]
+        _US_QUANT = [
+            "aqr", "point72", "millennium", "bridgewater", "worldquant",
+            "man group", "balyasny", "cubist", "drw", "squarepoint",
+        ]
+        _US_BB = [
+            "goldman", "morgan stanley", "jpmorgan", "jp morgan",
+            "bank of america", "citi", "barclays", "ubs", "deutsche",
+        ]
+        best = 0.0
+        for exp in internships:
+            combined = (
+                str(exp.get("company", "")) + " "
+                + str(exp.get("description", "")) + " "
+                + str(exp.get("title", ""))
+            ).lower()
+            score = 0.15  # generic internship
+            if any(f in combined for f in _US_TOP_QUANT):
+                score = 0.80
+            elif any(f in combined for f in _US_QUANT):
+                score = 0.60
+            elif any(f in combined for f in _US_BB):
+                score = 0.45
+            elif "quant" in combined or "trading" in combined:
+                score = 0.40
+            best = max(best, score)
+        # Count bonus: each additional internship adds diminishing value
+        adj += best + min(len(internships) - 1, 3) * 0.15
+    elif any(isinstance(e, dict) and e.get("type") == "research"
+             for e in work_exps):
+        adj += 0.10  # research-only experience
+
+    # --- Research & publications (+0 to +0.40) ---
+    projects = getattr(profile, "projects", [])
+    has_paper = any(
+        isinstance(p, dict) and p.get("has_paper")
+        for p in projects
     )
-    if n_internships >= 2:
-        adj += _ADJ_INTERNSHIP_2
-    elif n_internships >= 1:
-        adj += _ADJ_INTERNSHIP_1
+    has_research = len(projects) > 0 or any(
+        isinstance(e, dict) and e.get("type") == "research"
+        for e in work_exps
+    )
+    if has_paper:
+        adj += 0.40
+    elif has_research:
+        adj += 0.20
+
+    # --- Major relevance (+0 to +0.30) ---
+    majors = getattr(profile, "majors", [])
+    if majors:
+        major_lower = " ".join(majors).lower()
+        quant_kw = ["math", "stat", "physics", "computer", "cs"]
+        n_quant = sum(1 for kw in quant_kw if kw in major_lower)
+        if n_quant >= 2:
+            adj += 0.30  # double/triple quant major
+        elif n_quant >= 1:
+            adj += 0.15
+        elif any(kw in major_lower for kw in ["econ", "finance"]):
+            adj += 0.10
 
     return adj
 

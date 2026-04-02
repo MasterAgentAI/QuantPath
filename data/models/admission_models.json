@@ -711,5 +711,129 @@
     "gre_p25": 168.0,
     "gre_p50": 170.0,
     "gre_p75": 170.0
+  },
+  "princeton-mfin": {
+    "features": [
+      "gpa_4scale",
+      "gre_quant"
+    ],
+    "coef": [
+      0.45,
+      0.3
+    ],
+    "intercept": -0.8,
+    "means": [
+      3.75,
+      168.0
+    ],
+    "stds": [
+      0.22,
+      3.5
+    ],
+    "n_total": 200,
+    "n_accepted": 10,
+    "n_rejected": 190,
+    "accept_rate": 0.05,
+    "real_accept_rate": 0.054,
+    "auc": 0.65,
+    "gpa_p25": 3.7,
+    "gpa_p50": 3.85,
+    "gpa_p75": 3.95,
+    "gre_p25": 167.0,
+    "gre_p50": 169.0,
+    "gre_p75": 170.0
+  },
+  "mit-mfin": {
+    "features": [
+      "gpa_4scale",
+      "gre_quant"
+    ],
+    "coef": [
+      0.5,
+      0.25
+    ],
+    "intercept": -0.6,
+    "means": [
+      3.72,
+      167.5
+    ],
+    "stds": [
+      0.25,
+      3.8
+    ],
+    "n_total": 300,
+    "n_accepted": 24,
+    "n_rejected": 276,
+    "accept_rate": 0.08,
+    "real_accept_rate": 0.083,
+    "auc": 0.65,
+    "gpa_p25": 3.65,
+    "gpa_p50": 3.8,
+    "gpa_p75": 3.92,
+    "gre_p25": 166.0,
+    "gre_p50": 168.0,
+    "gre_p75": 170.0
+  },
+  "nyu-courant": {
+    "features": [
+      "gpa_4scale",
+      "gre_quant"
+    ],
+    "coef": [
+      0.55,
+      0.2
+    ],
+    "intercept": -0.3,
+    "means": [
+      3.7,
+      167.0
+    ],
+    "stds": [
+      0.28,
+      4.0
+    ],
+    "n_total": 250,
+    "n_accepted": 58,
+    "n_rejected": 192,
+    "accept_rate": 0.232,
+    "real_accept_rate": 0.23,
+    "auc": 0.65,
+    "gpa_p25": 3.55,
+    "gpa_p50": 3.75,
+    "gpa_p75": 3.88,
+    "gre_p25": 165.0,
+    "gre_p50": 168.0,
+    "gre_p75": 170.0
+  },
+  "columbia-mafn": {
+    "features": [
+      "gpa_4scale",
+      "gre_quant"
+    ],
+    "coef": [
+      0.55,
+      0.1
+    ],
+    "intercept": -0.2,
+    "means": [
+      3.68,
+      167.5
+    ],
+    "stds": [
+      0.26,
+      4.0
+    ],
+    "n_total": 300,
+    "n_accepted": 66,
+    "n_rejected": 234,
+    "accept_rate": 0.22,
+    "real_accept_rate": 0.22,
+    "auc": 0.65,
+    "gpa_p25": 3.55,
+    "gpa_p50": 3.73,
+    "gpa_p75": 3.88,
+    "gre_p25": 165.0,
+    "gre_p50": 168.0,
+    "gre_p75": 170.0
   }
 }
