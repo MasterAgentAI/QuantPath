@@ -153,12 +153,12 @@ def _profile_adjustment(profile: "UserProfile") -> float:
                  "johns hopkins", "rice", "vanderbilt", "ucla", "michigan"]
         _T30 = ["nyu", "uiuc", "illinois", "georgia tech", "gatech",
                  "wisconsin", "purdue", "unc"]
-        _C9 = ["tsinghua", "peking", "zhejiang", "fudan", "sjtu",
-                "shanghai jiao tong", "ustc", "nanjing"]
+        _TOP_INTL = ["tsinghua", "peking", "imperial", "lse", "oxford",
+                      "cambridge", "eth", "epfl"]
+        _C9 = ["zhejiang", "fudan", "sjtu", "shanghai jiao tong",
+                "ustc", "nanjing"]
         _985 = ["wuhan", "sun yat-sen", "huazhong", "sichuan", "tianjin",
                  "southeast", "dalian"]
-        _TOP_INTL = ["imperial", "lse", "oxford", "cambridge", "eth",
-                      "epfl"]
         if any(s in uni for s in _T10):
             adj += 0.80
         elif any(s in uni for s in _T20):
