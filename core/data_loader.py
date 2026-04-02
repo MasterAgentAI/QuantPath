@@ -9,6 +9,7 @@ models defined in ``core.models``.
 
 from __future__ import annotations
 
+import functools
 from pathlib import Path
 from typing import Any
 
@@ -155,12 +156,16 @@ def load_program(program_id: str) -> ProgramData:
     return _parse_program(raw)
 
 
-def load_all_programs() -> list[ProgramData]:
+@functools.lru_cache(maxsize=1)
+def load_all_programs() -> tuple[ProgramData, ...]:
     """Load every programme YAML in the ``data/programs/`` directory.
+
+    Returns a *tuple* (hashable, cached). Callers that need a list can
+    use ``list(load_all_programs())``.
 
     Returns
     -------
-    list[ProgramData]
+    tuple[ProgramData, ...]
         All programmes found, sorted by ``quantnet_ranking`` (nulls last).
     """
     programs: list[ProgramData] = []
@@ -170,9 +175,8 @@ def load_all_programs() -> list[ProgramData]:
         if raw:
             programs.append(_parse_program(raw))
 
-    # Sort by ranking, pushing None to the end.
     programs.sort(key=lambda p: (p.quantnet_ranking is None, p.quantnet_ranking or 0))
-    return programs
+    return tuple(programs)
 
 
 # ---------------------------------------------------------------------------

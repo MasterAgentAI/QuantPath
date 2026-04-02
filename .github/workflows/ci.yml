@@ -27,8 +27,13 @@ jobs:
       - name: Run pytest
         run: python -m pytest tests/ -v
 
-      - name: CLI smoke test
-        run: python -m cli.main programs
+      - name: CLI smoke tests
+        run: |
+          python -m cli.main programs
+          python -m cli.main compare --programs baruch-mfe,cmu-mscf
+          python -m cli.main roi
+          python -m cli.main interview --category probability
+          python -m cli.main contribute-upload
 
   lint:
     runs-on: ubuntu-latest
@@ -45,4 +50,4 @@ jobs:
         run: pip install ruff
 
       - name: Run ruff check
-        run: ruff check core/ cli/
+        run: ruff check core/ cli/ tools/ scripts/

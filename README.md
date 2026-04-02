@@ -6,7 +6,7 @@
 [![CI](https://github.com/MasterAgentAI/QuantPath/actions/workflows/ci.yml/badge.svg)](https://github.com/MasterAgentAI/QuantPath/actions)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE-AGPL-3.0)
 [![Data: CC BY-NC-SA 4.0](https://img.shields.io/badge/Data-CC_BY--NC--SA_4.0-lightgrey.svg)](data/LICENSE)
-![Tests](https://img.shields.io/badge/tests-465%20passed-brightgreen.svg)
+[![Tests](https://github.com/MasterAgentAI/QuantPath/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/MasterAgentAI/QuantPath/actions)
 ![Data](https://img.shields.io/badge/data-13%2C100%2B%20records-blue.svg)
 ![Programs](https://img.shields.io/badge/programs-15%20focused%20(31%20total)-orange.svg)
 ![Model](https://img.shields.io/badge/model-AUC%200.723-brightgreen.svg)

@@ -158,7 +158,7 @@ def rank_schools(
     evaluation: EvaluationResult,
     calibration_overrides: Optional[dict[str, dict[str, Any]]] = None,
     projected: bool = False,
-    **kwargs,
+    use_v2: bool = False,
 ) -> dict[str, Any]:
     """Rank and classify a set of programmes for the given applicant.
 
@@ -205,7 +205,7 @@ def rank_schools(
         # --- Classification: LR probability first, heuristic fallback ---
         # Use full prediction (bias-corrected + profile-aware + CI)
         # Use v2 (GPBoost) when use_v2=True, otherwise v1 (per-program LR)
-        if kwargs.get("use_v2"):
+        if use_v2:
             lr_pred = predict_prob_v2(prog.id, profile.gpa, gre_quant, profile)
         else:
             lr_pred = predict_prob_full(prog.id, profile.gpa, gre_quant, profile)

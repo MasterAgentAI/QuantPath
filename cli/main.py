@@ -48,11 +48,40 @@ def _quick_profile_interactive() -> str:
     console.print("Answer a few questions to get your admission predictions.\n")
 
     name = input("  Your name: ").strip() or "Applicant"
-    gpa = input("  GPA (e.g. 3.85): ").strip()
+
+    while True:
+        gpa_raw = input("  GPA (e.g. 3.85): ").strip()
+        if not gpa_raw:
+            gpa = ""
+            break
+        try:
+            gpa_val = float(gpa_raw)
+            if not 0.0 <= gpa_val <= 4.0:
+                console.print("  [yellow]GPA should be between 0.0 and 4.0.[/yellow]")
+                continue
+            gpa = gpa_raw
+            break
+        except ValueError:
+            console.print("  [yellow]Please enter a number (e.g. 3.85).[/yellow]")
+
     university = input("  University (e.g. Peking University, UIUC): ").strip()
     majors_raw = input("  Major(s), comma-separated (e.g. Math, CS): ").strip()
     is_intl = input("  International student? (y/n): ").strip().lower()
-    gre = input("  GRE Quant score (press Enter to skip): ").strip()
+
+    while True:
+        gre_raw = input("  GRE Quant score (press Enter to skip): ").strip()
+        if not gre_raw:
+            gre = ""
+            break
+        try:
+            gre_val = int(gre_raw)
+            if not 130 <= gre_val <= 170:
+                console.print("  [yellow]GRE Quant is 130–170.[/yellow]")
+                continue
+            gre = gre_raw
+            break
+        except ValueError:
+            console.print("  [yellow]Please enter a number (e.g. 168).[/yellow]")
 
     console.print("\n  [dim]Internships (press Enter when done):[/dim]")
     internships = []

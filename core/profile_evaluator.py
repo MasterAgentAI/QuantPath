@@ -272,13 +272,14 @@ def _score_cs(profile: UserProfile) -> tuple[float, list[dict[str, Any]]]:
     """CS dimension (weight 0.20).
 
     Factors & weights:
-        cpp_proficiency       0.25   (essential for Baruch, CMU, Berkeley)
-        python_proficiency    0.20   (standard tool across all programs)
-        data_structures_algo  0.18   (core CS fundamentals)
-        ml_course             0.10   (ML/DL increasingly valued)
-        numerical_computing   0.07   (numerical methods implementation)
-        software_engineering  0.10   (OOP, design — valued by industry)
-        is_cs_major           0.10   (bonus: 10 if CS major, else 0)
+        cpp_proficiency         0.25  (essential for Baruch, CMU, Berkeley)
+        python_proficiency      0.20  (standard tool across all programs)
+        data_structures_algo    0.18  (core CS fundamentals)
+        ml_course               0.10  (ML/DL increasingly valued)
+        numerical_computing     0.07  (numerical methods implementation)
+        software_engineering    0.08  (OOP, design — valued by industry)
+        reinforcement_learning  0.02  (RL, growing niche)
+        is_cs_major             0.10  (bonus: 10 if CS major, else 0)
     """
     cw = profile.coursework
 

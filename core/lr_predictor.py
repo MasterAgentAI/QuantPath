@@ -23,9 +23,9 @@ Profile adjustments (applied in logit space)
     1 quant internship:                          +0.10
     2+ quant internships:                        +0.20
 
-Confidence interval
+Confidence interval (90%)
     Approximated from sample size (n) and AUC using:
-        SE_logit ≈ 1.96 / sqrt(n_eff)
+        SE_logit ≈ 1.645 / sqrt(n_eff * p * (1-p))
         n_eff    = n * (2*AUC - 1)^2  (Bamber's index)
     Bounds are clamped to [0, 1].
 """
@@ -33,10 +33,13 @@ Confidence interval
 from __future__ import annotations
 
 import json
+import logging
 import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from .models import UserProfile
@@ -584,7 +587,8 @@ def predict_prob_v2(
             prob = float(pred["response_mean"][0])
         else:
             prob = float(pred[0])
-    except Exception:
+    except Exception as exc:
+        logger.warning("v2 predict failed for %s, falling back to v1: %s", program_id, exc)
         return predict_prob_full(program_id, gpa, gre, profile)
 
     # Apply bias correction
@@ -684,7 +688,8 @@ def _get_v2_raw(
         if isinstance(pred, dict):
             return float(pred["response_mean"][0])
         return float(pred[0])
-    except Exception:
+    except Exception as exc:
+        logger.warning("v2 raw predict failed for %s: %s", program_id, exc)
         return None
 
 
