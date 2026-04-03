@@ -708,6 +708,13 @@ def _get_v2_raw(
 # to give it meaningful influence on top of v1.
 _V2_SIGNAL_WEIGHT = 1.0
 
+# ── Platt scaling (post-hoc calibration) ──────────────────────────
+# Fitted on 126 prediction-outcome pairs from GitHub data-contribution
+# issues.  calibrated = sigmoid(a * logit(raw) + b).
+# CV Brier: 0.2537 → 0.1844 (5-fold), no overfitting (train 0.1820).
+_PLATT_A = 1.1663
+_PLATT_B = 1.3061
+
 # Cache for per-program v2 baselines (computed lazily).
 _v2_centers: dict[str, float] = {}
 
@@ -776,15 +783,21 @@ def predict_ensemble(
     # Blend
     v1_logit = _logit(max(0.001, min(0.999, v1.prob)))
     final_logit = v1_logit + _V2_SIGNAL_WEIGHT * v2_residual
-    prob = round(max(0.001, min(0.999, _sigmoid(final_logit))), 4)
 
-    # CI: preserve v1's CI width
+    # CI: preserve v1's CI width in logit space
     hw = (
         abs(_logit(v1.prob_high) - _logit(v1.prob))
         if v1.prob_high > v1.prob else 0.5
     )
-    prob_low = round(max(0.0, _sigmoid(final_logit - hw)), 4)
-    prob_high = round(min(1.0, _sigmoid(final_logit + hw)), 4)
+
+    # ── Platt scaling: calibrate the ensemble output ──
+    # Corrects systematic underestimation found in issue validation data.
+    cal_logit = _PLATT_A * final_logit + _PLATT_B
+    cal_hw = _PLATT_A * hw  # scale CI width proportionally
+
+    prob = round(max(0.001, min(0.999, _sigmoid(cal_logit))), 4)
+    prob_low = round(max(0.0, _sigmoid(cal_logit - cal_hw)), 4)
+    prob_high = round(min(1.0, _sigmoid(cal_logit + cal_hw)), 4)
 
     return AdmitPrediction(
         prob=prob,
