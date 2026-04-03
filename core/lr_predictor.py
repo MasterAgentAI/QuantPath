@@ -709,11 +709,13 @@ def _get_v2_raw(
 _V2_SIGNAL_WEIGHT = 1.0
 
 # ── Platt scaling (post-hoc calibration) ──────────────────────────
-# 50% blend of full Platt (a=1.166, b=1.306) toward identity (a=1, b=0).
-# Full Platt overcorrects for non-elite applicants; 50% blend gives
-# Brier 0.2537→0.1993 (-21%) while keeping predictions conservative.
-_PLATT_A = 1.083
-_PLATT_B = 0.653
+# Disabled: 126 issue samples have strong selection bias (mostly T10/T20
+# applicants with 68% accept rate).  Platt fit on this data overcorrects
+# for typical users.  Keeping params at identity until calibration data
+# grows to 300+ with broader applicant diversity.
+# Full Platt was (1.166, 1.306); 50% blend was (1.083, 0.653).
+_PLATT_A = 1.0
+_PLATT_B = 0.0
 
 # Cache for per-program v2 baselines (computed lazily).
 _v2_centers: dict[str, float] = {}
