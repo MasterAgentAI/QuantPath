@@ -709,11 +709,11 @@ def _get_v2_raw(
 _V2_SIGNAL_WEIGHT = 1.0
 
 # ── Platt scaling (post-hoc calibration) ──────────────────────────
-# Fitted on 126 prediction-outcome pairs from GitHub data-contribution
-# issues.  calibrated = sigmoid(a * logit(raw) + b).
-# CV Brier: 0.2537 → 0.1844 (5-fold), no overfitting (train 0.1820).
-_PLATT_A = 1.1663
-_PLATT_B = 1.3061
+# 50% blend of full Platt (a=1.166, b=1.306) toward identity (a=1, b=0).
+# Full Platt overcorrects for non-elite applicants; 50% blend gives
+# Brier 0.2537→0.1993 (-21%) while keeping predictions conservative.
+_PLATT_A = 1.083
+_PLATT_B = 0.653
 
 # Cache for per-program v2 baselines (computed lazily).
 _v2_centers: dict[str, float] = {}
